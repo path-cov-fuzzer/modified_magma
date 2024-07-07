@@ -27,7 +27,14 @@ export AFL_DRIVER_DONT_DEFER=1
 
 set -x
 
-cp "$OUT/afl/$PROGRAM" "$SHARED/"
+mkdir -p "$SHARED/afl"
+cp "$OUT/afl/$PROGRAM" "$SHARED/afl"
+
+mkdir -p "$SHARED/cmplog"
+cp "$OUT/cmplog/$PROGRAM" "$SHARED/cmplog"
+
+mkdir -p "$SHARED/corpus"
+cp -r "$TARGET/corpus/$PROGRAM" "$SHARED/corpus/$PROGRAM"
 
 "$FUZZER/repo/afl-fuzz" -i "$TARGET/corpus/$PROGRAM" -o "$SHARED/findings" \
     "${flag_cmplog[@]}" -d \
