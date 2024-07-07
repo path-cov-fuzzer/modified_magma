@@ -8,6 +8,7 @@ set -e
 # - env SHARED: path to directory shared with host (to store results)
 ##
 
+set -x
 MAGMA_STORAGE="$SHARED/canaries.raw"
 
 $CC $CFLAGS -D"MAGMA_STORAGE=\"$MAGMA_STORAGE\"" -c "$MAGMA/src/canary.c" \
@@ -18,3 +19,5 @@ $CC $CFLAGS -D"MAGMA_STORAGE=\"$MAGMA_STORAGE\"" -c "$MAGMA/src/storage.c" \
 
 $LD -r "$OUT/canary.o" "$OUT/storage.o" -o "$OUT/magma.o"
 rm "$OUT/canary.o" "$OUT/storage.o"
+set +x
+

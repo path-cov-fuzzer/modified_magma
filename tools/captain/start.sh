@@ -51,6 +51,7 @@ if [ ! -z "$SHARED" ]; then
     flag_volume="--volume=$SHARED:/magma_shared"
 fi
 
+set -x
 if [ -t 1 ]; then
     docker run -it $flag_volume \
         --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \
@@ -72,3 +73,4 @@ else
     exit_code=$(docker wait $container_id)
     exit $exit_code
 fi
+set +x

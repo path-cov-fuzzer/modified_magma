@@ -56,6 +56,7 @@ sapi/cli/php sapi/fuzzer/generate_parser_corpus.php
 
 FUZZERS="php-fuzz-json php-fuzz-exif php-fuzz-mbstring php-fuzz-unserialize php-fuzz-parser"
 for fuzzerName in $FUZZERS; do
+	# 在Bash脚本中，${fuzzerName/php-fuzz-/} 这种语法是一种变量替换（Variable substitution）的方式。它的含义是将变量 fuzzerName 的值中第一个匹配到的 php-fuzz- 字符串替换为空字符串（即删除）
 	cp sapi/fuzzer/$fuzzerName "$OUT/${fuzzerName/php-fuzz-/}"
 done
 
