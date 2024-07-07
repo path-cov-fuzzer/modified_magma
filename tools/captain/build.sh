@@ -41,7 +41,20 @@ if [ ! -z $HARDEN ]; then
     harden_flag="--build-arg harden=1"
 fi
 
+# CYHADDED: AFL++ 的 LLVM17 ------------------------------- start
 set -x
+if [ "$FUZZER" == "aflplusplus" ]; then
+
+docker build -t "$IMG_NAME" \
+    --build-arg fuzzer_name="$FUZZER" \
+    --build-arg target_name="$TARGET" \
+    --build-arg USER_ID=$(id -u $USER) \
+    --build-arg GROUP_ID=$(id -g $USER) \
+    $mode_flag $isan_flag $harden_flag \
+    -f "$MAGMA/docker/Dockerfile.my" "$MAGMA"
+
+else
+
 docker build -t "$IMG_NAME" \
     --build-arg fuzzer_name="$FUZZER" \
     --build-arg target_name="$TARGET" \
@@ -49,6 +62,9 @@ docker build -t "$IMG_NAME" \
     --build-arg GROUP_ID=$(id -g $USER) \
     $mode_flag $isan_flag $harden_flag \
     -f "$MAGMA/docker/Dockerfile" "$MAGMA"
+
+fi
 set +x
+# CYHADDED: AFL++ 的 LLVM17 ------------------------------- end
 
 echo "$IMG_NAME"
