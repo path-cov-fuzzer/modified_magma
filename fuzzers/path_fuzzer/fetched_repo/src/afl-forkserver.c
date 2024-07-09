@@ -1992,23 +1992,23 @@ afl_fsrv_run_target(afl_forkserver_t *fsrv, u32 timeout,
     //   printf("\n");
     //   printf("================================= the unreduced path is =================================\n");
 
-    extern const BlockID* reduce_path1(const PathReducer* reducer, const BlockID* path, int32_t path_size, FunID entry_fun_id, int* out_len);
-    reduced_path = reduce_path1(path_reducer, path_shm_ptr_pointer_to_1, fsrv->path_trace_bits[0], 0, &out_len); // CYHTO_DO: 加上 Zekun reduction 后要取消注释
-    //   out_len = path_shm_ptr[0]; // CYHTO_DO: 加上 Zekun reduction 后要去掉
+    // extern const BlockID* reduce_path1(const PathReducer* reducer, const BlockID* path, int32_t path_size, FunID entry_fun_id, int* out_len);
+    // reduced_path = reduce_path1(path_reducer, path_shm_ptr_pointer_to_1, fsrv->path_trace_bits[0], 0, &out_len); // CYHTO_DO: 加上 Zekun reduction 后要取消注释
+    out_len = fsrv->path_trace_bits[0]; // CYHTO_DO: 加上 Zekun reduction 后要去掉
     assert(out_len >= 0);
 
     // 声明断言：reduced_path 的长度一定小于等于 原来的path的长度  (当 path 中没有循环，那么就是“等于”)
     assert(out_len <= fsrv->path_trace_bits[0]);
 
     // 长度不能大于最大值
-    assert(fsrv->path_trace_bits[0] <= ((fsrv->path_map_size - sizeof(u32)) / sizeof(u32)));
+    printf("out_len = %d\n", out_len);
+    assert(out_len <= ((fsrv->path_map_size - sizeof(u32)) / sizeof(u32)));
 
-    //   sha256(path_shm_ptr_pointer_to_1, trace_hash, path_shm_ptr[0]);
-    sha256(reduced_path, trace_hash, out_len);
+    sha256(path_shm_ptr_pointer_to_1, trace_hash, out_len);
+    // sha256(reduced_path, trace_hash, out_len);
 
-    extern void free_boxed_array(int* ptr, size_t len);
-    //   free(reduced_path);  // CYHTO_DO: 加上 Zekun reduction 后还要取消注释
-    free_boxed_array(reduced_path, out_len);
+    // extern void free_boxed_array(int* ptr, size_t len);
+    // free_boxed_array(reduced_path, out_len);
     reduced_path = NULL;
     //   printf("hash = 0x%lx\n", trace_hash);
 

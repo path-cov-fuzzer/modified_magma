@@ -12,16 +12,6 @@ set -e
 # - env FUZZARGS: extra arguments to pass to the fuzzer
 ##
 
-# 3. 过滤掉 cfg.txt 和 callmap.txt 的东西，以及生成一些别的文本
-bash $FUZZER/filterCFG_Callmap_script.sh
-cat $OUT/cfg.txt | grep "BasicBlock: " | wc -l > $OUT/bbnum.txt
-cat $OUT/cfg_filtered.txt | grep "Function: " | nl -v 0 | awk '{print $1, $3, $4, $5, $6, $7, $8, $9}' > $OUT/function_list.txt
-
-# 4. 使用之前构建的东西，生成 CFG binary
-g++ $FUZZER/convert.cpp -o $OUT/convert
-$OUT/convert
-mv $OUT/top.bin $OUT/${PROGRAM}_cfg.bin
-
 # run.sh 本来的内容
 if nm "$OUT/afl/$PROGRAM" | grep -E '^[0-9a-f]+\s+[Ww]\s+main$'; then
     ARGS="-"

@@ -15,6 +15,26 @@
 # + env LOGSIZE: size (in bytes) of log file to generate (default: 1 MiB)
 ##
 
+set -x
+
+if [ "$FUZZER" == "path_fuzzer" ]; then
+
+# 3. 过滤掉 cfg.txt 和 callmap.txt 的东西，以及生成一些别的文本
+echo "3 start"
+bash $FUZZER/filterCFG_Callmap_script.sh
+cat $OUT/cfg.txt | grep "BasicBlock: " | wc -l > $OUT/bbnum.txt
+cat $OUT/cfg_filtered.txt | grep "Function: " | nl -v 0 | awk '{print $1, $3, $4, $5, $6, $7, $8, $9}' > $OUT/function_list.txt
+
+# 4. 使用之前构建的东西，生成 CFG binary
+echo "4 start"
+g++ $FUZZER/convert.cpp -o $OUT/convert
+$OUT/convert 
+mv $OUT/top.bin $OUT/${PROGRAM}_cfg.bin
+
+fi
+
+set +x
+
 # set default max log size to 1 MiB
 LOGSIZE=${LOGSIZE:-$[1 << 20]}
 
