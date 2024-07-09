@@ -1,4 +1,0 @@
-[submodule "fuzzers/path_fuzzer/fetched_repo"]
-	path = fuzzers/path_fuzzer/fetched_repo
-	url = https://github.com/path-cov-fuzzer/pathAFLplusplus.git
-	branch = path_fuzzer_with_reduction
