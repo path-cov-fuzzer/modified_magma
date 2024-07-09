@@ -19,6 +19,7 @@ export LIBS="$LIBS -lc++ -lc++abi $FUZZER/repo/utils/aflpp_driver/libAFLDriver.a
 # AFL++'s driver is compiled against libc++
 export CXXFLAGS="$CXXFLAGS -stdlib=libc++"
 
+export OUTAUX=$OUT
 # Build the AFL-only instrumented version
 (
     export OUT="$OUT/afl"
@@ -28,14 +29,19 @@ export CXXFLAGS="$CXXFLAGS -stdlib=libc++"
     "$MAGMA/build.sh"
 
     # $TARGET/build.sh 所描述的是 PUT 的构建代码，需要插桩
+    export OUT="$OUTAUX"
+
     # 1. 删除 $OUT/ 里的 "残余" 内容
-    rm $OUT/bbid.txt $OUT/callmap.txt $OUT/cfg.txt $OUT/function_list.txt $OUT/bbnum.txt $OUT/convert
+    rm $OUT/bbid.txt $OUT/callmap.txt $OUT/cfg.txt $OUT/function_list.txt $OUT/bbnum.txt $OUT/convert || true
+
     # 2. 设置好环境变量，进行插桩
     export BBIDFILE="$OUT/bbid.txt"
     export CALLMAPFILE="$OUT/callmap.txt"
     export CFGFILE="$OUT/cfg.txt"
-    export LD_LIBRARY_PATH=$FUZZER
+    export LD_LIBRARY_PATH=$FUZZER/repo
     export AFL_LLVM_CALLER=1
+
+    export OUT="$OUT/afl"
     "$TARGET/build.sh"
      
     # 在 $FUZZER/run.sh 中实现 3. 和 4. (分别是对 cfg.txt 和 callmap.txt 过滤，以及生成 CFG binary)

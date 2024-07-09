@@ -5,7 +5,7 @@ FROM ubuntu:20.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y sudo make build-essential git wget 
+RUN apt-get update && apt-get install -y sudo make build-essential git wget tree
 
 RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
 
