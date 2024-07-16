@@ -1367,9 +1367,7 @@ void path_inject_eachbb(int integerBBID) {
 
     if(first) {
         first = false;
-        __afl_path_ptr[0] = 1;
-        __afl_path_ptr[__afl_path_ptr[0]] = integerBBID;
-        return;
+        assert(__afl_path_ptr[0] == 0);
     }
 
     __afl_path_ptr[0] = __afl_path_ptr[0] + 1;

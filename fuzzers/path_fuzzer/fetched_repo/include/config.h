@@ -467,7 +467,7 @@
 /* Do not change this unless you really know what you are doing. */
 
 // CYHADDED: 定义执行路径共享内存的大小
-#define PATH_MAP_SIZE (1U << 29) // 512M
+#define PATH_MAP_SIZE (1U << 30) // 1G
 
 #define MAP_SIZE (1U << MAP_SIZE_POW2)
 #if MAP_SIZE <= 65536

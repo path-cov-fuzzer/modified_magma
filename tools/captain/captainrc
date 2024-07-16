@@ -30,7 +30,7 @@ REPEAT=3
 # [TIMEOUT]: time to run each campaign. This variable supports one-letter
 # suffixes to indicate duration (s: seconds, m: minutes, h: hours, d: days)
 # (default: 1m)
-TIMEOUT=20m
+TIMEOUT=10m
 
 # [POLL]: time (in seconds) between polls (default: 5)
 POLL=5
@@ -83,9 +83,9 @@ FUZZERS=(path_fuzzer)
 # aflplusplus_TARGETS=(openssl)
 # aflplusplus_TARGETS=(libpng libtiff libxml2 sqlite3)
 
-path_fuzzer_TARGETS=(lua php libsndfile libpng libtiff libxml2 sqlite3 openssl)
+# path_fuzzer_TARGETS=(lua php libsndfile libpng libtiff libxml2 sqlite3 openssl)
 # path_fuzzer_TARGETS=(libsndfile)
-# path_fuzzer_TARGETS=(lua)
+path_fuzzer_TARGETS=(lua)
 # path_fuzzer_TARGETS=(openssl libxml2 libsndfile lua)
 
 # [fuzzer_target_PROGRAMS]: an array of program names (from

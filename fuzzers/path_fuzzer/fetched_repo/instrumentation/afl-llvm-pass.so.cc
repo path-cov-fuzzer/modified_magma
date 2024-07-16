@@ -1203,9 +1203,12 @@ bool AFLCoverage::runOnModule(Module &M) {
 
     // 1. 给三个文件描述符加锁
     // 获取独占锁（写锁）
-    assert(flock(bbidfd, LOCK_EX) != -1);
-    assert(flock(callmap_fd, LOCK_EX) != -1);
-    assert(flock(cfg_fd, LOCK_EX) != -1);
+    // assert(flock(bbidfd, LOCK_EX) != -1);
+    // assert(flock(callmap_fd, LOCK_EX) != -1);
+    // assert(flock(cfg_fd, LOCK_EX) != -1);
+    while(flock(bbidfd, LOCK_EX) == -1);
+    while(flock(callmap_fd, LOCK_EX) == -1);
+    while(flock(cfg_fd, LOCK_EX) == -1);
 
     // 2. 读取存放在 BBIDFILE 里的整数，作为这一个 module 的起始 BBID
     int BBID = readBBIDfile(bbidfile);
@@ -1371,9 +1374,12 @@ bool AFLCoverage::runOnModule(Module &M) {
     writeBBIDfile(bbidfile, BBID);
 
     // 8. 给三个文件描述符释放锁
-    assert(flock(bbidfd, LOCK_UN) != -1);
-    assert(flock(callmap_fd, LOCK_UN) != -1);
-    assert(flock(cfg_fd, LOCK_UN) != -1);
+    // assert(flock(bbidfd, LOCK_UN) != -1);
+    // assert(flock(callmap_fd, LOCK_UN) != -1);
+    // assert(flock(cfg_fd, LOCK_UN) != -1);
+    while(flock(bbidfd, LOCK_UN) == -1);
+    while(flock(callmap_fd, LOCK_UN) == -1);
+    while(flock(cfg_fd, LOCK_UN) == -1);
 
     // 9. 释放锁后就可以关闭文件了
     fclose(bbidfile);
