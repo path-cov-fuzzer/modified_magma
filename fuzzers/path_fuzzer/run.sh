@@ -43,6 +43,8 @@ export CFG_BIN_FILE="$OUT/cfgbin/${PROGRAM}_cfg.bin"
 export LD_LIBRARY_PATH=$FUZZER/repo
 # export AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
 
+cp $OUT/cfg.txt $SHARED/cfg.txt
+
 set -x
 
 "$FUZZER/repo/afl-fuzz" -i "$TARGET/corpus/$PROGRAM" -o "$SHARED/findings" \
