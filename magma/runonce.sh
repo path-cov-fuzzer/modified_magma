@@ -43,5 +43,6 @@ echo "$msg"
 rm "$SHARED/runonce.tmp"
 
 if [ $is_triggered -ne 0 ] || [ $exit_code -ne 0 ]; then
+# if [ $is_triggered -ne 0 ] || [ $exit_code -ge 128 ]; then
     exit 1
 fi

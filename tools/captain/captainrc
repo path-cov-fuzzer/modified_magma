@@ -10,7 +10,7 @@
 WORKDIR=./workdir
 
 # REPEAT: number of campaigns to run per program (per fuzzer)
-REPEAT=2
+REPEAT=3
 
 # [WORKER_MODE]: defines the type of CPU resources to allocate (default: 1)
 # - 1: logical cores (possibly SMT-enabled)
@@ -30,7 +30,7 @@ REPEAT=2
 # [TIMEOUT]: time to run each campaign. This variable supports one-letter
 # suffixes to indicate duration (s: seconds, m: minutes, h: hours, d: days)
 # (default: 1m)
-TIMEOUT=2m
+TIMEOUT=20m
 
 # [POLL]: time (in seconds) between polls (default: 5)
 POLL=5
@@ -80,10 +80,13 @@ FUZZERS=(path_fuzzer)
 # (default: all targets)
 # afl_TARGETS=(libpng libtiff libxml2)
 # aflplusplus_TARGETS=(lua php libsndfile libpng libtiff libxml2 sqlite3 openssl)
+# aflplusplus_TARGETS=(openssl)
 # aflplusplus_TARGETS=(libpng libtiff libxml2 sqlite3)
 
 path_fuzzer_TARGETS=(lua php libsndfile libpng libtiff libxml2 sqlite3 openssl)
+# path_fuzzer_TARGETS=(libsndfile)
 # path_fuzzer_TARGETS=(lua)
+# path_fuzzer_TARGETS=(openssl libxml2 libsndfile lua)
 
 # [fuzzer_target_PROGRAMS]: an array of program names (from
 # magma/targets/target/configrc) to use as execution drivers when fuzzing the

@@ -5,7 +5,7 @@ FROM ubuntu:20.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y sudo make build-essential git wget tree
+RUN apt-get update && apt-get install -y sudo make build-essential git wget tree vim
 
 RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
 
@@ -127,10 +127,21 @@ ENV LDFLAGS -L"${OUT}" -g
 
 RUN ${FUZZER}/instrument.sh
 
-RUN mkdir -p ${OUT}/cmplog
-COPY --chown=magma:magma ${magma_root}/cmplogs/${target_name} ${OUT}/cmplog/
+# RUN ${FUZZER}/generateCFG.sh
+# ENTRYPOINT ${FUZZER}/generateCFG.sh
+
+# RUN mkdir -p ${OUT}/cmplog
+# COPY --chown=magma:magma ${magma_root}/cmplogs/${target_name} ${OUT}/cmplog/
+
+RUN mkdir -p ${OUT}/cfgbin
+COPY --chown=magma:magma ${magma_root}/cfgbin/${target_name} ${OUT}/cfgbin/
 
 ENTRYPOINT "${MAGMA}/run.sh"
+
+
+
+
+
 
 
 

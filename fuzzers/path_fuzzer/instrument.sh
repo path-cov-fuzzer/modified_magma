@@ -14,6 +14,9 @@ export CC="$FUZZER/repo/afl-clang-fast"
 export CXX="$FUZZER/repo/afl-clang-fast++"
 export AS="llvm-as"
 
+# CYHADDED: 
+export LD_LIBRARY_PATH=$FUZZER/repo
+
 export LIBS="$LIBS -lc++ -lc++abi $FUZZER/repo/utils/aflpp_driver/libAFLDriver.a"
 
 # AFL++'s driver is compiled against libc++
@@ -38,7 +41,6 @@ export OUTAUX=$OUT
     export BBIDFILE="$OUT/bbid.txt"
     export CALLMAPFILE="$OUT/callmap.txt"
     export CFGFILE="$OUT/cfg.txt"
-    export LD_LIBRARY_PATH=$FUZZER/repo
     export AFL_LLVM_CALLER=1
 
     export OUT="$OUT/afl"
@@ -47,25 +49,18 @@ export OUTAUX=$OUT
     # 在 $FUZZER/run.sh 中实现 3. 和 4. (分别是对 cfg.txt 和 callmap.txt 过滤，以及生成 CFG binary)
 )
 
-# !/bin/bash
-# 运行之前记得切换到 path_fuzzer_with_reduction 分支
+# Build the CmpLog instrumented version
+ 
+(
+    export OUT="$OUT/cmplog"
+    export LDFLAGS="$LDFLAGS -L$OUT"
+    # export CFLAGS="$CFLAGS -DMAGMA_DISABLE_CANARIES"
 
+    export AFL_LLVM_CMPLOG=1
 
-
-
-
-# # Build the CmpLog instrumented version
-# 
-# (
-#     export OUT="$OUT/cmplog"
-#     export LDFLAGS="$LDFLAGS -L$OUT"
-#     # export CFLAGS="$CFLAGS -DMAGMA_DISABLE_CANARIES"
-# 
-#     export AFL_LLVM_CMPLOG=1
-# 
-#     "$MAGMA/build.sh"
-#     "$TARGET/build.sh"
-# )
+    "$MAGMA/build.sh"
+    "$TARGET/build.sh"
+)
 
 # NOTE: We pass $OUT directly to the target build.sh script, since the artifact
 #       itself is the fuzz target. In the case of Angora, we might need to
