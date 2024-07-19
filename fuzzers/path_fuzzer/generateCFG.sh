@@ -43,6 +43,7 @@ do
     echo "after executing convert"
 
     cp $OUT/${PROGRAM}_cfg.bin $SHARED/${PROGRAM}_cfg.bin
+    cp $OUT/cfg_${PROGRAM}.txt $SHARED/cfg_${PROGRAM}.txt 
 
 done
 
