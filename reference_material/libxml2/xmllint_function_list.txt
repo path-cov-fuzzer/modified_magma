@@ -1,0 +1,2897 @@
+0 xmlMallocBreakpoint      
+1 xmlMallocLoc      
+2 xmlInitMemory      
+3 xmlMemoryDump      
+4 xmlMallocAtomicLoc      
+5 xmlMemMalloc      
+6 xmlReallocLoc      
+7 static xmlmemory.c_debugmem_tag_error     
+8 xmlMemRealloc      
+9 xmlMemFree      
+10 xmlMemStrdupLoc      
+11 xmlMemoryStrdup      
+12 xmlMemUsed      
+13 xmlMemBlocks      
+14 xmlMemDisplayLast      
+15 xmlMemDisplay      
+16 xmlMemShow      
+17 xmlCleanupMemory      
+18 xmlMemSetup      
+19 xmlMemGet      
+20 xmlGcMemSetup      
+21 xmlGcMemGet      
+22 initxmlDefaultSAXHandler      
+23 inithtmlDefaultSAXHandler      
+24 initdocbDefaultSAXHandler      
+25 xmlCharInRange      
+26 xmlIsBaseChar      
+27 xmlIsBlank      
+28 xmlIsChar      
+29 xmlIsCombining      
+30 xmlIsDigit      
+31 xmlIsExtender      
+32 xmlIsIdeographic      
+33 xmlIsPubidChar      
+34 xmlListCreate      
+35 static list.c_xmlLinkCompare     
+36 xmlListSearch      
+37 static list.c_xmlListLinkSearch     
+38 xmlListReverseSearch      
+39 static list.c_xmlListLinkReverseSearch     
+40 xmlListInsert      
+41 static list.c_xmlListLowerSearch     
+42 xmlListAppend      
+43 static list.c_xmlListHigherSearch     
+44 xmlListDelete      
+45 xmlListClear      
+46 xmlListRemoveFirst      
+47 static list.c_xmlLinkDeallocator     
+48 xmlListRemoveLast      
+49 xmlListRemoveAll      
+50 xmlListEmpty      
+51 xmlListFront      
+52 xmlListEnd      
+53 xmlListSize      
+54 xmlListPopFront      
+55 xmlListPopBack      
+56 xmlListPushFront      
+57 xmlListPushBack      
+58 xmlLinkGetData      
+59 xmlListReverse      
+60 xmlListSort      
+61 xmlListDup      
+62 xmlListMerge      
+63 xmlListWalk      
+64 xmlListReverseWalk      
+65 xmlListCopy      
+66 xmlNewMutex      
+67 xmlFreeMutex      
+68 xmlMutexLock      
+69 xmlMutexUnlock      
+70 xmlNewRMutex      
+71 xmlFreeRMutex      
+72 xmlRMutexLock      
+73 xmlRMutexUnlock      
+74 __xmlGlobalInitMutexLock      
+75 __xmlGlobalInitMutexUnlock      
+76 __xmlGlobalInitMutexDestroy      
+77 xmlGetGlobalState      
+78 xmlGetThreadId      
+79 xmlIsMainThread      
+80 xmlLockLibrary      
+81 xmlUnlockLibrary      
+82 xmlInitThreads      
+83 xmlCleanupThreads      
+84 xmlGetPredefinedEntity      
+85 xmlAddDtdEntity      
+86 static entities.c_xmlEntitiesErr     
+87 static entities.c_xmlAddEntity     
+88 xmlAddDocEntity      
+89 xmlNewEntity      
+90 static entities.c_xmlCreateEntity     
+91 xmlGetParameterEntity      
+92 static entities.c_xmlGetEntityFromTable     
+93 xmlGetDtdEntity      
+94 xmlGetDocEntity      
+95 xmlEncodeAttributeEntities      
+96 static entities.c_xmlEncodeEntitiesInternal     
+97 xmlEncodeEntitiesReentrant      
+98 xmlEncodeSpecialChars      
+99 static entities.c_xmlEntitiesErrMemory     
+100 xmlCreateEntitiesTable      
+101 xmlFreeEntitiesTable      
+102 static entities.c_xmlFreeEntityWrapper     
+103 xmlCopyEntitiesTable      
+104 static entities.c_xmlCopyEntity     
+105 xmlDumpEntityDecl      
+106 static entities.c_xmlDumpEntityContent     
+107 xmlDumpEntitiesTable      
+108 static entities.c_xmlDumpEntityDeclScan     
+109 static entities.c_xmlFreeEntity     
+110 htmlGetMetaEncoding      
+111 htmlSetMetaEncoding      
+112 htmlIsBooleanAttr      
+113 htmlNodeDump      
+114 static HTMLtree.c_htmlBufNodeDumpFormat     
+115 htmlNodeDumpFileFormat      
+116 static HTMLtree.c_htmlSaveErr     
+117 htmlNodeDumpFormatOutput      
+118 htmlNodeDumpFile      
+119 htmlDocDumpMemoryFormat      
+120 htmlDocContentDumpFormatOutput      
+121 htmlDocDumpMemory      
+122 static HTMLtree.c_htmlDtdDumpOutput     
+123 static HTMLtree.c_htmlAttrDumpOutput     
+124 htmlNodeDumpOutput      
+125 htmlDocContentDumpOutput      
+126 htmlDocDump      
+127 htmlSaveFile      
+128 htmlSaveFileFormat      
+129 htmlSaveFileEnc      
+130 static HTMLtree.c_htmlSaveErrMemory     
+131 xmlHashCreate      
+132 xmlHashCreateDict      
+133 xmlHashFree      
+134 xmlHashDefaultDeallocator      
+135 xmlHashAddEntry      
+136 xmlHashAddEntry3      
+137 xmlHashAddEntry2      
+138 xmlHashUpdateEntry      
+139 xmlHashUpdateEntry3      
+140 xmlHashUpdateEntry2      
+141 xmlHashLookup      
+142 xmlHashLookup3      
+143 xmlHashLookup2      
+144 xmlHashQLookup      
+145 xmlHashQLookup3      
+146 xmlHashQLookup2      
+147 static hash.c_xmlHashComputeKey     
+148 static hash.c_xmlHashGrow     
+149 static hash.c_xmlHashComputeQKey     
+150 xmlHashScan      
+151 xmlHashScanFull      
+152 static hash.c_stubHashScannerFull     
+153 xmlHashScan3      
+154 xmlHashScanFull3      
+155 xmlHashCopy      
+156 xmlHashSize      
+157 xmlHashRemoveEntry      
+158 xmlHashRemoveEntry3      
+159 xmlHashRemoveEntry2      
+160 xmlC14NExecute      
+161 static c14n.c_xmlC14NErrParam     
+162 static c14n.c_xmlC14NErr     
+163 static c14n.c_xmlC14NNewCtx     
+164 static c14n.c_xmlC14NProcessNodeList     
+165 static c14n.c_xmlC14NErrInternal     
+166 static c14n.c_xmlC14NFreeCtx     
+167 xmlC14NDocSaveTo      
+168 static c14n.c_xmlC14NIsNodeInNodeset     
+169 xmlC14NDocDumpMemory      
+170 static c14n.c_xmlC14NErrMemory     
+171 xmlC14NDocSave      
+172 static c14n.c_xmlC14NVisibleNsStackCreate     
+173 static c14n.c_xmlC14NProcessNode     
+174 static c14n.c_xmlC14NProcessElementNode     
+175 static c14n.c_xmlC11NNormalizeString     
+176 static c14n.c_xmlC14NErrInvalidNode     
+177 static c14n.c_xmlC14NErrUnknownNode     
+178 static c14n.c_xmlC14NCheckForRelativeNamespaces     
+179 static c14n.c_xmlC14NVisibleNsStackSave     
+180 static c14n.c_xmlC14NProcessNamespacesAxis     
+181 static c14n.c_xmlExcC14NProcessNamespacesAxis     
+182 static c14n.c_xmlC14NVisibleNsStackShift     
+183 static c14n.c_xmlC14NProcessAttrsAxis     
+184 static c14n.c_xmlC14NVisibleNsStackRestore     
+185 static c14n.c_xmlC14NErrRelativeNamespace     
+186 static c14n.c_xmlC14NNsCompare     
+187 static c14n.c_xmlC14NIsXmlNs     
+188 static c14n.c_xmlC14NVisibleNsStackFind     
+189 static c14n.c_xmlC14NVisibleNsStackAdd     
+190 static c14n.c_xmlC14NPrintNamespaces     
+191 static c14n.c_xmlC14NPrintNamespacesWalker     
+192 static c14n.c_xmlC14NStrEqual     
+193 static c14n.c_xmlExcC14NVisibleNsStackFind     
+194 static c14n.c_xmlC14NAttrsCompare     
+195 static c14n.c_xmlC14NIsXmlAttr     
+196 static c14n.c_xmlC14NFindHiddenParentAttr     
+197 static c14n.c_xmlC14NFixupBaseAttr     
+198 static c14n.c_xmlC14NPrintAttrs     
+199 static c14n.c_xmlC14NVisibleNsStackDestroy     
+200 main      
+201 static xmllint.c_usage     
+202 static xmllint.c_showVersion     
+203 static xmllint.c_myFreeFunc     
+204 static xmllint.c_myMallocFunc     
+205 static xmllint.c_myReallocFunc     
+206 static xmllint.c_myStrdupFunc     
+207 static xmllint.c_parsePath     
+208 static xmllint.c_registerNode     
+209 static xmllint.c_deregisterNode     
+210 static xmllint.c_xmllintExternalEntityLoader     
+211 static xmllint.c_startTimer     
+212 static xmllint.c_endTimer     
+213 static xmllint.c_streamFile     
+214 static xmllint.c_testSAX     
+215 static xmllint.c_parseAndPrintFile     
+216 static xmllint.c_internalSubsetDebug     
+217 static xmllint.c_isStandaloneDebug     
+218 static xmllint.c_hasInternalSubsetDebug     
+219 static xmllint.c_hasExternalSubsetDebug     
+220 static xmllint.c_resolveEntityDebug     
+221 static xmllint.c_getEntityDebug     
+222 static xmllint.c_entityDeclDebug     
+223 static xmllint.c_notationDeclDebug     
+224 static xmllint.c_attributeDeclDebug     
+225 static xmllint.c_elementDeclDebug     
+226 static xmllint.c_unparsedEntityDeclDebug     
+227 static xmllint.c_setDocumentLocatorDebug     
+228 static xmllint.c_startDocumentDebug     
+229 static xmllint.c_endDocumentDebug     
+230 static xmllint.c_startElementDebug     
+231 static xmllint.c_endElementDebug     
+232 static xmllint.c_referenceDebug     
+233 static xmllint.c_charactersDebug     
+234 static xmllint.c_ignorableWhitespaceDebug     
+235 static xmllint.c_processingInstructionDebug     
+236 static xmllint.c_commentDebug     
+237 static xmllint.c_warningDebug     
+238 static xmllint.c_errorDebug     
+239 static xmllint.c_fatalErrorDebug     
+240 static xmllint.c_getParameterEntityDebug     
+241 static xmllint.c_cdataBlockDebug     
+242 static xmllint.c_externalSubsetDebug     
+243 static xmllint.c_OOM     
+244 static xmllint.c_processNode     
+245 static xmllint.c_startElementNsDebug     
+246 static xmllint.c_endElementNsDebug     
+247 static xmllint.c_myRead     
+248 static xmllint.c_myClose     
+249 static xmllint.c_xmlHTMLError     
+250 static xmllint.c_xmlHTMLWarning     
+251 static xmllint.c_xmlHTMLValidityError     
+252 static xmllint.c_xmlHTMLValidityWarning     
+253 static xmllint.c_doXPathQuery     
+254 static xmllint.c_xmlShellReadline     
+255 static xmllint.c_walkDoc     
+256 static xmllint.c_xmlHTMLPrintFileInfo     
+257 static xmllint.c_xmlHTMLEncodeSend     
+258 static xmllint.c_xmlHTMLPrintFileContext     
+259 static xmllint.c_doXPathDump     
+260 __libxml2_xzopen      
+261 static xzlib.c_xz_open     
+262 __libxml2_xzcompressed      
+263 static xzlib.c_xz_compressed     
+264 __libxml2_xzdopen      
+265 __libxml2_xzread      
+266 static xzlib.c_xz_error     
+267 static xzlib.c_xz_skip     
+268 static xzlib.c_xz_make     
+269 static xzlib.c_xz_load     
+270 static xzlib.c_xz_decomp     
+271 __libxml2_xzclose      
+272 static xzlib.c_xz_reset     
+273 static xzlib.c_xz_head     
+274 static xzlib.c_xz_avail     
+275 static xzlib.c_is_format_xz     
+276 static xzlib.c_is_format_lzma     
+277 static xzlib.c_magma_and     
+278 static xzlib.c_gz_next4     
+279 static xzlib.c_xz_avail_zstrm     
+280 isolat1ToUTF8      
+281 UTF8Toisolat1      
+282 xmlDetectCharEncoding      
+283 xmlCleanupEncodingAliases      
+284 xmlGetEncodingAlias      
+285 xmlAddEncodingAlias      
+286 xmlDelEncodingAlias      
+287 xmlParseCharEncoding      
+288 xmlGetCharEncodingName      
+289 xmlNewCharEncodingHandler      
+290 static encoding.c_xmlEncodingErr     
+291 static encoding.c_xmlEncodingErrMemory     
+292 xmlRegisterCharEncodingHandler      
+293 xmlInitCharEncodingHandlers      
+294 static encoding.c_UTF8ToUTF8     
+295 static encoding.c_UTF16LEToUTF8     
+296 static encoding.c_UTF8ToUTF16LE     
+297 static encoding.c_UTF16BEToUTF8     
+298 static encoding.c_UTF8ToUTF16BE     
+299 static encoding.c_UTF8ToUTF16     
+300 static encoding.c_asciiToUTF8     
+301 static encoding.c_UTF8Toascii     
+302 xmlCleanupCharEncodingHandlers      
+303 xmlGetCharEncodingHandler      
+304 xmlFindCharEncodingHandler      
+305 xmlCharEncFirstLineInt      
+306 static encoding.c_xmlEncInputChunk     
+307 xmlCharEncFirstLine      
+308 xmlCharEncFirstLineInput      
+309 xmlCharEncInput      
+310 xmlCharEncInFunc      
+311 xmlCharEncOutput      
+312 static encoding.c_xmlEncOutputChunk     
+313 xmlCharEncOutFunc      
+314 xmlCharEncCloseFunc      
+315 xmlByteConsumed      
+316 static encoding.c_xmlIconvWrapper     
+317 xmlNanoFTPInit      
+318 xmlNanoFTPScanProxy      
+319 xmlNanoFTPCleanup      
+320 xmlNanoFTPProxy      
+321 xmlNanoFTPUpdateURL      
+322 xmlNanoFTPNewCtxt      
+323 static nanoftp.c_xmlFTPErrMemory     
+324 static nanoftp.c_xmlNanoFTPScanURL     
+325 xmlNanoFTPFreeCtxt      
+326 xmlNanoFTPGetResponse      
+327 static nanoftp.c_xmlNanoFTPReadResponse     
+328 xmlNanoFTPCheckResponse      
+329 xmlNanoFTPQuit      
+330 xmlNanoFTPConnect      
+331 static nanoftp.c_have_ipv6     
+332 static nanoftp.c_xmlNanoFTPSendUser     
+333 static nanoftp.c_xmlNanoFTPSendPasswd     
+334 xmlNanoFTPConnectTo      
+335 xmlNanoFTPCwd      
+336 xmlNanoFTPDele      
+337 xmlNanoFTPGetConnection      
+338 xmlNanoFTPCloseConnection      
+339 xmlNanoFTPList      
+340 static nanoftp.c_xmlNanoFTPParseList     
+341 xmlNanoFTPGetSocket      
+342 xmlNanoFTPGet      
+343 xmlNanoFTPRead      
+344 xmlNanoFTPOpen      
+345 xmlNanoFTPClose      
+346 static nanoftp.c_xmlNanoFTPGetMore     
+347 static nanoftp.c_xmlNanoFTPParseResponse     
+348 xmlXIncludeNewContext      
+349 static xinclude.c_xmlXIncludeErrMemory     
+350 xmlXIncludeFreeContext      
+351 static xinclude.c_xmlXIncludeURLPop     
+352 static xinclude.c_xmlXIncludeFreeRef     
+353 xmlXIncludeSetFlags      
+354 xmlXIncludeProcessTreeFlagsData      
+355 static xinclude.c_xmlXIncludeDoProcess     
+356 xmlXIncludeProcessFlagsData      
+357 xmlXIncludeProcessFlags      
+358 xmlXIncludeProcess      
+359 xmlXIncludeProcessTreeFlags      
+360 xmlXIncludeProcessTree      
+361 xmlXIncludeProcessNode      
+362 static xinclude.c_xmlXIncludeURLPush     
+363 static xinclude.c_xmlXIncludeTestNode     
+364 static xinclude.c_xmlXIncludePreProcessNode     
+365 static xinclude.c_xmlXIncludeLoadNode     
+366 static xinclude.c_xmlXIncludeIncludeNode     
+367 static xinclude.c_xmlXIncludeErr     
+368 static xinclude.c_xmlXIncludeAddNode     
+369 static xinclude.c_xmlXIncludeGetProp     
+370 static xinclude.c_xmlXIncludeNewRef     
+371 static xinclude.c_xmlXIncludeLoadDoc     
+372 static xinclude.c_xmlXIncludeLoadTxt     
+373 static xinclude.c_xmlXIncludeLoadFallback     
+374 static xinclude.c_xmlXIncludeParseFile     
+375 static xinclude.c_xmlXIncludeMergeEntities     
+376 static xinclude.c_xmlXIncludeRecurseDoc     
+377 static xinclude.c_xmlXIncludeCopyNodeList     
+378 static xinclude.c_xmlXIncludeCopyXPointer     
+379 static xinclude.c_xmlXIncludeMergeEntity     
+380 static xinclude.c_xmlXIncludeCopyNode     
+381 static xinclude.c_xmlXIncludeCopyRange     
+382 static xinclude.c_xmlXIncludeGetNthChild     
+383 static xinclude.c_xmlXIncludeAddTxt     
+384 xmlGenericErrorDefaultFunc      
+385 initGenericErrorDefaultFunc      
+386 xmlSetGenericErrorFunc      
+387 xmlSetStructuredErrorFunc      
+388 xmlParserPrintFileInfo      
+389 xmlParserPrintFileContext      
+390 static error.c_xmlParserPrintFileContextInternal     
+391 __xmlRaiseError      
+392 xmlResetError      
+393 xmlCopyError      
+394 xmlParserError      
+395 xmlParserWarning      
+396 xmlParserValidityError      
+397 xmlParserValidityWarning      
+398 static error.c_xmlReportError     
+399 __xmlSimpleError      
+400 xmlGetLastError      
+401 xmlResetLastError      
+402 xmlCtxtGetLastError      
+403 xmlCtxtResetLastError      
+404 xmlParseURI      
+405 xmlCreateURI      
+406 static uri.c_xmlParse3986URIReference     
+407 xmlFreeURI      
+408 xmlParseURIReference      
+409 xmlParseURIRaw      
+410 static uri.c_xmlURIErrMemory     
+411 xmlSaveUri      
+412 static uri.c_xmlSaveUriRealloc     
+413 xmlPrintURI      
+414 xmlNormalizeURIPath      
+415 xmlURIUnescapeString      
+416 static uri.c_is_hex     
+417 xmlURIEscapeStr      
+418 xmlURIEscape      
+419 xmlBuildURI      
+420 xmlBuildRelativeURI      
+421 xmlCanonicPath      
+422 xmlPathToURI      
+423 static uri.c_xmlCleanURI     
+424 static uri.c_xmlParse3986URI     
+425 static uri.c_xmlParse3986RelativeRef     
+426 static uri.c_xmlParse3986Scheme     
+427 static uri.c_xmlParse3986HierPart     
+428 static uri.c_xmlParse3986Query     
+429 static uri.c_xmlParse3986Fragment     
+430 static uri.c_xmlParse3986Authority     
+431 static uri.c_xmlParse3986PathAbEmpty     
+432 static uri.c_xmlParse3986PathAbsolute     
+433 static uri.c_xmlParse3986PathRootless     
+434 static uri.c_xmlParse3986Userinfo     
+435 static uri.c_xmlParse3986Host     
+436 static uri.c_xmlParse3986Port     
+437 static uri.c_xmlParse3986DecOctet     
+438 static uri.c_xmlParse3986Segment     
+439 static uri.c_xmlParse3986PathNoScheme     
+440 xmlDebugDumpString      
+441 xmlDebugDumpAttr      
+442 static debugXML.c_xmlCtxtDumpInitCtxt     
+443 static debugXML.c_xmlCtxtDumpAttr     
+444 static debugXML.c_xmlCtxtDumpCleanCtxt     
+445 xmlDebugDumpEntities      
+446 static debugXML.c_xmlCtxtDumpEntities     
+447 xmlDebugDumpAttrList      
+448 static debugXML.c_xmlCtxtDumpAttrList     
+449 xmlDebugDumpOneNode      
+450 static debugXML.c_xmlCtxtDumpOneNode     
+451 xmlDebugDumpNode      
+452 static debugXML.c_xmlCtxtDumpNode     
+453 xmlDebugDumpNodeList      
+454 static debugXML.c_xmlCtxtDumpNodeList     
+455 xmlDebugDumpDocumentHead      
+456 static debugXML.c_xmlCtxtDumpDocumentHead     
+457 xmlDebugDumpDocument      
+458 static debugXML.c_xmlCtxtDumpDocument     
+459 xmlDebugDumpDTD      
+460 static debugXML.c_xmlCtxtDumpDTD     
+461 xmlDebugCheckDocument      
+462 xmlLsCountNode      
+463 xmlLsOneNode      
+464 xmlBoolToText      
+465 xmlShellPrintXPathError      
+466 xmlShellPrintNode      
+467 static debugXML.c_xmlShellPrintNodeCtxt     
+468 xmlShellPrintXPathResult      
+469 static debugXML.c_xmlShellPrintXPathResultCtxt     
+470 xmlShellList      
+471 xmlShellBase      
+472 xmlShellDir      
+473 xmlShellCat      
+474 xmlShellLoad      
+475 xmlShellWrite      
+476 xmlShellSave      
+477 xmlShellValidate      
+478 xmlShellDu      
+479 xmlShellPwd      
+480 xmlShell      
+481 static debugXML.c_xmlShellRNGValidate     
+482 static debugXML.c_xmlShellGrep     
+483 static debugXML.c_xmlShellSetContent     
+484 static debugXML.c_xmlShellRegisterNamespace     
+485 static debugXML.c_xmlShellRegisterRootNamespaces     
+486 static debugXML.c_xmlShellSetBase     
+487 static debugXML.c_xmlCtxtDumpSpaces     
+488 static debugXML.c_xmlCtxtDumpString     
+489 static debugXML.c_xmlDebugErr     
+490 static debugXML.c_xmlCtxtGenericNodeCheck     
+491 static debugXML.c_xmlCtxtNsCheckScope     
+492 static debugXML.c_xmlCtxtCheckString     
+493 static debugXML.c_xmlCtxtCheckName     
+494 static debugXML.c_xmlDebugErr3     
+495 static debugXML.c_xmlNsCheckScope     
+496 static debugXML.c_xmlCtxtDumpDocHead     
+497 static debugXML.c_xmlCtxtDumpEntityCallback     
+498 static debugXML.c_xmlDebugErr2     
+499 static debugXML.c_xmlCtxtDumpDtdNode     
+500 static debugXML.c_xmlCtxtDumpElemDecl     
+501 static debugXML.c_xmlCtxtDumpAttrDecl     
+502 static debugXML.c_xmlCtxtDumpEntityDecl     
+503 static debugXML.c_xmlCtxtDumpNamespace     
+504 static debugXML.c_xmlCtxtDumpNamespaceList     
+505 static debugXML.c_xmlCtxtDumpEntity     
+506 xmlInitGlobals      
+507 xmlCleanupGlobals      
+508 static globals.c_xmlPosixStrdup     
+509 xmlInitializeGlobalState      
+510 xmlThrDefSetGenericErrorFunc      
+511 xmlThrDefSetStructuredErrorFunc      
+512 xmlRegisterNodeDefault      
+513 xmlThrDefRegisterNodeDefault      
+514 xmlDeregisterNodeDefault      
+515 xmlThrDefDeregisterNodeDefault      
+516 xmlThrDefParserInputBufferCreateFilenameDefault      
+517 xmlThrDefOutputBufferCreateFilenameDefault      
+518 __docbDefaultSAXHandler      
+519 __htmlDefaultSAXHandler      
+520 __xmlLastError      
+521 __oldXMLWDcompatibility      
+522 __xmlBufferAllocScheme      
+523 xmlThrDefBufferAllocScheme      
+524 __xmlDefaultBufferSize      
+525 xmlThrDefDefaultBufferSize      
+526 __xmlDefaultSAXHandler      
+527 __xmlDefaultSAXLocator      
+528 __xmlDoValidityCheckingDefaultValue      
+529 xmlThrDefDoValidityCheckingDefaultValue      
+530 __xmlGenericError      
+531 __xmlStructuredError      
+532 __xmlGenericErrorContext      
+533 __xmlStructuredErrorContext      
+534 __xmlGetWarningsDefaultValue      
+535 xmlThrDefGetWarningsDefaultValue      
+536 __xmlIndentTreeOutput      
+537 xmlThrDefIndentTreeOutput      
+538 __xmlTreeIndentString      
+539 xmlThrDefTreeIndentString      
+540 __xmlKeepBlanksDefaultValue      
+541 xmlThrDefKeepBlanksDefaultValue      
+542 __xmlLineNumbersDefaultValue      
+543 xmlThrDefLineNumbersDefaultValue      
+544 __xmlLoadExtDtdDefaultValue      
+545 xmlThrDefLoadExtDtdDefaultValue      
+546 __xmlParserDebugEntities      
+547 xmlThrDefParserDebugEntities      
+548 __xmlParserVersion      
+549 __xmlPedanticParserDefaultValue      
+550 xmlThrDefPedanticParserDefaultValue      
+551 __xmlSaveNoEmptyTags      
+552 xmlThrDefSaveNoEmptyTags      
+553 __xmlSubstituteEntitiesDefaultValue      
+554 xmlThrDefSubstituteEntitiesDefaultValue      
+555 __xmlRegisterNodeDefaultValue      
+556 __xmlDeregisterNodeDefaultValue      
+557 __xmlParserInputBufferCreateFilenameValue      
+558 __xmlOutputBufferCreateFilenameValue      
+559 xmlBufCreate      
+560 static buf.c_xmlBufMemoryError     
+561 xmlBufCreateSize      
+562 xmlBufDetach      
+563 xmlBufCreateStatic      
+564 xmlBufGetAllocationScheme      
+565 xmlBufSetAllocationScheme      
+566 xmlBufFree      
+567 xmlBufEmpty      
+568 xmlBufShrink      
+569 xmlBufGrow      
+570 static buf.c_xmlBufGrowInternal     
+571 xmlBufInflate      
+572 xmlBufDump      
+573 xmlBufContent      
+574 xmlBufEnd      
+575 xmlBufAddLen      
+576 xmlBufErase      
+577 xmlBufLength      
+578 xmlBufUse      
+579 xmlBufAvail      
+580 xmlBufIsEmpty      
+581 xmlBufResize      
+582 xmlBufAdd      
+583 xmlBufAddHead      
+584 xmlBufCat      
+585 xmlBufCCat      
+586 xmlBufWriteCHAR      
+587 xmlBufWriteChar      
+588 xmlBufWriteQuotedString      
+589 xmlBufFromBuffer      
+590 xmlBufBackToBuffer      
+591 static buf.c_xmlBufOverflowError     
+592 xmlBufMergeBuffer      
+593 xmlBufResetInput      
+594 xmlBufGetInputBase      
+595 xmlBufSetInputBaseCur      
+596 xmlStrndup      
+597 xmlStrdup      
+598 xmlCharStrndup      
+599 xmlCharStrdup      
+600 xmlStrcmp      
+601 xmlStrEqual      
+602 xmlStrQEqual      
+603 xmlStrncmp      
+604 xmlStrcasecmp      
+605 xmlStrncasecmp      
+606 xmlStrchr      
+607 xmlStrstr      
+608 xmlStrlen      
+609 xmlStrcasestr      
+610 xmlStrsub      
+611 xmlStrncat      
+612 xmlStrncatNew      
+613 static xmlstring.c_magma_or     
+614 xmlStrcat      
+615 xmlStrPrintf      
+616 xmlStrVPrintf      
+617 xmlUTF8Size      
+618 xmlUTF8Charcmp      
+619 xmlUTF8Strlen      
+620 xmlGetUTF8Char      
+621 xmlCheckUTF8      
+622 xmlUTF8Strsize      
+623 xmlUTF8Strndup      
+624 xmlUTF8Strpos      
+625 xmlUTF8Strloc      
+626 xmlUTF8Strsub      
+627 xmlEscapeFormatString      
+628 xmlFreePattern      
+629 xmlFreePatternList      
+630 static pattern.c_xmlFreePatternInternal     
+631 xmlFreeStreamCtxt      
+632 xmlStreamPush      
+633 static pattern.c_xmlStreamPushInternal     
+634 xmlStreamPushNode      
+635 xmlStreamPushAttr      
+636 xmlStreamPop      
+637 xmlStreamWantsAnyNode      
+638 xmlPatterncompile      
+639 static pattern.c_xmlNewPatParserContext     
+640 static pattern.c_xmlNewPattern     
+641 static pattern.c_xmlCompileIDCXPathPath     
+642 static pattern.c_xmlCompilePathPattern     
+643 static pattern.c_xmlFreePatParserContext     
+644 static pattern.c_xmlStreamCompile     
+645 static pattern.c_xmlReversePattern     
+646 static pattern.c_xmlFreeStreamComp     
+647 xmlPatternMatch      
+648 static pattern.c_xmlPatMatch     
+649 xmlPatternGetStreamCtxt      
+650 static pattern.c_xmlNewStreamCtxt     
+651 xmlPatternStreamable      
+652 xmlPatternMaxDepth      
+653 xmlPatternMinDepth      
+654 xmlPatternFromRoot      
+655 static pattern.c_xmlStreamCtxtAddState     
+656 static pattern.c_xmlPatternAdd     
+657 static pattern.c_xmlCompileStepPattern     
+658 static pattern.c_xmlCompileAttributeTest     
+659 static pattern.c_xmlPatScanNCName     
+660 static pattern.c_xmlPatScanName     
+661 static pattern.c_xmlNewStreamComp     
+662 static pattern.c_xmlStreamCompAddStep     
+663 static pattern.c_xmlPatPushState     
+664 xmlInitializeDict      
+665 __xmlInitializeDict      
+666 xmlDictCleanup      
+667 xmlDictCreate      
+668 xmlDictCreateSub      
+669 xmlDictReference      
+670 xmlDictFree      
+671 xmlDictLookup      
+672 static dict.c_xmlDictComputeFastKey     
+673 static dict.c_xmlDictComputeBigKey     
+674 static dict.c_xmlDictAddString     
+675 static dict.c_xmlDictGrow     
+676 xmlDictExists      
+677 xmlDictQLookup      
+678 static dict.c_xmlDictComputeFastQKey     
+679 static dict.c_xmlDictComputeBigQKey     
+680 static dict.c_xmlDictAddQString     
+681 xmlDictOwns      
+682 xmlDictSize      
+683 xmlDictSetLimit      
+684 xmlDictGetUsage      
+685 xmlSAX2GetPublicId      
+686 xmlSAX2GetSystemId      
+687 xmlSAX2GetLineNumber      
+688 xmlSAX2GetColumnNumber      
+689 xmlSAX2IsStandalone      
+690 xmlSAX2HasInternalSubset      
+691 xmlSAX2HasExternalSubset      
+692 xmlSAX2InternalSubset      
+693 static SAX2.c_xmlSAX2ErrMemory     
+694 xmlSAX2ExternalSubset      
+695 xmlSAX2ResolveEntity      
+696 xmlSAX2GetEntity      
+697 static SAX2.c_xmlFatalErrMsg     
+698 xmlSAX2GetParameterEntity      
+699 xmlSAX2EntityDecl      
+700 static SAX2.c_xmlWarnMsg     
+701 xmlSAX2AttributeDecl      
+702 static SAX2.c_xmlErrValid     
+703 xmlSAX2ElementDecl      
+704 xmlSAX2NotationDecl      
+705 xmlSAX2UnparsedEntityDecl      
+706 xmlSAX2SetDocumentLocator      
+707 xmlSAX2StartDocument      
+708 xmlSAX2EndDocument      
+709 xmlSAX2StartElement      
+710 static SAX2.c_xmlCheckDefaultedAttributes     
+711 static SAX2.c_xmlSAX2AttributeInternal     
+712 static SAX2.c_xmlNsWarnMsg     
+713 xmlSAX2EndElement      
+714 xmlSAX2StartElementNs      
+715 static SAX2.c_xmlSAX2AttributeNs     
+716 xmlSAX2EndElementNs      
+717 xmlSAX2Reference      
+718 xmlSAX2Characters      
+719 static SAX2.c_xmlSAX2Text     
+720 xmlSAX2IgnorableWhitespace      
+721 xmlSAX2ProcessingInstruction      
+722 xmlSAX2Comment      
+723 xmlSAX2CDataBlock      
+724 xmlSAXDefaultVersion      
+725 xmlSAXVersion      
+726 xmlSAX2InitDefaultSAXHandler      
+727 xmlDefaultSAXHandlerInit      
+728 xmlSAX2InitHtmlDefaultSAXHandler      
+729 htmlDefaultSAXHandlerInit      
+730 xmlSAX2InitDocbDefaultSAXHandler      
+731 docbDefaultSAXHandlerInit      
+732 static SAX2.c_xmlNsErrMsg     
+733 static SAX2.c_xmlSAX2TextNode     
+734 static SAX2.c_xmlSAX2DecodeAttrEntities     
+735 xmlCheckVersion      
+736 xmlErrMemory      
+737 __xmlErrEncoding      
+738 xmlIsLetter      
+739 xmlParserInputRead      
+740 xmlParserInputGrow      
+741 xmlParserInputShrink      
+742 xmlNextChar      
+743 static parserInternals.c_xmlErrInternal     
+744 static parserInternals.c_xmlErrEncodingInt     
+745 xmlCurrentChar      
+746 xmlStringCurrentChar      
+747 xmlCopyCharMultiByte      
+748 xmlCopyChar      
+749 xmlSwitchEncoding      
+750 static parserInternals.c_xmlSwitchToEncodingInt     
+751 xmlSwitchInputEncoding      
+752 static parserInternals.c_xmlSwitchInputEncodingInt     
+753 xmlSwitchToEncoding      
+754 xmlFreeInputStream      
+755 xmlNewInputStream      
+756 xmlNewIOInputStream      
+757 xmlNewEntityInputStream      
+758 xmlNewStringInputStream      
+759 xmlNewInputFromFile      
+760 xmlInitParserCtxt      
+761 xmlInitNodeInfoSeq      
+762 xmlFreeParserCtxt      
+763 xmlNewParserCtxt      
+764 xmlClearParserCtxt      
+765 xmlClearNodeInfoSeq      
+766 xmlParserFindNodeInfo      
+767 xmlParserFindNodeInfoIndex      
+768 xmlParserAddNodeInfo      
+769 xmlPedanticParserDefault      
+770 xmlLineNumbersDefault      
+771 xmlSubstituteEntitiesDefault      
+772 xmlKeepBlanksDefault      
+773 __xmlIOErr      
+774 __xmlLoaderErr      
+775 xmlNormalizeWindowsPath      
+776 xmlCleanupInputCallbacks      
+777 xmlPopInputCallbacks      
+778 xmlCleanupOutputCallbacks      
+779 xmlPopOutputCallbacks      
+780 xmlCheckFilename      
+781 xmlInputReadCallbackNop      
+782 xmlFileMatch      
+783 xmlFileOpen      
+784 static xmlIO.c_xmlFileOpen_real     
+785 xmlFileRead      
+786 static xmlIO.c_xmlIOErr     
+787 xmlFileClose      
+788 xmlIOFTPMatch      
+789 xmlIOFTPOpen      
+790 xmlIOFTPRead      
+791 xmlIOFTPClose      
+792 xmlRegisterInputCallbacks      
+793 xmlRegisterOutputCallbacks      
+794 xmlRegisterDefaultInputCallbacks      
+795 static xmlIO.c_xmlGzfileMatch     
+796 static xmlIO.c_xmlGzfileOpen     
+797 static xmlIO.c_xmlGzfileRead     
+798 static xmlIO.c_xmlGzfileClose     
+799 static xmlIO.c_xmlXzfileMatch     
+800 static xmlIO.c_xmlXzfileOpen     
+801 static xmlIO.c_xmlXzfileRead     
+802 static xmlIO.c_xmlXzfileClose     
+803 xmlRegisterDefaultOutputCallbacks      
+804 static xmlIO.c_xmlFileOpenW     
+805 static xmlIO.c_xmlFileWrite     
+806 xmlAllocParserInputBuffer      
+807 static xmlIO.c_xmlIOErrMemory     
+808 xmlAllocOutputBuffer      
+809 xmlAllocOutputBufferInternal      
+810 xmlFreeParserInputBuffer      
+811 xmlOutputBufferClose      
+812 xmlOutputBufferFlush      
+813 __xmlParserInputBufferCreateFilename      
+814 xmlParserInputBufferCreateFilename      
+815 __xmlOutputBufferCreateFilename      
+816 static xmlIO.c_xmlGzfileOpenW     
+817 static xmlIO.c_xmlGzfileWrite     
+818 xmlOutputBufferCreateFilename      
+819 xmlParserInputBufferCreateFile      
+820 static xmlIO.c_xmlFileFlush     
+821 xmlOutputBufferCreateFile      
+822 xmlOutputBufferCreateBuffer      
+823 xmlOutputBufferCreateIO      
+824 static xmlIO.c_xmlBufferWrite     
+825 xmlOutputBufferGetContent      
+826 xmlOutputBufferGetSize      
+827 xmlParserInputBufferCreateFd      
+828 static xmlIO.c_xmlFdRead     
+829 static xmlIO.c_xmlFdClose     
+830 xmlParserInputBufferCreateMem      
+831 xmlParserInputBufferCreateStatic      
+832 xmlOutputBufferCreateFd      
+833 static xmlIO.c_xmlFdWrite     
+834 xmlParserInputBufferCreateIO      
+835 xmlParserInputBufferCreateFilenameDefault      
+836 xmlOutputBufferCreateFilenameDefault      
+837 xmlParserInputBufferPush      
+838 xmlParserInputBufferGrow      
+839 static xmlIO.c_endOfInput     
+840 xmlParserInputBufferRead      
+841 xmlOutputBufferWrite      
+842 xmlOutputBufferWriteEscape      
+843 static xmlIO.c_xmlEscapeContent     
+844 xmlOutputBufferWriteString      
+845 xmlParserGetDirectory      
+846 xmlCheckHTTPInput      
+847 xmlSetExternalEntityLoader      
+848 xmlGetExternalEntityLoader      
+849 xmlLoadExternalEntity      
+850 static xmlIO.c_xmlNoNetExists     
+851 xmlNoNetExternalEntityLoader      
+852 static xmlIO.c_xmlResolveResourceFromCatalog     
+853 static xmlIO.c_xmlDefaultExternalEntityLoader     
+854 static xmlIO.c_xmlGzfileOpen_real     
+855 static xmlIO.c_xmlXzfileOpen_real     
+856 xmlFreeCatalog      
+857 static catalog.c_xmlFreeCatalogEntryList     
+858 static catalog.c_xmlFreeCatalogEntry     
+859 xmlConvertSGMLCatalog      
+860 static catalog.c_xmlCatalogConvertEntry     
+861 xmlParseCatalogFile      
+862 xmlLoadSGMLSuperCatalog      
+863 static catalog.c_xmlLoadFileContent     
+864 static catalog.c_xmlCreateNewCatalog     
+865 static catalog.c_xmlParseSGMLCatalog     
+866 xmlLoadACatalog      
+867 static catalog.c_xmlNewCatalogEntry     
+868 xmlACatalogResolveSystem      
+869 static catalog.c_xmlCatalogListXMLResolve     
+870 static catalog.c_xmlCatalogGetSGMLSystem     
+871 xmlACatalogResolvePublic      
+872 static catalog.c_xmlCatalogGetSGMLPublic     
+873 xmlACatalogResolve      
+874 static catalog.c_xmlCatalogSGMLResolve     
+875 xmlACatalogResolveURI      
+876 static catalog.c_xmlCatalogListXMLResolveURI     
+877 xmlACatalogDump      
+878 static catalog.c_xmlDumpXMLCatalog     
+879 static catalog.c_xmlCatalogDumpEntry     
+880 xmlACatalogAdd      
+881 static catalog.c_xmlAddXMLCatalog     
+882 static catalog.c_xmlGetSGMLCatalogEntryType     
+883 xmlACatalogRemove      
+884 static catalog.c_xmlDelXMLCatalog     
+885 xmlNewCatalog      
+886 xmlCatalogIsEmpty      
+887 xmlInitializeCatalog      
+888 static catalog.c_xmlInitializeCatalogData     
+889 xmlLoadCatalog      
+890 static catalog.c_xmlExpandCatalog     
+891 xmlLoadCatalogs      
+892 xmlCatalogCleanup      
+893 static catalog.c_xmlFreeCatalogHashEntryList     
+894 xmlCatalogResolveSystem      
+895 xmlCatalogResolvePublic      
+896 xmlCatalogResolve      
+897 xmlCatalogResolveURI      
+898 xmlCatalogDump      
+899 xmlCatalogAdd      
+900 xmlCatalogRemove      
+901 xmlCatalogConvert      
+902 xmlCatalogGetDefaults      
+903 xmlCatalogSetDefaults      
+904 xmlCatalogSetDefaultPrefer      
+905 xmlCatalogSetDebug      
+906 xmlCatalogFreeLocal      
+907 xmlCatalogAddLocal      
+908 xmlCatalogLocalResolve      
+909 xmlCatalogLocalResolveURI      
+910 xmlCatalogGetSystem      
+911 xmlCatalogGetPublic      
+912 static catalog.c_xmlCatalogErrMemory     
+913 static catalog.c_xmlParseSGMLCatalogComment     
+914 static catalog.c_xmlParseSGMLCatalogName     
+915 static catalog.c_xmlParseSGMLCatalogPubid     
+916 static catalog.c_xmlCatalogNormalizePublic     
+917 static catalog.c_xmlCatalogUnWrapURN     
+918 static catalog.c_xmlFetchXMLCatalogFile     
+919 static catalog.c_xmlCatalogXMLResolve     
+920 static catalog.c_xmlParseXMLCatalogFile     
+921 static catalog.c_xmlCatalogErr     
+922 static catalog.c_xmlParseXMLCatalogNodeList     
+923 static catalog.c_xmlParseXMLCatalogNode     
+924 static catalog.c_xmlParseXMLCatalogOneNode     
+925 static catalog.c_xmlCatalogXMLResolveURI     
+926 static catalog.c_xmlDumpXMLCatalogNode     
+927 static catalog.c_xmlGetXMLCatalogEntryType     
+928 xmlUCSIsAegeanNumbers      
+929 xmlUCSIsAlphabeticPresentationForms      
+930 xmlUCSIsArabic      
+931 xmlUCSIsArabicPresentationFormsA      
+932 xmlUCSIsArabicPresentationFormsB      
+933 xmlUCSIsArmenian      
+934 xmlUCSIsArrows      
+935 xmlUCSIsBasicLatin      
+936 xmlUCSIsBengali      
+937 xmlUCSIsBlockElements      
+938 xmlUCSIsBopomofo      
+939 xmlUCSIsBopomofoExtended      
+940 xmlUCSIsBoxDrawing      
+941 xmlUCSIsBraillePatterns      
+942 xmlUCSIsBuhid      
+943 xmlUCSIsByzantineMusicalSymbols      
+944 xmlUCSIsCJKCompatibility      
+945 xmlUCSIsCJKCompatibilityForms      
+946 xmlUCSIsCJKCompatibilityIdeographs      
+947 xmlUCSIsCJKCompatibilityIdeographsSupplement      
+948 xmlUCSIsCJKRadicalsSupplement      
+949 xmlUCSIsCJKSymbolsandPunctuation      
+950 xmlUCSIsCJKUnifiedIdeographs      
+951 xmlUCSIsCJKUnifiedIdeographsExtensionA      
+952 xmlUCSIsCJKUnifiedIdeographsExtensionB      
+953 xmlUCSIsCherokee      
+954 xmlUCSIsCombiningDiacriticalMarks      
+955 xmlUCSIsCombiningDiacriticalMarksforSymbols      
+956 xmlUCSIsCombiningHalfMarks      
+957 xmlUCSIsCombiningMarksforSymbols      
+958 xmlUCSIsControlPictures      
+959 xmlUCSIsCurrencySymbols      
+960 xmlUCSIsCypriotSyllabary      
+961 xmlUCSIsCyrillic      
+962 xmlUCSIsCyrillicSupplement      
+963 xmlUCSIsDeseret      
+964 xmlUCSIsDevanagari      
+965 xmlUCSIsDingbats      
+966 xmlUCSIsEnclosedAlphanumerics      
+967 xmlUCSIsEnclosedCJKLettersandMonths      
+968 xmlUCSIsEthiopic      
+969 xmlUCSIsGeneralPunctuation      
+970 xmlUCSIsGeometricShapes      
+971 xmlUCSIsGeorgian      
+972 xmlUCSIsGothic      
+973 xmlUCSIsGreek      
+974 xmlUCSIsGreekExtended      
+975 xmlUCSIsGreekandCoptic      
+976 xmlUCSIsGujarati      
+977 xmlUCSIsGurmukhi      
+978 xmlUCSIsHalfwidthandFullwidthForms      
+979 xmlUCSIsHangulCompatibilityJamo      
+980 xmlUCSIsHangulJamo      
+981 xmlUCSIsHangulSyllables      
+982 xmlUCSIsHanunoo      
+983 xmlUCSIsHebrew      
+984 xmlUCSIsHighPrivateUseSurrogates      
+985 xmlUCSIsHighSurrogates      
+986 xmlUCSIsHiragana      
+987 xmlUCSIsIPAExtensions      
+988 xmlUCSIsIdeographicDescriptionCharacters      
+989 xmlUCSIsKanbun      
+990 xmlUCSIsKangxiRadicals      
+991 xmlUCSIsKannada      
+992 xmlUCSIsKatakana      
+993 xmlUCSIsKatakanaPhoneticExtensions      
+994 xmlUCSIsKhmer      
+995 xmlUCSIsKhmerSymbols      
+996 xmlUCSIsLao      
+997 xmlUCSIsLatin1Supplement      
+998 xmlUCSIsLatinExtendedA      
+999 xmlUCSIsLatinExtendedB      
+1000 xmlUCSIsLatinExtendedAdditional      
+1001 xmlUCSIsLetterlikeSymbols      
+1002 xmlUCSIsLimbu      
+1003 xmlUCSIsLinearBIdeograms      
+1004 xmlUCSIsLinearBSyllabary      
+1005 xmlUCSIsLowSurrogates      
+1006 xmlUCSIsMalayalam      
+1007 xmlUCSIsMathematicalAlphanumericSymbols      
+1008 xmlUCSIsMathematicalOperators      
+1009 xmlUCSIsMiscellaneousMathematicalSymbolsA      
+1010 xmlUCSIsMiscellaneousMathematicalSymbolsB      
+1011 xmlUCSIsMiscellaneousSymbols      
+1012 xmlUCSIsMiscellaneousSymbolsandArrows      
+1013 xmlUCSIsMiscellaneousTechnical      
+1014 xmlUCSIsMongolian      
+1015 xmlUCSIsMusicalSymbols      
+1016 xmlUCSIsMyanmar      
+1017 xmlUCSIsNumberForms      
+1018 xmlUCSIsOgham      
+1019 xmlUCSIsOldItalic      
+1020 xmlUCSIsOpticalCharacterRecognition      
+1021 xmlUCSIsOriya      
+1022 xmlUCSIsOsmanya      
+1023 xmlUCSIsPhoneticExtensions      
+1024 xmlUCSIsPrivateUse      
+1025 xmlUCSIsPrivateUseArea      
+1026 xmlUCSIsRunic      
+1027 xmlUCSIsShavian      
+1028 xmlUCSIsSinhala      
+1029 xmlUCSIsSmallFormVariants      
+1030 xmlUCSIsSpacingModifierLetters      
+1031 xmlUCSIsSpecials      
+1032 xmlUCSIsSuperscriptsandSubscripts      
+1033 xmlUCSIsSupplementalArrowsA      
+1034 xmlUCSIsSupplementalArrowsB      
+1035 xmlUCSIsSupplementalMathematicalOperators      
+1036 xmlUCSIsSupplementaryPrivateUseAreaA      
+1037 xmlUCSIsSupplementaryPrivateUseAreaB      
+1038 xmlUCSIsSyriac      
+1039 xmlUCSIsTagalog      
+1040 xmlUCSIsTagbanwa      
+1041 xmlUCSIsTags      
+1042 xmlUCSIsTaiLe      
+1043 xmlUCSIsTaiXuanJingSymbols      
+1044 xmlUCSIsTamil      
+1045 xmlUCSIsTelugu      
+1046 xmlUCSIsThaana      
+1047 xmlUCSIsThai      
+1048 xmlUCSIsTibetan      
+1049 xmlUCSIsUgaritic      
+1050 xmlUCSIsUnifiedCanadianAboriginalSyllabics      
+1051 xmlUCSIsVariationSelectors      
+1052 xmlUCSIsVariationSelectorsSupplement      
+1053 xmlUCSIsYiRadicals      
+1054 xmlUCSIsYiSyllables      
+1055 xmlUCSIsYijingHexagramSymbols      
+1056 xmlUCSIsBlock      
+1057 static xmlunicode.c_xmlUnicodeLookup     
+1058 xmlUCSIsCatC      
+1059 xmlUCSIsCatCc      
+1060 xmlUCSIsCatCf      
+1061 xmlUCSIsCatCo      
+1062 xmlUCSIsCatCs      
+1063 xmlUCSIsCatL      
+1064 xmlUCSIsCatLl      
+1065 xmlUCSIsCatLm      
+1066 xmlUCSIsCatLo      
+1067 xmlUCSIsCatLt      
+1068 xmlUCSIsCatLu      
+1069 xmlUCSIsCatM      
+1070 xmlUCSIsCatMc      
+1071 xmlUCSIsCatMe      
+1072 xmlUCSIsCatMn      
+1073 xmlUCSIsCatN      
+1074 xmlUCSIsCatNd      
+1075 xmlUCSIsCatNl      
+1076 xmlUCSIsCatNo      
+1077 xmlUCSIsCatP      
+1078 xmlUCSIsCatPc      
+1079 xmlUCSIsCatPd      
+1080 xmlUCSIsCatPe      
+1081 xmlUCSIsCatPf      
+1082 xmlUCSIsCatPi      
+1083 xmlUCSIsCatPo      
+1084 xmlUCSIsCatPs      
+1085 xmlUCSIsCatS      
+1086 xmlUCSIsCatSc      
+1087 xmlUCSIsCatSk      
+1088 xmlUCSIsCatSm      
+1089 xmlUCSIsCatSo      
+1090 xmlUCSIsCatZ      
+1091 xmlUCSIsCatZl      
+1092 xmlUCSIsCatZp      
+1093 xmlUCSIsCatZs      
+1094 xmlUCSIsCat      
+1095 xmlValidBuildContentModel      
+1096 static valid.c_xmlErrValidNode     
+1097 static valid.c_xmlValidBuildAContentModel     
+1098 xmlSnprintfElementContent      
+1099 xmlNewValidCtxt      
+1100 static valid.c_xmlVErrMemory     
+1101 xmlFreeValidCtxt      
+1102 xmlNewDocElementContent      
+1103 static valid.c_xmlErrValid     
+1104 xmlNewElementContent      
+1105 xmlCopyDocElementContent      
+1106 xmlCopyElementContent      
+1107 xmlFreeDocElementContent      
+1108 xmlFreeElementContent      
+1109 xmlSprintfElementContent      
+1110 xmlAddElementDecl      
+1111 static valid.c_xmlFreeElement     
+1112 xmlFreeElementTable      
+1113 static valid.c_xmlFreeElementTableEntry     
+1114 xmlCopyElementTable      
+1115 static valid.c_xmlCopyElement     
+1116 xmlDumpElementDecl      
+1117 static valid.c_xmlDumpElementContent     
+1118 xmlDumpElementTable      
+1119 static valid.c_xmlDumpElementDeclScan     
+1120 xmlCreateEnumeration      
+1121 xmlFreeEnumeration      
+1122 xmlCopyEnumeration      
+1123 xmlAddAttributeDecl      
+1124 static valid.c_xmlValidateAttributeValueInternal     
+1125 static valid.c_xmlErrValidWarning     
+1126 static valid.c_xmlFreeAttribute     
+1127 static valid.c_xmlGetDtdElementDesc2     
+1128 static valid.c_xmlScanIDAttributeDecl     
+1129 xmlFreeAttributeTable      
+1130 static valid.c_xmlFreeAttributeTableEntry     
+1131 xmlCopyAttributeTable      
+1132 static valid.c_xmlCopyAttribute     
+1133 xmlDumpAttributeDecl      
+1134 static valid.c_xmlDumpEnumeration     
+1135 xmlDumpAttributeTable      
+1136 static valid.c_xmlDumpAttributeDeclScan     
+1137 xmlAddNotationDecl      
+1138 static valid.c_xmlFreeNotation     
+1139 xmlFreeNotationTable      
+1140 static valid.c_xmlFreeNotationTableEntry     
+1141 xmlCopyNotationTable      
+1142 static valid.c_xmlCopyNotation     
+1143 xmlDumpNotationDecl      
+1144 xmlDumpNotationTable      
+1145 static valid.c_xmlDumpNotationDeclScan     
+1146 xmlAddID      
+1147 static valid.c_xmlFreeID     
+1148 xmlFreeIDTable      
+1149 static valid.c_xmlFreeIDTableEntry     
+1150 xmlIsID      
+1151 xmlGetDtdAttrDesc      
+1152 xmlRemoveID      
+1153 xmlGetID      
+1154 xmlAddRef      
+1155 static valid.c_xmlFreeRef     
+1156 static valid.c_xmlDummyCompare     
+1157 xmlFreeRefTable      
+1158 static valid.c_xmlFreeRefTableEntry     
+1159 xmlIsRef      
+1160 xmlRemoveRef      
+1161 static valid.c_xmlWalkRemoveRef     
+1162 xmlGetRefs      
+1163 xmlGetDtdElementDesc      
+1164 xmlGetDtdQElementDesc      
+1165 xmlGetDtdQAttrDesc      
+1166 xmlGetDtdNotationDesc      
+1167 xmlValidateNotationUse      
+1168 xmlIsMixedElement      
+1169 xmlValidateNameValue      
+1170 static valid.c_xmlValidateNameValueInternal     
+1171 xmlValidateNamesValue      
+1172 static valid.c_xmlValidateNamesValueInternal     
+1173 xmlValidateNmtokenValue      
+1174 static valid.c_xmlValidateNmtokenValueInternal     
+1175 xmlValidateNmtokensValue      
+1176 static valid.c_xmlValidateNmtokensValueInternal     
+1177 xmlValidateNotationDecl      
+1178 xmlValidateAttributeValue      
+1179 xmlValidCtxtNormalizeAttributeValue      
+1180 xmlValidNormalizeAttributeValue      
+1181 xmlValidateAttributeDecl      
+1182 static valid.c_xmlValidateAttributeIdCallback     
+1183 static valid.c_xmlErrValidNodeNr     
+1184 xmlValidateElementDecl      
+1185 xmlValidateOneAttribute      
+1186 static valid.c_xmlValidateAttributeValue2     
+1187 xmlValidateOneNamespace      
+1188 xmlValidatePushElement      
+1189 static valid.c_xmlValidateCheckMixed     
+1190 static valid.c_xmlValidGetElemDecl     
+1191 static valid.c_vstateVPush     
+1192 xmlValidatePushCData      
+1193 xmlValidatePopElement      
+1194 static valid.c_vstateVPop     
+1195 xmlValidateOneElement      
+1196 static valid.c_xmlValidateOneCdataElement     
+1197 static valid.c_xmlValidateElementContent     
+1198 xmlValidateRoot      
+1199 xmlValidateElement      
+1200 xmlValidateDocumentFinal      
+1201 static valid.c_xmlValidateCheckRefCallback     
+1202 xmlValidateDtd      
+1203 xmlValidateDtdFinal      
+1204 static valid.c_xmlValidateAttributeCallback     
+1205 static valid.c_xmlValidateNotationCallback     
+1206 xmlValidateDocument      
+1207 xmlValidGetPotentialChildren      
+1208 xmlValidGetValidElements      
+1209 static valid.c_xmlNoValidityErr     
+1210 static valid.c_xmlDumpElementOccur     
+1211 static valid.c_xmlIsDocNameStartChar     
+1212 static valid.c_xmlIsDocNameChar     
+1213 static valid.c_nodeVPush     
+1214 static valid.c_nodeVPop     
+1215 static valid.c_xmlSnprintfElements     
+1216 static valid.c_xmlWalkValidateList     
+1217 static valid.c_xmlValidateRef     
+1218 xmlSchematronFree      
+1219 static schematron.c_xmlSchematronFreeRules     
+1220 static schematron.c_xmlSchematronFreePatterns     
+1221 xmlSchematronNewParserCtxt      
+1222 static schematron.c_xmlSchematronPErrMemory     
+1223 xmlSchematronFreeParserCtxt      
+1224 xmlSchematronNewMemParserCtxt      
+1225 xmlSchematronNewDocParserCtxt      
+1226 xmlSchematronParse      
+1227 static schematron.c_xmlSchematronPErr     
+1228 static schematron.c_xmlSchematronNewSchematron     
+1229 static schematron.c_xmlSchematronAddNamespace     
+1230 static schematron.c_xmlSchematronParsePattern     
+1231 xmlSchematronSetValidStructuredErrors      
+1232 xmlSchematronNewValidCtxt      
+1233 static schematron.c_xmlSchematronVErrMemory     
+1234 xmlSchematronFreeValidCtxt      
+1235 xmlSchematronValidateDoc      
+1236 static schematron.c_xmlSchematronRunTest     
+1237 static schematron.c_xmlSchematronNextNode     
+1238 static schematron.c_xmlSchematronReportPattern     
+1239 static schematron.c_xmlSchematronFreeTests     
+1240 static schematron.c_xmlSchematronAddPattern     
+1241 static schematron.c_xmlSchematronParseRule     
+1242 static schematron.c_xmlSchematronAddRule     
+1243 static schematron.c_xmlSchematronAddTest     
+1244 static schematron.c_xmlSchematronReportSuccess     
+1245 static schematron.c_xmlSchematronFormatReport     
+1246 static schematron.c_xmlSchematronReportOutput     
+1247 static schematron.c_xmlSchematronGetNode     
+1248 xmlXPtrNewRange      
+1249 static xpointer.c_xmlXPtrNewRangeInternal     
+1250 static xpointer.c_xmlXPtrRangeCheckOrder     
+1251 xmlXPtrNewRangePoints      
+1252 xmlXPtrNewRangePointNode      
+1253 xmlXPtrNewRangeNodePoint      
+1254 xmlXPtrNewRangeNodes      
+1255 xmlXPtrNewCollapsedRange      
+1256 xmlXPtrNewRangeNodeObject      
+1257 xmlXPtrLocationSetCreate      
+1258 static xpointer.c_xmlXPtrErrMemory     
+1259 xmlXPtrLocationSetAdd      
+1260 static xpointer.c_xmlXPtrRangesEqual     
+1261 xmlXPtrLocationSetMerge      
+1262 xmlXPtrLocationSetDel      
+1263 xmlXPtrLocationSetRemove      
+1264 xmlXPtrFreeLocationSet      
+1265 xmlXPtrNewLocationSetNodes      
+1266 xmlXPtrNewLocationSetNodeSet      
+1267 xmlXPtrWrapLocationSet      
+1268 xmlXPtrNewContext      
+1269 static xpointer.c_xmlXPtrRangeFunction     
+1270 static xpointer.c_xmlXPtrRangeInsideFunction     
+1271 static xpointer.c_xmlXPtrStringRangeFunction     
+1272 static xpointer.c_xmlXPtrStartPointFunction     
+1273 static xpointer.c_xmlXPtrEndPointFunction     
+1274 static xpointer.c_xmlXPtrHereFunction     
+1275 static xpointer.c_xmlXPtrOriginFunction     
+1276 xmlXPtrEval      
+1277 static xpointer.c_xmlXPtrEvalXPointer     
+1278 static xpointer.c_xmlXPtrErr     
+1279 xmlXPtrBuildNodeList      
+1280 static xpointer.c_xmlXPtrBuildRangeNodeList     
+1281 xmlXPtrRangeToFunction      
+1282 xmlXPtrAdvanceNode      
+1283 xmlXPtrEvalRangePredicate      
+1284 static xpointer.c_xmlXPtrCmpPoints     
+1285 static xpointer.c_xmlXPtrEvalChildSeq     
+1286 static xpointer.c_xmlXPtrEvalFullXPtr     
+1287 static xpointer.c_xmlXPtrGetChildNo     
+1288 static xpointer.c_xmlXPtrGetNthChild     
+1289 static xpointer.c_xmlXPtrEvalXPtrPart     
+1290 static xpointer.c_xmlXPtrNewPoint     
+1291 static xpointer.c_xmlXPtrNbLocChildren     
+1292 static xpointer.c_xmlXPtrCoveringRange     
+1293 static xpointer.c_xmlXPtrGetArity     
+1294 static xpointer.c_xmlXPtrGetIndex     
+1295 static xpointer.c_xmlXPtrInsideRange     
+1296 static xpointer.c_xmlXPtrGetStartPoint     
+1297 static xpointer.c_xmlXPtrGetEndPoint     
+1298 static xpointer.c_xmlXPtrAdvanceChar     
+1299 static xpointer.c_xmlXPtrGetLastChar     
+1300 static xpointer.c_xmlXPtrSearchString     
+1301 static xpointer.c_xmlXPtrMatchString     
+1302 xmlSchemaInitTypes      
+1303 static xmlschemastypes.c_xmlSchemaInitBasicType     
+1304 static xmlschemastypes.c_xmlSchemaAddParticle     
+1305 static xmlschemastypes.c_xmlSchemaTypeErrMemory     
+1306 xmlSchemaCleanupTypes      
+1307 static xmlschemastypes.c_xmlSchemaFreeTypeEntry     
+1308 xmlSchemaIsBuiltInTypeFacet      
+1309 xmlSchemaGetBuiltInType      
+1310 xmlSchemaValueAppend      
+1311 xmlSchemaValueGetNext      
+1312 xmlSchemaValueGetAsString      
+1313 xmlSchemaValueGetAsBoolean      
+1314 xmlSchemaNewStringValue      
+1315 xmlSchemaNewNOTATIONValue      
+1316 static xmlschemastypes.c_xmlSchemaNewValue     
+1317 xmlSchemaNewQNameValue      
+1318 xmlSchemaFreeValue      
+1319 xmlSchemaGetPredefinedType      
+1320 xmlSchemaGetBuiltInListSimpleTypeItemType      
+1321 xmlSchemaWhiteSpaceReplace      
+1322 xmlSchemaCollapseString      
+1323 xmlSchemaValPredefTypeNode      
+1324 static xmlschemastypes.c_xmlSchemaValAtomicType     
+1325 xmlSchemaValPredefTypeNodeNoNorm      
+1326 xmlSchemaValidatePredefinedType      
+1327 xmlSchemaCopyValue      
+1328 static xmlschemastypes.c_xmlSchemaDupVal     
+1329 xmlSchemaCompareValues      
+1330 static xmlschemastypes.c_xmlSchemaCompareValuesInternal     
+1331 xmlSchemaCompareValuesWhtsp      
+1332 xmlSchemaGetFacetValueAsULong      
+1333 xmlSchemaValidateListSimpleTypeFacet      
+1334 xmlSchemaValidateFacet      
+1335 xmlSchemaValidateLengthFacet      
+1336 static xmlschemastypes.c_xmlSchemaValidateLengthFacetInternal     
+1337 xmlSchemaValidateLengthFacetWhtsp      
+1338 static xmlschemastypes.c_xmlSchemaValidateFacetInternal     
+1339 xmlSchemaValidateFacetWhtsp      
+1340 xmlSchemaGetCanonValue      
+1341 static xmlschemastypes.c_xmlSchemaDateNormalize     
+1342 xmlSchemaGetCanonValueWhtsp      
+1343 xmlSchemaGetValType      
+1344 static xmlschemastypes.c_xmlSchemaNewMinLengthFacet     
+1345 static xmlschemastypes.c_xmlSchemaParseUInt     
+1346 static xmlschemastypes.c_xmlSchemaValidateDates     
+1347 static xmlschemastypes.c_xmlSchemaValidateDuration     
+1348 static xmlschemastypes.c_xmlSchemaCheckLanguageType     
+1349 static xmlschemastypes.c_xmlSchemaValAtomicListNode     
+1350 static xmlschemastypes.c_xmlSchemaStrip     
+1351 static xmlschemastypes.c__xmlSchemaBase64Decode     
+1352 static xmlschemastypes.c__xmlSchemaParseGDay     
+1353 static xmlschemastypes.c__xmlSchemaParseTimeZone     
+1354 static xmlschemastypes.c__xmlSchemaParseGMonth     
+1355 static xmlschemastypes.c__xmlSchemaParseTime     
+1356 static xmlschemastypes.c__xmlSchemaParseGYear     
+1357 static xmlschemastypes.c_xmlSchemaCompareDecimals     
+1358 static xmlschemastypes.c_xmlSchemaCompareDurations     
+1359 static xmlschemastypes.c_xmlSchemaCompareDates     
+1360 static xmlschemastypes.c_xmlSchemaComparePreserveReplaceStrings     
+1361 static xmlschemastypes.c_xmlSchemaComparePreserveCollapseStrings     
+1362 static xmlschemastypes.c_xmlSchemaCompareReplacedStrings     
+1363 static xmlschemastypes.c_xmlSchemaCompareReplaceCollapseStrings     
+1364 static xmlschemastypes.c_xmlSchemaCompareNormStrings     
+1365 static xmlschemastypes.c_xmlSchemaCompareFloats     
+1366 static xmlschemastypes.c__xmlSchemaDateCastYMToDays     
+1367 static xmlschemastypes.c_xmlSchemaNormLen     
+1368 static xmlschemastypes.c_xmlSchemaCompareValuesWhtspExt     
+1369 static xmlschemastypes.c__xmlSchemaDateAdd     
+1370 xmlIsXHTML      
+1371 xmlBufDumpNotationTable      
+1372 xmlBufDumpElementDecl      
+1373 xmlBufDumpAttributeDecl      
+1374 xmlBufDumpEntityDecl      
+1375 xmlNsListDumpOutput      
+1376 static xmlsave.c_xmlNsDumpOutput     
+1377 xmlSaveToFd      
+1378 static xmlsave.c_xmlNewSaveCtxt     
+1379 static xmlsave.c_xmlFreeSaveCtxt     
+1380 xmlSaveToFilename      
+1381 xmlSaveToBuffer      
+1382 xmlSaveToIO      
+1383 xmlSaveDoc      
+1384 static xmlsave.c_xmlDocContentDumpOutput     
+1385 xmlSaveTree      
+1386 static xmlsave.c_xhtmlNodeDumpOutput     
+1387 static xmlsave.c_htmlNodeDumpOutputInternal     
+1388 static xmlsave.c_xmlNodeDumpOutputInternal     
+1389 xmlSaveFlush      
+1390 xmlSaveClose      
+1391 xmlSaveSetEscape      
+1392 xmlSaveSetAttrEscape      
+1393 xmlBufAttrSerializeTxtContent      
+1394 static xmlsave.c_xmlSaveErr     
+1395 static xmlsave.c_xmlSerializeHexCharRef     
+1396 xmlAttrSerializeTxtContent      
+1397 xmlNodeDump      
+1398 xmlBufNodeDump      
+1399 static xmlsave.c_xmlSaveErrMemory     
+1400 xmlNodeDumpOutput      
+1401 xmlElemDump      
+1402 static xmlsave.c_xmlSaveCtxtInit     
+1403 xmlDocDumpFormatMemoryEnc      
+1404 xmlDocDumpMemory      
+1405 xmlDocDumpFormatMemory      
+1406 xmlDocDumpMemoryEnc      
+1407 xmlDocFormatDump      
+1408 xmlDocDump      
+1409 xmlSaveFileTo      
+1410 xmlSaveFormatFileTo      
+1411 xmlSaveFormatFileEnc      
+1412 xmlSaveFileEnc      
+1413 xmlSaveFormatFile      
+1414 xmlSaveFile      
+1415 static xmlsave.c_xmlOutputBufferWriteWSNonSig     
+1416 static xmlsave.c_xmlSaveSwitchEncoding     
+1417 static xmlsave.c_xmlEscapeEntities     
+1418 static xmlsave.c_xmlSaveClearEncoding     
+1419 static xmlsave.c_xmlNsDumpOutputCtxt     
+1420 static xmlsave.c_xmlDtdDumpOutput     
+1421 static xmlsave.c_xmlNsListDumpOutputCtxt     
+1422 static xmlsave.c_xhtmlAttrListDumpOutput     
+1423 static xmlsave.c_xhtmlIsEmpty     
+1424 static xmlsave.c_xmlAttrDumpOutput     
+1425 static xmlsave.c_xmlAttrSerializeContent     
+1426 xmlTextReaderRead      
+1427 static xmlreader.c_xmlTextReaderReadTree     
+1428 static xmlreader.c_xmlTextReaderPushData     
+1429 static xmlreader.c_xmlTextReaderValidatePop     
+1430 static xmlreader.c_xmlTextReaderFreeNode     
+1431 xmlTextReaderExpand      
+1432 static xmlreader.c_xmlTextReaderEntPush     
+1433 static xmlreader.c_xmlTextReaderValidateEntity     
+1434 static xmlreader.c_xmlTextReaderEntPop     
+1435 static xmlreader.c_xmlTextReaderValidatePush     
+1436 static xmlreader.c_xmlTextReaderValidateCData     
+1437 xmlTextReaderPreserve      
+1438 xmlTextReaderReadState      
+1439 static xmlreader.c_xmlTextReaderDoExpand     
+1440 xmlTextReaderNext      
+1441 static xmlreader.c_xmlTextReaderNextTree     
+1442 xmlTextReaderReadInnerXml      
+1443 xmlTextReaderReadOuterXml      
+1444 xmlTextReaderReadString      
+1445 static xmlreader.c_xmlTextReaderCollectSiblings     
+1446 xmlTextReaderNextSibling      
+1447 xmlNewTextReader      
+1448 static xmlreader.c_xmlTextReaderStartElement     
+1449 static xmlreader.c_xmlTextReaderEndElement     
+1450 static xmlreader.c_xmlTextReaderStartElementNs     
+1451 static xmlreader.c_xmlTextReaderEndElementNs     
+1452 static xmlreader.c_xmlTextReaderCharacters     
+1453 static xmlreader.c_xmlTextReaderCDataBlock     
+1454 xmlNewTextReaderFilename      
+1455 xmlFreeTextReader      
+1456 static xmlreader.c_xmlTextReaderFreeDoc     
+1457 xmlTextReaderClose      
+1458 xmlTextReaderGetAttributeNo      
+1459 xmlTextReaderGetAttribute      
+1460 xmlTextReaderGetAttributeNs      
+1461 xmlTextReaderGetRemainder      
+1462 xmlTextReaderLookupNamespace      
+1463 xmlTextReaderMoveToAttributeNo      
+1464 xmlTextReaderMoveToAttribute      
+1465 xmlTextReaderMoveToAttributeNs      
+1466 xmlTextReaderMoveToFirstAttribute      
+1467 xmlTextReaderMoveToNextAttribute      
+1468 xmlTextReaderMoveToElement      
+1469 xmlTextReaderReadAttributeValue      
+1470 xmlTextReaderConstEncoding      
+1471 xmlTextReaderAttributeCount      
+1472 xmlTextReaderNodeType      
+1473 xmlTextReaderIsEmptyElement      
+1474 xmlTextReaderLocalName      
+1475 xmlTextReaderName      
+1476 xmlTextReaderConstLocalName      
+1477 xmlTextReaderConstName      
+1478 xmlTextReaderPrefix      
+1479 xmlTextReaderConstPrefix      
+1480 xmlTextReaderNamespaceUri      
+1481 xmlTextReaderConstNamespaceUri      
+1482 xmlTextReaderBaseUri      
+1483 xmlTextReaderConstBaseUri      
+1484 xmlTextReaderDepth      
+1485 xmlTextReaderHasAttributes      
+1486 xmlTextReaderHasValue      
+1487 xmlTextReaderValue      
+1488 xmlTextReaderConstValue      
+1489 xmlTextReaderIsDefault      
+1490 xmlTextReaderQuoteChar      
+1491 xmlTextReaderXmlLang      
+1492 xmlTextReaderConstXmlLang      
+1493 xmlTextReaderConstString      
+1494 xmlTextReaderNormalization      
+1495 xmlTextReaderSetParserProp      
+1496 xmlTextReaderGetParserProp      
+1497 xmlTextReaderGetParserLineNumber      
+1498 xmlTextReaderGetParserColumnNumber      
+1499 xmlTextReaderCurrentNode      
+1500 xmlTextReaderPreservePattern      
+1501 xmlTextReaderCurrentDoc      
+1502 xmlTextReaderRelaxNGSetSchema      
+1503 static xmlreader.c_xmlTextReaderValidityErrorRelay     
+1504 static xmlreader.c_xmlTextReaderValidityWarningRelay     
+1505 static xmlreader.c_xmlTextReaderValidityStructuredRelay     
+1506 xmlTextReaderSetSchema      
+1507 static xmlreader.c_xmlTextReaderLocator     
+1508 xmlTextReaderSchemaValidateCtxt      
+1509 static xmlreader.c_xmlTextReaderSchemaValidateInternal     
+1510 xmlTextReaderSchemaValidate      
+1511 xmlTextReaderRelaxNGValidateCtxt      
+1512 static xmlreader.c_xmlTextReaderRelaxNGValidateInternal     
+1513 xmlTextReaderRelaxNGValidate      
+1514 xmlTextReaderIsNamespaceDecl      
+1515 xmlTextReaderConstXmlVersion      
+1516 xmlTextReaderStandalone      
+1517 xmlTextReaderLocatorLineNumber      
+1518 xmlTextReaderLocatorBaseURI      
+1519 xmlTextReaderSetErrorHandler      
+1520 static xmlreader.c_xmlTextReaderError     
+1521 static xmlreader.c_xmlTextReaderValidityError     
+1522 static xmlreader.c_xmlTextReaderWarning     
+1523 static xmlreader.c_xmlTextReaderValidityWarning     
+1524 xmlTextReaderSetStructuredErrorHandler      
+1525 static xmlreader.c_xmlTextReaderStructuredError     
+1526 xmlTextReaderIsValid      
+1527 xmlTextReaderGetErrorHandler      
+1528 xmlTextReaderSetup      
+1529 xmlTextReaderByteConsumed      
+1530 xmlReaderWalker      
+1531 xmlReaderForDoc      
+1532 xmlReaderForMemory      
+1533 xmlReaderForFile      
+1534 xmlReaderForFd      
+1535 xmlReaderForIO      
+1536 xmlReaderNewWalker      
+1537 xmlReaderNewDoc      
+1538 xmlReaderNewMemory      
+1539 xmlReaderNewFile      
+1540 xmlReaderNewFd      
+1541 xmlReaderNewIO      
+1542 static xmlreader.c_xmlTextReaderFreeProp     
+1543 static xmlreader.c_xmlTextReaderFreeNodeList     
+1544 static xmlreader.c_xmlTextReaderFreePropList     
+1545 static xmlreader.c_xmlTextReaderRemoveID     
+1546 static xmlreader.c_xmlTextReaderRemoveRef     
+1547 static xmlreader.c_xmlTextReaderWalkRemoveRef     
+1548 static xmlreader.c_xmlTextReaderGetSuccessor     
+1549 static xmlreader.c_xmlTextReaderFreeIDTable     
+1550 static xmlreader.c_xmlTextReaderFreeIDTableEntry     
+1551 static xmlreader.c_xmlFreeID     
+1552 static xmlreader.c_xmlTextReaderBuildMessage     
+1553 static xmlreader.c_xmlTextReaderGenericError     
+1554 xmlBuildQName      
+1555 static tree.c_xmlTreeErrMemory     
+1556 xmlSplitQName2      
+1557 xmlSplitQName3      
+1558 xmlValidateNCName      
+1559 xmlValidateQName      
+1560 xmlValidateName      
+1561 xmlValidateNMToken      
+1562 xmlSetBufferAllocationScheme      
+1563 xmlGetBufferAllocationScheme      
+1564 xmlNewNs      
+1565 xmlFreeNs      
+1566 xmlSetNs      
+1567 xmlFreeNsList      
+1568 xmlNewDtd      
+1569 xmlGetIntSubset      
+1570 xmlCreateIntSubset      
+1571 xmlFreeDtd      
+1572 xmlUnlinkNode      
+1573 xmlFreeNode      
+1574 xmlNewDoc      
+1575 xmlFreeDoc      
+1576 xmlFreeNodeList      
+1577 xmlStringLenGetNodeList      
+1578 static tree.c_xmlTreeErr     
+1579 xmlNewDocText      
+1580 xmlAddNextSibling      
+1581 xmlNewReference      
+1582 xmlStringGetNodeList      
+1583 xmlNodeListGetString      
+1584 xmlNodeListGetRawString      
+1585 xmlNewProp      
+1586 static tree.c_xmlNewPropInternal     
+1587 xmlNewNsProp      
+1588 xmlNewNsPropEatName      
+1589 xmlNewDocProp      
+1590 xmlFreePropList      
+1591 xmlFreeProp      
+1592 xmlRemoveProp      
+1593 xmlNewDocPI      
+1594 xmlNewPI      
+1595 xmlNewNode      
+1596 xmlNewNodeEatName      
+1597 xmlNewDocNode      
+1598 xmlNewDocNodeEatName      
+1599 xmlNewDocRawNode      
+1600 xmlNewDocFragment      
+1601 xmlNewText      
+1602 xmlNewTextChild      
+1603 xmlNewCharRef      
+1604 xmlNewTextLen      
+1605 xmlNewDocTextLen      
+1606 xmlNewComment      
+1607 xmlNewCDataBlock      
+1608 xmlNewDocComment      
+1609 xmlSetTreeDoc      
+1610 xmlSetListDoc      
+1611 xmlNewChild      
+1612 xmlNodeAddContent      
+1613 xmlNodeSetContent      
+1614 static tree.c_xmlAddPropSibling     
+1615 xmlAddPrevSibling      
+1616 xmlAddSibling      
+1617 xmlAddChildList      
+1618 xmlAddChild      
+1619 xmlHasNsProp      
+1620 xmlGetLastChild      
+1621 xmlChildElementCount      
+1622 xmlFirstElementChild      
+1623 xmlLastElementChild      
+1624 xmlPreviousElementSibling      
+1625 xmlNextElementSibling      
+1626 xmlReplaceNode      
+1627 xmlCopyNamespace      
+1628 xmlCopyNamespaceList      
+1629 xmlCopyProp      
+1630 static tree.c_xmlCopyPropInternal     
+1631 xmlCopyPropList      
+1632 xmlCopyNode      
+1633 static tree.c_xmlStaticCopyNode     
+1634 xmlDocCopyNode      
+1635 xmlDocCopyNodeList      
+1636 static tree.c_xmlStaticCopyNodeList     
+1637 xmlCopyNodeList      
+1638 xmlCopyDtd      
+1639 static tree.c_xmlGetEntityFromDtd     
+1640 static tree.c_xmlGetParameterEntityFromDtd     
+1641 xmlCopyDoc      
+1642 xmlGetLineNo      
+1643 static tree.c_xmlGetLineNoInternal     
+1644 xmlGetNodePath      
+1645 xmlDocGetRootElement      
+1646 xmlDocSetRootElement      
+1647 xmlNodeSetLang      
+1648 xmlSearchNsByHref      
+1649 xmlSetNsProp      
+1650 xmlNodeGetLang      
+1651 xmlGetNsProp      
+1652 xmlNodeSetSpacePreserve      
+1653 xmlNodeGetSpacePreserve      
+1654 xmlNodeSetName      
+1655 xmlNodeSetBase      
+1656 xmlNodeGetBase      
+1657 xmlGetProp      
+1658 xmlNodeBufGetContent      
+1659 xmlBufGetNodeContent      
+1660 xmlNodeGetContent      
+1661 static tree.c_xmlGetPropNodeValueInternal     
+1662 xmlNodeSetContentLen      
+1663 xmlNodeAddContentLen      
+1664 xmlTextMerge      
+1665 xmlGetNsList      
+1666 xmlSearchNs      
+1667 static tree.c_xmlTreeEnsureXMLDecl     
+1668 static tree.c_xmlNsInScope     
+1669 xmlReconciliateNs      
+1670 static tree.c_xmlNewReconciledNs     
+1671 xmlHasProp      
+1672 static tree.c_xmlGetPropNodeInternal     
+1673 xmlGetNoNsProp      
+1674 xmlUnsetProp      
+1675 xmlUnsetNsProp      
+1676 xmlSetProp      
+1677 xmlNodeIsText      
+1678 xmlIsBlankNode      
+1679 xmlTextConcat      
+1680 xmlBufferCreate      
+1681 xmlBufferCreateSize      
+1682 xmlBufferDetach      
+1683 xmlBufferCreateStatic      
+1684 xmlBufferSetAllocationScheme      
+1685 xmlBufferFree      
+1686 xmlBufferEmpty      
+1687 xmlBufferShrink      
+1688 xmlBufferGrow      
+1689 xmlBufferDump      
+1690 xmlBufferContent      
+1691 xmlBufferLength      
+1692 xmlBufferResize      
+1693 xmlBufferAdd      
+1694 xmlBufferAddHead      
+1695 xmlBufferCat      
+1696 xmlBufferCCat      
+1697 xmlBufferWriteCHAR      
+1698 xmlBufferWriteChar      
+1699 xmlBufferWriteQuotedString      
+1700 xmlGetDocCompressMode      
+1701 xmlSetDocCompressMode      
+1702 xmlGetCompressMode      
+1703 xmlSetCompressMode      
+1704 xmlDOMWrapNewCtxt      
+1705 xmlDOMWrapFreeCtxt      
+1706 static tree.c_xmlDOMWrapNsMapFree     
+1707 xmlDOMWrapRemoveNode      
+1708 static tree.c_xmlDOMWrapNSNormAddNsMapItem2     
+1709 static tree.c_xmlDOMWrapStoreNs     
+1710 xmlDOMWrapReconcileNamespaces      
+1711 static tree.c_xmlDOMWrapNSNormGatherInScopeNs     
+1712 static tree.c_xmlDOMWrapNsMapAddItem     
+1713 static tree.c_xmlDOMWrapNSNormAcquireNormalizedNs     
+1714 xmlDOMWrapCloneNode      
+1715 xmlDOMWrapAdoptNode      
+1716 static tree.c_xmlDOMWrapAdoptBranch     
+1717 static tree.c_xmlDOMWrapAdoptAttr     
+1718 static tree.c_xmlDOMWrapNSNormDeclareNsForced     
+1719 static tree.c_xmlTreeNSListLookupByPrefix     
+1720 static tree.c_xmlSearchNsByPrefixStrict     
+1721 static tree.c_xmlSearchNsByNamespaceStrict     
+1722 htmlInitAutoClose      
+1723 htmlTagLookup      
+1724 static HTMLparser.c_htmlCompareTags     
+1725 htmlAutoCloseTag      
+1726 static HTMLparser.c_htmlCheckAutoClose     
+1727 htmlIsAutoClosed      
+1728 htmlIsScriptAttribute      
+1729 htmlEntityLookup      
+1730 htmlEntityValueLookup      
+1731 UTF8ToHtml      
+1732 htmlEncodeEntities      
+1733 htmlNewDocNoDtD      
+1734 static HTMLparser.c_htmlErrMemory     
+1735 htmlNewDoc      
+1736 htmlParseEntityRef      
+1737 static HTMLparser.c_htmlParseName     
+1738 static HTMLparser.c_htmlParseErr     
+1739 htmlParseCharRef      
+1740 static HTMLparser.c_htmlParseErrInt     
+1741 htmlParseElement      
+1742 static HTMLparser.c_htmlParseStartTag     
+1743 static HTMLparser.c_htmlnamePop     
+1744 static HTMLparser.c_htmlParseContent     
+1745 static HTMLparser.c_htmlAutoCloseOnEnd     
+1746 __htmlParseContent      
+1747 static HTMLparser.c_htmlParseContentInternal     
+1748 htmlParseDocument      
+1749 static HTMLparser.c_htmlSkipBlankChars     
+1750 static HTMLparser.c_htmlParseComment     
+1751 static HTMLparser.c_htmlParsePI     
+1752 static HTMLparser.c_htmlParseDocTypeDecl     
+1753 htmlFreeParserCtxt      
+1754 htmlNewParserCtxt      
+1755 static HTMLparser.c_htmlInitParserCtxt     
+1756 htmlCreateMemoryParserCtxt      
+1757 htmlParseChunk      
+1758 static HTMLparser.c_htmlParseTryOrFinish     
+1759 htmlCreatePushParserCtxt      
+1760 static HTMLparser.c_htmlNewInputStream     
+1761 htmlSAXParseDoc      
+1762 static HTMLparser.c_htmlCreateDocParserCtxt     
+1763 htmlParseDoc      
+1764 htmlCreateFileParserCtxt      
+1765 static HTMLparser.c_htmlCheckEncoding     
+1766 htmlSAXParseFile      
+1767 htmlParseFile      
+1768 htmlHandleOmittedElem      
+1769 htmlElementAllowedHere      
+1770 htmlElementStatusHere      
+1771 htmlAttrAllowed      
+1772 htmlNodeStatus      
+1773 htmlCtxtReset      
+1774 htmlCtxtUseOptions      
+1775 htmlReadDoc      
+1776 static HTMLparser.c_htmlDoRead     
+1777 htmlReadFile      
+1778 htmlReadMemory      
+1779 htmlReadFd      
+1780 htmlReadIO      
+1781 htmlCtxtReadDoc      
+1782 htmlCtxtReadFile      
+1783 htmlCtxtReadMemory      
+1784 htmlCtxtReadFd      
+1785 htmlCtxtReadIO      
+1786 static HTMLparser.c_htmlCompareStartClose     
+1787 static HTMLparser.c_htmlParseNameComplex     
+1788 static HTMLparser.c_htmlCurrentChar     
+1789 static HTMLparser.c_htmlFindEncoding     
+1790 static HTMLparser.c_htmlParseHTMLName     
+1791 static HTMLparser.c_htmlParseCharDataInternal     
+1792 static HTMLparser.c_htmlAutoClose     
+1793 static HTMLparser.c_htmlCheckImplied     
+1794 static HTMLparser.c_htmlParseAttribute     
+1795 static HTMLparser.c_htmlCheckMeta     
+1796 static HTMLparser.c_htmlnamePush     
+1797 static HTMLparser.c_areBlanks     
+1798 static HTMLparser.c_htmlCheckParagraph     
+1799 static HTMLparser.c_htmlParseAttValue     
+1800 static HTMLparser.c_htmlParseHTMLAttribute     
+1801 static HTMLparser.c_htmlCheckEncodingDirect     
+1802 static HTMLparser.c_htmlParseEndTag     
+1803 static HTMLparser.c_htmlParseHTMLName_nonInvasive     
+1804 static HTMLparser.c_htmlParseScript     
+1805 static HTMLparser.c_htmlParseReference     
+1806 static HTMLparser.c_htmlParseCharData     
+1807 static HTMLparser.c_htmlAutoCloseOnClose     
+1808 static HTMLparser.c_htmlNodeInfoPop     
+1809 static HTMLparser.c_htmlGetEndPriority     
+1810 static HTMLparser.c_htmlParserFinishElementParsing     
+1811 static HTMLparser.c_htmlParseElementInternal     
+1812 static HTMLparser.c_htmlNodeInfoPush     
+1813 static HTMLparser.c_htmlParseExternalID     
+1814 static HTMLparser.c_htmlParseSystemLiteral     
+1815 static HTMLparser.c_htmlParsePubidLiteral     
+1816 static HTMLparser.c_htmlParseLookupSequence     
+1817 static HTMLparser.c_htmlParseLookupCommentEnd     
+1818 xmlRegNewExecCtxt      
+1819 static xmlregexp.c_xmlRegexpErrMemory     
+1820 xmlRegFreeExecCtxt      
+1821 xmlRegExecPushString      
+1822 static xmlregexp.c_xmlRegExecPushStringInternal     
+1823 xmlRegExecPushString2      
+1824 static xmlregexp.c_xmlRegCompactPushString     
+1825 xmlRegExecNextValues      
+1826 static xmlregexp.c_xmlRegExecGetValues     
+1827 xmlRegExecErrInfo      
+1828 xmlRegexpPrint      
+1829 static xmlregexp.c_xmlRegPrintAtom     
+1830 static xmlregexp.c_xmlRegPrintState     
+1831 xmlRegexpCompile      
+1832 static xmlregexp.c_xmlRegNewParserCtxt     
+1833 static xmlregexp.c_xmlRegNewState     
+1834 static xmlregexp.c_xmlRegStatePush     
+1835 static xmlregexp.c_xmlFAParseRegExp     
+1836 static xmlregexp.c_xmlRegexpErrCompile     
+1837 static xmlregexp.c_xmlRegFreeParserCtxt     
+1838 static xmlregexp.c_xmlFAEliminateEpsilonTransitions     
+1839 static xmlregexp.c_xmlRegEpxFromParse     
+1840 xmlRegexpExec      
+1841 static xmlregexp.c_xmlFARegExec     
+1842 xmlRegexpIsDeterminist      
+1843 xmlNewAutomata      
+1844 static xmlregexp.c_xmlRegFreeState     
+1845 static xmlregexp.c_xmlFAComputesDeterminism     
+1846 xmlFreeAutomata      
+1847 xmlRegFreeRegexp      
+1848 static xmlregexp.c_xmlRegFreeAtom     
+1849 xmlAutomataSetFlags      
+1850 xmlAutomataGetInitState      
+1851 xmlAutomataSetFinalState      
+1852 xmlAutomataNewTransition      
+1853 static xmlregexp.c_xmlRegNewAtom     
+1854 static xmlregexp.c_xmlFAGenerateTransitions     
+1855 xmlAutomataNewTransition2      
+1856 xmlAutomataNewNegTrans      
+1857 xmlAutomataNewCountTrans2      
+1858 static xmlregexp.c_xmlRegGetCounter     
+1859 static xmlregexp.c_xmlRegStateAddTrans     
+1860 static xmlregexp.c_xmlRegAtomPush     
+1861 static xmlregexp.c_xmlFAGenerateEpsilonTransition     
+1862 xmlAutomataNewCountTrans      
+1863 xmlAutomataNewOnceTrans2      
+1864 xmlAutomataNewOnceTrans      
+1865 xmlAutomataNewState      
+1866 xmlAutomataNewEpsilon      
+1867 xmlAutomataNewAllTrans      
+1868 static xmlregexp.c_xmlFAGenerateAllTransition     
+1869 xmlAutomataNewCounter      
+1870 xmlAutomataNewCountedTrans      
+1871 static xmlregexp.c_xmlFAGenerateCountedEpsilonTransition     
+1872 xmlAutomataNewCounterTrans      
+1873 static xmlregexp.c_xmlFAGenerateCountedTransition     
+1874 xmlAutomataCompile      
+1875 xmlAutomataIsDeterminist      
+1876 static xmlregexp.c_xmlFARegExecSaveInputString     
+1877 static xmlregexp.c_xmlRegStrEqualWildcard     
+1878 static xmlregexp.c_xmlFARegExecSave     
+1879 static xmlregexp.c_xmlFARegExecRollBack     
+1880 static xmlregexp.c_xmlRegPrintAtomType     
+1881 static xmlregexp.c_xmlRegPrintQuantType     
+1882 static xmlregexp.c_xmlRegPrintRange     
+1883 static xmlregexp.c_xmlRegPrintTrans     
+1884 static xmlregexp.c_xmlFAParseBranch     
+1885 static xmlregexp.c_xmlFAParsePiece     
+1886 static xmlregexp.c_xmlFAParseAtom     
+1887 static xmlregexp.c_xmlFAParseQuantifier     
+1888 static xmlregexp.c_xmlFAIsChar     
+1889 static xmlregexp.c_xmlFAParseCharClass     
+1890 static xmlregexp.c_xmlFAParseCharGroup     
+1891 static xmlregexp.c_xmlFAParseCharClassEsc     
+1892 static xmlregexp.c_xmlFAParsePosCharGroup     
+1893 static xmlregexp.c_xmlFAParseCharRange     
+1894 static xmlregexp.c_xmlRegAtomAddRange     
+1895 static xmlregexp.c_xmlRegNewRange     
+1896 static xmlregexp.c_xmlFAParseCharProp     
+1897 static xmlregexp.c_xmlFAParseQuantExact     
+1898 static xmlregexp.c_xmlFAEliminateSimpleEpsilonTransitions     
+1899 static xmlregexp.c_xmlFAReduceEpsilonTransitions     
+1900 static xmlregexp.c_xmlRegCalloc2     
+1901 static xmlregexp.c_xmlRegCheckCharacter     
+1902 static xmlregexp.c_xmlRegCheckCharacterRange     
+1903 static xmlregexp.c_xmlFAEqualAtoms     
+1904 static xmlregexp.c_xmlFACompareAtoms     
+1905 static xmlregexp.c_xmlFARecurseDeterminism     
+1906 static xmlregexp.c_xmlFAFinishRecurseDeterminism     
+1907 static xmlregexp.c_xmlFACompareAtomTypes     
+1908 static xmlregexp.c_xmlFACompareRanges     
+1909 static xmlregexp.c_xmlRegFreeRange     
+1910 static xmlregexp.c_xmlRegCopyAtom     
+1911 static xmlregexp.c_xmlRegCopyRange     
+1912 static xmlregexp.c_xmlRegStateAddTransTo     
+1913 xmlRelaxNGFree      
+1914 static relaxng.c_xmlRelaxNGFreeGrammar     
+1915 static relaxng.c_xmlRelaxNGFreeDocumentList     
+1916 static relaxng.c_xmlRelaxNGFreeIncludeList     
+1917 static relaxng.c_xmlRelaxNGFreeDefine     
+1918 xmlRelaxParserSetFlag      
+1919 xmlRelaxNGInitTypes      
+1920 static relaxng.c_xmlRelaxNGRegisterTypeLibrary     
+1921 static relaxng.c_xmlRelaxNGSchemaTypeHave     
+1922 static relaxng.c_xmlRelaxNGSchemaTypeCheck     
+1923 static relaxng.c_xmlRelaxNGSchemaTypeCompare     
+1924 static relaxng.c_xmlRelaxNGSchemaFacetCheck     
+1925 static relaxng.c_xmlRelaxNGSchemaFreeValue     
+1926 static relaxng.c_xmlRelaxNGDefaultTypeHave     
+1927 static relaxng.c_xmlRelaxNGDefaultTypeCheck     
+1928 static relaxng.c_xmlRelaxNGDefaultTypeCompare     
+1929 xmlRelaxNGCleanupTypes      
+1930 static relaxng.c_xmlRelaxNGFreeTypeLibrary     
+1931 xmlRelaxNGNewParserCtxt      
+1932 static relaxng.c_xmlRngPErrMemory     
+1933 xmlRelaxNGNewMemParserCtxt      
+1934 xmlRelaxNGNewDocParserCtxt      
+1935 xmlRelaxNGFreeParserCtxt      
+1936 static relaxng.c_xmlRelaxNGFreeDocument     
+1937 xmlRelaxNGParse      
+1938 static relaxng.c_xmlRngPErr     
+1939 static relaxng.c_xmlRelaxNGCleanupDoc     
+1940 static relaxng.c_xmlRelaxNGParseDocument     
+1941 static relaxng.c_xmlRelaxNGComputeInterleaves     
+1942 static relaxng.c_xmlRelaxNGNewDefine     
+1943 static relaxng.c_xmlRelaxNGTryCompile     
+1944 xmlRelaxNGSetParserErrors      
+1945 xmlRelaxNGGetParserErrors      
+1946 xmlRelaxNGSetParserStructuredErrors      
+1947 xmlRelaxNGDump      
+1948 static relaxng.c_xmlRelaxNGDumpGrammar     
+1949 xmlRelaxNGDumpTree      
+1950 xmlRelaxNGValidatePushElement      
+1951 static relaxng.c_xmlRelaxNGAddValidError     
+1952 static relaxng.c_xmlRelaxNGValidateProgressiveCallback     
+1953 static relaxng.c_xmlRelaxNGElemPush     
+1954 xmlRelaxNGValidatePushCData      
+1955 xmlRelaxNGValidatePopElement      
+1956 static relaxng.c_xmlRelaxNGElemPop     
+1957 xmlRelaxNGValidateFullElement      
+1958 static relaxng.c_xmlRelaxNGNewValidState     
+1959 static relaxng.c_xmlRelaxNGValidateDefinition     
+1960 static relaxng.c_xmlRelaxNGFreeValidState     
+1961 xmlRelaxNGNewValidCtxt      
+1962 static relaxng.c_xmlRngVErrMemory     
+1963 xmlRelaxNGFreeValidCtxt      
+1964 static relaxng.c_xmlRelaxNGFreeStates     
+1965 xmlRelaxNGSetValidErrors      
+1966 xmlRelaxNGSetValidStructuredErrors      
+1967 xmlRelaxNGGetValidErrors      
+1968 xmlRelaxNGValidateDoc      
+1969 static relaxng.c_xmlRelaxNGValidateDocument     
+1970 static relaxng.c_xmlRelaxNGCleanPSVI     
+1971 static relaxng.c_xmlRelaxNGFreeInclude     
+1972 static relaxng.c_xmlRelaxNGFreePartition     
+1973 static relaxng.c_xmlRelaxNGNormalize     
+1974 static relaxng.c_xmlRelaxNGFreeInnerSchema     
+1975 static relaxng.c_xmlRelaxNGCleanupTree     
+1976 static relaxng.c_xmlRelaxNGCleanupAttributes     
+1977 static relaxng.c_xmlRelaxNGLoadExternalRef     
+1978 static relaxng.c_xmlRelaxNGLoadInclude     
+1979 static relaxng.c_xmlRelaxNGIsBlank     
+1980 static relaxng.c_xmlRelaxNGDocumentPush     
+1981 static relaxng.c_xmlRelaxNGDocumentPop     
+1982 static relaxng.c_xmlRelaxNGIncludePush     
+1983 static relaxng.c_xmlRelaxNGIncludePop     
+1984 static relaxng.c_xmlRelaxNGRemoveRedefine     
+1985 static relaxng.c_xmlRelaxNGNormExtSpace     
+1986 static relaxng.c_xmlRelaxNGNewRelaxNG     
+1987 static relaxng.c_xmlRelaxNGParseGrammar     
+1988 static relaxng.c_xmlRelaxNGNewGrammar     
+1989 static relaxng.c_xmlRelaxNGParseStart     
+1990 static relaxng.c_xmlRelaxNGCheckCycles     
+1991 static relaxng.c_xmlRelaxNGSimplify     
+1992 static relaxng.c_xmlRelaxNGCheckRules     
+1993 static relaxng.c_xmlRelaxNGParseGrammarContent     
+1994 static relaxng.c_xmlRelaxNGCombineStart     
+1995 static relaxng.c_xmlRelaxNGCheckCombine     
+1996 static relaxng.c_xmlRelaxNGCheckReference     
+1997 static relaxng.c_xmlRelaxNGParseDefine     
+1998 static relaxng.c_xmlRelaxNGParseInclude     
+1999 static relaxng.c_xmlRelaxNGParsePatterns     
+2000 static relaxng.c_xmlRelaxNGParseElement     
+2001 static relaxng.c_xmlRelaxNGParsePattern     
+2002 static relaxng.c_xmlRelaxNGParseNameClass     
+2003 static relaxng.c_xmlRelaxNGParseExceptNameClass     
+2004 static relaxng.c_xmlRelaxNGParseAttribute     
+2005 static relaxng.c_xmlRelaxNGParseData     
+2006 static relaxng.c_xmlRelaxNGParseValue     
+2007 static relaxng.c_xmlRelaxNGParseInterleave     
+2008 static relaxng.c_xmlRelaxNGProcessExternalRef     
+2009 static relaxng.c_xmlRelaxNGGetDataTypeLibrary     
+2010 static relaxng.c_xmlRelaxNGParseImportRefs     
+2011 static relaxng.c_xmlRelaxNGParseImportRef     
+2012 static relaxng.c_xmlRelaxNGTryUnlink     
+2013 static relaxng.c_xmlRelaxNGGenerateAttributes     
+2014 static relaxng.c_xmlRelaxNGCheckGroupAttrs     
+2015 static relaxng.c_xmlRelaxNGGroupContentType     
+2016 static relaxng.c_xmlRelaxNGCheckChoiceDeterminism     
+2017 static relaxng.c_xmlRelaxNGMaxContentType     
+2018 static relaxng.c_xmlRelaxNGGetElements     
+2019 static relaxng.c_xmlRelaxNGCompareElemDefLists     
+2020 static relaxng.c_xmlRelaxNGCompareNameClasses     
+2021 static relaxng.c_xmlRelaxNGElementMatch     
+2022 static relaxng.c_xmlRelaxNGDumpValidError     
+2023 static relaxng.c_xmlRelaxNGPopErrors     
+2024 static relaxng.c_xmlRelaxNGShowValidError     
+2025 static relaxng.c_xmlRelaxNGGetErrorString     
+2026 static relaxng.c_xmlRngVErr     
+2027 static relaxng.c_xmlRelaxNGIsNullable     
+2028 static relaxng.c_xmlRelaxNGIsCompilable     
+2029 static relaxng.c_xmlRelaxNGCompile     
+2030 static relaxng.c_xmlRelaxNGDefName     
+2031 static relaxng.c_xmlRelaxNGDumpDefine     
+2032 static relaxng.c_xmlRelaxNGDumpDefines     
+2033 static relaxng.c_xmlRelaxNGValidErrorPush     
+2034 static relaxng.c_xmlRelaxNGValidateAttributeList     
+2035 static relaxng.c_xmlRelaxNGValidateElementEnd     
+2036 static relaxng.c_xmlRelaxNGLogBestError     
+2037 static relaxng.c_xmlRelaxNGValidateAttribute     
+2038 static relaxng.c_xmlRelaxNGValidateValueContent     
+2039 static relaxng.c_xmlRelaxNGAttributeMatch     
+2040 static relaxng.c_xmlRelaxNGValidateValue     
+2041 static relaxng.c_xmlRelaxNGNextValue     
+2042 static relaxng.c_xmlRelaxNGValidateDatatype     
+2043 static relaxng.c_xmlRelaxNGValidateValueList     
+2044 static relaxng.c_xmlRelaxNGSkipIgnored     
+2045 static relaxng.c_xmlRelaxNGBestState     
+2046 static relaxng.c_xmlRelaxNGNewStates     
+2047 static relaxng.c_xmlRelaxNGAddStatesUniq     
+2048 static relaxng.c_xmlRelaxNGValidateState     
+2049 static relaxng.c_xmlRelaxNGAddStates     
+2050 static relaxng.c_xmlRelaxNGValidErrorPop     
+2051 static relaxng.c_xmlRelaxNGValidateCompiledContent     
+2052 static relaxng.c_xmlRelaxNGValidateDefinitionList     
+2053 static relaxng.c_xmlRelaxNGCopyValidState     
+2054 static relaxng.c_xmlRelaxNGValidateInterleave     
+2055 static relaxng.c_xmlRelaxNGValidateCompiledCallback     
+2056 static relaxng.c_xmlRelaxNGNodeMatchesList     
+2057 static relaxng.c_xmlRelaxNGEqualValidState     
+2058 libxml_domnode_binary_insertion_sort      
+2059 static xpath.c_libxml_domnode_binary_insertion_sort_start     
+2060 libxml_domnode_tim_sort      
+2061 static xpath.c_compute_minrun     
+2062 static xpath.c_PUSH_NEXT     
+2063 static xpath.c_libxml_domnode_check_invariant     
+2064 static xpath.c_libxml_domnode_tim_sort_collapse     
+2065 xmlXPathInit      
+2066 xmlXPathIsNaN      
+2067 xmlXPathIsInf      
+2068 xmlXPathErr      
+2069 xmlXPatherror      
+2070 xmlXPathFreeCompExpr      
+2071 xmlXPathFreeObject      
+2072 xmlXPathDebugDumpObject      
+2073 static xpath.c_xmlXPathDebugDumpNodeSet     
+2074 static xpath.c_xmlXPathDebugDumpValueTree     
+2075 static xpath.c_xmlXPathDebugDumpNode     
+2076 static xpath.c_xmlXPathDebugDumpLocationSet     
+2077 xmlXPathDebugDumpCompExpr      
+2078 static xpath.c_xmlXPathDebugDumpStepOp     
+2079 xmlXPathContextSetCache      
+2080 static xpath.c_xmlXPathNewCache     
+2081 static xpath.c_xmlXPathFreeCache     
+2082 valuePop      
+2083 valuePush      
+2084 static xpath.c_xmlXPathPErrMemory     
+2085 xmlXPathPopBoolean      
+2086 xmlXPathCastToBoolean      
+2087 static xpath.c_xmlXPathReleaseObject     
+2088 xmlXPathPopNumber      
+2089 xmlXPathCastToNumber      
+2090 xmlXPathPopString      
+2091 xmlXPathCastToString      
+2092 xmlXPathPopNodeSet      
+2093 xmlXPathPopExternal      
+2094 xmlXPathOrderDocElems      
+2095 xmlXPathCmpNodes      
+2096 xmlXPathNodeSetSort      
+2097 xmlXPathNodeSetFreeNs      
+2098 xmlXPathNodeSetCreate      
+2099 static xpath.c_xmlXPathErrMemory     
+2100 static xpath.c_xmlXPathNodeSetDupNs     
+2101 xmlXPathNodeSetContains      
+2102 xmlXPathNodeSetAddNs      
+2103 xmlXPathNodeSetAdd      
+2104 xmlXPathNodeSetAddUnique      
+2105 xmlXPathNodeSetMerge      
+2106 xmlXPathNodeSetDel      
+2107 xmlXPathNodeSetRemove      
+2108 xmlXPathFreeNodeSet      
+2109 xmlXPathNewNodeSet      
+2110 xmlXPathNewValueTree      
+2111 xmlXPathNewNodeSetList      
+2112 xmlXPathWrapNodeSet      
+2113 xmlXPathFreeNodeSetList      
+2114 xmlXPathDifference      
+2115 xmlXPathIntersection      
+2116 xmlXPathDistinctSorted      
+2117 xmlXPathCastNodeToString      
+2118 xmlXPathDistinct      
+2119 xmlXPathHasSameNodes      
+2120 xmlXPathNodeLeadingSorted      
+2121 xmlXPathNodeLeading      
+2122 xmlXPathLeadingSorted      
+2123 xmlXPathLeading      
+2124 xmlXPathNodeTrailingSorted      
+2125 xmlXPathNodeTrailing      
+2126 xmlXPathTrailingSorted      
+2127 xmlXPathTrailing      
+2128 xmlXPathRegisterFunc      
+2129 xmlXPathRegisterFuncNS      
+2130 xmlXPathRegisterFuncLookup      
+2131 xmlXPathFunctionLookup      
+2132 xmlXPathFunctionLookupNS      
+2133 xmlXPathRegisteredFuncsCleanup      
+2134 xmlXPathRegisterVariable      
+2135 xmlXPathRegisterVariableNS      
+2136 static xpath.c_xmlXPathFreeObjectEntry     
+2137 xmlXPathRegisterVariableLookup      
+2138 xmlXPathVariableLookup      
+2139 xmlXPathVariableLookupNS      
+2140 static xpath.c_xmlXPathCacheObjectCopy     
+2141 xmlXPathRegisteredVariablesCleanup      
+2142 xmlXPathRegisterNs      
+2143 xmlXPathNsLookup      
+2144 xmlXPathRegisteredNsCleanup      
+2145 xmlXPathNewFloat      
+2146 xmlXPathNewBoolean      
+2147 xmlXPathNewString      
+2148 xmlXPathWrapString      
+2149 xmlXPathNewCString      
+2150 xmlXPathWrapCString      
+2151 xmlXPathWrapExternal      
+2152 xmlXPathObjectCopy      
+2153 static xpath.c_xmlXPathFreeValueTree     
+2154 xmlXPathCastBooleanToString      
+2155 xmlXPathCastNumberToString      
+2156 static xpath.c_xmlXPathFormatNumber     
+2157 xmlXPathCastNodeSetToString      
+2158 xmlXPathConvertString      
+2159 xmlXPathCastBooleanToNumber      
+2160 xmlXPathCastStringToNumber      
+2161 xmlXPathStringEvalNumber      
+2162 xmlXPathCastNodeToNumber      
+2163 xmlXPathCastNodeSetToNumber      
+2164 xmlXPathConvertNumber      
+2165 xmlXPathCastNumberToBoolean      
+2166 xmlXPathCastStringToBoolean      
+2167 xmlXPathCastNodeSetToBoolean      
+2168 xmlXPathConvertBoolean      
+2169 xmlXPathNewContext      
+2170 xmlXPathRegisterAllFunctions      
+2171 xmlXPathFreeContext      
+2172 xmlXPathNewParserContext      
+2173 static xpath.c_xmlXPathNewCompExpr     
+2174 xmlXPathFreeParserContext      
+2175 xmlXPathEqualValues      
+2176 static xpath.c_xmlXPathEqualNodeSets     
+2177 static xpath.c_xmlXPathEqualNodeSetFloat     
+2178 static xpath.c_xmlXPathEqualNodeSetString     
+2179 static xpath.c_xmlXPathEqualValuesCommon     
+2180 xmlXPathNotEqualValues      
+2181 xmlXPathCompareValues      
+2182 static xpath.c_xmlXPathCompareNodeSets     
+2183 static xpath.c_xmlXPathCompareNodeSetValue     
+2184 xmlXPathNumberFunction      
+2185 xmlXPathValueFlipSign      
+2186 xmlXPathAddValues      
+2187 xmlXPathSubValues      
+2188 xmlXPathMultValues      
+2189 xmlXPathDivValues      
+2190 xmlXPathModValues      
+2191 xmlXPathNextSelf      
+2192 xmlXPathNextChild      
+2193 xmlXPathNextDescendant      
+2194 xmlXPathNextDescendantOrSelf      
+2195 xmlXPathNextParent      
+2196 xmlXPathNextAncestor      
+2197 xmlXPathNextAncestorOrSelf      
+2198 xmlXPathNextFollowingSibling      
+2199 xmlXPathNextPrecedingSibling      
+2200 xmlXPathNextFollowing      
+2201 xmlXPathNextPreceding      
+2202 static xpath.c_xmlXPathIsAncestor     
+2203 xmlXPathNextNamespace      
+2204 xmlXPathNextAttribute      
+2205 xmlXPathRoot      
+2206 static xpath.c_xmlXPathCacheNewNodeSet     
+2207 xmlXPathLastFunction      
+2208 static xpath.c_xmlXPathCacheNewFloat     
+2209 xmlXPathPositionFunction      
+2210 xmlXPathCountFunction      
+2211 xmlXPathIdFunction      
+2212 static xpath.c_xmlXPathGetElementsByIds     
+2213 static xpath.c_xmlXPathCacheWrapNodeSet     
+2214 static xpath.c_xmlXPathCacheConvertString     
+2215 xmlXPathLocalNameFunction      
+2216 static xpath.c_xmlXPathCacheNewCString     
+2217 static xpath.c_xmlXPathCacheNewString     
+2218 xmlXPathNamespaceURIFunction      
+2219 xmlXPathStringFunction      
+2220 static xpath.c_xmlXPathCacheWrapString     
+2221 xmlXPathStringLengthFunction      
+2222 xmlXPathConcatFunction      
+2223 xmlXPathContainsFunction      
+2224 static xpath.c_xmlXPathCacheNewBoolean     
+2225 xmlXPathStartsWithFunction      
+2226 xmlXPathSubstringFunction      
+2227 xmlXPathSubstringBeforeFunction      
+2228 xmlXPathSubstringAfterFunction      
+2229 xmlXPathNormalizeFunction      
+2230 xmlXPathTranslateFunction      
+2231 xmlXPathBooleanFunction      
+2232 static xpath.c_xmlXPathCacheConvertBoolean     
+2233 xmlXPathNotFunction      
+2234 xmlXPathTrueFunction      
+2235 xmlXPathFalseFunction      
+2236 xmlXPathLangFunction      
+2237 static xpath.c_xmlXPathCacheConvertNumber     
+2238 xmlXPathSumFunction      
+2239 xmlXPathFloorFunction      
+2240 xmlXPathCeilingFunction      
+2241 xmlXPathRoundFunction      
+2242 xmlXPathParseNCName      
+2243 static xpath.c_xmlXPathParseNameComplex     
+2244 xmlXPathParseName      
+2245 xmlXPathIsNodeType      
+2246 xmlXPathEvalPredicate      
+2247 xmlXPathEvaluatePredicateResult      
+2248 xmlXPathCtxtCompile      
+2249 static xpath.c_xmlXPathTryStreamCompile     
+2250 static xpath.c_xmlXPathCompileExpr     
+2251 static xpath.c_xmlXPathOptimizeExpression     
+2252 xmlXPathCompile      
+2253 xmlXPathCompiledEval      
+2254 static xpath.c_xmlXPathCompiledEvalInternal     
+2255 xmlXPathCompiledEvalToBoolean      
+2256 xmlXPathEvalExpr      
+2257 static xpath.c_xmlXPathRunEval     
+2258 xmlXPathEval      
+2259 xmlXPathSetContextNode      
+2260 xmlXPathNodeEval      
+2261 xmlXPathEvalExpression      
+2262 static xpath.c_xmlXPathNameFunction     
+2263 static xpath.c_xmlXPathEscapeUriFunction     
+2264 static xpath.c_wrap_cmp     
+2265 static xpath.c_libxml_domnode_binary_insertion_find     
+2266 static xpath.c_xmlXPathCmpNodesExt     
+2267 static xpath.c_libxml_domnode_count_run     
+2268 static xpath.c_libxml_domnode_tim_sort_merge     
+2269 static xpath.c_libxml_domnode_reverse_elements     
+2270 static xpath.c_libxml_domnode_tim_sort_resize     
+2271 static xpath.c_xmlXPathDebugDumpNodeList     
+2272 static xpath.c_xmlXPathCacheFreeObjectList     
+2273 static xpath.c_xmlPointerListFree     
+2274 static xpath.c_xmlPointerListCreate     
+2275 static xpath.c_xmlPointerListAddSize     
+2276 static xpath.c_xmlXPathNodeValHash     
+2277 static xpath.c_xmlXPathStringHash     
+2278 static xpath.c_xmlXPathCompareNodeSetFloat     
+2279 static xpath.c_xmlXPathCompareNodeSetString     
+2280 static xpath.c_xmlXPathCurrentChar     
+2281 static xpath.c_xmlXPathCompAndExpr     
+2282 static xpath.c_xmlXPathCompExprAdd     
+2283 static xpath.c_xmlXPathCompEqualityExpr     
+2284 static xpath.c_xmlXPathCompRelationalExpr     
+2285 static xpath.c_xmlXPathCompAdditiveExpr     
+2286 static xpath.c_xmlXPathCompMultiplicativeExpr     
+2287 static xpath.c_xmlXPathCompUnaryExpr     
+2288 static xpath.c_xmlXPathCompUnionExpr     
+2289 static xpath.c_xmlXPathCompPathExpr     
+2290 static xpath.c_xmlXPathScanName     
+2291 static xpath.c_xmlXPathCompLocationPath     
+2292 static xpath.c_xmlXPathCompFilterExpr     
+2293 static xpath.c_xmlXPathCompRelativeLocationPath     
+2294 static xpath.c_xmlXPathCompPrimaryExpr     
+2295 static xpath.c_xmlXPathCompPredicate     
+2296 static xpath.c_xmlXPathCompVariableReference     
+2297 static xpath.c_xmlXPathCompNumber     
+2298 static xpath.c_xmlXPathCompLiteral     
+2299 static xpath.c_xmlXPathCompFunctionCall     
+2300 static xpath.c_xmlXPathParseQName     
+2301 static xpath.c_xmlXPathCompStep     
+2302 static xpath.c_xmlXPathIsAxisName     
+2303 static xpath.c_xmlXPathCompNodeTest     
+2304 static xpath.c_xmlXPathParseLiteral     
+2305 static xpath.c_xmlXPathCompParserContext     
+2306 static xpath.c_xmlXPathRunStreamEval     
+2307 static xpath.c_xmlXPathCompOpEvalToBoolean     
+2308 static xpath.c_xmlXPathCompOpEval     
+2309 static xpath.c_xmlXPathCheckOpLimit     
+2310 static xpath.c_xmlXPathNodeCollectAndTest     
+2311 static xpath.c_xmlXPathNodeSetMergeAndClear     
+2312 static xpath.c_xmlXPathNodeSetMergeAndClearNoDupls     
+2313 static xpath.c_xmlXPathNextChildElement     
+2314 static xpath.c_xmlXPathNextPrecedingInternal     
+2315 static xpath.c_xmlXPathIsPositionalPredicate     
+2316 static xpath.c_xmlXPathCompOpEvalPredicate     
+2317 static xpath.c_xmlXPathNodeSetFilter     
+2318 static xpath.c_xmlXPathNodeSetClear     
+2319 static xpath.c_xmlXPathNodeSetClearFromPos     
+2320 static xpath.c_xmlXPathSetFrame     
+2321 static xpath.c_xmlXPathPopFrame     
+2322 static xpath.c_xmlXPathCompOpEvalFirst     
+2323 static xpath.c_xmlXPathCompOpEvalLast     
+2324 static xpath.c_xmlXPathNodeSetKeepLast     
+2325 static xpath.c_xmlXPathLocationSetFilter     
+2326 static xpath.c_xmlXPathCompSwap     
+2327 static xpath.c_xmlXPathCompOpEvalFilterFirst     
+2328 xmlHasFeature      
+2329 xmlCheckLanguageID      
+2330 inputPush      
+2331 inputPop      
+2332 nodePush      
+2333 static parser.c_xmlFatalErrMsgInt     
+2334 static parser.c_xmlHaltParser     
+2335 nodePop      
+2336 namePush      
+2337 namePop      
+2338 xmlSkipBlankChars      
+2339 xmlParsePEReference      
+2340 xmlPopInput      
+2341 static parser.c_xmlFatalErr     
+2342 xmlPushInput      
+2343 static parser.c_xmlGROW     
+2344 xmlParseCharRef      
+2345 xmlParserHandlePEReference      
+2346 xmlStringLenDecodeEntities      
+2347 static parser.c_xmlParseStringCharRef     
+2348 static parser.c_xmlParseStringEntityRef     
+2349 static parser.c_xmlParserEntityCheck     
+2350 static parser.c_xmlFatalErrMsg     
+2351 xmlStringDecodeEntities      
+2352 static parser.c_xmlParseStringPEReference     
+2353 static parser.c_xmlLoadEntityContent     
+2354 static parser.c_magma_and     
+2355 xmlSplitQName      
+2356 static parser.c_xmlFatalErrMsgStr     
+2357 xmlParseName      
+2358 static parser.c_xmlParseNameComplex     
+2359 xmlParseNmtoken      
+2360 static parser.c_xmlIsNameChar     
+2361 xmlParseEntityValue      
+2362 static parser.c_xmlParseStringName     
+2363 xmlParseAttValue      
+2364 static parser.c_xmlParseAttValueInternal     
+2365 xmlParseSystemLiteral      
+2366 static parser.c_xmlSHRINK     
+2367 xmlParsePubidLiteral      
+2368 xmlParseCharData      
+2369 static parser.c_areBlanks     
+2370 static parser.c_xmlParseCharDataComplex     
+2371 xmlParseExternalID      
+2372 xmlParseComment      
+2373 static parser.c_xmlParseCommentComplex     
+2374 xmlParsePITarget      
+2375 static parser.c_xmlWarningMsg     
+2376 static parser.c_xmlNsErr     
+2377 xmlParsePI      
+2378 static parser.c_xmlParseCatalogPI     
+2379 xmlParseNotationDecl      
+2380 xmlParseEntityDecl      
+2381 static parser.c_xmlErrMsgStr     
+2382 xmlParseDefaultDecl      
+2383 xmlParseNotationType      
+2384 static parser.c_xmlValidityError     
+2385 xmlParseEnumerationType      
+2386 xmlParseEnumeratedType      
+2387 xmlParseAttributeType      
+2388 xmlParseAttributeListDecl      
+2389 static parser.c_xmlAttrNormalizeSpace     
+2390 static parser.c_xmlAddDefAttrs     
+2391 static parser.c_xmlAddSpecialAttr     
+2392 xmlParseElementMixedContentDecl      
+2393 xmlParseElementChildrenContentDecl      
+2394 static parser.c_xmlParseElementChildrenContentDeclPriv     
+2395 xmlParseElementContentDecl      
+2396 xmlParseElementDecl      
+2397 xmlParseMarkupDecl      
+2398 xmlParseTextDecl      
+2399 xmlParseVersionInfo      
+2400 xmlParseEncodingDecl      
+2401 xmlParseExternalSubset      
+2402 static parser.c_xmlDetectSAX2     
+2403 static parser.c_xmlParseConditionalSections     
+2404 xmlParseReference      
+2405 xmlParseEntityRef      
+2406 static parser.c_xmlParseBalancedChunkMemoryInternal     
+2407 static parser.c_xmlParseExternalEntityPrivate     
+2408 static parser.c_xmlAddEntityReference     
+2409 xmlParseDocTypeDecl      
+2410 xmlParseAttribute      
+2411 xmlParseStartTag      
+2412 static parser.c_xmlErrAttributeDup     
+2413 xmlParseEndTag      
+2414 static parser.c_xmlParseEndTag1     
+2415 xmlParseCDSect      
+2416 xmlParseContent      
+2417 static parser.c_xmlParseContentInternal     
+2418 static parser.c_xmlFatalErrMsgStrIntStr     
+2419 xmlParseElement      
+2420 static parser.c_xmlParseElementStart     
+2421 static parser.c_xmlParseElementEnd     
+2422 xmlParseVersionNum      
+2423 xmlParseEncName      
+2424 xmlParseSDDecl      
+2425 xmlParseXMLDecl      
+2426 xmlParseMisc      
+2427 xmlParseDocument      
+2428 xmlInitParser      
+2429 static parser.c_xmlParseInternalSubset     
+2430 static parser.c_xmlCleanSpecialAttr     
+2431 xmlParseExtParsedEnt      
+2432 xmlParseChunk      
+2433 static parser.c_xmlParseTryOrFinish     
+2434 static parser.c_xmlParseCheckTransition     
+2435 xmlCreatePushParserCtxt      
+2436 xmlStopParser      
+2437 xmlCreateIOParserCtxt      
+2438 xmlIOParseDTD      
+2439 xmlSAXParseDTD      
+2440 xmlParseDTD      
+2441 xmlParseCtxtExternalEntity      
+2442 xmlParseExternalEntity      
+2443 xmlParseBalancedChunkMemory      
+2444 xmlParseBalancedChunkMemoryRecover      
+2445 xmlParseInNodeContext      
+2446 xmlCreateMemoryParserCtxt      
+2447 static parser.c_xmlCtxtUseOptionsInternal     
+2448 static parser.c_xmlGetNamespace     
+2449 static parser.c_nsPush     
+2450 static parser.c_nsPop     
+2451 xmlSAXParseEntity      
+2452 xmlCreateFileParserCtxt      
+2453 xmlParseEntity      
+2454 xmlCreateEntityParserCtxt      
+2455 static parser.c_xmlCreateEntityParserCtxtInternal     
+2456 xmlCreateURLParserCtxt      
+2457 xmlSAXParseFileWithData      
+2458 xmlSAXParseFile      
+2459 xmlRecoverDoc      
+2460 xmlSAXParseDoc      
+2461 xmlParseFile      
+2462 xmlRecoverFile      
+2463 xmlSetupParserForBuffer      
+2464 xmlSAXUserParseFile      
+2465 xmlSAXParseMemoryWithData      
+2466 xmlSAXParseMemory      
+2467 xmlParseMemory      
+2468 xmlRecoverMemory      
+2469 xmlSAXUserParseMemory      
+2470 xmlCreateDocParserCtxt      
+2471 xmlParseDoc      
+2472 xmlSetEntityReferenceFunc      
+2473 xmlCleanupParser      
+2474 xmlCtxtReset      
+2475 xmlCtxtResetPush      
+2476 xmlCtxtUseOptions      
+2477 xmlReadDoc      
+2478 static parser.c_xmlDoRead     
+2479 xmlReadFile      
+2480 xmlReadMemory      
+2481 xmlReadFd      
+2482 xmlReadIO      
+2483 xmlCtxtReadDoc      
+2484 xmlCtxtReadFile      
+2485 xmlCtxtReadMemory      
+2486 xmlCtxtReadFd      
+2487 xmlCtxtReadIO      
+2488 static parser.c_xmlIsNameStartChar     
+2489 static parser.c_xmlParseNameAndCompare     
+2490 static parser.c_spacePop     
+2491 static parser.c_xmlParseAttValueComplex     
+2492 static parser.c_spacePush     
+2493 static parser.c_xmlParseStartTag2     
+2494 static parser.c_nameNsPush     
+2495 static parser.c_xmlParseQName     
+2496 static parser.c_xmlParseAttribute2     
+2497 static parser.c_xmlNsWarn     
+2498 static parser.c_xmlCtxtGrowAttrs     
+2499 static parser.c_xmlParseNCName     
+2500 static parser.c_xmlParseNCNameComplex     
+2501 static parser.c_xmlAttrNormalizeSpace2     
+2502 static parser.c_xmlParseEndTag2     
+2503 static parser.c_xmlParseQNameAndCompare     
+2504 static parser.c_xmlCleanSpecialAttrCallback     
+2505 static parser.c_xmlParseGetLasts     
+2506 static parser.c_xmlParseLookupSequence     
+2507 static parser.c_nameNsPop     
+2508 static parser.c_xmlCheckCdataPush     
+2509 xmlSchemaNewFacet      
+2510 xmlSchemaFreeWildcard      
+2511 static xmlschemas.c_xmlSchemaFreeAnnot     
+2512 static xmlschemas.c_xmlSchemaFreeWildcardNsSet     
+2513 xmlSchemaFreeFacet      
+2514 xmlSchemaFreeType      
+2515 static xmlschemas.c_xmlSchemaItemListFree     
+2516 static xmlschemas.c_xmlSchemaFreeTypeLinkList     
+2517 xmlSchemaFree      
+2518 static xmlschemas.c_xmlSchemaBucketFreeEntry     
+2519 static xmlschemas.c_xmlSchemaBucketFree     
+2520 xmlSchemaDump      
+2521 static xmlschemas.c_xmlSchemaAnnotDump     
+2522 static xmlschemas.c_xmlSchemaTypeDumpEntry     
+2523 static xmlschemas.c_xmlSchemaElementDump     
+2524 xmlSchemaNewParserCtxt      
+2525 static xmlschemas.c_xmlSchemaParserCtxtCreate     
+2526 xmlSchemaNewMemParserCtxt      
+2527 xmlSchemaNewDocParserCtxt      
+2528 xmlSchemaFreeParserCtxt      
+2529 xmlSchemaFreeValidCtxt      
+2530 static xmlschemas.c_xmlSchemaConstructionCtxtFree     
+2531 xmlSchemaCheckFacet      
+2532 static xmlschemas.c_xmlSchemaInternalErr     
+2533 static xmlschemas.c_xmlSchemaVCheckCVCSimpleType     
+2534 static xmlschemas.c_xmlSchemaCustomErr     
+2535 static xmlschemas.c_xmlSchemaFacetTypeToString     
+2536 static xmlschemas.c_xmlSchemaFormatQName     
+2537 static xmlschemas.c_xmlSchemaCustomErr4     
+2538 xmlSchemaParse      
+2539 static xmlschemas.c_xmlSchemaNewSchema     
+2540 static xmlschemas.c_xmlSchemaConstructionCtxtCreate     
+2541 static xmlschemas.c_xmlSchemaAddSchemaDoc     
+2542 static xmlschemas.c_xmlSchemaParseNewDocWithContext     
+2543 static xmlschemas.c_xmlSchemaFixupComponents     
+2544 xmlSchemaSetParserErrors      
+2545 xmlSchemaSetValidErrors      
+2546 xmlSchemaSetParserStructuredErrors      
+2547 xmlSchemaSetValidStructuredErrors      
+2548 xmlSchemaGetParserErrors      
+2549 xmlSchemaNewValidCtxt      
+2550 static xmlschemas.c_xmlSchemaVErrMemory     
+2551 static xmlschemas.c_xmlSchemaItemListCreate     
+2552 xmlSchemaValidateSetFilename      
+2553 static xmlschemas.c_xmlSchemaIDCFreeKey     
+2554 static xmlschemas.c_xmlSchemaFreeIDCStateObjList     
+2555 static xmlschemas.c_xmlSchemaClearAttrInfos     
+2556 static xmlschemas.c_xmlSchemaClearElemInfo     
+2557 xmlSchemaIsValid      
+2558 xmlSchemaGetValidErrors      
+2559 xmlSchemaSetValidOptions      
+2560 xmlSchemaValidCtxtGetOptions      
+2561 xmlSchemaValidateOneElement      
+2562 static xmlschemas.c_xmlSchemaVStart     
+2563 xmlSchemaValidateDoc      
+2564 xmlSchemaSAXPlug      
+2565 static xmlschemas.c_xmlSchemaSAXHandleStartElementNs     
+2566 static xmlschemas.c_xmlSchemaSAXHandleEndElementNs     
+2567 static xmlschemas.c_xmlSchemaSAXHandleText     
+2568 static xmlschemas.c_xmlSchemaSAXHandleCDataSection     
+2569 static xmlschemas.c_xmlSchemaSAXHandleReference     
+2570 static xmlschemas.c_internalSubsetSplit     
+2571 static xmlschemas.c_isStandaloneSplit     
+2572 static xmlschemas.c_hasInternalSubsetSplit     
+2573 static xmlschemas.c_hasExternalSubsetSplit     
+2574 static xmlschemas.c_resolveEntitySplit     
+2575 static xmlschemas.c_getEntitySplit     
+2576 static xmlschemas.c_entityDeclSplit     
+2577 static xmlschemas.c_notationDeclSplit     
+2578 static xmlschemas.c_attributeDeclSplit     
+2579 static xmlschemas.c_elementDeclSplit     
+2580 static xmlschemas.c_unparsedEntityDeclSplit     
+2581 static xmlschemas.c_setDocumentLocatorSplit     
+2582 static xmlschemas.c_startDocumentSplit     
+2583 static xmlschemas.c_endDocumentSplit     
+2584 static xmlschemas.c_processingInstructionSplit     
+2585 static xmlschemas.c_commentSplit     
+2586 static xmlschemas.c_warningSplit     
+2587 static xmlschemas.c_errorSplit     
+2588 static xmlschemas.c_fatalErrorSplit     
+2589 static xmlschemas.c_getParameterEntitySplit     
+2590 static xmlschemas.c_externalSubsetSplit     
+2591 static xmlschemas.c_charactersSplit     
+2592 static xmlschemas.c_ignorableWhitespaceSplit     
+2593 static xmlschemas.c_cdataBlockSplit     
+2594 static xmlschemas.c_referenceSplit     
+2595 static xmlschemas.c_startElementNsSplit     
+2596 static xmlschemas.c_endElementNsSplit     
+2597 static xmlschemas.c_xmlSchemaPreRun     
+2598 xmlSchemaSAXUnplug      
+2599 static xmlschemas.c_xmlSchemaPostRun     
+2600 xmlSchemaValidateSetLocator      
+2601 xmlSchemaValidateStream      
+2602 static xmlschemas.c_xmlSchemaValidateStreamLocator     
+2603 xmlSchemaValidateFile      
+2604 xmlSchemaValidCtxtGetParserCtxt      
+2605 static xmlschemas.c_xmlSchemaComponentListFree     
+2606 static xmlschemas.c_xmlSchemaFreeAttribute     
+2607 static xmlschemas.c_xmlSchemaFreeAttributeUse     
+2608 static xmlschemas.c_xmlSchemaFreeAttributeUseProhib     
+2609 static xmlschemas.c_xmlSchemaFreeElement     
+2610 static xmlschemas.c_xmlSchemaFreeModelGroup     
+2611 static xmlschemas.c_xmlSchemaFreeAttributeGroup     
+2612 static xmlschemas.c_xmlSchemaFreeModelGroupDef     
+2613 static xmlschemas.c_xmlSchemaFreeIDC     
+2614 static xmlschemas.c_xmlSchemaFreeNotation     
+2615 static xmlschemas.c_xmlSchemaFreeQNameRef     
+2616 static xmlschemas.c_xmlSchemaPSimpleInternalErr     
+2617 static xmlschemas.c_xmlSchemaGetComponentTypeStr     
+2618 static xmlschemas.c_xmlSchemaItemTypeToStr     
+2619 static xmlschemas.c_xmlSchemaTypeDump     
+2620 static xmlschemas.c_xmlSchemaAttrUsesDump     
+2621 static xmlschemas.c_xmlSchemaContentModelDump     
+2622 static xmlschemas.c_xmlSchemaPErrMemory     
+2623 static xmlschemas.c_xmlSchemaSubstGroupFreeEntry     
+2624 static xmlschemas.c_xmlSchemaRedefListFree     
+2625 static xmlschemas.c_xmlSchemaSubstGroupFree     
+2626 static xmlschemas.c_xmlSchemaInternalErr2     
+2627 static xmlschemas.c_xmlSchemaErr3     
+2628 static xmlschemas.c_xmlSchemaErr4Line     
+2629 static xmlschemas.c_xmlSchemaGetComponentNode     
+2630 static xmlschemas.c_xmlSchemaFormatItemForReport     
+2631 static xmlschemas.c_xmlSchemaFormatNodeForError     
+2632 static xmlschemas.c_xmlSchemaErr4     
+2633 static xmlschemas.c_xmlSchemaGetComponentQName     
+2634 static xmlschemas.c_xmlSchemaGetComponentDesignation     
+2635 static xmlschemas.c_xmlSchemaWildcardPCToString     
+2636 static xmlschemas.c_xmlSchemaGetComponentTargetNs     
+2637 static xmlschemas.c_xmlSchemaGetComponentName     
+2638 static xmlschemas.c_xmlSchemaGetSchemaBucket     
+2639 static xmlschemas.c_xmlSchemaSchemaRelationCreate     
+2640 static xmlschemas.c_xmlSchemaSchemaRelationAddChild     
+2641 static xmlschemas.c_xmlSchemaGetSchemaBucketByTNS     
+2642 static xmlschemas.c_xmlSchemaCustomWarning     
+2643 static xmlschemas.c_xmlSchemaGetChameleonSchemaBucket     
+2644 static xmlschemas.c_xmlSchemaPErr     
+2645 static xmlschemas.c_xmlSchemaCleanupDoc     
+2646 static xmlschemas.c_xmlSchemaGetProp     
+2647 static xmlschemas.c_xmlSchemaBucketCreate     
+2648 static xmlschemas.c_xmlSchemaIsBlank     
+2649 static xmlschemas.c_xmlSchemaItemListAdd     
+2650 static xmlschemas.c_xmlSchemaClearSchemaDefaults     
+2651 static xmlschemas.c_xmlSchemaParseSchemaElement     
+2652 static xmlschemas.c_xmlSchemaParseSchemaTopLevel     
+2653 static xmlschemas.c_xmlSchemaPValAttrID     
+2654 static xmlschemas.c_xmlSchemaGetPropNode     
+2655 static xmlschemas.c_xmlSchemaPValAttrNode     
+2656 static xmlschemas.c_xmlSchemaGetNodeContent     
+2657 static xmlschemas.c_xmlSchemaPValAttrFormDefault     
+2658 static xmlschemas.c_xmlSchemaPSimpleTypeErr     
+2659 static xmlschemas.c_xmlSchemaPValAttrBlockFinal     
+2660 static xmlschemas.c_xmlSchemaPValAttrNodeID     
+2661 static xmlschemas.c_xmlSchemaGetNodeContentNoDict     
+2662 static xmlschemas.c_xmlSchemaPValAttrNodeValue     
+2663 static xmlschemas.c_xmlSchemaIsGlobalItem     
+2664 static xmlschemas.c_xmlSchemaPErrExt     
+2665 static xmlschemas.c_xmlSchemaParseAnnotation     
+2666 static xmlschemas.c_xmlSchemaParseImport     
+2667 static xmlschemas.c_xmlSchemaParseInclude     
+2668 static xmlschemas.c_xmlSchemaParseRedefine     
+2669 static xmlschemas.c_xmlSchemaParseComplexType     
+2670 static xmlschemas.c_xmlSchemaParseSimpleType     
+2671 static xmlschemas.c_xmlSchemaParseElement     
+2672 static xmlschemas.c_xmlSchemaParseGlobalAttribute     
+2673 static xmlschemas.c_xmlSchemaParseAttributeGroupDefinition     
+2674 static xmlschemas.c_xmlSchemaParseModelGroupDefinition     
+2675 static xmlschemas.c_xmlSchemaParseNotation     
+2676 static xmlschemas.c_xmlSchemaPContentErr     
+2677 static xmlschemas.c_xmlSchemaNewAnnot     
+2678 static xmlschemas.c_xmlSchemaPIllegalAttrErr     
+2679 static xmlschemas.c_xmlSchemaPValAttr     
+2680 static xmlschemas.c_xmlSchemaGetPropNodeNs     
+2681 static xmlschemas.c_xmlSchemaFormatQNameNs     
+2682 static xmlschemas.c_xmlSchemaPCustomErr     
+2683 static xmlschemas.c_xmlSchemaBuildAbsoluteURI     
+2684 static xmlschemas.c_xmlSchemaParseNewDoc     
+2685 static xmlschemas.c_xmlSchemaPCustomErrExt     
+2686 static xmlschemas.c_xmlSchemaNewParserCtxtUseDict     
+2687 static xmlschemas.c_xmlSchemaParseIncludeOrRedefine     
+2688 static xmlschemas.c_xmlSchemaParseIncludeOrRedefineAttrs     
+2689 static xmlschemas.c_xmlSchemaPMissingAttrErr     
+2690 static xmlschemas.c_xmlSchemaAddType     
+2691 static xmlschemas.c_xmlSchemaPGetBoolNodeValue     
+2692 static xmlschemas.c_xmlSchemaParseSimpleContent     
+2693 static xmlschemas.c_xmlSchemaParseComplexContent     
+2694 static xmlschemas.c_xmlSchemaParseModelGroup     
+2695 static xmlschemas.c_xmlSchemaParseModelGroupDefRef     
+2696 static xmlschemas.c_xmlSchemaParseLocalAttributes     
+2697 static xmlschemas.c_xmlSchemaParseAnyAttribute     
+2698 static xmlschemas.c_xmlSchemaAddRedef     
+2699 static xmlschemas.c_xmlSchemaAddItemSize     
+2700 static xmlschemas.c_xmlSchemaItemListAddSize     
+2701 static xmlschemas.c_xmlSchemaAddAnnotation     
+2702 static xmlschemas.c_xmlSchemaParseRestriction     
+2703 static xmlschemas.c_xmlSchemaParseExtension     
+2704 static xmlschemas.c_xmlSchemaPValAttrQName     
+2705 static xmlschemas.c_xmlSchemaParseFacet     
+2706 static xmlschemas.c_xmlSchemaPValAttrNodeQName     
+2707 static xmlschemas.c_xmlSchemaPValAttrNodeQNameValue     
+2708 static xmlschemas.c_xmlSchemaPErr2     
+2709 static xmlschemas.c_xmlGetBooleanProp     
+2710 static xmlschemas.c_xmlSchemaAddModelGroup     
+2711 static xmlschemas.c_xmlGetMinOccurs     
+2712 static xmlschemas.c_xmlGetMaxOccurs     
+2713 static xmlschemas.c_xmlSchemaPCheckParticleCorrect_2     
+2714 static xmlschemas.c_xmlSchemaAddParticle     
+2715 static xmlschemas.c_xmlSchemaParseAny     
+2716 static xmlschemas.c_xmlSchemaPCustomAttrErr     
+2717 static xmlschemas.c_xmlSchemaAddWildcard     
+2718 static xmlschemas.c_xmlSchemaParseWildcardNs     
+2719 static xmlschemas.c_xmlSchemaNewWildcardNsConstraint     
+2720 static xmlschemas.c_xmlSchemaCheckReference     
+2721 static xmlschemas.c_xmlSchemaNewQNameRef     
+2722 static xmlschemas.c_xmlSchemaParseLocalAttribute     
+2723 static xmlschemas.c_xmlSchemaParseAttributeGroupRef     
+2724 static xmlschemas.c_xmlSchemaPMutualExclAttrErr     
+2725 static xmlschemas.c_xmlSchemaAddAttributeUse     
+2726 static xmlschemas.c_xmlSchemaAddAttribute     
+2727 static xmlschemas.c_xmlSchemaAddAttributeUseProhib     
+2728 static xmlschemas.c_xmlSchemaParseList     
+2729 static xmlschemas.c_xmlSchemaParseUnion     
+2730 static xmlschemas.c_xmlSchemaAddElement     
+2731 static xmlschemas.c_xmlSchemaParseIDC     
+2732 static xmlschemas.c_xmlSchemaAddIDC     
+2733 static xmlschemas.c_xmlSchemaParseIDCSelectorAndField     
+2734 static xmlschemas.c_xmlSchemaCheckCSelectorXPath     
+2735 static xmlschemas.c_xmlSchemaAddAttributeGroupDefinition     
+2736 static xmlschemas.c_xmlSchemaAddModelGroupDefinition     
+2737 static xmlschemas.c_xmlSchemaAddNotation     
+2738 static xmlschemas.c_xmlSchemaCheckSRCRedefineFirst     
+2739 static xmlschemas.c_xmlSchemaAddComponents     
+2740 static xmlschemas.c_xmlSchemaResolveElementReferences     
+2741 static xmlschemas.c_xmlSchemaResolveTypeReferences     
+2742 static xmlschemas.c_xmlSchemaResolveAttrTypeReferences     
+2743 static xmlschemas.c_xmlSchemaResolveAttrUseReferences     
+2744 static xmlschemas.c_xmlSchemaResolveAttrGroupReferences     
+2745 static xmlschemas.c_xmlSchemaResolveModelGroupParticleReferences     
+2746 static xmlschemas.c_xmlSchemaResolveIDCKeyReferences     
+2747 static xmlschemas.c_xmlSchemaResolveAttrUseProhibReferences     
+2748 static xmlschemas.c_xmlSchemaCheckTypeDefCircular     
+2749 static xmlschemas.c_xmlSchemaCheckGroupDefCircular     
+2750 static xmlschemas.c_xmlSchemaCheckAttrGroupCircular     
+2751 static xmlschemas.c_xmlSchemaModelGroupToModelGroupDefFixup     
+2752 static xmlschemas.c_xmlSchemaAttributeGroupExpandRefs     
+2753 static xmlschemas.c_xmlSchemaFixupSimpleTypeStageOne     
+2754 static xmlschemas.c_xmlSchemaCheckUnionTypeDefCircular     
+2755 static xmlschemas.c_xmlSchemaFixupSimpleTypeStageTwo     
+2756 static xmlschemas.c_xmlSchemaCheckAttrPropsCorrect     
+2757 static xmlschemas.c_xmlSchemaCheckAttrUsePropsCorrect     
+2758 static xmlschemas.c_xmlSchemaCheckAGPropsCorrect     
+2759 static xmlschemas.c_xmlSchemaCheckSRCRedefineSecond     
+2760 static xmlschemas.c_xmlSchemaFixupComplexType     
+2761 static xmlschemas.c_xmlSchemaCheckElementDeclComponent     
+2762 static xmlschemas.c_xmlSchemaBuildContentModel     
+2763 static xmlschemas.c_xmlSchemaFindRedefCompInGraph     
+2764 static xmlschemas.c_xmlSchemaGetType     
+2765 static xmlschemas.c_xmlSchemaPResCompAttrErr     
+2766 static xmlschemas.c_xmlSchemaGetElem     
+2767 static xmlschemas.c_xmlSchemaResolveUnionMemberTypes     
+2768 static xmlschemas.c_xmlSchemaGetNamedComponent     
+2769 static xmlschemas.c_xmlSchemaGetGroup     
+2770 static xmlschemas.c_xmlSchemaGetAttributeDecl     
+2771 static xmlschemas.c_xmlSchemaGetAttributeGroup     
+2772 static xmlschemas.c_xmlSchemaGetIDC     
+2773 static xmlschemas.c_xmlSchemaCheckTypeDefCircularInternal     
+2774 static xmlschemas.c_xmlSchemaGetCircModelGrDefRef     
+2775 static xmlschemas.c_xmlSchemaCheckAttrGroupCircularRecur     
+2776 static xmlschemas.c_xmlSchemaExpandAttributeGroupRefs     
+2777 static xmlschemas.c_xmlSchemaItemListRemove     
+2778 static xmlschemas.c_xmlSchemaCloneWildcardNsConstraints     
+2779 static xmlschemas.c_xmlSchemaIntersectWildcards     
+2780 static xmlschemas.c_xmlSchemaItemListInsert     
+2781 static xmlschemas.c_xmlSchemaPSimpleErr     
+2782 static xmlschemas.c_xmlSchemaCheckUnionTypeDefCircularRecur     
+2783 static xmlschemas.c_xmlSchemaGetUnionSimpleTypeMemberTypes     
+2784 static xmlschemas.c_xmlSchemaTypeFixup     
+2785 static xmlschemas.c_xmlSchemaFinishMemberTypeDefinitionsProperty     
+2786 static xmlschemas.c_xmlSchemaCheckSTPropsCorrect     
+2787 static xmlschemas.c_xmlSchemaCheckCOSSTRestricts     
+2788 static xmlschemas.c_xmlSchemaCheckFacetValues     
+2789 static xmlschemas.c_xmlSchemaDeriveAndValidateFacets     
+2790 static xmlschemas.c_xmlSchemaTypeFixupWhitespace     
+2791 static xmlschemas.c_xmlSchemaTypeFixupOptimFacets     
+2792 static xmlschemas.c_xmlSchemaTypeFinalContains     
+2793 static xmlschemas.c_xmlSchemaGetPrimitiveType     
+2794 static xmlschemas.c_xmlSchemaPIllegalFacetAtomicErr     
+2795 static xmlschemas.c_xmlSchemaPIllegalFacetListUnionErr     
+2796 static xmlschemas.c_xmlSchemaCheckCOSSTDerivedOK     
+2797 static xmlschemas.c_xmlSchemaCreateVCtxtOnPCtxt     
+2798 static xmlschemas.c_xmlSchemaDeriveFacetErr     
+2799 static xmlschemas.c_xmlSchemaIsDerivedFromBuiltInType     
+2800 static xmlschemas.c_xmlSchemaAreValuesEqual     
+2801 static xmlschemas.c_xmlSchemaCheckDerivationOKRestriction2to4     
+2802 static xmlschemas.c_xmlSchemaPAttrUseErr4     
+2803 static xmlschemas.c_xmlSchemaGetEffectiveValueConstraint     
+2804 static xmlschemas.c_xmlSchemaCheckCVCWildcardNamespace     
+2805 static xmlschemas.c_xmlSchemaCheckCOSNSSubset     
+2806 static xmlschemas.c_xmlSchemaCheckSRCCT     
+2807 static xmlschemas.c_xmlSchemaFixupTypeAttributeUses     
+2808 static xmlschemas.c_xmlSchemaCheckCTComponent     
+2809 static xmlschemas.c_xmlSchemaIsParticleEmptiable     
+2810 static xmlschemas.c_xmlSchemaGetParticleEmptiable     
+2811 static xmlschemas.c_xmlSchemaUnionWildcards     
+2812 static xmlschemas.c_xmlSchemaCheckCTPropsCorrect     
+2813 static xmlschemas.c_xmlSchemaCheckCOSCTExtends     
+2814 static xmlschemas.c_xmlSchemaCheckDerivationOKRestriction     
+2815 static xmlschemas.c_xmlSchemaCheckElemPropsCorrect     
+2816 static xmlschemas.c_xmlSchemaCheckElemSubstGroup     
+2817 static xmlschemas.c_xmlSchemaCheckSubstGroupCircular     
+2818 static xmlschemas.c_xmlSchemaCheckCOSDerivedOK     
+2819 static xmlschemas.c_xmlSchemaParseCheckCOSValidDefault     
+2820 static xmlschemas.c_xmlSchemaCheckCOSCTDerivedOK     
+2821 static xmlschemas.c_xmlSchemaAreEqualTypes     
+2822 static xmlschemas.c_xmlSchemaAddElementSubstitutionMember     
+2823 static xmlschemas.c_xmlSchemaSubstGroupGet     
+2824 static xmlschemas.c_xmlSchemaSubstGroupAdd     
+2825 static xmlschemas.c_xmlSchemaBuildAContentModel     
+2826 static xmlschemas.c_xmlSchemaBuildContentModelForElement     
+2827 static xmlschemas.c_xmlSchemaBuildContentModelForSubstGroup     
+2828 static xmlschemas.c_xmlSchemaNormalizeValue     
+2829 static xmlschemas.c_xmlSchemaValidateNotation     
+2830 static xmlschemas.c_xmlSchemaValidateQName     
+2831 static xmlschemas.c_xmlSchemaValidateFacets     
+2832 static xmlschemas.c_xmlSchemaSimpleTypeErr     
+2833 static xmlschemas.c_xmlSchemaGetWhiteSpaceFacetValue     
+2834 static xmlschemas.c_xmlSchemaLookupNamespace     
+2835 static xmlschemas.c_xmlSchemaGetNotation     
+2836 static xmlschemas.c_xmlSchemaFacetErr     
+2837 static xmlschemas.c_xmlSchemaEvalErrorNodeType     
+2838 static xmlschemas.c_xmlSchemaErr     
+2839 static xmlschemas.c_xmlSchemaFormatFacetEnumSet     
+2840 static xmlschemas.c_xmlSchemaGetCanonValueWhtspExt     
+2841 static xmlschemas.c_xmlSchemaGetCanonValueWhtspExt_1     
+2842 static xmlschemas.c_xmlSchemaIDCReleaseMatcherList     
+2843 static xmlschemas.c_xmlSchemaIDCFreeIDCTable     
+2844 static xmlschemas.c_xmlFreeIDCHashEntry     
+2845 static xmlschemas.c_xmlSchemaIDCFreeBinding     
+2846 static xmlschemas.c_xmlSchemaVDocWalk     
+2847 static xmlschemas.c_xmlSchemaValidatorPushElem     
+2848 static xmlschemas.c_xmlSchemaValidatorPushAttribute     
+2849 static xmlschemas.c_xmlSchemaValidateElem     
+2850 static xmlschemas.c_xmlSchemaVPushText     
+2851 static xmlschemas.c_xmlSchemaValidatorPopElem     
+2852 static xmlschemas.c_xmlSchemaGetFreshElemInfo     
+2853 static xmlschemas.c_xmlSchemaGetFreshAttrInfo     
+2854 static xmlschemas.c_xmlSchemaAssembleByXSI     
+2855 static xmlschemas.c_xmlSchemaAugmentImportedIDC     
+2856 static xmlschemas.c_xmlSchemaValidateChildElem     
+2857 static xmlschemas.c_xmlSchemaValidateElemWildcard     
+2858 static xmlschemas.c_xmlSchemaValidateElemDecl     
+2859 static xmlschemas.c_xmlSchemaXPathEvaluate     
+2860 static xmlschemas.c_xmlSchemaVAttributesComplex     
+2861 static xmlschemas.c_xmlSchemaVAttributesSimple     
+2862 static xmlschemas.c_xmlSchemaGetMetaAttrInfo     
+2863 static xmlschemas.c_xmlSchemaAssembleByLocation     
+2864 static xmlschemas.c_xmlSchemaAugmentIDC     
+2865 static xmlschemas.c_xmlSchemaProcessXSIType     
+2866 static xmlschemas.c_xmlSchemaVContentModelCallback     
+2867 static xmlschemas.c_xmlSchemaComplexTypeErr     
+2868 static xmlschemas.c_xmlSchemaVExpandQName     
+2869 static xmlschemas.c_xmlSchemaIDCRegisterMatchers     
+2870 static xmlschemas.c_xmlSchemaIDCAddStateObject     
+2871 static xmlschemas.c_xmlSchemaXPathProcessHistory     
+2872 static xmlschemas.c_xmlSchemaXPathPop     
+2873 static xmlschemas.c_xmlSchemaIllegalAttrErr     
+2874 static xmlschemas.c_xmlSchemaGetIDCDesignation     
+2875 static xmlschemas.c_xmlSchemaIDCStoreKey     
+2876 static xmlschemas.c_xmlSchemaIDCAcquireTargetList     
+2877 static xmlschemas.c_xmlSchemaHashKeySequence     
+2878 static xmlschemas.c_xmlSchemaFormatIDCKeySequence     
+2879 static xmlschemas.c_xmlSchemaIDCStoreNodeTableItem     
+2880 static xmlschemas.c_xmlSchemaVAddNodeQName     
+2881 static xmlschemas.c_xmlSchemaFormatIDCKeySequence_1     
+2882 static xmlschemas.c_xmlSchemaGetCanonValueHash     
+2883 static xmlschemas.c_xmlSchemaFormatErrorNodeQName     
+2884 static xmlschemas.c_xmlSchemaVCheckINodeDataType     
+2885 static xmlschemas.c_xmlSchemaCheckCOSValidDefault     
+2886 static xmlschemas.c_xmlSchemaIDCFillNodeTables     
+2887 static xmlschemas.c_xmlSchemaCheckCVCIDCKeyRef     
+2888 static xmlschemas.c_xmlSchemaBubbleIDCNodeTables     
+2889 static xmlschemas.c_xmlSchemaIDCAcquireBinding     
+2890 static xmlschemas.c_xmlSchemaIDCAppendNodeTableItem     
+2891 static xmlschemas.c_xmlSchemaIDCNewBinding     
+2892 static xmlschemas.c_xmlSchemaKeyrefErr     
+2893 static xmlschemas.c_xmlSchemaCreatePCtxtOnVCtxt     
+2894 static xmlschemas.c_xmlSchemaClearValidCtxt     
+2895 static xmlschemas.c_xmlSchemaIDCFreeMatcherList     
+2896 static xmlschemas.c_xmlSchemaItemListClear     

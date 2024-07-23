@@ -1,0 +1,1227 @@
+0 LLVMFuzzerTestOneInput      
+1 static ossfuzz/sndfile_fuzzer.cc__ZL13vfget_filelenPv     
+2 static ossfuzz/sndfile_fuzzer.cc__ZL6vfseekliPv     
+3 static ossfuzz/sndfile_fuzzer.cc__ZL6vfreadPvlS_     
+4 static ossfuzz/sndfile_fuzzer.cc__ZL7vfwritePKvlPv     
+5 static ossfuzz/sndfile_fuzzer.cc__ZL6vftellPv     
+6 Gsm_Decoder      
+7 static src/GSM610/decode.c_Postprocessing     
+8 static src/GSM610/decode.c_GSM_MULT_R     
+9 static src/GSM610/decode.c_GSM_ADD     
+10 gsm_encode      
+11 gsm_create      
+12 gsm_init      
+13 main      
+14 Gsm_Long_Term_Predictor      
+15 static src/GSM610/long_term.c_Fast_Calculation_of_the_LTP_parameters     
+16 static src/GSM610/long_term.c_Calculation_of_the_LTP_parameters     
+17 static src/GSM610/long_term.c_Long_term_analysis_filtering     
+18 Gsm_Long_Term_Synthesis_Filtering      
+19 static src/GSM610/long_term.c_GSM_MULT_R     
+20 static src/GSM610/long_term.c_GSM_ADD     
+21 static src/GSM610/long_term.c_GSM_ABS     
+22 static src/GSM610/long_term.c_SASR_W     
+23 static src/GSM610/long_term.c_SASR_L     
+24 static src/GSM610/long_term.c_GSM_SUB     
+25 gsm_destroy      
+26 gsm_decode      
+27 Gsm_Coder      
+28 static src/GSM610/code.c_GSM_ADD     
+29 gsm_add      
+30 gsm_sub      
+31 gsm_mult      
+32 static src/GSM610/add.c_SASR_L     
+33 gsm_mult_r      
+34 gsm_abs      
+35 gsm_L_mult      
+36 gsm_L_add      
+37 gsm_L_sub      
+38 gsm_norm      
+39 gsm_L_asl      
+40 gsm_L_asr      
+41 gsm_asr      
+42 static src/GSM610/add.c_SASR_W     
+43 gsm_asl      
+44 gsm_div      
+45 gsm_option      
+46 Gsm_LPC_Analysis      
+47 static src/GSM610/lpc.c_Fast_Autocorrelation     
+48 static src/GSM610/lpc.c_Autocorrelation     
+49 static src/GSM610/lpc.c_Reflection_coefficients     
+50 static src/GSM610/lpc.c_Transformation_to_Log_Area_Ratios     
+51 static src/GSM610/lpc.c_Quantization_and_coding     
+52 static src/GSM610/lpc.c_GSM_ABS     
+53 static src/GSM610/lpc.c_GSM_MULT_R     
+54 static src/GSM610/lpc.c_SASL_L     
+55 static src/GSM610/lpc.c_SASL_W     
+56 static src/GSM610/lpc.c_SASR_L     
+57 static src/GSM610/lpc.c_GSM_ADD     
+58 static src/GSM610/lpc.c_GSM_MULT     
+59 static src/GSM610/lpc.c_SASR_W     
+60 Gsm_Preprocess      
+61 static src/GSM610/preprocess.c_SASR_W     
+62 static src/GSM610/preprocess.c_SASR_L     
+63 static src/GSM610/preprocess.c_GSM_MULT_R     
+64 static src/GSM610/preprocess.c_GSM_L_ADD     
+65 static src/GSM610/preprocess.c_GSM_ADD     
+66 g721_encoder      
+67 g721_decoder      
+68 g723_16_encoder      
+69 g723_16_decoder      
+70 Gsm_RPE_Encoding      
+71 static src/GSM610/rpe.c_Weighting_filter     
+72 static src/GSM610/rpe.c_RPE_grid_selection     
+73 static src/GSM610/rpe.c_APCM_quantization     
+74 static src/GSM610/rpe.c_APCM_inverse_quantization     
+75 static src/GSM610/rpe.c_RPE_grid_positioning     
+76 Gsm_RPE_Decoding      
+77 static src/GSM610/rpe.c_APCM_quantization_xmaxc_to_exp_mant     
+78 static src/GSM610/rpe.c_SASR_L     
+79 static src/GSM610/rpe.c_SASR_W     
+80 static src/GSM610/rpe.c_GSM_ABS     
+81 static src/GSM610/rpe.c_GSM_MULT     
+82 static src/GSM610/rpe.c_GSM_MULT_R     
+83 static src/GSM610/rpe.c_GSM_ADD     
+84 Gsm_Short_Term_Analysis_Filter      
+85 static src/GSM610/short_term.c_Decoding_of_the_coded_Log_Area_Ratios     
+86 static src/GSM610/short_term.c_Coefficients_0_12     
+87 static src/GSM610/short_term.c_LARp_to_rp     
+88 static src/GSM610/short_term.c_Fast_Short_term_analysis_filtering     
+89 static src/GSM610/short_term.c_Short_term_analysis_filtering     
+90 static src/GSM610/short_term.c_Coefficients_13_26     
+91 static src/GSM610/short_term.c_Coefficients_27_39     
+92 static src/GSM610/short_term.c_Coefficients_40_159     
+93 Gsm_Short_Term_Synthesis_Filter      
+94 static src/GSM610/short_term.c_Fast_Short_term_synthesis_filtering     
+95 static src/GSM610/short_term.c_Short_term_synthesis_filtering     
+96 static src/GSM610/short_term.c_GSM_ADD     
+97 static src/GSM610/short_term.c_GSM_SUB     
+98 static src/GSM610/short_term.c_GSM_MULT_R     
+99 static src/GSM610/short_term.c_SASR_W     
+100 g723_24_encoder      
+101 g723_24_decoder      
+102 g723_40_encoder      
+103 g723_40_decoder      
+104 BitBufferInit      
+105 BitBufferRead      
+106 BitBufferReadSmall      
+107 BitBufferReadOne      
+108 BitBufferPeek      
+109 BitBufferPeekOne      
+110 BitBufferUnpackBERSize      
+111 BitBufferGetPosition      
+112 BitBufferByteAlign      
+113 BitBufferWrite      
+114 BitBufferAdvance      
+115 BitBufferRewind      
+116 BitBufferReset      
+117 private_init_state      
+118 g72x_reader_init      
+119 static src/G72x/g72x.c_g72x_state_new     
+120 g72x_writer_init      
+121 g72x_decode_block      
+122 static src/G72x/g72x.c_unpack_bytes     
+123 g72x_encode_block      
+124 static src/G72x/g72x.c_pack_bytes     
+125 predictor_zero      
+126 static src/G72x/g72x.c_fmult     
+127 predictor_pole      
+128 step_size      
+129 quantize      
+130 static src/G72x/g72x.c_quan     
+131 reconstruct      
+132 update      
+133 unpc_block      
+134 dyn_comp      
+135 static src/ALAC/ag_enc.c_dyn_code_32bit     
+136 static src/ALAC/ag_enc.c_lead     
+137 static src/ALAC/ag_enc.c_dyn_code     
+138 static src/ALAC/ag_enc.c_psf_get_be32     
+139 static src/ALAC/ag_enc.c_psf_put_be32     
+140 raw_open      
+141 pvf_open      
+142 static src/pvf.c_pvf_read_header     
+143 static src/pvf.c_pvf_write_header     
+144 static src/pvf.c_pvf_close     
+145 init_coefs      
+146 copy_coefs      
+147 pc_block      
+148 unmix16      
+149 unmix20      
+150 unmix24      
+151 unmix32      
+152 copyPredictorTo24      
+153 copyPredictorTo24Shift      
+154 copyPredictorTo20      
+155 copyPredictorTo32      
+156 copyPredictorTo32Shift      
+157 vorbiscomment_read_tags      
+158 static src/ogg_vcomment.c_read_32bit_size_t     
+159 static src/ogg_vcomment.c_vorbiscomment_lookup_id     
+160 vorbiscomment_write_tags      
+161 static src/ogg_vcomment.c_vorbiscomment_lookup_name     
+162 mat4_open      
+163 static src/mat4.c_mat4_read_header     
+164 static src/mat4.c_mat4_write_header     
+165 static src/mat4.c_mat4_close     
+166 static src/mat4.c_mat4_format_to_encoding     
+167 static src/mat4.c_psf_lrint     
+168 static src/mat4.c_mat4_marker_to_str     
+169 set_standard_ag_params      
+170 set_ag_params      
+171 dyn_decomp      
+172 static src/ALAC/ag_dec.c_dyn_get_32bit     
+173 static src/ALAC/ag_dec.c_lead     
+174 static src/ALAC/ag_dec.c_dyn_get     
+175 txw_open      
+176 mix16      
+177 mix20      
+178 mix24      
+179 mix32      
+180 avr_open      
+181 static src/avr.c_avr_read_header     
+182 static src/avr.c_avr_write_header     
+183 static src/avr.c_avr_close     
+184 w64_open      
+185 static src/w64.c_w64_read_header     
+186 static src/w64.c_w64_write_header     
+187 static src/w64.c_w64_close     
+188 xi_open      
+189 static src/xi.c_xi_read_header     
+190 static src/xi.c_xi_write_header     
+191 static src/xi.c_xi_close     
+192 static src/xi.c_dpcm_seek     
+193 static src/xi.c_dpcm_init     
+194 static src/xi.c_dpcm_read_dsc2s     
+195 static src/xi.c_dpcm_read_dsc2i     
+196 static src/xi.c_dpcm_read_dsc2f     
+197 static src/xi.c_dpcm_read_dsc2d     
+198 static src/xi.c_dpcm_read_dles2s     
+199 static src/xi.c_dpcm_read_dles2i     
+200 static src/xi.c_dpcm_read_dles2f     
+201 static src/xi.c_dpcm_read_dles2d     
+202 static src/xi.c_dpcm_write_s2dsc     
+203 static src/xi.c_dpcm_write_i2dsc     
+204 static src/xi.c_dpcm_write_f2dsc     
+205 static src/xi.c_dpcm_write_d2dsc     
+206 static src/xi.c_dpcm_write_s2dles     
+207 static src/xi.c_dpcm_write_i2dles     
+208 static src/xi.c_dpcm_write_f2dles     
+209 static src/xi.c_dpcm_write_d2dles     
+210 static src/xi.c_dsc2s_array     
+211 static src/xi.c_dsc2i_array     
+212 static src/xi.c_dsc2f_array     
+213 static src/xi.c_dsc2d_array     
+214 static src/xi.c_dles2s_array     
+215 static src/xi.c_dles2i_array     
+216 static src/xi.c_dles2f_array     
+217 static src/xi.c_dles2d_array     
+218 static src/xi.c_s2dsc_array     
+219 static src/xi.c_i2dsc_array     
+220 static src/xi.c_f2dsc_array     
+221 static src/xi.c_psf_lrintf     
+222 static src/xi.c_d2dsc_array     
+223 static src/xi.c_psf_lrint     
+224 static src/xi.c_s2dles_array     
+225 static src/xi.c_i2dles_array     
+226 static src/xi.c_f2dles_array     
+227 static src/xi.c_d2dles_array     
+228 aiff_open      
+229 static src/aiff.c_aiff_close     
+230 static src/aiff.c_aiff_read_header     
+231 static src/aiff.c_aiff_next_chunk_iterator     
+232 static src/aiff.c_aiff_get_chunk_size     
+233 static src/aiff.c_aiff_get_chunk_data     
+234 static src/aiff.c_peak_info_calloc     
+235 static src/aiff.c_aiff_write_header     
+236 static src/aiff.c_aiff_set_chunk     
+237 static src/aiff.c_aiff_command     
+238 static src/aiff.c_aiff_read_comm_chunk     
+239 static src/aiff.c_get_loop_mode_str     
+240 static src/aiff.c_get_loop_mode     
+241 static src/aiff.c_aiff_read_basc_chunk     
+242 static src/aiff.c_make_size_t     
+243 static src/aiff.c_aiff_read_chanmap     
+244 static src/aiff.c_marker_to_position     
+245 static src/aiff.c___bswap_32     
+246 static src/aiff.c_tenbytefloat2int     
+247 static src/aiff.c_aiff_write_tailer     
+248 static src/aiff.c_aiff_write_strings     
+249 static src/aiff.c_aiff_rewrite_header     
+250 static src/aiff.c_uint2tenbytefloat     
+251 rf64_open      
+252 static src/rf64.c_rf64_read_header     
+253 static src/rf64.c_rf64_next_chunk_iterator     
+254 static src/rf64.c_rf64_get_chunk_size     
+255 static src/rf64.c_rf64_get_chunk_data     
+256 static src/rf64.c_rf64_write_header     
+257 static src/rf64.c_rf64_set_chunk     
+258 static src/rf64.c_rf64_close     
+259 static src/rf64.c_rf64_command     
+260 static src/rf64.c_rf64_write_fmt_chunk     
+261 static src/rf64.c_rf64_write_tailer     
+262 nist_open      
+263 static src/nist.c_nist_read_header     
+264 static src/nist.c_nist_write_header     
+265 static src/nist.c_nist_close     
+266 g72x_init      
+267 static src/g72x.c_g72x_read_s     
+268 static src/g72x.c_g72x_read_i     
+269 static src/g72x.c_g72x_read_f     
+270 static src/g72x.c_g72x_read_d     
+271 static src/g72x.c_g72x_seek     
+272 static src/g72x.c_psf_g72x_decode_block     
+273 static src/g72x.c_g72x_write_s     
+274 static src/g72x.c_g72x_write_i     
+275 static src/g72x.c_g72x_write_f     
+276 static src/g72x.c_g72x_write_d     
+277 static src/g72x.c_g72x_close     
+278 static src/g72x.c_g72x_read_block     
+279 static src/g72x.c_g72x_write_block     
+280 static src/g72x.c_psf_g72x_encode_block     
+281 static src/g72x.c_psf_lrintf     
+282 static src/g72x.c_psf_lrint     
+283 ogg_read_first_page      
+284 ogg_sync_fseek      
+285 ogg_sync_next_page      
+286 ogg_write_page      
+287 ogg_sync_ftell      
+288 ogg_stream_next_page      
+289 ogg_stream_unpack_page      
+290 ogg_sync_last_page_before      
+291 ogg_stream_seek_page_search      
+292 static src/ogg.c_ogg_page_search_do_rescale     
+293 static src/ogg.c_ogg_page_search_continued_data     
+294 ogg_open      
+295 static src/ogg.c_ogg_close     
+296 static src/ogg.c_ogg_stream_classify     
+297 static src/ogg.c_ogg_page_classify     
+298 caf_open      
+299 static src/caf.c_caf_read_header     
+300 static src/caf.c_caf_next_chunk_iterator     
+301 static src/caf.c_caf_get_chunk_size     
+302 static src/caf.c_caf_get_chunk_data     
+303 static src/caf.c_peak_info_calloc     
+304 static src/caf.c_caf_write_header     
+305 static src/caf.c_caf_set_chunk     
+306 static src/caf.c_caf_close     
+307 static src/caf.c_caf_command     
+308 static src/caf.c_caf_write_tailer     
+309 static src/caf.c_caf_write_strings     
+310 static src/caf.c_put_key_value     
+311 static src/caf.c_psf_lrint     
+312 static src/caf.c_caf_read_chanmap     
+313 static src/caf.c_caf_read_strings     
+314 static src/caf.c_decode_desc_chunk     
+315 static src/caf.c_string_hash32     
+316 ogg_vorbis_open      
+317 static src/ogg_vorbis.c_vorbis_read_header     
+318 static src/ogg_vorbis.c_vorbis_read_s     
+319 static src/ogg_vorbis.c_vorbis_read_i     
+320 static src/ogg_vorbis.c_vorbis_read_f     
+321 static src/ogg_vorbis.c_vorbis_read_d     
+322 static src/ogg_vorbis.c_vorbis_close     
+323 static src/ogg_vorbis.c_vorbis_write_header     
+324 static src/ogg_vorbis.c_vorbis_write_s     
+325 static src/ogg_vorbis.c_vorbis_write_i     
+326 static src/ogg_vorbis.c_vorbis_write_f     
+327 static src/ogg_vorbis.c_vorbis_write_d     
+328 static src/ogg_vorbis.c_vorbis_seek     
+329 static src/ogg_vorbis.c_vorbis_command     
+330 static src/ogg_vorbis.c_vorbis_byterate     
+331 static src/ogg_vorbis.c_vorbis_calculate_granulepos     
+332 static src/ogg_vorbis.c_vorbis_read_sample     
+333 static src/ogg_vorbis.c_vorbis_rshort     
+334 static src/ogg_vorbis.c_psf_lrintf     
+335 static src/ogg_vorbis.c_vorbis_rint     
+336 static src/ogg_vorbis.c_vorbis_rfloat     
+337 static src/ogg_vorbis.c_vorbis_rdouble     
+338 static src/ogg_vorbis.c_vorbis_write_samples     
+339 static src/ogg_vorbis.c_vorbis_seek_trysearch     
+340 static src/ogg_vorbis.c_vorbis_skip     
+341 static src/ogg_vorbis.c_vorbis_rnull     
+342 alac_decoder_init      
+343 static src/ALAC/alac_decoder.c_psf_get_be32     
+344 static src/ALAC/alac_decoder.c_psf_get_be16     
+345 alac_decode      
+346 static src/ALAC/alac_decoder.c_alac_data_stream_element     
+347 static src/ALAC/alac_decoder.c_alac_fill_element     
+348 static src/ALAC/alac_decoder.c_Zero32     
+349 wavlike_read_fmt_chunk      
+350 wavlike_format_str      
+351 static src/wavlike.c_wavex_guid_equal     
+352 wavlike_write_guid      
+353 wavlike_gen_channel_mask      
+354 wavlike_analyze      
+355 wavlike_srate2blocksize      
+356 wavlike_read_bext_chunk      
+357 wavlike_write_bext_chunk      
+358 wavlike_read_cart_chunk      
+359 static src/wavlike.c_make_size_t     
+360 wavlike_write_cart_chunk      
+361 wavlike_subchunk_parse      
+362 static src/wavlike.c_exif_subchunk_parse     
+363 wavlike_write_strings      
+364 wavlike_read_peak_chunk      
+365 static src/wavlike.c_peak_info_calloc     
+366 wavlike_write_peak_chunk      
+367 wavlike_write_custom_chunks      
+368 static src/wavlike.c_exif_fill_and_sink     
+369 mpeg_init      
+370 static src/mpeg.c_mpeg_write_header     
+371 mpeg_open      
+372 static src/mpeg.c_mpeg_command     
+373 sf_open      
+374 static src/sndfile.c_psf_close     
+375 psf_open_file      
+376 sf_open_fd      
+377 sf_open_virtual      
+378 sf_close      
+379 sf_write_sync      
+380 sf_error_number      
+381 sf_strerror      
+382 sf_error      
+383 sf_perror      
+384 sf_error_str      
+385 sf_format_check      
+386 sf_version_string      
+387 sf_command      
+388 static src/sndfile.c_peak_info_calloc     
+389 sf_seek      
+390 sf_get_string      
+391 sf_set_string      
+392 sf_current_byterate      
+393 sf_read_raw      
+394 sf_read_short      
+395 sf_readf_short      
+396 sf_read_int      
+397 sf_readf_int      
+398 sf_read_float      
+399 sf_readf_float      
+400 sf_read_double      
+401 sf_readf_double      
+402 sf_write_raw      
+403 sf_write_short      
+404 sf_writef_short      
+405 sf_write_int      
+406 sf_writef_int      
+407 sf_write_float      
+408 sf_writef_float      
+409 sf_write_double      
+410 sf_writef_double      
+411 static src/sndfile.c_guess_file_type     
+412 static src/sndfile.c_format_from_extension     
+413 static src/sndfile.c_validate_sfinfo     
+414 static src/sndfile.c_save_header_info     
+415 static src/sndfile.c_validate_psf     
+416 sf_set_chunk      
+417 sf_get_chunk_iterator      
+418 sf_next_chunk_iterator      
+419 sf_get_chunk_size      
+420 sf_get_chunk_data      
+421 static src/sndfile.c___bswap_32     
+422 static src/sndfile.c_try_resource_fork     
+423 sd2_open      
+424 static src/sd2.c_sd2_parse_rsrc_fork     
+425 static src/sd2.c_sd2_write_rsrc_fork     
+426 static src/sd2.c_sd2_close     
+427 static src/sd2.c_read_rsrc_int     
+428 static src/sd2.c_read_rsrc_short     
+429 static src/sd2.c_read_rsrc_marker     
+430 static src/sd2.c_parse_str_rsrc     
+431 static src/sd2.c_read_rsrc_char     
+432 static src/sd2.c_read_rsrc_str     
+433 ogg_opus_open      
+434 static src/ogg_opus.c_ogg_opus_close     
+435 static src/ogg_opus.c_ogg_opus_read_header     
+436 static src/ogg_opus.c_ogg_opus_analyze_file     
+437 static src/ogg_opus.c_ogg_opus_read_s     
+438 static src/ogg_opus.c_ogg_opus_read_i     
+439 static src/ogg_opus.c_ogg_opus_read_f     
+440 static src/ogg_opus.c_ogg_opus_read_d     
+441 static src/ogg_opus.c_ogg_opus_setup_encoder     
+442 static src/ogg_opus.c_ogg_opus_write_header     
+443 static src/ogg_opus.c_ogg_opus_write_s     
+444 static src/ogg_opus.c_ogg_opus_write_i     
+445 static src/ogg_opus.c_ogg_opus_write_f     
+446 static src/ogg_opus.c_ogg_opus_write_d     
+447 static src/ogg_opus.c_ogg_opus_seek     
+448 static src/ogg_opus.c_ogg_opus_command     
+449 static src/ogg_opus.c_ogg_opus_byterate     
+450 static src/ogg_opus.c_ogg_opus_flush     
+451 static src/ogg_opus.c_opus_read_header_packet     
+452 static src/ogg_opus.c_ogg_opus_setup_decoder     
+453 static src/ogg_opus.c_opus_print_header     
+454 static src/ogg_opus.c_ogg_opus_read_refill     
+455 static src/ogg_opus.c_psf_lrintf     
+456 static src/ogg_opus.c_ogg_opus_unpack_next_page     
+457 static src/ogg_opus.c_ogg_opus_calculate_page_duration     
+458 static src/ogg_opus.c_ogg_opus_write_out     
+459 static src/ogg_opus.c_ogg_opus_seek_manual     
+460 static src/ogg_opus.c_ogg_opus_seek_page_search     
+461 static src/ogg_opus.c_ogg_opus_seek_null_read     
+462 paf_open      
+463 static src/paf.c_paf_read_header     
+464 static src/paf.c_paf_write_header     
+465 static src/paf.c_paf24_init     
+466 static src/paf.c_magma_or     
+467 static src/paf.c_paf24_read_block     
+468 static src/paf.c_paf24_read_s     
+469 static src/paf.c_paf24_read_i     
+470 static src/paf.c_paf24_read_f     
+471 static src/paf.c_paf24_read_d     
+472 static src/paf.c_paf24_write_s     
+473 static src/paf.c_paf24_write_i     
+474 static src/paf.c_paf24_write_f     
+475 static src/paf.c_paf24_write_d     
+476 static src/paf.c_paf24_seek     
+477 static src/paf.c_paf24_close     
+478 static src/paf.c_endswap_int_array     
+479 static src/paf.c___bswap_32     
+480 static src/paf.c_paf24_read     
+481 static src/paf.c_paf24_write     
+482 static src/paf.c_paf24_write_block     
+483 static src/paf.c_psf_lrintf     
+484 static src/paf.c_psf_lrint     
+485 alac_set_fastmode      
+486 alac_encode      
+487 static src/ALAC/alac_encoder.c_EncodeStereo     
+488 static src/ALAC/alac_encoder.c_EncodeStereoFast     
+489 static src/ALAC/alac_encoder.c_EncodeMono     
+490 alac_get_magic_cookie_size      
+491 alac_get_magic_cookie      
+492 static src/ALAC/alac_encoder.c_GetConfig     
+493 static src/ALAC/alac_encoder.c___bswap_32     
+494 alac_encoder_init      
+495 alac_get_source_format      
+496 static src/ALAC/alac_encoder.c_EncodeStereoEscape     
+497 static src/ALAC/alac_encoder.c___bswap_16     
+498 htk_open      
+499 static src/htk.c_htk_read_header     
+500 static src/htk.c_htk_write_header     
+501 static src/htk.c_htk_close     
+502 ircam_open      
+503 static src/ircam.c_ircam_read_header     
+504 static src/ircam.c_ircam_write_header     
+505 static src/ircam.c_ircam_close     
+506 static src/ircam.c_get_encoding_str     
+507 static src/ircam.c_get_encoding     
+508 sds_open      
+509 static src/sds.c_sds_read_header     
+510 static src/sds.c_sds_write_header     
+511 static src/sds.c_sds_init     
+512 static src/sds.c_sds_close     
+513 static src/sds.c_sds_seek     
+514 static src/sds.c_sds_byterate     
+515 static src/sds.c_sds_2byte_read     
+516 static src/sds.c_sds_2byte_write     
+517 static src/sds.c_sds_3byte_read     
+518 static src/sds.c_sds_3byte_write     
+519 static src/sds.c_sds_4byte_read     
+520 static src/sds.c_sds_4byte_write     
+521 static src/sds.c_sds_read_s     
+522 static src/sds.c_sds_read_i     
+523 static src/sds.c_sds_read_f     
+524 static src/sds.c_sds_read_d     
+525 static src/sds.c_sds_write_s     
+526 static src/sds.c_sds_write_i     
+527 static src/sds.c_sds_write_f     
+528 static src/sds.c_sds_write_d     
+529 static src/sds.c_sds_read     
+530 static src/sds.c_sds_write     
+531 wav_open      
+532 static src/wav.c_wav_read_header     
+533 static src/wav.c_wav_next_chunk_iterator     
+534 static src/wav.c_wav_get_chunk_size     
+535 static src/wav.c_wav_get_chunk_data     
+536 static src/wav.c_peak_info_calloc     
+537 static src/wav.c_wav_write_header     
+538 static src/wav.c_wav_set_chunk     
+539 static src/wav.c_wav_close     
+540 static src/wav.c_wav_command     
+541 static src/wav.c_wav_read_smpl_chunk     
+542 static src/wav.c_wav_read_acid_chunk     
+543 static src/wav.c_wav_write_fmt_chunk     
+544 static src/wav.c_wavex_write_fmt_chunk     
+545 static src/wav.c_wav_write_tailer     
+546 dwd_open      
+547 au_open      
+548 static src/au.c_au_read_header     
+549 static src/au.c_au_write_header     
+550 static src/au.c_au_close     
+551 static src/au.c_au_format_to_encoding     
+552 rx2_open      
+553 svx_open      
+554 static src/svx.c_svx_read_header     
+555 static src/svx.c_svx_write_header     
+556 static src/svx.c_svx_close     
+557 wve_open      
+558 static src/wve.c_wve_read_header     
+559 static src/wve.c_wve_write_header     
+560 static src/wve.c_wve_close     
+561 flac_open      
+562 static src/flac.c_flac_read_header     
+563 static src/flac.c_flac_enc_init     
+564 static src/flac.c_flac_write_header     
+565 static src/flac.c_flac_close     
+566 static src/flac.c_flac_seek     
+567 static src/flac.c_flac_byterate     
+568 static src/flac.c_flac_command     
+569 flac_init      
+570 static src/flac.c_flac_read_flac2s     
+571 static src/flac.c_flac_read_flac2i     
+572 static src/flac.c_flac_read_flac2f     
+573 static src/flac.c_flac_read_flac2d     
+574 static src/flac.c_flac_write_s2flac     
+575 static src/flac.c_flac_write_i2flac     
+576 static src/flac.c_flac_write_f2flac     
+577 static src/flac.c_flac_write_d2flac     
+578 static src/flac.c_flac_write_strings     
+579 static src/flac.c_sf_flac_enc_write_callback     
+580 static src/flac.c_sf_flac_enc_seek_callback     
+581 static src/flac.c_sf_flac_enc_tell_callback     
+582 static src/flac.c_sf_flac_read_callback     
+583 static src/flac.c_sf_flac_seek_callback     
+584 static src/flac.c_sf_flac_tell_callback     
+585 static src/flac.c_sf_flac_length_callback     
+586 static src/flac.c_sf_flac_eof_callback     
+587 static src/flac.c_sf_flac_write_callback     
+588 static src/flac.c_sf_flac_meta_callback     
+589 static src/flac.c_sf_flac_error_callback     
+590 static src/flac.c_flac_buffer_copy     
+591 static src/flac.c_magma_and     
+592 static src/flac.c_sf_flac_meta_get_vorbiscomments     
+593 static src/flac.c_psf_lrint     
+594 static src/flac.c_flac_read_loop     
+595 static src/flac.c_s2flac8_array     
+596 static src/flac.c_s2flac16_array     
+597 static src/flac.c_s2flac24_array     
+598 static src/flac.c_i2flac8_array     
+599 static src/flac.c_i2flac16_array     
+600 static src/flac.c_i2flac24_array     
+601 static src/flac.c_f2flac8_clip_array     
+602 static src/flac.c_f2flac8_array     
+603 static src/flac.c_f2flac16_clip_array     
+604 static src/flac.c_f2flac16_array     
+605 static src/flac.c_f2flac24_clip_array     
+606 static src/flac.c_f2flac24_array     
+607 static src/flac.c_psf_lrintf     
+608 static src/flac.c_d2flac8_clip_array     
+609 static src/flac.c_d2flac8_array     
+610 static src/flac.c_d2flac16_clip_array     
+611 static src/flac.c_d2flac16_array     
+612 static src/flac.c_d2flac24_clip_array     
+613 static src/flac.c_d2flac24_array     
+614 mpc2k_open      
+615 static src/mpc2k.c_mpc2k_read_header     
+616 static src/mpc2k.c_mpc2k_write_header     
+617 static src/mpc2k.c_mpc2k_close     
+618 static src/mpc2k.c_make_size_t     
+619 voc_open      
+620 static src/voc.c_voc_read_header     
+621 static src/voc.c_voc_write_header     
+622 static src/voc.c_voc_close     
+623 static src/voc.c_voc_encoding2str     
+624 mat5_open      
+625 static src/mat5.c_mat5_read_header     
+626 static src/mat5.c_mat5_write_header     
+627 static src/mat5.c_mat5_close     
+628 static src/mat5.c___bswap_16     
+629 static src/mat5.c_psf_lrint     
+630 psf_copy_filename      
+631 psf_fopen      
+632 static src/file_io.c_psf_open_fd     
+633 static src/file_io.c_psf_log_syserr     
+634 psf_fclose      
+635 static src/file_io.c_psf_close_fd     
+636 psf_open_rsrc      
+637 static src/file_io.c_psf_get_filelen_fd     
+638 psf_get_filelen      
+639 psf_close_rsrc      
+640 psf_set_stdio      
+641 psf_set_file      
+642 psf_file_valid      
+643 psf_fseek      
+644 psf_fread      
+645 psf_fwrite      
+646 static src/file_io.c_magma_or     
+647 psf_ftell      
+648 psf_fgets      
+649 psf_is_pipe      
+650 psf_ftruncate      
+651 psf_init_files      
+652 psf_use_rsrc      
+653 psf_fsync      
+654 psf_allocate      
+655 psf_log_printf      
+656 static src/common.c_log_putchar     
+657 psf_asciiheader_printf      
+658 psf_binheader_writef      
+659 static src/common.c_psf_bump_header_allocation     
+660 static src/common.c_header_put_marker     
+661 static src/common.c_header_put_byte     
+662 static src/common.c_header_put_be_short     
+663 static src/common.c_header_put_le_short     
+664 static src/common.c_header_put_be_3byte     
+665 static src/common.c_header_put_le_3byte     
+666 static src/common.c_header_put_be_int     
+667 static src/common.c_header_put_le_int     
+668 static src/common.c_header_put_be_8byte     
+669 static src/common.c_header_put_le_8byte     
+670 psf_binheader_readf      
+671 static src/common.c_header_read     
+672 static src/common.c_psf_get_be32     
+673 static src/common.c_psf_get_le32     
+674 static src/common.c_psf_get_be64     
+675 static src/common.c_psf_get_le64     
+676 static src/common.c_header_gets     
+677 static src/common.c_header_seek     
+678 psf_default_seek      
+679 psf_hexdump      
+680 psf_isprint      
+681 psf_log_SF_INFO      
+682 psf_strlcat      
+683 psf_strlcpy      
+684 psf_memdup      
+685 psf_memset      
+686 psf_cues_alloc      
+687 psf_cues_dup      
+688 psf_get_cues      
+689 psf_instrument_alloc      
+690 psf_sanitize_string      
+691 psf_get_date_str      
+692 subformat_to_bytewidth      
+693 s_bitwidth_to_subformat      
+694 u_bitwidth_to_subformat      
+695 psf_rand_int32      
+696 append_snprintf      
+697 psf_strlcpy_crlf      
+698 psf_decode_frame_count      
+699 str_of_major_format      
+700 str_of_minor_format      
+701 str_of_open_mode      
+702 str_of_endianness      
+703 psf_f2s_array      
+704 static src/common.c_psf_lrintf     
+705 psf_f2s_clip_array      
+706 psf_d2s_array      
+707 static src/common.c_psf_lrint     
+708 psf_d2s_clip_array      
+709 psf_f2i_array      
+710 psf_f2i_clip_array      
+711 psf_d2i_array      
+712 psf_d2i_clip_array      
+713 psf_open_tmpfile      
+714 psf_get_format_simple_count      
+715 psf_get_format_simple      
+716 psf_get_format_major_count      
+717 psf_get_format_major      
+718 psf_get_format_subtype_count      
+719 psf_get_format_subtype      
+720 psf_get_format_info      
+721 psf_calc_signal_max      
+722 psf_calc_max_all_channels      
+723 psf_get_signal_max      
+724 psf_get_max_all_channels      
+725 float32_init      
+726 static src/float32.c_float32_get_capability     
+727 static src/float32.c_host_read_f2s     
+728 static src/float32.c_host_read_f2i     
+729 static src/float32.c_host_read_f     
+730 static src/float32.c_host_read_f2d     
+731 static src/float32.c_replace_read_f2s     
+732 static src/float32.c_replace_read_f2i     
+733 static src/float32.c_replace_read_f     
+734 static src/float32.c_replace_read_f2d     
+735 static src/float32.c_host_write_s2f     
+736 static src/float32.c_host_write_i2f     
+737 static src/float32.c_host_write_f     
+738 static src/float32.c_host_write_d2f     
+739 static src/float32.c_replace_write_s2f     
+740 static src/float32.c_replace_write_i2f     
+741 static src/float32.c_replace_write_f     
+742 static src/float32.c_replace_write_d2f     
+743 float32_be_read      
+744 float32_le_read      
+745 float32_le_write      
+746 float32_be_write      
+747 static src/float32.c_f2s_clip_array     
+748 static src/float32.c_f2s_array     
+749 static src/float32.c_endswap_int_array     
+750 static src/float32.c_psf_lrintf     
+751 static src/float32.c___bswap_32     
+752 static src/float32.c_f2i_clip_array     
+753 static src/float32.c_f2i_array     
+754 static src/float32.c_endswap_int_copy     
+755 static src/float32.c_f2d_array     
+756 static src/float32.c_s2f_array     
+757 static src/float32.c_float32_peak_update     
+758 static src/float32.c_i2f_array     
+759 static src/float32.c_d2f_array     
+760 static src/float32.c_bf2f_array     
+761 static src/float32.c_f2bf_array     
+762 double64_init      
+763 static src/double64.c_double64_get_capability     
+764 static src/double64.c_host_read_d2s     
+765 static src/double64.c_host_read_d2i     
+766 static src/double64.c_host_read_d2f     
+767 static src/double64.c_host_read_d     
+768 static src/double64.c_replace_read_d2s     
+769 static src/double64.c_replace_read_d2i     
+770 static src/double64.c_replace_read_d2f     
+771 static src/double64.c_replace_read_d     
+772 static src/double64.c_host_write_s2d     
+773 static src/double64.c_host_write_i2d     
+774 static src/double64.c_host_write_f2d     
+775 static src/double64.c_host_write_d     
+776 static src/double64.c_replace_write_s2d     
+777 static src/double64.c_replace_write_i2d     
+778 static src/double64.c_replace_write_f2d     
+779 static src/double64.c_replace_write_d     
+780 double64_be_read      
+781 double64_le_read      
+782 double64_be_write      
+783 static src/double64.c_psf_lrint     
+784 double64_le_write      
+785 static src/double64.c_d2s_clip_array     
+786 static src/double64.c_d2s_array     
+787 static src/double64.c_endswap_double_array     
+788 static src/double64.c_endswap_int64_t_array     
+789 static src/double64.c___bswap_64     
+790 static src/double64.c_d2i_clip_array     
+791 static src/double64.c_d2i_array     
+792 static src/double64.c_d2f_array     
+793 static src/double64.c_s2d_array     
+794 static src/double64.c_double64_peak_update     
+795 static src/double64.c_i2d_array     
+796 static src/double64.c_f2d_array     
+797 static src/double64.c_endswap_double_copy     
+798 static src/double64.c_endswap_int64_t_copy     
+799 static src/double64.c_d2bd_read     
+800 static src/double64.c_bd2d_write     
+801 alaw_init      
+802 static src/alaw.c_alaw_read_alaw2s     
+803 static src/alaw.c_alaw_read_alaw2i     
+804 static src/alaw.c_alaw_read_alaw2f     
+805 static src/alaw.c_alaw_read_alaw2d     
+806 static src/alaw.c_alaw_write_s2alaw     
+807 static src/alaw.c_alaw_write_i2alaw     
+808 static src/alaw.c_alaw_write_f2alaw     
+809 static src/alaw.c_alaw_write_d2alaw     
+810 static src/alaw.c_alaw2s_array     
+811 static src/alaw.c_alaw2i_array     
+812 static src/alaw.c_alaw2f_array     
+813 static src/alaw.c_alaw2d_array     
+814 static src/alaw.c_s2alaw_array     
+815 static src/alaw.c_i2alaw_array     
+816 static src/alaw.c_f2alaw_array     
+817 static src/alaw.c_psf_lrintf     
+818 static src/alaw.c_d2alaw_array     
+819 static src/alaw.c_psf_lrint     
+820 vox_adpcm_init      
+821 static src/vox_adpcm.c_vox_write_s     
+822 static src/vox_adpcm.c_vox_write_i     
+823 static src/vox_adpcm.c_vox_write_f     
+824 static src/vox_adpcm.c_vox_write_d     
+825 static src/vox_adpcm.c_vox_read_s     
+826 static src/vox_adpcm.c_vox_read_i     
+827 static src/vox_adpcm.c_vox_read_f     
+828 static src/vox_adpcm.c_vox_read_d     
+829 static src/vox_adpcm.c_codec_close     
+830 static src/vox_adpcm.c_vox_read_block     
+831 static src/vox_adpcm.c_vox_write_block     
+832 static src/vox_adpcm.c_psf_lrintf     
+833 static src/vox_adpcm.c_psf_lrint     
+834 wavlike_ima_init      
+835 static src/ima_adpcm.c_ima_reader_init     
+836 static src/ima_adpcm.c_ima_writer_init     
+837 static src/ima_adpcm.c_ima_close     
+838 static src/ima_adpcm.c_wavlike_ima_seek     
+839 aiff_ima_init      
+840 static src/ima_adpcm.c_aiff_ima_seek     
+841 static src/ima_adpcm.c_wavlike_ima_decode_block     
+842 static src/ima_adpcm.c_aiff_ima_decode_block     
+843 static src/ima_adpcm.c_ima_read_s     
+844 static src/ima_adpcm.c_ima_read_i     
+845 static src/ima_adpcm.c_ima_read_f     
+846 static src/ima_adpcm.c_ima_read_d     
+847 static src/ima_adpcm.c_clamp_ima_step_index     
+848 static src/ima_adpcm.c_ima_read_block     
+849 static src/ima_adpcm.c_wavlike_ima_encode_block     
+850 static src/ima_adpcm.c_aiff_ima_encode_block     
+851 static src/ima_adpcm.c_ima_write_s     
+852 static src/ima_adpcm.c_ima_write_i     
+853 static src/ima_adpcm.c_ima_write_f     
+854 static src/ima_adpcm.c_ima_write_d     
+855 static src/ima_adpcm.c_ima_write_block     
+856 static src/ima_adpcm.c_psf_lrintf     
+857 static src/ima_adpcm.c_psf_lrint     
+858 dwvw_init      
+859 static src/dwvw.c_dwvw_read_reset     
+860 static src/dwvw.c_dwvw_read_s     
+861 static src/dwvw.c_dwvw_read_i     
+862 static src/dwvw.c_dwvw_read_f     
+863 static src/dwvw.c_dwvw_read_d     
+864 static src/dwvw.c_dwvw_write_s     
+865 static src/dwvw.c_dwvw_write_i     
+866 static src/dwvw.c_dwvw_write_f     
+867 static src/dwvw.c_dwvw_write_d     
+868 static src/dwvw.c_dwvw_close     
+869 static src/dwvw.c_dwvw_seek     
+870 static src/dwvw.c_dwvw_byterate     
+871 static src/dwvw.c_dwvw_encode_data     
+872 static src/dwvw.c_dwvw_encode_store_bits     
+873 static src/dwvw.c_dwvw_decode_data     
+874 static src/dwvw.c_dwvw_decode_load_bits     
+875 static src/dwvw.c_psf_lrintf     
+876 static src/dwvw.c_psf_lrint     
+877 wavlike_msadpcm_init      
+878 static src/ms_adpcm.c_msadpcm_decode_block     
+879 static src/ms_adpcm.c_msadpcm_read_s     
+880 static src/ms_adpcm.c_msadpcm_read_i     
+881 static src/ms_adpcm.c_msadpcm_read_f     
+882 static src/ms_adpcm.c_msadpcm_read_d     
+883 static src/ms_adpcm.c_msadpcm_write_s     
+884 static src/ms_adpcm.c_msadpcm_write_i     
+885 static src/ms_adpcm.c_msadpcm_write_f     
+886 static src/ms_adpcm.c_msadpcm_write_d     
+887 static src/ms_adpcm.c_msadpcm_close     
+888 static src/ms_adpcm.c_msadpcm_seek     
+889 wavlike_msadpcm_write_adapt_coeffs      
+890 static src/ms_adpcm.c_msadpcm_get_bpred     
+891 static src/ms_adpcm.c_msadpcm_read_block     
+892 static src/ms_adpcm.c_msadpcm_write_block     
+893 static src/ms_adpcm.c_msadpcm_encode_block     
+894 static src/ms_adpcm.c_choose_predictor     
+895 static src/ms_adpcm.c_psf_lrintf     
+896 static src/ms_adpcm.c_psf_lrint     
+897 broadcast_var_alloc      
+898 broadcast_var_set      
+899 static src/broadcast.c_bc_min_size     
+900 static src/broadcast.c_gen_coding_history     
+901 broadcast_var_get      
+902 dither_init      
+903 static src/dither.c_dither_read_int     
+904 static src/dither.c_dither_read_short     
+905 static src/dither.c_dither_write_int     
+906 static src/dither.c_dither_write_short     
+907 static src/dither.c_dither_write_float     
+908 static src/dither.c_dither_write_double     
+909 static src/dither.c_dither_short     
+910 static src/dither.c_dither_int     
+911 static src/dither.c_dither_float     
+912 static src/dither.c_dither_double     
+913 psf_store_string      
+914 psf_set_string      
+915 psf_get_string      
+916 psf_location_string_count      
+917 cart_var_alloc      
+918 cart_var_set      
+919 static src/cart.c_cart_min_size     
+920 cart_var_get      
+921 ima_oki_adpcm_init      
+922 adpcm_decode      
+923 adpcm_encode      
+924 ima_oki_adpcm_decode_block      
+925 ima_oki_adpcm_encode_block      
+926 aiff_caf_find_channel_layout_tag      
+927 aiff_caf_of_channel_layout_tag      
+928 psf_get_chunk_iterator      
+929 psf_find_read_chunk_str      
+930 static src/chunk.c_hash_of_str     
+931 psf_next_chunk_iterator      
+932 psf_store_read_chunk_u32      
+933 static src/chunk.c_psf_store_read_chunk     
+934 psf_find_read_chunk_m32      
+935 psf_find_read_chunk_iterator      
+936 psf_store_read_chunk_str      
+937 psf_save_write_chunk      
+938 pcm_init      
+939 static src/pcm.c_pcm_read_sc2s     
+940 static src/pcm.c_pcm_read_sc2i     
+941 static src/pcm.c_pcm_read_sc2f     
+942 static src/pcm.c_pcm_read_sc2d     
+943 static src/pcm.c_pcm_read_uc2s     
+944 static src/pcm.c_pcm_read_uc2i     
+945 static src/pcm.c_pcm_read_uc2f     
+946 static src/pcm.c_pcm_read_uc2d     
+947 static src/pcm.c_pcm_read_bes2s     
+948 static src/pcm.c_pcm_read_bes2i     
+949 static src/pcm.c_pcm_read_bes2f     
+950 static src/pcm.c_pcm_read_bes2d     
+951 static src/pcm.c_pcm_read_bet2s     
+952 static src/pcm.c_pcm_read_bet2i     
+953 static src/pcm.c_pcm_read_bet2f     
+954 static src/pcm.c_pcm_read_bet2d     
+955 static src/pcm.c_pcm_read_bei2s     
+956 static src/pcm.c_pcm_read_bei2i     
+957 static src/pcm.c_pcm_read_bei2f     
+958 static src/pcm.c_pcm_read_bei2d     
+959 static src/pcm.c_pcm_read_les2s     
+960 static src/pcm.c_pcm_read_les2i     
+961 static src/pcm.c_pcm_read_les2f     
+962 static src/pcm.c_pcm_read_les2d     
+963 static src/pcm.c_pcm_read_let2s     
+964 static src/pcm.c_pcm_read_let2i     
+965 static src/pcm.c_pcm_read_let2f     
+966 static src/pcm.c_pcm_read_let2d     
+967 static src/pcm.c_pcm_read_lei2s     
+968 static src/pcm.c_pcm_read_lei2i     
+969 static src/pcm.c_pcm_read_lei2f     
+970 static src/pcm.c_pcm_read_lei2d     
+971 static src/pcm.c_pcm_write_s2sc     
+972 static src/pcm.c_pcm_write_i2sc     
+973 static src/pcm.c_pcm_write_f2sc     
+974 static src/pcm.c_pcm_write_d2sc     
+975 static src/pcm.c_pcm_write_s2uc     
+976 static src/pcm.c_pcm_write_i2uc     
+977 static src/pcm.c_pcm_write_f2uc     
+978 static src/pcm.c_pcm_write_d2uc     
+979 static src/pcm.c_pcm_write_s2bes     
+980 static src/pcm.c_pcm_write_i2bes     
+981 static src/pcm.c_pcm_write_f2bes     
+982 static src/pcm.c_pcm_write_d2bes     
+983 static src/pcm.c_pcm_write_s2bet     
+984 static src/pcm.c_pcm_write_i2bet     
+985 static src/pcm.c_pcm_write_f2bet     
+986 static src/pcm.c_pcm_write_d2bet     
+987 static src/pcm.c_pcm_write_s2bei     
+988 static src/pcm.c_pcm_write_i2bei     
+989 static src/pcm.c_pcm_write_f2bei     
+990 static src/pcm.c_pcm_write_d2bei     
+991 static src/pcm.c_pcm_write_s2les     
+992 static src/pcm.c_pcm_write_i2les     
+993 static src/pcm.c_pcm_write_f2les     
+994 static src/pcm.c_pcm_write_d2les     
+995 static src/pcm.c_pcm_write_s2let     
+996 static src/pcm.c_pcm_write_i2let     
+997 static src/pcm.c_pcm_write_f2let     
+998 static src/pcm.c_pcm_write_d2let     
+999 static src/pcm.c_pcm_write_s2lei     
+1000 static src/pcm.c_pcm_write_i2lei     
+1001 static src/pcm.c_pcm_write_f2lei     
+1002 static src/pcm.c_pcm_write_d2lei     
+1003 static src/pcm.c_sc2s_array     
+1004 static src/pcm.c_uc2s_array     
+1005 static src/pcm.c_endswap_short_array     
+1006 static src/pcm.c___bswap_16     
+1007 static src/pcm.c_bet2s_array     
+1008 static src/pcm.c_let2s_array     
+1009 static src/pcm.c_bei2s_array     
+1010 static src/pcm.c___bswap_32     
+1011 static src/pcm.c_lei2s_array     
+1012 static src/pcm.c_sc2i_array     
+1013 static src/pcm.c_uc2i_array     
+1014 static src/pcm.c_bes2i_array     
+1015 static src/pcm.c_les2i_array     
+1016 static src/pcm.c_bet2i_array     
+1017 static src/pcm.c_psf_get_be24     
+1018 static src/pcm.c_let2i_array     
+1019 static src/pcm.c_psf_get_le24     
+1020 static src/pcm.c_endswap_int_array     
+1021 static src/pcm.c_sc2f_array     
+1022 static src/pcm.c_uc2f_array     
+1023 static src/pcm.c_bes2f_array     
+1024 static src/pcm.c_les2f_array     
+1025 static src/pcm.c_bet2f_array     
+1026 static src/pcm.c_let2f_array     
+1027 static src/pcm.c_bei2f_array     
+1028 static src/pcm.c_lei2f_array     
+1029 static src/pcm.c_sc2d_array     
+1030 static src/pcm.c_uc2d_array     
+1031 static src/pcm.c_bes2d_array     
+1032 static src/pcm.c_les2d_array     
+1033 static src/pcm.c_bet2d_array     
+1034 static src/pcm.c_let2d_array     
+1035 static src/pcm.c_bei2d_array     
+1036 static src/pcm.c_lei2d_array     
+1037 static src/pcm.c_s2sc_array     
+1038 static src/pcm.c_s2uc_array     
+1039 static src/pcm.c_endswap_short_copy     
+1040 static src/pcm.c_s2bet_array     
+1041 static src/pcm.c_s2let_array     
+1042 static src/pcm.c_s2bei_array     
+1043 static src/pcm.c_s2lei_array     
+1044 static src/pcm.c_i2sc_array     
+1045 static src/pcm.c_i2uc_array     
+1046 static src/pcm.c_i2bes_array     
+1047 static src/pcm.c_i2les_array     
+1048 static src/pcm.c_i2bet_array     
+1049 static src/pcm.c_i2let_array     
+1050 static src/pcm.c_endswap_int_copy     
+1051 static src/pcm.c_f2sc_clip_array     
+1052 static src/pcm.c_f2sc_array     
+1053 static src/pcm.c_psf_lrintf     
+1054 static src/pcm.c_f2uc_clip_array     
+1055 static src/pcm.c_f2uc_array     
+1056 static src/pcm.c_f2bes_clip_array     
+1057 static src/pcm.c_f2bes_array     
+1058 static src/pcm.c_f2les_clip_array     
+1059 static src/pcm.c_f2les_array     
+1060 static src/pcm.c_f2let_clip_array     
+1061 static src/pcm.c_f2let_array     
+1062 static src/pcm.c_f2bet_clip_array     
+1063 static src/pcm.c_f2bet_array     
+1064 static src/pcm.c_psf_lrint     
+1065 static src/pcm.c_f2bei_clip_array     
+1066 static src/pcm.c_f2bei_array     
+1067 static src/pcm.c_f2lei_clip_array     
+1068 static src/pcm.c_f2lei_array     
+1069 static src/pcm.c_d2sc_clip_array     
+1070 static src/pcm.c_d2sc_array     
+1071 static src/pcm.c_d2uc_clip_array     
+1072 static src/pcm.c_d2uc_array     
+1073 static src/pcm.c_d2bes_clip_array     
+1074 static src/pcm.c_d2bes_array     
+1075 static src/pcm.c_d2les_clip_array     
+1076 static src/pcm.c_d2les_array     
+1077 static src/pcm.c_d2let_clip_array     
+1078 static src/pcm.c_d2let_array     
+1079 static src/pcm.c_d2bet_clip_array     
+1080 static src/pcm.c_d2bet_array     
+1081 static src/pcm.c_d2bei_clip_array     
+1082 static src/pcm.c_d2bei_array     
+1083 static src/pcm.c_d2lei_clip_array     
+1084 static src/pcm.c_d2lei_array     
+1085 id3_lookup_v1_genre      
+1086 static src/id3.c_id3v1_genre_handler     
+1087 id3_skip      
+1088 id3_process_v2_genre      
+1089 ulaw_init      
+1090 static src/ulaw.c_ulaw_read_ulaw2s     
+1091 static src/ulaw.c_ulaw_read_ulaw2i     
+1092 static src/ulaw.c_ulaw_read_ulaw2f     
+1093 static src/ulaw.c_ulaw_read_ulaw2d     
+1094 static src/ulaw.c_ulaw_write_s2ulaw     
+1095 static src/ulaw.c_ulaw_write_i2ulaw     
+1096 static src/ulaw.c_ulaw_write_f2ulaw     
+1097 static src/ulaw.c_ulaw_write_d2ulaw     
+1098 static src/ulaw.c_ulaw2s_array     
+1099 static src/ulaw.c_ulaw2i_array     
+1100 static src/ulaw.c_ulaw2f_array     
+1101 static src/ulaw.c_ulaw2d_array     
+1102 static src/ulaw.c_s2ulaw_array     
+1103 static src/ulaw.c_i2ulaw_array     
+1104 static src/ulaw.c_f2ulaw_array     
+1105 static src/ulaw.c_psf_lrintf     
+1106 static src/ulaw.c_d2ulaw_array     
+1107 static src/ulaw.c_psf_lrint     
+1108 mpeg_l3_encoder_init      
+1109 static src/mpeg_l3_encode.c_mpeg_l3_encode_write_short_stereo     
+1110 static src/mpeg_l3_encode.c_mpeg_l3_encode_write_int_stereo     
+1111 static src/mpeg_l3_encode.c_mpeg_l3_encode_write_float_stereo     
+1112 static src/mpeg_l3_encode.c_mpeg_l3_encode_write_double_stereo     
+1113 static src/mpeg_l3_encode.c_mpeg_l3_encode_write_short_mono     
+1114 static src/mpeg_l3_encode.c_mpeg_l3_encode_write_int_mono     
+1115 static src/mpeg_l3_encode.c_mpeg_l3_encode_write_float_mono     
+1116 static src/mpeg_l3_encode.c_mpeg_l3_encode_write_double_mono     
+1117 static src/mpeg_l3_encode.c_mpeg_l3_encoder_close     
+1118 static src/mpeg_l3_encode.c_mpeg_l3_encoder_byterate     
+1119 mpeg_l3_encoder_write_id3tag      
+1120 static src/mpeg_l3_encode.c_mpeg_l3_encoder_construct     
+1121 mpeg_l3_encoder_set_quality      
+1122 mpeg_l3_encoder_get_bitrate_mode      
+1123 mpeg_l3_encoder_set_bitrate_mode      
+1124 static src/mpeg_l3_encode.c_mpeg_l3_encoder_log_config     
+1125 static src/mpeg_l3_encode.c_normalize_float     
+1126 static src/mpeg_l3_encode.c_normalize_double     
+1127 audio_detect      
+1128 static src/audio_detect.c_vote_for_format     
+1129 gsm610_init      
+1130 static src/gsm610.c_gsm610_wav_encode_block     
+1131 static src/gsm610.c_gsm610_wav_decode_block     
+1132 static src/gsm610.c_gsm610_encode_block     
+1133 static src/gsm610.c_gsm610_decode_block     
+1134 static src/gsm610.c_gsm610_read_s     
+1135 static src/gsm610.c_gsm610_read_i     
+1136 static src/gsm610.c_gsm610_read_f     
+1137 static src/gsm610.c_gsm610_read_d     
+1138 static src/gsm610.c_gsm610_write_s     
+1139 static src/gsm610.c_gsm610_write_i     
+1140 static src/gsm610.c_gsm610_write_f     
+1141 static src/gsm610.c_gsm610_write_d     
+1142 static src/gsm610.c_gsm610_close     
+1143 static src/gsm610.c_gsm610_seek     
+1144 static src/gsm610.c_gsm610_read_block     
+1145 static src/gsm610.c_gsm610_write_block     
+1146 static src/gsm610.c_psf_lrintf     
+1147 static src/gsm610.c_psf_lrint     
+1148 nms_adpcm_init      
+1149 static src/nms_adpcm.c_nms_adpcm_codec_init     
+1150 static src/nms_adpcm.c_nms_adpcm_read_s     
+1151 static src/nms_adpcm.c_nms_adpcm_read_i     
+1152 static src/nms_adpcm.c_nms_adpcm_read_f     
+1153 static src/nms_adpcm.c_nms_adpcm_read_d     
+1154 static src/nms_adpcm.c_nms_adpcm_write_s     
+1155 static src/nms_adpcm.c_nms_adpcm_write_i     
+1156 static src/nms_adpcm.c_nms_adpcm_write_f     
+1157 static src/nms_adpcm.c_nms_adpcm_write_d     
+1158 static src/nms_adpcm.c_nms_adpcm_close     
+1159 static src/nms_adpcm.c_nms_adpcm_seek     
+1160 static src/nms_adpcm.c_nms_adpcm_read_block     
+1161 static src/nms_adpcm.c_psf_nms_adpcm_decode_block     
+1162 static src/nms_adpcm.c_nms_adpcm_decode_block     
+1163 static src/nms_adpcm.c_nms_adpcm_block_unpack_16     
+1164 static src/nms_adpcm.c_nms_adpcm_block_unpack_24     
+1165 static src/nms_adpcm.c_nms_adpcm_block_unpack_32     
+1166 static src/nms_adpcm.c_nms_adpcm_decode_sample     
+1167 static src/nms_adpcm.c_nms_adpcm_update     
+1168 static src/nms_adpcm.c_nms_adpcm_reconstruct_sample     
+1169 static src/nms_adpcm.c_nms_adpcm_antilog     
+1170 static src/nms_adpcm.c_nms_adpcm_write_block     
+1171 static src/nms_adpcm.c_psf_nms_adpcm_encode_block     
+1172 static src/nms_adpcm.c_nms_adpcm_encode_block     
+1173 static src/nms_adpcm.c_nms_adpcm_encode_sample     
+1174 static src/nms_adpcm.c_nms_adpcm_block_pack_16     
+1175 static src/nms_adpcm.c_nms_adpcm_block_pack_24     
+1176 static src/nms_adpcm.c_nms_adpcm_block_pack_32     
+1177 static src/nms_adpcm.c_psf_lrintf     
+1178 static src/nms_adpcm.c_psf_lrint     
+1179 alac_init      
+1180 static src/alac.c_alac_close     
+1181 static src/alac.c_alac_reader_init     
+1182 static src/alac.c_alac_writer_init     
+1183 static src/alac.c_alac_byterate     
+1184 alac_get_desc_chunk_items      
+1185 static src/alac.c_alac_encode_block     
+1186 static src/alac.c_alac_pakt_encode     
+1187 static src/alac.c_alac_pakt_append     
+1188 static src/alac.c_psf_put_be64     
+1189 static src/alac.c_psf_put_be32     
+1190 static src/alac.c_alac_pakt_read_decode     
+1191 static src/alac.c_alac_kuki_read     
+1192 static src/alac.c_alac_error_string     
+1193 static src/alac.c_alac_read_s     
+1194 static src/alac.c_alac_read_i     
+1195 static src/alac.c_alac_read_f     
+1196 static src/alac.c_alac_read_d     
+1197 static src/alac.c_alac_seek     
+1198 static src/alac.c_alac_reader_calc_frames     
+1199 static src/alac.c_alac_pakt_alloc     
+1200 static src/alac.c___bswap_64     
+1201 static src/alac.c_alac_decode_block     
+1202 static src/alac.c_alac_reader_next_packet_size     
+1203 static src/alac.c_alac_pakt_block_offset     
+1204 static src/alac.c_alac_write_s     
+1205 static src/alac.c_alac_write_i     
+1206 static src/alac.c_alac_write_f     
+1207 static src/alac.c_alac_write_d     
+1208 mpeg_decoder_init      
+1209 static src/mpeg_decode.c_mpeg_dec_close     
+1210 static src/mpeg_decode.c_mpeg_dec_io_read     
+1211 static src/mpeg_decode.c_mpeg_dec_io_lseek     
+1212 static src/mpeg_decode.c_mpeg_dec_fill_sfinfo     
+1213 static src/mpeg_decode.c_mpeg_dec_print_frameinfo     
+1214 static src/mpeg_decode.c_mpeg_dec_read_s     
+1215 static src/mpeg_decode.c_mpeg_dec_read_i     
+1216 static src/mpeg_decode.c_mpeg_dec_read_f     
+1217 static src/mpeg_decode.c_mpeg_dec_read_d     
+1218 static src/mpeg_decode.c_mpeg_dec_seek     
+1219 static src/mpeg_decode.c_mpeg_dec_byterate     
+1220 static src/mpeg_decode.c_mpeg_decoder_read_strings     
+1221 mpeg_decoder_get_bitrate_mode      
+1222 static src/mpeg_decode.c_mpeg_dec_decode     
+1223 static src/mpeg_decode.c_f2d_array     
+1224 static src/mpeg_decode.c_mpeg_decoder_read_strings_id3v1     
+1225 static src/mpeg_decode.c_mpeg_decoder_read_strings_id3v2     
+1226 static src/mpeg_decode.c_strcpy_inbounded     
