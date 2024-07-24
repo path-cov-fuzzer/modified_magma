@@ -3,7 +3,7 @@ set -e
 
 source $TARGET/configrc
 
-g++ $FUZZER/convert.cpp -o $OUT/convert
+g++ -g $FUZZER/convert.cpp -o $OUT/convert
 cat $OUT/cfg.txt | grep "BasicBlock: " | wc -l > $OUT/bbnum.txt
 
 for each_PROGRAM in "${PROGRAMS[@]}"
@@ -51,6 +51,7 @@ do
 done
 
 cp $OUT/bbnum.txt $SHARED/bbnum.txt
+cp $OUT/cfg.txt $SHARED/cfg.txt
 
 
 

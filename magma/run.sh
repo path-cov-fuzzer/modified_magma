@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -e
 
 ##
@@ -16,6 +15,9 @@ set -e
 # - env MAGMA: path to Magma support files
 # + env LOGSIZE: size (in bytes) of log file to generate (default: 1 MiB)
 ##
+
+# CYHADDED: 生成 CFG binary
+source $FUZZER/generateCFG.sh
 
 # CYHADDED: 打印一些变量 ------------------ start
 # 设置 CFLAGS, CXXFLAGS, LD, LDFLAGS, SHARED, LIBS
@@ -94,20 +96,33 @@ fi
 
 # launch the fuzzer in parallel with the monitor
 rm -f "$MONITOR/tmp"*
-polls=("$MONITOR"/*)
-if [ ${#polls[@]} -eq 0 ]; then
-    counter=0
-else
-    timestamps=($(sort -n < <(basename -a "${polls[@]}")))
-    last=${timestamps[-1]}
-    counter=$(( last + POLL ))
-fi
+# CYHADDED: 只添加一个 counter = 0
+counter=0
+# polls=("$MONITOR"/*)
+# if [ ${#polls[@]} -eq 0 ]; then
+#     counter=0
+# else
+#     timestamps=($(sort -n < <(basename -a "${polls[@]}")))
+#     last=${timestamps[-1]}
+#     echo "last ================ start" 
+#     echo "last = $last" 
+#     echo "last ================ end" 
+#     echo "POLL ================ start" 
+#     echo "POLL = $POLL" 
+#     echo "POLL ================ end" 
+#     counter=$(( last + POLL ))
+# fi
 
 while true; do
     "$OUT/monitor" --dump row > "$MONITOR/tmp"
+    echo "counter ================ start" 
+    echo "counter = $counter" 
+    echo "counter ================ end" 
     if [ $? -eq 0 ]; then
+        echo "yes, this is 0, reserve"
         mv "$MONITOR/tmp" "$MONITOR/$counter"
     else
+        echo "no, this is not 0, delete"
         rm "$MONITOR/tmp"
     fi
     counter=$(( counter + POLL ))

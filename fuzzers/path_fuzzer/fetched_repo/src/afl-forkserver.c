@@ -1821,7 +1821,7 @@ afl_fsrv_write_to_testcase(afl_forkserver_t *fsrv, u8 *buf, size_t len) {
   }
 
 }
-
+ 
 // CYHADDED: 出错时的路径日志 ------------------------ start
 void writeToLogFile(char *content) {
     FILE *file = fopen("/magma_shared/path_log.txt", "a"); // 打开文件，以追加模式写入

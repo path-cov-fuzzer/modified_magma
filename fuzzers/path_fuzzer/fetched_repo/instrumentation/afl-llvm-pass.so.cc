@@ -1374,14 +1374,14 @@ bool AFLCoverage::runOnModule(Module &M) {
     writeBBIDfile(bbidfile, BBID);
 
     // 8. 给三个文件描述符释放锁
-    // assert(flock(bbidfd, LOCK_UN) != -1);
-    // assert(flock(callmap_fd, LOCK_UN) != -1);
-    // assert(flock(cfg_fd, LOCK_UN) != -1);
-    while(flock(bbidfd, LOCK_UN) == -1);
-    while(flock(callmap_fd, LOCK_UN) == -1);
-    while(flock(cfg_fd, LOCK_UN) == -1);
+    // // assert(flock(bbidfd, LOCK_UN) != -1);
+    // // assert(flock(callmap_fd, LOCK_UN) != -1);
+    // // assert(flock(cfg_fd, LOCK_UN) != -1);
+    // while(flock(bbidfd, LOCK_UN) == -1);
+    // while(flock(callmap_fd, LOCK_UN) == -1);
+    // while(flock(cfg_fd, LOCK_UN) == -1);
 
-    // 9. 释放锁后就可以关闭文件了
+    // 9. 释放锁后就可以关闭文件了 (似乎在关闭文件的同时会释放锁)
     fclose(bbidfile);
     fclose(callmapfile);
     fclose(cfgfile);

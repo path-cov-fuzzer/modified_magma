@@ -85,8 +85,9 @@ FUZZERS=(path_fuzzer)
 
 # path_fuzzer_TARGETS=(lua php libsndfile libpng libtiff libxml2 sqlite3 openssl)
 # path_fuzzer_TARGETS=(libsndfile)
-path_fuzzer_TARGETS=(lua)
-# path_fuzzer_TARGETS=(openssl libxml2 libsndfile lua)
+path_fuzzer_TARGETS=(openssl)
+# path_fuzzer_TARGETS=(libtiff)
+# path_fuzzer_TARGETS=(php libsndfile libtiff libxml2 openssl)
 
 # [fuzzer_target_PROGRAMS]: an array of program names (from
 # magma/targets/target/configrc) to use as execution drivers when fuzzing the

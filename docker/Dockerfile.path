@@ -5,7 +5,7 @@ FROM ubuntu:20.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y sudo make build-essential git wget tree vim
+RUN apt-get update && apt-get install -y sudo make build-essential git wget tree vim gdb
 
 RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
 
@@ -80,6 +80,11 @@ RUN mkdir -p ${SHARED} ${OUT} && \
 ARG magma_path=magma
 ENV MAGMA 	${MAGMA_R}/${magma_path}
 USER root:root
+
+# docker 似乎从 host 获取 /proc/sys/kernel/core_pattern
+# # CYHADDED: 添加一些东西，修改 /proc/sys/kernel/core_pattern
+# RUN echo "core" > /proc/sys/kernel/core_pattern
+
 RUN mkdir -p ${MAGMA} && chown magma:magma ${MAGMA}
 COPY --chown=magma:magma ${magma_root}/${magma_path} ${MAGMA}/
 RUN ${MAGMA}/preinstall.sh
@@ -127,14 +132,17 @@ ENV LDFLAGS -L"${OUT}" -g
 
 RUN ${FUZZER}/instrument.sh
 
+# 这个脚本只能放在 magma/run.sh 中运行
 # RUN ${FUZZER}/generateCFG.sh
 # ENTRYPOINT ${FUZZER}/generateCFG.sh
 
+# 暂时无用了，因为已经获得了 12PUTs 的 cmplog binary
 # RUN mkdir -p ${OUT}/cmplog
 # COPY --chown=magma:magma ${magma_root}/cmplogs/${target_name} ${OUT}/cmplog/
 
-RUN mkdir -p ${OUT}/cfgbin
-COPY --chown=magma:magma ${magma_root}/cfgbin/${target_name} ${OUT}/cfgbin/
+# 这个不能用，因为 cfg binary 在不同的插桩中会不一样
+# RUN mkdir -p ${OUT}/cfgbin
+# COPY --chown=magma:magma ${magma_root}/cfgbin/${target_name} ${OUT}/cfgbin/
 
 ENTRYPOINT "${MAGMA}/run.sh"
 
