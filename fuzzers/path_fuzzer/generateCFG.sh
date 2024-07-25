@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+export PROGRAMAUX=$PROGRAM
+
 source $TARGET/configrc
 
 g++ -g $FUZZER/convert.cpp -o $OUT/convert
@@ -53,5 +55,6 @@ done
 cp $OUT/bbnum.txt $SHARED/bbnum.txt
 cp $OUT/cfg.txt $SHARED/cfg.txt
 
+export PROGRAM=$PROGRAMAUX
 
 

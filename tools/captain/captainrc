@@ -83,9 +83,10 @@ FUZZERS=(path_fuzzer)
 # aflplusplus_TARGETS=(openssl)
 # aflplusplus_TARGETS=(libpng libtiff libxml2 sqlite3)
 
-# path_fuzzer_TARGETS=(lua php libsndfile libpng libtiff libxml2 sqlite3 openssl)
+path_fuzzer_TARGETS=(lua php libsndfile libpng libtiff libxml2 sqlite3 openssl)
+# path_fuzzer_TARGETS=(libsndfile libtiff libxml2)
 # path_fuzzer_TARGETS=(libsndfile)
-path_fuzzer_TARGETS=(openssl)
+# path_fuzzer_TARGETS=(openssl)
 # path_fuzzer_TARGETS=(libtiff)
 # path_fuzzer_TARGETS=(php libsndfile libtiff libxml2 openssl)
 

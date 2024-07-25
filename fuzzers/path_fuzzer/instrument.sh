@@ -17,6 +17,11 @@ export AS="llvm-as"
 # CYHADDED: 
 export LD_LIBRARY_PATH=$FUZZER/repo
 
+# CYHADDED: echo
+echo "================== LIBS ================ start"
+echo "LIBS = $LIBS"
+echo "================== LIBS ================ end"
+
 export LIBS="$LIBS -lc++ -lc++abi $FUZZER/repo/utils/aflpp_driver/libAFLDriver.a"
 
 # AFL++'s driver is compiled against libc++

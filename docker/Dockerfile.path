@@ -5,7 +5,7 @@ FROM ubuntu:20.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y sudo make build-essential git wget tree vim gdb
+RUN apt-get update && apt-get install -y sudo make build-essential git wget tree vim gdb zstd libzstd-dev libjbig-dev
 
 RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
 
@@ -127,16 +127,19 @@ ARG BUILD_FLAGS="-include ${MAGMA}/src/canary.h ${CANARIES_FLAG} ${FIXES_FLAG} $
 
 ENV CFLAGS ${BUILD_FLAGS}
 ENV CXXFLAGS ${BUILD_FLAGS}
-ENV LIBS -l:magma.o -lrt
+# CYHADDED: 多加两个动态库 -ljbig -lzstd
+ENV LIBS -l:magma.o -lrt -ljbig -lzstd
+# ENV LIBS -l:magma.o -lrt
 ENV LDFLAGS -L"${OUT}" -g
 
+# ENTRYPOINT ${FUZZER}/instrument.sh
 RUN ${FUZZER}/instrument.sh
 
 # 这个脚本只能放在 magma/run.sh 中运行
 # RUN ${FUZZER}/generateCFG.sh
 # ENTRYPOINT ${FUZZER}/generateCFG.sh
 
-# 暂时无用了，因为已经获得了 12PUTs 的 cmplog binary
+# 暂时无用了，因为 12PUTs 的 cmplog binary 是在 build.sh 中构建的
 # RUN mkdir -p ${OUT}/cmplog
 # COPY --chown=magma:magma ${magma_root}/cmplogs/${target_name} ${OUT}/cmplog/
 

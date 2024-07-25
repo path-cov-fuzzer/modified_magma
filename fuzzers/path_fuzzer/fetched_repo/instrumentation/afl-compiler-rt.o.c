@@ -1349,7 +1349,7 @@ __attribute__((constructor(0))) void __afl_auto_first(void) {
 static bool first = true;    // 表示是第一次执行 path_inject_eachbb 函数
 
 void writeToLogFile(char *content) {
-    FILE *file = fopen("./PUT_log.txt", "a"); // 打开文件，以追加模式写入
+    FILE *file = fopen("/magma_shared/PUT_log.txt", "a"); // 打开文件，以追加模式写入
     if (file != NULL) {
         fprintf(file, "%s\n", content); // 写入内容到文件
         fclose(file); // 关闭文件
@@ -1374,9 +1374,13 @@ void path_inject_eachbb(int integerBBID) {
 
     if(__afl_path_ptr[0] * sizeof(u32) <= __afl_path_map_size - sizeof(u32)) {
         __afl_path_ptr[__afl_path_ptr[0]] = integerBBID;
+
+        // snprintf(formattedContent, 100, "__afl_path_ptr[0] = %d, __afl_path_ptr[__afl_path_ptr[0]] = %d", __afl_path_ptr[0], __afl_path_ptr[__afl_path_ptr[0]]);
+        // writeToLogFile(formattedContent);
+
     }
     else {
-        writeToLogFile("path SHM exceeds!\n");
+        writeToLogFile("path SHM exceeds!");
         assert(0);
     }
 }
