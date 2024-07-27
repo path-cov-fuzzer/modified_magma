@@ -2454,9 +2454,14 @@ int main(int argc, char **argv_orig, char **envp) {
 
       afl_fsrv_kill(&afl->fsrv);
       afl_shm_deinit(&afl->shm);
+
       afl->fsrv.map_size = new_map_size;
       afl->fsrv.trace_bits =
           afl_shm_init(&afl->shm, new_map_size, afl->non_instrumented_mode);
+      // CYHADDED: 把 afl->shm 里的 path_map 赋值给 afl->fsrv 的 path_tracebits
+      afl->fsrv.path_trace_bits = afl->shm.path_map;
+      afl->fsrv.path_map_size   = afl->shm.path_map_size;
+
       setenv("AFL_NO_AUTODICT", "1", 1);  // loaded already
       afl_fsrv_start(&afl->fsrv, afl->argv, &afl->stop_soon,
                      afl->afl_env.afl_debug_child);
@@ -2537,6 +2542,10 @@ int main(int argc, char **argv_orig, char **envp) {
       setenv("AFL_NO_AUTODICT", "1", 1);  // loaded already
       afl->fsrv.trace_bits =
           afl_shm_init(&afl->shm, new_map_size, afl->non_instrumented_mode);
+      // CYHADDED: 把 afl->shm 里的 path_map 赋值给 afl->fsrv 的 path_tracebits
+      afl->fsrv.path_trace_bits = afl->shm.path_map;
+      afl->fsrv.path_map_size   = afl->shm.path_map_size;
+
       afl->cmplog_fsrv.trace_bits = afl->fsrv.trace_bits;
       afl_fsrv_start(&afl->fsrv, afl->argv, &afl->stop_soon,
                      afl->afl_env.afl_debug_child);

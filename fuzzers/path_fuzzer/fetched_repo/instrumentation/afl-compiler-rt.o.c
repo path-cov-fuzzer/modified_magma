@@ -1374,10 +1374,6 @@ void path_inject_eachbb(int integerBBID) {
 
     if(__afl_path_ptr[0] * sizeof(u32) <= __afl_path_map_size - sizeof(u32)) {
         __afl_path_ptr[__afl_path_ptr[0]] = integerBBID;
-
-        // snprintf(formattedContent, 100, "__afl_path_ptr[0] = %d, __afl_path_ptr[__afl_path_ptr[0]] = %d", __afl_path_ptr[0], __afl_path_ptr[__afl_path_ptr[0]]);
-        // writeToLogFile(formattedContent);
-
     }
     else {
         writeToLogFile("path SHM exceeds!");

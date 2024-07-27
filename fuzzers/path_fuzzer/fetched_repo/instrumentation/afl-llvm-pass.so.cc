@@ -1170,223 +1170,228 @@ bool AFLCoverage::runOnModule(Module &M) {
 
   }
 
+
     // CYHADDED: 添加的代码如下 ------------------------------------------------------------------------------- start
+    char *cmplog_env_var = "AFL_LLVM_CMPLOG";  // 举例：获取 PATH 环境变量的值
 
-    // 新的插桩逻辑：
-    // 每个基本块的开头插桩，每个 call 指令的后面插桩
-    // 插桩之前加个文件锁，里面存放着 int 类型的 BBID，插桩完后释放锁
+    char *cmplog_value = getenv(env_var);
 
-    // CYHADDED: 新代码开始 ------------------------------------------------------------------------------------------------------------- start
-    // 0. 获取 BBID文件，CALLMAP文件 和 CFG文件 的文件描述符
-    // BBID文件   ：仅仅储存一个整数，所有基本块被分配的 BBID 都从这里读取
-    // CALLMAP文件：每行的格式是：整数BBID Calls 函数名                 （函数名格式：全局符号：FuncName  局部符号：static ModuleName_FuncName）
-    // CFG文件    ：格式类似于以前的 INT_CFG，只不过现在函数名换成了 （全局符号：FuncName  局部符号：static ModuleName_FuncName）
+    if (NULL == cmplog_value) {
+        // 新的插桩逻辑：
+        // 每个基本块的开头插桩，每个 call 指令的后面插桩
+        // 插桩之前加个文件锁，里面存放着 int 类型的 BBID，插桩完后释放锁
 
-    char *BBID_filename = getenv("BBIDFILE");
-    char *CALLMAP_filename = getenv("CALLMAPFILE");
-    char *CFG_filename = getenv("CFGFILE");
-    FILE *bbidfile = fopen(BBID_filename, "r+");
-    // 若 BBID文件 不存在，则创建它并写入数字 0
-    if(NULL == bbidfile) {
-        bbidfile = fopen(BBID_filename, "w+");
-        assert(bbidfile);
-        writeBBIDfile(bbidfile, 0);
-    }
-    FILE *callmapfile = fopen(CALLMAP_filename, "a");
-    assert(callmapfile);
-    FILE *cfgfile = fopen(CFG_filename, "a");
-    assert(cfgfile);
-    // 根据 FILE* 获取文件描述符
-    int bbidfd = fileno(bbidfile);
-    int callmap_fd = fileno(callmapfile);
-    int cfg_fd = fileno(cfgfile);
+        // CYHADDED: 新代码开始 ------------------------------------------------------------------------------------------------------------- start
+        // 0. 获取 BBID文件，CALLMAP文件 和 CFG文件 的文件描述符
+        // BBID文件   ：仅仅储存一个整数，所有基本块被分配的 BBID 都从这里读取
+        // CALLMAP文件：每行的格式是：整数BBID Calls 函数名                 （函数名格式：全局符号：FuncName  局部符号：static ModuleName_FuncName）
+        // CFG文件    ：格式类似于以前的 INT_CFG，只不过现在函数名换成了 （全局符号：FuncName  局部符号：static ModuleName_FuncName）
 
-    // 1. 给三个文件描述符加锁
-    // 获取独占锁（写锁）
-    // assert(flock(bbidfd, LOCK_EX) != -1);
-    // assert(flock(callmap_fd, LOCK_EX) != -1);
-    // assert(flock(cfg_fd, LOCK_EX) != -1);
-    while(flock(bbidfd, LOCK_EX) == -1);
-    while(flock(callmap_fd, LOCK_EX) == -1);
-    while(flock(cfg_fd, LOCK_EX) == -1);
+        char *BBID_filename = getenv("BBIDFILE");
+        char *CALLMAP_filename = getenv("CALLMAPFILE");
+        char *CFG_filename = getenv("CFGFILE");
+        FILE *bbidfile = fopen(BBID_filename, "r+");
+        // 若 BBID文件 不存在，则创建它并写入数字 0
+        if(NULL == bbidfile) {
+            bbidfile = fopen(BBID_filename, "w+");
+            assert(bbidfile);
+            writeBBIDfile(bbidfile, 0);
+        }
+        FILE *callmapfile = fopen(CALLMAP_filename, "a");
+        assert(callmapfile);
+        FILE *cfgfile = fopen(CFG_filename, "a");
+        assert(cfgfile);
+        // 根据 FILE* 获取文件描述符
+        int bbidfd = fileno(bbidfile);
+        int callmap_fd = fileno(callmapfile);
+        int cfg_fd = fileno(cfgfile);
 
-    // 2. 读取存放在 BBIDFILE 里的整数，作为这一个 module 的起始 BBID
-    int BBID = readBBIDfile(bbidfile);
+        // 1. 给三个文件描述符加锁
+        // 获取独占锁（写锁）
+        // assert(flock(bbidfd, LOCK_EX) != -1);
+        // assert(flock(callmap_fd, LOCK_EX) != -1);
+        // assert(flock(cfg_fd, LOCK_EX) != -1);
+        while(flock(bbidfd, LOCK_EX) == -1);
+        while(flock(callmap_fd, LOCK_EX) == -1);
+        while(flock(cfg_fd, LOCK_EX) == -1);
 
-    // 3. 准备正则表达式模式：过滤掉所有开头为 llvm\. 的函数
-    std::regex pattern("^llvm\\..*");
+        // 2. 读取存放在 BBIDFILE 里的整数，作为这一个 module 的起始 BBID
+        int BBID = readBBIDfile(bbidfile);
 
-    // 4. 给代码里注入要调用的函数的声明 void path_inject_eachbb(int);
-    auto &CTX = M.getContext();
-    Type *VoidTy = Type::getVoidTy(CTX);
-    Type *interger32Type = Type::getInt32Ty(CTX);
-    FunctionType *FuncTy_eachbb = FunctionType::get(VoidTy, {interger32Type}, false); // 参数是 int 指针，也可以说是字符串
-    FunctionCallee path_inject_eachbbFunc = M.getOrInsertFunction("path_inject_eachbb", FuncTy_eachbb);
+        // 3. 准备正则表达式模式：过滤掉所有开头为 llvm\. 的函数
+        std::regex pattern("^llvm\\..*");
 
-    // 5. 这一次的循环的目的是：记录每个 originalBB 对应的 插桩后BBID
-    std::map<llvm::BasicBlock*, int> origBB_and_BBID;
-    int cfgBBID = BBID;
-    for (auto &F : M) {
-        // 如果这个函数只是个声明，那么 skip
-        if (F.isDeclaration())
-            continue;
-        // 函数名开头为 llvm\.，直接跳过
-        std::string FuncName = F.getName().str(); 
-        if (std::regex_match(FuncName, pattern)) 
-            continue;
+        // 4. 给代码里注入要调用的函数的声明 void path_inject_eachbb(int);
+        auto &CTX = M.getContext();
+        Type *VoidTy = Type::getVoidTy(CTX);
+        Type *interger32Type = Type::getInt32Ty(CTX);
+        FunctionType *FuncTy_eachbb = FunctionType::get(VoidTy, {interger32Type}, false); // 参数是 int 指针，也可以说是字符串
+        FunctionCallee path_inject_eachbbFunc = M.getOrInsertFunction("path_inject_eachbb", FuncTy_eachbb);
 
-        // // 每个函数一开始，bbID = 0  这里注释掉即可，BBID 的初始化在读取 BBIDfile 的那一刻就做好了
-        // int bbID = 0;
+        // 5. 这一次的循环的目的是：记录每个 originalBB 对应的 插桩后BBID
+        std::map<llvm::BasicBlock*, int> origBB_and_BBID;
+        int cfgBBID = BBID;
+        for (auto &F : M) {
+            // 如果这个函数只是个声明，那么 skip
+            if (F.isDeclaration())
+                continue;
+            // 函数名开头为 llvm\.，直接跳过
+            std::string FuncName = F.getName().str(); 
+            if (std::regex_match(FuncName, pattern)) 
+                continue;
 
-        for (auto &BB : F) {
+            // // 每个函数一开始，bbID = 0  这里注释掉即可，BBID 的初始化在读取 BBIDfile 的那一刻就做好了
+            // int bbID = 0;
 
-            origBB_and_BBID[&BB] = cfgBBID;
-            cfgBBID++; 
+            for (auto &BB : F) {
 
-            // 每一个 call 指令后面会进行一次插桩，每一次插桩增加 2 个基本块
-            for (auto &Inst : BB) {
-                // 检查指令是否是call指令
-                if (CallInst* callInst = dyn_cast<CallInst>(&Inst)) {
-                    // 获取被调用的函数的指针
-                    Function *Callee = callInst->getCalledFunction();
-                    // 如果这个 call 指令是间接 call，那么我们直接 skip，不插桩
-                    if(!Callee) 
-                        continue;
-                    // 如果被调用的函数的函数名开头为 llvm. ，那么就跳过
-                    if (std::regex_search(Callee->getName().str(), pattern)) 
-                        continue;
-                    // 检查这个 call 指令调用的函数名是否为 path_inject_eachbb，若是，则跳过
-                    assert(Callee->getName() != "path_inject_eachbb");
+                origBB_and_BBID[&BB] = cfgBBID;
+                cfgBBID++; 
 
-                    // 每一个 call 指令后面会进行一次插桩，每一次插桩增加 2 个基本块
-                    cfgBBID += 2;
+                // 每一个 call 指令后面会进行一次插桩，每一次插桩增加 2 个基本块
+                for (auto &Inst : BB) {
+                    // 检查指令是否是call指令
+                    if (CallInst* callInst = dyn_cast<CallInst>(&Inst)) {
+                        // 获取被调用的函数的指针
+                        Function *Callee = callInst->getCalledFunction();
+                        // 如果这个 call 指令是间接 call，那么我们直接 skip，不插桩
+                        if(!Callee) 
+                            continue;
+                        // 如果被调用的函数的函数名开头为 llvm. ，那么就跳过
+                        if (std::regex_search(Callee->getName().str(), pattern)) 
+                            continue;
+                        // 检查这个 call 指令调用的函数名是否为 path_inject_eachbb，若是，则跳过
+                        assert(Callee->getName() != "path_inject_eachbb");
+
+                        // 每一个 call 指令后面会进行一次插桩，每一次插桩增加 2 个基本块
+                        cfgBBID += 2;
+                    }
                 }
             }
         }
-    }
 
-    // 6. 给代码里加入对声明的函数 void path_inject_eachbb(int); 的调用
-    // 这一次的循环有两个目的：1.插桩 2.填充callmap.txt 3.填充 cfg.txt
-    for (auto &F : M) {
-        // 如果这个函数只是个声明，那么 skip
-        if (F.isDeclaration())
-            continue;
-        // 函数名开头为 llvm\.，直接跳过
-        if (std::regex_match(F.getName().str(), pattern)) 
-            continue;
+        // 6. 给代码里加入对声明的函数 void path_inject_eachbb(int); 的调用
+        // 这一次的循环有两个目的：1.插桩 2.填充callmap.txt 3.填充 cfg.txt
+        for (auto &F : M) {
+            // 如果这个函数只是个声明，那么 skip
+            if (F.isDeclaration())
+                continue;
+            // 函数名开头为 llvm\.，直接跳过
+            if (std::regex_match(F.getName().str(), pattern)) 
+                continue;
 
-        // 查看这个函数是否是 static 的
-        bool isFuncStatic = F.hasLocalLinkage();
-        std::string FuncName = isFuncStatic ? ("static " + M.getName().str() + "_" + F.getName().str()) : F.getName().str(); 
-        writeFile(cfgfile, "Function: %s\n", FuncName.c_str());
+            // 查看这个函数是否是 static 的
+            bool isFuncStatic = F.hasLocalLinkage();
+            std::string FuncName = isFuncStatic ? ("static " + M.getName().str() + "_" + F.getName().str()) : F.getName().str(); 
+            writeFile(cfgfile, "Function: %s\n", FuncName.c_str());
 
-        // // 每个函数一开始，bbID = 0  这里注释掉即可，BBID 的初始化在读取 BBIDfile 的那一刻就做好了
-        // int bbID = 0;
+            // // 每个函数一开始，bbID = 0  这里注释掉即可，BBID 的初始化在读取 BBIDfile 的那一刻就做好了
+            // int bbID = 0;
 
-        for (auto &BB : F) {
-            // 记录在 basic block 开头的 bbID，随后再往每个 callInst 后面插入函数调用
-            int storebbID = BBID;
-            BBID++; 
-            // 往 cfg.txt 写入这个基本块的块号
-            writeFile(cfgfile, "BasicBlock: %d\n", storebbID);
-            writeFile(callmapfile, "%d\n", storebbID);
-            // 首先给每一个 call 指令的后面插入 void path_inject_eachbb(int) 的调用
-            for (auto &Inst : BB) {
-                // 检查指令是否是call指令
-                if (CallInst* callInst = dyn_cast<CallInst>(&Inst)) {
-                    // 获取被调用的函数的指针
-                    Function *Callee = callInst->getCalledFunction();
-                    // 如果这个 call 指令是间接 call，那么我们直接 skip，不插桩
-                    if(!Callee) 
-                        continue;
-                    // 如果被调用的函数的函数名开头为 llvm. ，那么就跳过
-                    if (std::regex_search(Callee->getName().str(), pattern)) 
-                        continue;
-                    // 检查这个 call 指令调用的函数名是否为 path_inject_eachbb，若是，则跳过
-                    if (Callee->getName() == "path_inject_eachbb") 
-                        continue;
+            for (auto &BB : F) {
+                // 记录在 basic block 开头的 bbID，随后再往每个 callInst 后面插入函数调用
+                int storebbID = BBID;
+                BBID++; 
+                // 往 cfg.txt 写入这个基本块的块号
+                writeFile(cfgfile, "BasicBlock: %d\n", storebbID);
+                writeFile(callmapfile, "%d\n", storebbID);
+                // 首先给每一个 call 指令的后面插入 void path_inject_eachbb(int) 的调用
+                for (auto &Inst : BB) {
+                    // 检查指令是否是call指令
+                    if (CallInst* callInst = dyn_cast<CallInst>(&Inst)) {
+                        // 获取被调用的函数的指针
+                        Function *Callee = callInst->getCalledFunction();
+                        // 如果这个 call 指令是间接 call，那么我们直接 skip，不插桩
+                        if(!Callee) 
+                            continue;
+                        // 如果被调用的函数的函数名开头为 llvm. ，那么就跳过
+                        if (std::regex_search(Callee->getName().str(), pattern)) 
+                            continue;
+                        // 检查这个 call 指令调用的函数名是否为 path_inject_eachbb，若是，则跳过
+                        if (Callee->getName() == "path_inject_eachbb") 
+                            continue;
 
-                    // 遇到 call 指令了，需要多分两个基本块出来
-                    writeFile(cfgfile, "Successors: %d\n", BBID);
-                    writeFile(cfgfile, "BasicBlock: %d\n", BBID);
+                        // 遇到 call 指令了，需要多分两个基本块出来
+                        writeFile(cfgfile, "Successors: %d\n", BBID);
+                        writeFile(cfgfile, "BasicBlock: %d\n", BBID);
 
-                    // 在这里遇到了一个正常的 call 指令，我们要对其进行解析，然后写入 callmapfile
-                    bool isCalleeStatic = Callee->hasLocalLinkage();
-                    std::string calleeFuncName = isCalleeStatic ? ("static " + M.getName().str() + "_" + Callee->getName().str()) : Callee->getName().str(); 
-                    writeFile(callmapfile, "%d Calls %s\n", BBID, calleeFuncName.c_str());
-                    // CYHNO_TE: 执行到这里，已经说明要在 call 指令后面插桩了，这里我们要跳过 call BasicBlock，所以 bbID 需要 +1 
-                    BBID++;
+                        // 在这里遇到了一个正常的 call 指令，我们要对其进行解析，然后写入 callmapfile
+                        bool isCalleeStatic = Callee->hasLocalLinkage();
+                        std::string calleeFuncName = isCalleeStatic ? ("static " + M.getName().str() + "_" + Callee->getName().str()) : Callee->getName().str(); 
+                        writeFile(callmapfile, "%d Calls %s\n", BBID, calleeFuncName.c_str());
+                        // CYHNO_TE: 执行到这里，已经说明要在 call 指令后面插桩了，这里我们要跳过 call BasicBlock，所以 bbID 需要 +1 
+                        BBID++;
 
-                    // 遇到 call 指令了，需要多分两个基本块出来
-                    writeFile(cfgfile, "Successors: %d\n", BBID);
-                    writeFile(cfgfile, "BasicBlock: %d\n", BBID);
-                    writeFile(callmapfile, "%d\n", BBID);
+                        // 遇到 call 指令了，需要多分两个基本块出来
+                        writeFile(cfgfile, "Successors: %d\n", BBID);
+                        writeFile(cfgfile, "BasicBlock: %d\n", BBID);
+                        writeFile(callmapfile, "%d\n", BBID);
 
-                    // 创建IRBuilder对象
-                    IRBuilder<> builder(callInst->getNextNode());
-                    // 创建 path_inject_eachbb 的参数
-                    std::vector<Value*> args;
-                    args.push_back(builder.getInt32(BBID));
-                    // 插入 path_inject_eachbb(BBID) 这个函数调用
-                    builder.CreateCall(path_inject_eachbbFunc, args);
+                        // 创建IRBuilder对象
+                        IRBuilder<> builder(callInst->getNextNode());
+                        // 创建 path_inject_eachbb 的参数
+                        std::vector<Value*> args;
+                        args.push_back(builder.getInt32(BBID));
+                        // 插入 path_inject_eachbb(BBID) 这个函数调用
+                        builder.CreateCall(path_inject_eachbbFunc, args);
 
-                    // 更新 bbID
-                    BBID++; 
+                        // 更新 bbID
+                        BBID++; 
+                    }
                 }
-            }
 
-            // 往 cfg.txt 写入这个基本块在切分之前的 successors
-            writeFile(cfgfile, "Successors:");
-            for (BasicBlock *Succ : successors(&BB)) {
-                writeFile(cfgfile, " %d", origBB_and_BBID[Succ]);
+                // 往 cfg.txt 写入这个基本块在切分之前的 successors
+                writeFile(cfgfile, "Successors:");
+                for (BasicBlock *Succ : successors(&BB)) {
+                    writeFile(cfgfile, " %d", origBB_and_BBID[Succ]);
+                }
+                writeFile(cfgfile, "\n");
+
+                // 接着给这个基本块的开头插入 void path_inject_eachbb(int) 的调用
+                // 每个基本块的开头的 bbID 之前已经存下来了，是 storebbID
+                // 获取基本块的开头指令迭代器
+                // NOTE: 需要跳过 PHI 指令，不然会报错
+                Instruction* firstInst = &(BB.front());
+                // 跳过 PHI 指令
+                while (PHINode *PHI = dyn_cast<PHINode>(firstInst)) {
+                    firstInst = firstInst->getNextNode();
+                }
+                // 跳过 LandingPad 指令
+                while (isa<LandingPadInst>(firstInst)) {
+                    firstInst = firstInst->getNextNode();
+                }
+                
+                // 创建IRBuilder对象
+                IRBuilder<> builder(firstInst);
+                // 创建函数调用指令
+                std::vector<Value*> args;
+                // 创建 path_inject_eachbb 的参数
+                args.push_back(builder.getInt32(storebbID));
+                // 插入 path_inject_eachbb(BBID) 这个函数调用
+                builder.CreateCall(path_inject_eachbbFunc, args);
+
+                // NOTE: 此时不需要更新 bbID, 在储存 storebbID 的时候已经更新过了
             }
             writeFile(cfgfile, "\n");
-
-            // 接着给这个基本块的开头插入 void path_inject_eachbb(int) 的调用
-            // 每个基本块的开头的 bbID 之前已经存下来了，是 storebbID
-            // 获取基本块的开头指令迭代器
-            // NOTE: 需要跳过 PHI 指令，不然会报错
-            Instruction* firstInst = &(BB.front());
-            // 跳过 PHI 指令
-            while (PHINode *PHI = dyn_cast<PHINode>(firstInst)) {
-                firstInst = firstInst->getNextNode();
-            }
-            // 跳过 LandingPad 指令
-            while (isa<LandingPadInst>(firstInst)) {
-                firstInst = firstInst->getNextNode();
-            }
-            
-            // 创建IRBuilder对象
-            IRBuilder<> builder(firstInst);
-            // 创建函数调用指令
-            std::vector<Value*> args;
-            // 创建 path_inject_eachbb 的参数
-            args.push_back(builder.getInt32(storebbID));
-            // 插入 path_inject_eachbb(BBID) 这个函数调用
-            builder.CreateCall(path_inject_eachbbFunc, args);
-
-            // NOTE: 此时不需要更新 bbID, 在储存 storebbID 的时候已经更新过了
         }
-        writeFile(cfgfile, "\n");
+
+        // 7. 把最后得到的 BBID 存放在 BBIDFILE 里，作为下一个 module 的起始 BBID
+        writeBBIDfile(bbidfile, BBID);
+
+        // 8. 给三个文件描述符释放锁
+        // // assert(flock(bbidfd, LOCK_UN) != -1);
+        // // assert(flock(callmap_fd, LOCK_UN) != -1);
+        // // assert(flock(cfg_fd, LOCK_UN) != -1);
+        // while(flock(bbidfd, LOCK_UN) == -1);
+        // while(flock(callmap_fd, LOCK_UN) == -1);
+        // while(flock(cfg_fd, LOCK_UN) == -1);
+
+        // 9. 释放锁后就可以关闭文件了 (似乎在关闭文件的同时会释放锁)
+        fclose(bbidfile);
+        fclose(callmapfile);
+        fclose(cfgfile);
+        // CYHADDED: 新代码开始 ------------------------------------------------------------------------------------------------------------- end
     }
-
-    // 7. 把最后得到的 BBID 存放在 BBIDFILE 里，作为下一个 module 的起始 BBID
-    writeBBIDfile(bbidfile, BBID);
-
-    // 8. 给三个文件描述符释放锁
-    // // assert(flock(bbidfd, LOCK_UN) != -1);
-    // // assert(flock(callmap_fd, LOCK_UN) != -1);
-    // // assert(flock(cfg_fd, LOCK_UN) != -1);
-    // while(flock(bbidfd, LOCK_UN) == -1);
-    // while(flock(callmap_fd, LOCK_UN) == -1);
-    // while(flock(cfg_fd, LOCK_UN) == -1);
-
-    // 9. 释放锁后就可以关闭文件了 (似乎在关闭文件的同时会释放锁)
-    fclose(bbidfile);
-    fclose(callmapfile);
-    fclose(cfgfile);
-    // CYHADDED: 新代码开始 ------------------------------------------------------------------------------------------------------------- end
-
     // CYHADDED: 添加的代码如下 ------------------------------------------------------------------------------- end
 
 #if LLVM_VERSION_MAJOR >= 11                        /* use new pass manager */

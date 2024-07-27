@@ -279,6 +279,7 @@ __attribute__((weak)) int main(int argc, char **argv) {
 
   */
 
+  // 如果命令行参数数量小于 2，或者第二个参数是 -h / --help，那么报错
   if (argc < 2 || strncmp(argv[1], "-h", 2) == 0 ||
       strcmp(argv[1], "--help") == 0) {
 
@@ -299,7 +300,9 @@ __attribute__((weak)) int main(int argc, char **argv) {
         "option\n"
         "===================================================================\n",
         argv[0], argv[0]);
-    if (argc == 2 &&
+    
+    // 如果第二个参数是 -h 或者 --help，那么打印完 help 日志后就直接退出
+	if (argc == 2 &&
         (strncmp(argv[1], "-h", 2) == 0 || strcmp(argv[1], "--help") == 0)) {
 
       exit(0);
@@ -308,6 +311,8 @@ __attribute__((weak)) int main(int argc, char **argv) {
 
   }
 
+  // 这个函数在本文件内是有定义的，不过也是弱符号 (libtiff 没有 LLVMFuzzerRunDriver)
+  // 但 LLVMFuzzerTestOneInput 存在于 contrib/oss-fuzz/tiff_read_rgba_fuzzer.cc
   return LLVMFuzzerRunDriver(&argc, &argv, LLVMFuzzerTestOneInput);
 
 }
@@ -319,6 +324,7 @@ __attribute__((weak)) int LLVMFuzzerRunDriver(
   int    argc = *argcp;
   char **argv = *argvp;
 
+  // 通常不执行
   if (getenv("AFL_GDB")) {
 
     char cmd[64];
@@ -329,6 +335,7 @@ __attribute__((weak)) int LLVMFuzzerRunDriver(
 
   }
 
+  // 判断是否在 AFL_fuzzing 中，若不在，则 __afl_sharedmem_fuzzing = 0;
   bool in_afl = !(!getenv(SHM_FUZZ_ENV_VAR) || !getenv(SHM_ENV_VAR) ||
                   fcntl(FORKSRV_FD, F_GETFD) == -1 ||
                   fcntl(FORKSRV_FD + 1, F_GETFD) == -1);
@@ -338,6 +345,8 @@ __attribute__((weak)) int LLVMFuzzerRunDriver(
   output_file = stderr;
   maybe_duplicate_stderr();
   maybe_close_fd_mask();
+  
+  // 若 LLVMFuzzerInitialize 被定义了，则执行下面的代码 (libtiff 中没有定义)
   if (LLVMFuzzerInitialize) {
 
     fprintf(stderr, "Running LLVMFuzzerInitialize ...\n");
@@ -347,7 +356,6 @@ __attribute__((weak)) int LLVMFuzzerRunDriver(
   }
 
   // Do any other expensive one-time initialization here.
-
   uint8_t dummy_input[64] = {0};
   memcpy(dummy_input, (void *)AFL_PERSISTENT, sizeof(AFL_PERSISTENT));
   memcpy(dummy_input + 32, (void *)AFL_DEFER_FORKSVR,
@@ -355,9 +363,11 @@ __attribute__((weak)) int LLVMFuzzerRunDriver(
 
   int N = INT_MAX;
 
+  // 如果 1.不在 AFL fuzzing 中 2.参数数量为 3.第二个参数不为 "-"
   if (!in_afl && argc == 2 && !strcmp(argv[1], "-")) {
 
     __afl_manual_init();
+    // 根据命令行参数，让 PUT 一个一个执行输入文件
     return ExecuteFilesOnyByOne(argc, argv, callback);
 
   } else if (argc == 2 && argv[1][0] == '-' && argv[1][1]) {
