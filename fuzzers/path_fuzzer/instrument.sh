@@ -33,9 +33,6 @@ export OUTAUX=$OUT
     export OUT="$OUT/afl"
     export LDFLAGS="$LDFLAGS -L$OUT"
 
-    # $MAGMA/build.sh 所描述的是 MAGMA 日志协作代码，不需要在这上面插桩
-    "$MAGMA/build.sh"
-
     # $TARGET/build.sh 所描述的是 PUT 的构建代码，需要插桩
     export OUT="$OUTAUX"
 
@@ -49,6 +46,8 @@ export OUTAUX=$OUT
     export AFL_LLVM_CALLER=1
 
     export OUT="$OUT/afl"
+
+    "$MAGMA/build.sh"
     "$TARGET/build.sh"
      
     # 在 $FUZZER/run.sh 中实现 3. 和 4. (分别是对 cfg.txt 和 callmap.txt 过滤，以及生成 CFG binary)
