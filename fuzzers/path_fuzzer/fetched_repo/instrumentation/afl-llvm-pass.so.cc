@@ -1174,7 +1174,7 @@ bool AFLCoverage::runOnModule(Module &M) {
     // CYHADDED: 添加的代码如下 ------------------------------------------------------------------------------- start
     char *cmplog_env_var = "AFL_LLVM_CMPLOG";  // 举例：获取 PATH 环境变量的值
 
-    char *cmplog_value = getenv(env_var);
+    char *cmplog_value = getenv(cmplog_env_var);
 
     if (NULL == cmplog_value) {
         // 新的插桩逻辑：
