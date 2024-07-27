@@ -60,6 +60,7 @@ export OUTAUX=$OUT
     export LDFLAGS="$LDFLAGS -L$OUT"
     # export CFLAGS="$CFLAGS -DMAGMA_DISABLE_CANARIES"
 
+    export AFL_LLVM_CALLER=1
     export AFL_LLVM_CMPLOG=1
 
     "$MAGMA/build.sh"
