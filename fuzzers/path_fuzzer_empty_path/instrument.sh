@@ -16,7 +16,7 @@ export CXX="$FUZZER/repo/afl-clang-fast++"
 export AS="llvm-as"
 export LD_LIBRARY_PATH=$FUZZER/repo
 
-if [ "$TARGET" != "lavam" ]; then
+if [ "$TARGET" != "base64" ] && [ "$TARGET" != "md5sum" ] && [ "$TARGET" != "uniq" ] && [ "$TARGET" != "who" ]; then
 
 	export LIBS="$LIBS -lc++ -lc++abi $FUZZER/repo/utils/aflpp_driver/libAFLDriver.a"
 

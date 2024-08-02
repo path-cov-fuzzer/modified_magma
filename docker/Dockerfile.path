@@ -110,45 +110,44 @@ RUN mkdir -p ${TARGET} && chown magma:magma ${TARGET}
 COPY --chown=magma:magma ${magma_root}/${target_path} ${TARGET}/
 RUN ${TARGET}/preinstall.sh
 USER magma:magma
-# RUN ${TARGET}/fetch.sh
-ENTRYPOINT ${TARGET}/fetch.sh
-# RUN ${MAGMA}/apply_patches.sh
+RUN ${TARGET}/fetch.sh
+RUN ${MAGMA}/apply_patches.sh
 
-# ## Configuration parameters
-# ARG isan
-# ARG harden
-# ARG canaries
-# ARG fixes
+## Configuration parameters
+ARG isan
+ARG harden
+ARG canaries
+ARG fixes
 
-# ARG ISAN_FLAG=${isan:+-DMAGMA_FATAL_CANARIES}
-# ARG HARDEN_FLAG=${harden:+-DMAGMA_HARDEN_CANARIES}
-# ARG CANARIES_FLAG=${canaries:+-DMAGMA_ENABLE_CANARIES}
-# ARG FIXES_FLAG=${fixes:+-DMAGMA_ENABLE_FIXES}
-# ARG BUILD_FLAGS="-include ${MAGMA}/src/canary.h ${CANARIES_FLAG} ${FIXES_FLAG} ${ISAN_FLAG} ${HARDEN_FLAG} -g -O0"
+ARG ISAN_FLAG=${isan:+-DMAGMA_FATAL_CANARIES}
+ARG HARDEN_FLAG=${harden:+-DMAGMA_HARDEN_CANARIES}
+ARG CANARIES_FLAG=${canaries:+-DMAGMA_ENABLE_CANARIES}
+ARG FIXES_FLAG=${fixes:+-DMAGMA_ENABLE_FIXES}
+ARG BUILD_FLAGS="-include ${MAGMA}/src/canary.h ${CANARIES_FLAG} ${FIXES_FLAG} ${ISAN_FLAG} ${HARDEN_FLAG} -g -O0"
 
-# ENV CFLAGS ${BUILD_FLAGS}
-# ENV CXXFLAGS ${BUILD_FLAGS}
-# # CYHADDED: 多加两个动态库 -ljbig -lzstd
-# ENV LIBS -l:magma.o -lrt -ljbig -lzstd
-# # ENV LIBS -l:magma.o -lrt
-# ENV LDFLAGS -L"${OUT}" -g
+ENV CFLAGS ${BUILD_FLAGS}
+ENV CXXFLAGS ${BUILD_FLAGS}
+# CYHADDED: 多加两个动态库 -ljbig -lzstd
+ENV LIBS -l:magma.o -lrt -ljbig -lzstd
+# ENV LIBS -l:magma.o -lrt
+ENV LDFLAGS -L"${OUT}" -g
 
-# # ENTRYPOINT ${FUZZER}/instrument.sh
-# RUN ${FUZZER}/instrument.sh
+# ENTRYPOINT ${FUZZER}/instrument.sh
+RUN ${FUZZER}/instrument.sh
 
-# # 这个脚本只能放在 magma/run.sh 中运行
-# # RUN ${FUZZER}/generateCFG.sh
-# # ENTRYPOINT ${FUZZER}/generateCFG.sh
+# 这个脚本只能放在 magma/run.sh 中运行
+# RUN ${FUZZER}/generateCFG.sh
+# ENTRYPOINT ${FUZZER}/generateCFG.sh
 
-# # 暂时无用了，因为 12PUTs 的 cmplog binary 是在 build.sh 中构建的
-# # RUN mkdir -p ${OUT}/cmplog
-# # COPY --chown=magma:magma ${magma_root}/cmplogs/${target_name} ${OUT}/cmplog/
+# 暂时无用了，因为 12PUTs 的 cmplog binary 是在 build.sh 中构建的
+# RUN mkdir -p ${OUT}/cmplog
+# COPY --chown=magma:magma ${magma_root}/cmplogs/${target_name} ${OUT}/cmplog/
 
-# # 这个不能用，因为 cfg binary 在不同的插桩中会不一样
-# # RUN mkdir -p ${OUT}/cfgbin
-# # COPY --chown=magma:magma ${magma_root}/cfgbin/${target_name} ${OUT}/cfgbin/
+# 这个不能用，因为 cfg binary 在不同的插桩中会不一样
+# RUN mkdir -p ${OUT}/cfgbin
+# COPY --chown=magma:magma ${magma_root}/cfgbin/${target_name} ${OUT}/cfgbin/
 
-# ENTRYPOINT "${MAGMA}/run.sh"
+ENTRYPOINT "${MAGMA}/run.sh"
 
 
 
