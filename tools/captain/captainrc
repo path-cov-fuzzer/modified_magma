@@ -73,7 +73,7 @@ POLL=5
 # FUZZERS: an array of fuzzer names (from magma/fuzzers/*) to evaluate
 # FUZZERS=(afl aflfast moptafl aflplusplus fairfuzz honggfuzz)
 # FUZZERS=(aflplusplus)
-FUZZERS=(path_fuzzer_empty_path)
+FUZZERS=(path_fuzzer_empty_path path_fuzzer_full_path)
 
 # [fuzzer_TARGETS]: an array of target names (from magma/targets/*) to fuzz with
 # `fuzzer`. The `fuzzer` prefix is a fuzzer listed in the FUZZERS array
