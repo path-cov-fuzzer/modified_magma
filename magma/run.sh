@@ -17,7 +17,11 @@ set -e
 ##
 
 # CYHADDED: 生成 CFG binary
-source $FUZZER/generateCFG.sh
+if [ $TARGET != "lavam" ]; then
+
+	source $FUZZER/generateCFG.sh
+
+fi
 
 # CYHADDED: 打印一些变量 ------------------ start
 # 设置 CFLAGS, CXXFLAGS, LD, LDFLAGS, SHARED, LIBS

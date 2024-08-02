@@ -1,23 +1,61 @@
 #!/bin/bash
 set -e
 
-for program in base64 md5sum uniq who; do
-	export WHITELIST="${program}.c"
-	# Compile program
-	pushd $TARGET/repo/$program/coreutils-8.24-lava-safe/
-	autoreconf
-	./configure LIBS="$LIBS -lacl"
+if [ "$AFL_LLVM_CMPLOG" -ne 1 ]; then
 
-	# Hook functions for uniq
-	if [[ "$program" == "uniq" ]]; then
-		find . -type f -name "*.h" -exec sed -i \
-			's/#define\s*HAVE_GETC_UNLOCKED\s*[0-9]/#undef HAVE_GETC_UNLOCKED/' {} +
-		find . -type f -name "*.h" -exec sed -i \
-			's/#define\s*HAVE_DECL_GETC_UNLOCKED\s*[0-9]/#undef HAVE_GETC_UNLOCKED/' {} +
-	fi
+	for program in base64 md5sum uniq who; do
 
-	make
-	cp "src/$program" "$OUT/$program"
+		pushd $TARGET/repo/$program/coreutils-8.24-lava-safe
 
-	popd
-done
+		rm $OUT/bbid.txt $OUT/callmap.txt $OUT/cfg.txt $OUT/function_list.txt $OUT/bbnum.txt $OUT/convert || true
+		make clean
+		rm src/$program
+
+		export BBIDFILE="$OUT/bbid.txt"
+		export CALLMAPFILE="$OUT/callmap.txt"
+		export CFGFILE="$OUT/cfg.txt"
+		make -e cyh$program
+
+		cat $OUT/cfg.txt | grep "BasicBlock: " | wc -l > $OUT/bbnum.txt
+		# 如果是其它 TARGET，这里需要一个 filter CFG 和 callmap 的操作，这里直接拷贝改名就好
+		cp $OUT/cfg.txt $OUT/cfg_filtered.txt
+		cp $OUT/callmap.txt $OUT/callmap_filtered.txt
+		# 生成 function_list.txt
+		cat $OUT/cfg_filtered.txt | grep "Function: " | nl -v 0 | awk '{print $1, $3, $4, $5, $6, $7, $8, $9}' > $OUT/function_list.txt
+
+		cp "src/$program" "$OUT/afl/$program"
+
+		g++ -g $FUZZER/convert.cpp -o $OUT/convert
+		pushd $OUT > /dev/null
+		./convert
+		popd > /dev/null
+
+		mv $OUT/top.bin $OUT/${program}_cfg.bin
+
+		# 改名，防止冲突
+		mv $OUT/cfg_filtered.txt $OUT/cfg_${program}.txt
+		mv $OUT/callmap_filtered.txt $OUT/callmap_${program}.txt
+		mv $OUT/function_list.txt $OUT/${program}_function_list.txt
+
+		popd
+
+	done
+
+else
+
+	for program in base64 md5sum uniq who; do
+
+		pushd $TARGET/repo/$program/coreutils-8.24-lava-safe
+
+		make clean
+		rm src/$program
+
+		make -e cyh$program
+		cp "src/$program" "$OUT/cmplog/$program"
+
+		popd
+
+	done
+
+fi
+
