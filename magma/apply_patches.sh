@@ -8,7 +8,7 @@ set -e
 
 # TODO filter patches by target config.yaml
 
-if [ "$TARGET" != "lavam" ]; then
+if [[ "$TARGET" != "lavam" ]]; then
 
 	find "$TARGET/patches/setup" "$TARGET/patches/bugs" -name "*.patch" | \
 	while read patch; do

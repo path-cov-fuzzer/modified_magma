@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-if [ "$AFL_LLVM_CMPLOG" -ne 1 ]; then
+if [[ "$AFL_LLVM_CMPLOG" != "1" ]]; then
 
 	for program in base64 md5sum uniq who; do
 
