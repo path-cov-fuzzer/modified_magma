@@ -1,0 +1,9 @@
+base_fuzzcompile_cmplog.sh  | 使用原生 AFL++ (不启用 LLVM) 编译 base64，生成 cmplog-version 和 noncmplog-version 的 PUTs，并且复制到 base64_test 的相应文件夹中
+cfgcompile.sh               | 使用 最新的 一体式 AFL++ 生成 base64 CFG
+cfgcompile.sh.backup        | 使用 CFG-AFL++ 编译 base64，生成 base64 的 CFG (旧版本的备份)
+cyhscript.sh                | 对 coreutils 代码进行一些细微修改，让它们能够适配 ubuntu20.04
+pathfuzzcompile.sh          | 使用 最新的 一体式 AFL++ 进行插桩
+pathfuzzcompile.sh.backup   | 使用 path-AFL++ 编译 base64，生成可供 path-fuzzer fuzzing 的 base64 PUT (旧版本的备份)
+singlecompile.sh            | 使用 gcc/g++ 单独编译一个 base64 的脚本
+cfgcompile_llvm_ir.sh       | 生成 CFG 的同时，生成各个文件的 LLVM IR
+
