@@ -44,7 +44,7 @@ else
     pushd $TARGET/repo/coreutils-8.24-lava-safe
 
     make clean
-    rm src/$program
+    rm src/$program || true
 
     make -e cyh$program
     cp "src/$program" "$OUT/cmplog/$program"
