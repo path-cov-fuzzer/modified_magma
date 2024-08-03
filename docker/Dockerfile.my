@@ -5,7 +5,7 @@ FROM ubuntu:20.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y sudo make build-essential git wget tree vim
+RUN apt-get update && apt-get install -y sudo make build-essential git wget tree vim gdb zstd libzstd-dev libjbig-dev libselinux-dev
 
 RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
 
@@ -16,7 +16,7 @@ RUN echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-17 main" >> /etc/a
 RUN echo "deb-src http://apt.llvm.org/focal/ llvm-toolchain-focal-17 main" >> /etc/apt/sources.list
 
 RUN apt-get update && apt-get install -y clang-17 llvm-17-dev libc++-17-dev libc++abi-17-dev \
-    gcc-9-plugin-dev libssl-dev cargo
+    gcc-9-plugin-dev libssl-dev cargo autopoint
 
 RUN update-alternatives \
   --install /usr/lib/llvm              llvm             /usr/lib/llvm-17  20 \

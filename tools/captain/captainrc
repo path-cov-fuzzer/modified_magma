@@ -10,7 +10,7 @@
 WORKDIR=./workdir
 
 # REPEAT: number of campaigns to run per program (per fuzzer)
-REPEAT=3
+REPEAT=2
 
 # [WORKER_MODE]: defines the type of CPU resources to allocate (default: 1)
 # - 1: logical cores (possibly SMT-enabled)
@@ -72,7 +72,7 @@ POLL=5
 
 # FUZZERS: an array of fuzzer names (from magma/fuzzers/*) to evaluate
 # FUZZERS=(afl aflfast moptafl aflplusplus fairfuzz honggfuzz)
-FUZZERS=(aflplusplus)
+FUZZERS=(aflplusplus path_fuzzer_empty_path path_fuzzer_full_path) 
 # FUZZERS=(path_fuzzer_empty_path)
 
 # [fuzzer_TARGETS]: an array of target names (from magma/targets/*) to fuzz with
@@ -83,6 +83,8 @@ FUZZERS=(aflplusplus)
 # aflplusplus_TARGETS=(openssl)
 # aflplusplus_TARGETS=(libpng libtiff libxml2 sqlite3)
 aflplusplus_TARGETS=(base64 md5sum uniq who)
+path_fuzzer_empty_path_TARGETS=(base64 md5sum uniq who)
+path_fuzzer_full_path_TARGETS=(base64 md5sum uniq who)
 
 # path_fuzzer_TARGETS=(lavam lua php libsndfile libpng libtiff libxml2 sqlite3 openssl)
 # path_fuzzer_empty_path_TARGETS=(base64 md5sum uniq who)
