@@ -9,7 +9,7 @@ if [[ "$AFL_LLVM_CMPLOG" != "1" ]]; then
 
     rm $OUT/bbid.txt $OUT/callmap.txt $OUT/cfg.txt $OUT/function_list.txt $OUT/bbnum.txt $OUT/convert || true
     make clean
-    rm src/$program
+    rm src/$program || true
 
     export BBIDFILE="$OUT/bbid.txt"
     export CALLMAPFILE="$OUT/callmap.txt"
