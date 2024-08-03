@@ -17,7 +17,7 @@ set -e
 ##
 
 # CYHADDED: 生成 CFG binary
-if [ $TARGET != "lavam" ]; then
+if [[ "$TARGET" != *"base64"* ]] && [[ "$TARGET" != *"md5sum"* ]] && [[ "$TARGET" != *"uniq"* ]] && [[ "$TARGET" != *"who"* ]]; then
 
 	source $FUZZER/generateCFG.sh
 

@@ -14,33 +14,63 @@ export CC="$FUZZER/repo/afl-clang-fast"
 export CXX="$FUZZER/repo/afl-clang-fast++"
 export AS="llvm-as"
 
-export LIBS="$LIBS -lc++ -lc++abi $FUZZER/repo/utils/aflpp_driver/libAFLDriver.a"
+if [[ "$TARGET" != *"base64"* ]] && [[ "$TARGET" != *"md5sum"* ]] && [[ "$TARGET" != *"uniq"* ]] && [[ "$TARGET" != *"who"* ]]; then
 
-# AFL++'s driver is compiled against libc++
-export CXXFLAGS="$CXXFLAGS -stdlib=libc++"
+    echo "branch 1"
 
-# Build the AFL-only instrumented version
-(
-    export OUT="$OUT/afl"
-    export LDFLAGS="$LDFLAGS -L$OUT"
+    export LIBS="$LIBS -lc++ -lc++abi $FUZZER/repo/utils/aflpp_driver/libAFLDriver.a"
 
-    "$MAGMA/build.sh"
-    "$TARGET/build.sh"
-)
+    # AFL++'s driver is compiled against libc++
+    export CXXFLAGS="$CXXFLAGS -stdlib=libc++"
 
-# Build the CmpLog instrumented version
+    # Build the AFL-only instrumented version
+    (
+        export OUT="$OUT/afl"
+        export LDFLAGS="$LDFLAGS -L$OUT"
 
-(
-    export OUT="$OUT/cmplog"
-    export LDFLAGS="$LDFLAGS -L$OUT"
-    # export CFLAGS="$CFLAGS -DMAGMA_DISABLE_CANARIES"
+        "$MAGMA/build.sh"
+        "$TARGET/build.sh"
+    )
 
-    export AFL_LLVM_CMPLOG=1
+    # Build the CmpLog instrumented version
 
-    "$MAGMA/build.sh"
-    "$TARGET/build.sh"
-)
+    (
+        export OUT="$OUT/cmplog"
+        export LDFLAGS="$LDFLAGS -L$OUT"
+        # export CFLAGS="$CFLAGS -DMAGMA_DISABLE_CANARIES"
 
-# NOTE: We pass $OUT directly to the target build.sh script, since the artifact
-#       itself is the fuzz target. In the case of Angora, we might need to
-#       replace $OUT by $OUT/fast and $OUT/track, for instance.
+        export AFL_LLVM_CMPLOG=1
+
+        "$MAGMA/build.sh"
+        "$TARGET/build.sh"
+    )
+
+    # NOTE: We pass $OUT directly to the target build.sh script, since the artifact
+    #       itself is the fuzz target. In the case of Angora, we might need to
+    #       replace $OUT by $OUT/fast and $OUT/track, for instance.
+
+else
+
+    echo "branch 2"
+
+	(
+		export LIBS=""
+		export CFLAGS="-I. -I./lib -Ilib -I./lib -Isrc -I./src -O2 -Wno-error=implicit-function-declaration"
+		export CXXFLAGS="-I. -I./lib -Ilib -I./lib -Isrc -I./src -O2 -Wno-error=implicit-function-declaration"
+
+		"$TARGET/build.sh"
+	)
+
+	(
+		export LIBS=""
+		export CFLAGS="-I. -I./lib -Ilib -I./lib -Isrc -I./src -O2 -Wno-error=implicit-function-declaration"
+		export CXXFLAGS="-I. -I./lib -Ilib -I./lib -Isrc -I./src -O2 -Wno-error=implicit-function-declaration"
+        export AFL_LLVM_CMPLOG=1
+
+		"$TARGET/build.sh"
+	)
+
+fi
+
+
+
