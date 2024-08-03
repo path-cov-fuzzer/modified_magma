@@ -16,6 +16,8 @@ if [[ "$AFL_LLVM_CMPLOG" != "1" ]]; then
     export CFGFILE="$OUT/cfg.txt"
     make -e cyh$program
 
+    cp "src/$program" "$OUT/afl/$program"
+
     if [[ -e "$OUT/cfg.txt" ]] && [[ -e "$OUT/callmap.txt" ]]; then
         cat $OUT/cfg.txt | grep "BasicBlock: " | wc -l > $OUT/bbnum.txt
         # 如果是其它 TARGET，这里需要一个 filter CFG 和 callmap 的操作，这里直接拷贝改名就好
@@ -23,8 +25,6 @@ if [[ "$AFL_LLVM_CMPLOG" != "1" ]]; then
         cp $OUT/callmap.txt $OUT/callmap_filtered.txt
         # 生成 function_list.txt
         cat $OUT/cfg_filtered.txt | grep "Function: " | nl -v 0 | awk '{print $1, $3, $4, $5, $6, $7, $8, $9}' > $OUT/function_list.txt
-
-        cp "src/$program" "$OUT/afl/$program"
 
         g++ -g $FUZZER/convert.cpp -o $OUT/convert
         pushd $OUT > /dev/null
