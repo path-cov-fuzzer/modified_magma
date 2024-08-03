@@ -16,8 +16,9 @@ export CXX="$FUZZER/repo/afl-clang-fast++"
 export AS="llvm-as"
 export LD_LIBRARY_PATH=$FUZZER/repo
 
-if [ "$TARGET" != "base64" ] && [ "$TARGET" != "md5sum" ] && [ "$TARGET" != "uniq" ] && [ "$TARGET" != "who" ]; then
+if [[ "$TARGET" != *"base64"* ]] && [[ "$TARGET" != *"md5sum"* ]] && [[ "$TARGET" != *"uniq"* ]] && [[ "$TARGET" != *"who"* ]]; then
 
+    echo "branch 1"
 	export LIBS="$LIBS -lc++ -lc++abi $FUZZER/repo/utils/aflpp_driver/libAFLDriver.a"
 
 	# AFL++'s driver is compiled against libc++
@@ -68,6 +69,8 @@ if [ "$TARGET" != "base64" ] && [ "$TARGET" != "md5sum" ] && [ "$TARGET" != "uni
 #       replace $OUT by $OUT/fast and $OUT/track, for instance.
 
 else 
+
+    echo "branch 2"
 
 	(
 		export LIBS=""

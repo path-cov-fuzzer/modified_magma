@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+export program="md5sum"
+
 if [[ "$AFL_LLVM_CMPLOG" != "1" ]]; then
 
     pushd $TARGET/repo/coreutils-8.24-lava-safe
