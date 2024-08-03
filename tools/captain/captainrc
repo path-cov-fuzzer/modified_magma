@@ -72,7 +72,7 @@ POLL=5
 
 # FUZZERS: an array of fuzzer names (from magma/fuzzers/*) to evaluate
 # FUZZERS=(afl aflfast moptafl aflplusplus fairfuzz honggfuzz)
-FUZZERS=(aflplusplus path_fuzzer_empty_path path_fuzzer_full_path) 
+FUZZERS=(path_fuzzer_empty_path path_fuzzer_full_path) 
 # FUZZERS=(path_fuzzer_empty_path)
 
 # [fuzzer_TARGETS]: an array of target names (from magma/targets/*) to fuzz with
@@ -82,7 +82,7 @@ FUZZERS=(aflplusplus path_fuzzer_empty_path path_fuzzer_full_path)
 # aflplusplus_TARGETS=(lua php libsndfile libpng libtiff libxml2 sqlite3 openssl)
 # aflplusplus_TARGETS=(openssl)
 # aflplusplus_TARGETS=(libpng libtiff libxml2 sqlite3)
-aflplusplus_TARGETS=(base64 md5sum uniq who)
+# aflplusplus_TARGETS=(base64 md5sum uniq who)
 path_fuzzer_empty_path_TARGETS=(base64 md5sum uniq who)
 path_fuzzer_full_path_TARGETS=(base64 md5sum uniq who)
 

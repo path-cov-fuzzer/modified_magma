@@ -18,9 +18,12 @@ set -e
 
 # CYHADDED: 生成 CFG binary
 if [[ "$TARGET" != *"base64"* ]] && [[ "$TARGET" != *"md5sum"* ]] && [[ "$TARGET" != *"uniq"* ]] && [[ "$TARGET" != *"who"* ]]; then
-
 	source $FUZZER/generateCFG.sh
-
+else
+	cp $OUT/cfg_${PROGRAM}.txt $SHARED/cfg_${PROGRAM}.txt
+	cp $OUT/callmap_${PROGRAM}.txt $SHARED/callmap_${PROGRAM}.txt
+	cp $OUT/${PROGRAM}_function_list.txt $SHARED/${PROGRAM}_function_list.txt
+	cp $OUT/${PROGRAM}_cfg.bin $SHARED/${PROGRAM}_cfg.bin
 fi
 
 # CYHADDED: 打印一些变量 ------------------ start
