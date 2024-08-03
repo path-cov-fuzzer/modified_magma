@@ -39,7 +39,7 @@ if [[ "$AFL_LLVM_CMPLOG" != "1" ]]; then
         mv $OUT/function_list.txt $OUT/${program}_function_list.txt
     else
 
-        if [[ "$FUZZER" == *"aflplusplus"* ]]; then
+        if [[ "$FUZZER" != *"aflplusplus"* ]]; then
             echo "Assertion failed: Fuzzer is not aflplusplus, but cfg.txt does not exit"
             exit 1
         fi
