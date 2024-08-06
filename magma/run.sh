@@ -17,7 +17,9 @@ set -e
 ##
 
 # CYHADDED: 生成 CFG binary
-if [[ "$FUZZER" != "aflplusplus" ]]; then
+echo "============= FUZZER = $FUZZER"
+if [[ "$FUZZER" != *"aflplusplus"* ]]; then
+	echo "branch 1"
 	if [[ "$TARGET" != *"base64"* ]] && [[ "$TARGET" != *"md5sum"* ]] && [[ "$TARGET" != *"uniq"* ]] && [[ "$TARGET" != *"who"* ]]; then
 		source $FUZZER/generateCFG.sh
 	else
