@@ -10,7 +10,7 @@
 WORKDIR=./workdir
 
 # REPEAT: number of campaigns to run per program (per fuzzer)
-REPEAT=2
+REPEAT=5
 
 # [WORKER_MODE]: defines the type of CPU resources to allocate (default: 1)
 # - 1: logical cores (possibly SMT-enabled)
@@ -30,7 +30,7 @@ REPEAT=2
 # [TIMEOUT]: time to run each campaign. This variable supports one-letter
 # suffixes to indicate duration (s: seconds, m: minutes, h: hours, d: days)
 # (default: 1m)
-TIMEOUT=10m
+TIMEOUT=30m
 
 # [POLL]: time (in seconds) between polls (default: 5)
 POLL=5
@@ -72,7 +72,7 @@ POLL=5
 
 # FUZZERS: an array of fuzzer names (from magma/fuzzers/*) to evaluate
 # FUZZERS=(afl aflfast moptafl aflplusplus fairfuzz honggfuzz)
-FUZZERS=(path_fuzzer_empty_path path_fuzzer_full_path) 
+FUZZERS=(aflplusplus path_fuzzer_empty_path path_fuzzer_full_path cov_trans_fuzzer_empty_path cov_trans_fuzzer_full_path) 
 # FUZZERS=(path_fuzzer_empty_path)
 
 # [fuzzer_TARGETS]: an array of target names (from magma/targets/*) to fuzz with
@@ -82,9 +82,12 @@ FUZZERS=(path_fuzzer_empty_path path_fuzzer_full_path)
 # aflplusplus_TARGETS=(lua php libsndfile libpng libtiff libxml2 sqlite3 openssl)
 # aflplusplus_TARGETS=(openssl)
 # aflplusplus_TARGETS=(libpng libtiff libxml2 sqlite3)
-# aflplusplus_TARGETS=(base64 md5sum uniq who)
+
+aflplusplus_TARGETS=(base64 md5sum uniq who)
 path_fuzzer_empty_path_TARGETS=(base64 md5sum uniq who)
 path_fuzzer_full_path_TARGETS=(base64 md5sum uniq who)
+cov_trans_empty_path_TARGETS=(base64 md5sum uniq who)
+cov_trans_full_path_TARGETS=(base64 md5sum uniq who)
 
 # path_fuzzer_TARGETS=(lavam lua php libsndfile libpng libtiff libxml2 sqlite3 openssl)
 # path_fuzzer_empty_path_TARGETS=(base64 md5sum uniq who)
