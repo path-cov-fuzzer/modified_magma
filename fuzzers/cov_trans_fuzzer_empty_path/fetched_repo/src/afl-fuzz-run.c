@@ -28,6 +28,10 @@
 #include <path_reduction.h>
 // CYHADDED: 包含 path_reduction.h 头文件 ------------ end
 
+// CYHADDED: 包含 assert.h 头文件 ------------ start
+#include <assert.h>
+// CYHADDED: 包含 assert.h 头文件 ------------ end
+
 #include "afl-fuzz.h"
 #include <sys/time.h>
 #include <signal.h>
