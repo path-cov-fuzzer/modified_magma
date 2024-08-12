@@ -206,8 +206,10 @@ if [ -z $CACHE_ON_DISK ]; then
     if mountpoint -q -- "$CACHEDIR"; then
         sudo umount -f "$CACHEDIR"
     fi
+    set -x
     sudo mount -t tmpfs -o size=$TMPFS_SIZE,uid=$(id -u $USER),gid=$(id -g $USER) \
         tmpfs "$CACHEDIR"
+    set +x
 fi
 
 cleanup()

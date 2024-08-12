@@ -10,7 +10,7 @@
 # - env ARGS: extra arguments to pass to the program
 ##
 
-export TIMELIMIT=0.12s
+export TIMELIMIT=0.15s
 
 run_limited()
 {
