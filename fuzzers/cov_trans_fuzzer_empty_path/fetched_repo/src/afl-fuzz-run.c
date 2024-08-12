@@ -90,7 +90,7 @@ fuzz_run_target(afl_state_t *afl, afl_forkserver_t *fsrv, u32 timeout) {
     prev_queued_cov = cur_queued_cov;
   }
   // 如果当前总执行数已经是之前的三倍，那么看看 corpus_count 是否有变化 (TODO: )
-  if(cur_execs >= prev_execs * 3) {
+  if(cur_execs >= prev_execs * 6) {
     // 如果 corpus_count 没有增加，那么切换到下一个 k 
     assert(cur_queued_cov >= prev_queued_cov);
     if (cur_queued_cov == prev_queued_cov) {
