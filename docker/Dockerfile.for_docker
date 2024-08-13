@@ -1,0 +1,175 @@
+FROM ubuntu:20.04
+
+# TODO remove sudo for user "magma" to avoid unwanted priv escalation from
+# other attack vectors.
+
+# CYHADDED: 一些基本软件的安装
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y sudo make build-essential git wget tree vim gdb zstd libzstd-dev libjbig-dev libselinux-dev
+
+RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
+
+RUN echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal main" >> /etc/apt/sources.list
+RUN echo "deb-src http://apt.llvm.org/focal/ llvm-toolchain-focal main" >> /etc/apt/sources.list
+RUN echo "# 17" >> /etc/apt/sources.list
+RUN echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-17 main" >> /etc/apt/sources.list
+RUN echo "deb-src http://apt.llvm.org/focal/ llvm-toolchain-focal-17 main" >> /etc/apt/sources.list
+
+RUN apt-get update && apt-get install -y clang-17 llvm-17-dev libc++-17-dev libc++abi-17-dev \
+    gcc-9-plugin-dev libssl-dev cargo autopoint
+
+RUN update-alternatives \
+  --install /usr/lib/llvm              llvm             /usr/lib/llvm-17  20 \
+  --slave   /usr/bin/llvm-config       llvm-config      /usr/bin/llvm-config-17  \
+    --slave   /usr/bin/llvm-ar           llvm-ar          /usr/bin/llvm-ar-17 \
+    --slave   /usr/bin/llvm-as           llvm-as          /usr/bin/llvm-as-17 \
+    --slave   /usr/bin/llvm-bcanalyzer   llvm-bcanalyzer  /usr/bin/llvm-bcanalyzer-17 \
+    --slave   /usr/bin/llvm-c-test       llvm-c-test      /usr/bin/llvm-c-test-17 \
+    --slave   /usr/bin/llvm-cov          llvm-cov         /usr/bin/llvm-cov-17 \
+    --slave   /usr/bin/llvm-diff         llvm-diff        /usr/bin/llvm-diff-17 \
+    --slave   /usr/bin/llvm-dis          llvm-dis         /usr/bin/llvm-dis-17 \
+    --slave   /usr/bin/llvm-dwarfdump    llvm-dwarfdump   /usr/bin/llvm-dwarfdump-17 \
+    --slave   /usr/bin/llvm-extract      llvm-extract     /usr/bin/llvm-extract-17 \
+    --slave   /usr/bin/llvm-link         llvm-link        /usr/bin/llvm-link-17 \
+    --slave   /usr/bin/llvm-mc           llvm-mc          /usr/bin/llvm-mc-17 \
+    --slave   /usr/bin/llvm-nm           llvm-nm          /usr/bin/llvm-nm-17 \
+    --slave   /usr/bin/llvm-objdump      llvm-objdump     /usr/bin/llvm-objdump-17 \
+    --slave   /usr/bin/llvm-ranlib       llvm-ranlib      /usr/bin/llvm-ranlib-17 \
+    --slave   /usr/bin/llvm-readobj      llvm-readobj     /usr/bin/llvm-readobj-17 \
+    --slave   /usr/bin/llvm-rtdyld       llvm-rtdyld      /usr/bin/llvm-rtdyld-17 \
+    --slave   /usr/bin/llvm-size         llvm-size        /usr/bin/llvm-size-17 \
+    --slave   /usr/bin/llvm-stress       llvm-stress      /usr/bin/llvm-stress-17 \
+    --slave   /usr/bin/llvm-symbolizer   llvm-symbolizer  /usr/bin/llvm-symbolizer-17 \
+    --slave   /usr/bin/llvm-tblgen       llvm-tblgen      /usr/bin/llvm-tblgen-17
+
+RUN update-alternatives \
+  --install /usr/bin/clang                 clang                  /usr/bin/clang-17     20 \
+  --slave   /usr/bin/clang++               clang++                /usr/bin/clang++-17 \
+  --slave   /usr/bin/clang-cpp             clang-cpp              /usr/bin/clang-cpp-17
+
+## Magma directory hierarchy
+# magma_root is relative to the docker-build's working directory
+# The Docker image must be built in the root of the magma directory
+ARG magma_root=./
+
+## Path variables inside the container
+ENV MAGMA_R /magma
+ENV OUT		/magma_out
+ENV SHARED 	/magma_shared
+
+ENV CC  /usr/bin/gcc
+ENV CXX /usr/bin/g++
+ENV LD /usr/bin/ld
+ENV AR /usr/bin/ar
+ENV AS /usr/bin/as
+ENV NM /usr/bin/nm
+ENV RANLIB /usr/bin/ranlib
+
+ARG USER_ID=1000
+ARG GROUP_ID=1000
+RUN mkdir -p /home && \
+	groupadd -g ${GROUP_ID} magma && \
+	useradd -l -u ${USER_ID} -K UMASK=0000 -d /home -g magma magma && \
+	chown magma:magma /home
+RUN	echo "magma:amgam" | chpasswd && usermod -a -G sudo magma
+
+RUN mkdir -p ${SHARED} ${OUT} && \
+	chown magma:magma ${SHARED} ${OUT} && \
+	chmod 744 ${SHARED} ${OUT}
+
+# CYHADDED: magma monitor 的依赖和构建
+ARG magma_path=magma
+ENV MAGMA 	${MAGMA_R}/${magma_path}
+USER root:root
+RUN mkdir -p ${MAGMA} && chown magma:magma ${MAGMA}
+COPY --chown=magma:magma ${magma_root}/${magma_path} ${MAGMA}/
+RUN ${MAGMA}/preinstall.sh
+USER magma:magma
+RUN ${MAGMA}/prebuild.sh
+
+# CYHADDED: 5 fuzzers 的构建
+ARG fuzzer_path1=fuzzers/aflplusplus
+ARG fuzzer_path2=fuzzers/path_fuzzer_empty_path
+ARG fuzzer_path3=fuzzers/path_fuzzer_full_path
+ARG fuzzer_path4=fuzzers/cov_trans_fuzzer_empty_path
+ARG fuzzer_path5=fuzzers/cov_trans_fuzzer_full_path
+
+ENV FUZZER1 	${MAGMA_R}/fuzzers/aflplusplus
+ENV FUZZER2 	${MAGMA_R}/fuzzers/path_fuzzer_empty_path
+ENV FUZZER3 	${MAGMA_R}/fuzzers/path_fuzzer_full_path
+ENV FUZZER4 	${MAGMA_R}/fuzzers/cov_trans_fuzzer_empty_path
+ENV FUZZER5 	${MAGMA_R}/fuzzers/cov_trans_fuzzer_full_path
+
+USER root:root
+
+RUN mkdir -p ${FUZZER1} && chown magma:magma ${FUZZER1}
+RUN mkdir -p ${FUZZER2} && chown magma:magma ${FUZZER2}
+RUN mkdir -p ${FUZZER3} && chown magma:magma ${FUZZER3}
+RUN mkdir -p ${FUZZER4} && chown magma:magma ${FUZZER4}
+RUN mkdir -p ${FUZZER5} && chown magma:magma ${FUZZER5}
+
+COPY --chown=magma:magma ${magma_root}/${fuzzer_path1} ${FUZZER1}/
+COPY --chown=magma:magma ${magma_root}/${fuzzer_path2} ${FUZZER2}/
+COPY --chown=magma:magma ${magma_root}/${fuzzer_path3} ${FUZZER3}/
+COPY --chown=magma:magma ${magma_root}/${fuzzer_path4} ${FUZZER4}/
+COPY --chown=magma:magma ${magma_root}/${fuzzer_path5} ${FUZZER5}/
+
+USER magma:magma
+
+RUN ${FUZZER1}/fetch.sh
+RUN ${FUZZER1}/build.sh
+RUN ${FUZZER2}/fetch.sh
+RUN ${FUZZER2}/build.sh
+RUN ${FUZZER3}/fetch.sh
+RUN ${FUZZER3}/build.sh
+RUN ${FUZZER4}/fetch.sh
+RUN ${FUZZER4}/build.sh
+RUN ${FUZZER5}/fetch.sh
+RUN ${FUZZER5}/build.sh
+
+# CYHADDED: 获取所有 TARGETS 的 PUT, cmplog, cfgbin 和 reference materials
+# ARG target_path=targets
+# ENV TARGET 	${MAGMA_R}/${target_path}
+
+USER root:root
+RUN mkdir -p ${OUT} && chown magma:magma ${OUT}
+RUN mkdir -p ${OUT}/afl && chown magma:magma ${OUT}/afl
+RUN mkdir -p ${OUT}/cmplog && chown magma:magma ${OUT}/cmplog
+RUN mkdir -p ${OUT}/cfgbin && chown magma:magma ${OUT}/cfgbin
+RUN mkdir -p ${OUT}/corpus && chown magma:magma ${OUT}/corpus
+RUN mkdir -p ${OUT}/reference_material && chown magma:magma ${OUT}/reference_material
+
+COPY --chown=magma:magma ${magma_root}/for_docker_stuff/afl  ${OUT}/afl
+COPY --chown=magma:magma ${magma_root}/for_docker_stuff/cmplog  ${OUT}/cmplog
+COPY --chown=magma:magma ${magma_root}/for_docker_stuff/cfgbin  ${OUT}/cfgbin
+COPY --chown=magma:magma ${magma_root}/for_docker_stuff/corpus  ${OUT}/corpus
+COPY --chown=magma:magma ${magma_root}/for_docker_stuff/reference_material ${OUT}/reference_material
+
+USER magma:magma
+
+## Configuration parameters
+ARG isan
+ARG harden
+ARG canaries
+ARG fixes
+
+ARG ISAN_FLAG=${isan:+-DMAGMA_FATAL_CANARIES}
+ARG HARDEN_FLAG=${harden:+-DMAGMA_HARDEN_CANARIES}
+ARG CANARIES_FLAG=${canaries:+-DMAGMA_ENABLE_CANARIES}
+ARG FIXES_FLAG=${fixes:+-DMAGMA_ENABLE_FIXES}
+ARG BUILD_FLAGS="-include ${MAGMA}/src/canary.h ${CANARIES_FLAG} ${FIXES_FLAG} ${ISAN_FLAG} ${HARDEN_FLAG} -g -O0"
+
+ENV CFLAGS ${BUILD_FLAGS}
+ENV CXXFLAGS ${BUILD_FLAGS}
+ENV LIBS -l:magma.o -lrt
+ENV LDFLAGS -L"${OUT}" -g
+
+# RUN ${FUZZER}/instrument.sh
+
+# ENTRYPOINT "${MAGMA}/run.sh"
+
+
+
+
+
