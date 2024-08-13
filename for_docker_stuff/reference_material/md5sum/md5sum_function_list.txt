@@ -1,0 +1,652 @@
+0 lava_set      
+1 lava_get      
+2 usage      
+3 main      
+4 copy_acl      
+5 set_acl      
+6 acl_errno_valid      
+7 acl_access_nontrivial      
+8 free_permission_context      
+9 get_permissions      
+10 chmod_or_fchmod      
+11 set_permissions      
+12 static lib/set-permissions.c_set_acls     
+13 areadlink      
+14 static lib/areadlink.c_careadlinkatcwd     
+15 areadlink_with_size      
+16 areadlinkat      
+17 static lib/argmatch.c___argmatch_die     
+18 argmatch      
+19 argmatch_invalid      
+20 argmatch_valid      
+21 __xargmatch_internal      
+22 argmatch_to_argument      
+23 argv_iter_init_argv      
+24 argv_iter_init_stream      
+25 argv_iter      
+26 argv_iter_n_args      
+27 argv_iter_free      
+28 find_backup_file_name      
+29 get_version      
+30 xget_version      
+31 base64_encode      
+32 base64_encode_alloc      
+33 isbase64      
+34 base64_decode_ctx_init      
+35 base64_decode_ctx      
+36 base64_decode_alloc_ctx      
+37 rotl64      
+38 rotr64      
+39 rotl32      
+40 rotr32      
+41 rotl_sz      
+42 rotr_sz      
+43 rotl16      
+44 rotr16      
+45 rotl8      
+46 rotr8      
+47 buffer_lcm      
+48 c_isascii      
+49 c_isalnum      
+50 c_isalpha      
+51 c_isblank      
+52 c_iscntrl      
+53 c_isdigit      
+54 c_islower      
+55 c_isgraph      
+56 c_isprint      
+57 c_ispunct      
+58 c_isspace      
+59 c_isupper      
+60 c_isxdigit      
+61 c_tolower      
+62 c_toupper      
+63 c_strcasecmp      
+64 c_strncasecmp      
+65 c_strtod      
+66 c_strtold      
+67 canon_host      
+68 canon_host_r      
+69 ch_strerror      
+70 canonicalize_filename_mode      
+71 careadlinkat      
+72 set_cloexec_flag      
+73 dup_cloexec      
+74 close_stream      
+75 close_stdin_set_file_name      
+76 close_stdin      
+77 close_stdout_set_file_name      
+78 close_stdout_set_ignore_EPIPE      
+79 close_stdout      
+80 md5_init_ctx      
+81 md5_read_ctx      
+82 md5_finish_ctx      
+83 md5_process_block      
+84 md5_stream      
+85 md5_process_bytes      
+86 md5_buffer      
+87 sha1_init_ctx      
+88 sha1_read_ctx      
+89 sha1_finish_ctx      
+90 sha1_process_block      
+91 sha1_stream      
+92 sha1_process_bytes      
+93 sha1_buffer      
+94 sha256_init_ctx      
+95 sha224_init_ctx      
+96 sha256_read_ctx      
+97 sha224_read_ctx      
+98 sha256_finish_ctx      
+99 static lib/sha256.c_sha256_conclude_ctx     
+100 sha224_finish_ctx      
+101 sha256_stream      
+102 sha256_process_block      
+103 sha256_process_bytes      
+104 sha224_stream      
+105 sha256_buffer      
+106 sha224_buffer      
+107 sha512_init_ctx      
+108 sha384_init_ctx      
+109 sha512_read_ctx      
+110 sha384_read_ctx      
+111 sha512_finish_ctx      
+112 static lib/sha512.c_sha512_conclude_ctx     
+113 sha384_finish_ctx      
+114 sha512_stream      
+115 sha512_process_block      
+116 sha512_process_bytes      
+117 sha384_stream      
+118 sha512_buffer      
+119 sha384_buffer      
+120 cycle_check_init      
+121 cycle_check      
+122 di_set_alloc      
+123 static lib/di-set.c_di_ent_hash     
+124 static lib/di-set.c_di_ent_compare     
+125 static lib/di-set.c_di_ent_free     
+126 di_set_free      
+127 di_set_insert      
+128 di_set_lookup      
+129 static lib/di-set.c_di_ino_hash     
+130 opendir_safer      
+131 dir_name      
+132 base_name      
+133 dir_len      
+134 mdir_name      
+135 last_component      
+136 base_len      
+137 strip_trailing_slashes      
+138 dtoastr      
+139 dtotimespec      
+140 exclude_add_pattern_buffer      
+141 fnmatch_pattern_has_wildcards      
+142 new_exclude      
+143 free_exclude      
+144 exclude_fnmatch      
+145 static lib/exclude.c_fnmatch_no_wildcards     
+146 excluded_file_name      
+147 add_exclude      
+148 add_exclude_fp      
+149 add_exclude_file      
+150 static lib/exclude.c_call_addfn     
+151 static lib/exclude.c_string_hasher_ci     
+152 static lib/exclude.c_string_hasher     
+153 static lib/exclude.c_string_compare_ci     
+154 static lib/exclude.c_string_compare     
+155 static lib/exclude.c_string_free     
+156 fdadvise      
+157 fadvise      
+158 chmodat      
+159 lchmodat      
+160 chownat      
+161 lchownat      
+162 creat_safer      
+163 open_safer      
+164 fd_reopen      
+165 fd_safer_flag      
+166 dup_safer_flag      
+167 fdutimensat      
+168 file_has_acl      
+169 record_file      
+170 seen_file      
+171 file_type      
+172 strmode      
+173 filemodestring      
+174 file_name_concat      
+175 mfile_name_concat      
+176 filevercmp      
+177 static lib/filevercmp.c_match_suffix     
+178 static lib/filevercmp.c_verrevcmp     
+179 fopen_safer      
+180 fprintftime      
+181 static lib/fprintftime.c_strftime_case_     
+182 static lib/fprintftime.c_fwrite_uppcase     
+183 freadseek      
+184 freopen_safer      
+185 ftoastr      
+186 full_read      
+187 full_write      
+188 gethrxtime      
+189 xtime_make      
+190 xtime_nonnegative_sec      
+191 xtime_sec      
+192 xtime_nonnegative_nsec      
+193 xtime_nsec      
+194 getndelim2      
+195 gettime      
+196 getugroups      
+197 hard_locale      
+198 hash_get_n_buckets      
+199 hash_get_n_buckets_used      
+200 hash_get_n_entries      
+201 hash_get_max_bucket_length      
+202 hash_table_ok      
+203 hash_print_statistics      
+204 hash_lookup      
+205 hash_get_first      
+206 hash_get_next      
+207 hash_get_entries      
+208 hash_do_for_each      
+209 hash_string      
+210 hash_reset_tuning      
+211 hash_initialize      
+212 static lib/hash.c_raw_hasher     
+213 static lib/hash.c_raw_comparator     
+214 hash_clear      
+215 hash_free      
+216 hash_rehash      
+217 static lib/hash.c_transfer_entries     
+218 hash_insert_if_absent      
+219 hash_insert      
+220 hash_delete      
+221 hash_pjw      
+222 triple_hash      
+223 triple_hash_no_name      
+224 triple_compare      
+225 triple_compare_ino_str      
+226 triple_free      
+227 heap_alloc      
+228 static lib/heap.c_heap_default_compare     
+229 heap_free      
+230 heap_insert      
+231 heap_remove_top      
+232 human_readable      
+233 human_options      
+234 i_ring_init      
+235 i_ring_empty      
+236 i_ring_push      
+237 i_ring_pop      
+238 getuser      
+239 getuidbyname      
+240 getgroup      
+241 getgidbyname      
+242 ino_map_alloc      
+243 static lib/ino-map.c_ino_hash     
+244 static lib/ino-map.c_ino_compare     
+245 ino_map_free      
+246 ino_map_insert      
+247 imaxtostr      
+248 inttostr      
+249 offtostr      
+250 uinttostr      
+251 umaxtostr      
+252 ldtoastr      
+253 initbuffer      
+254 readlinebuffer      
+255 readlinebuffer_delim      
+256 freebuffer      
+257 static lib/gl_linked_list.c_gl_linked_nx_create_empty     
+258 static lib/gl_linked_list.c_gl_linked_nx_create     
+259 static lib/gl_linked_list.c_gl_linked_size     
+260 static lib/gl_linked_list.c_gl_linked_node_value     
+261 static lib/gl_linked_list.c_gl_linked_node_nx_set_value     
+262 static lib/gl_linked_list.c_gl_linked_next_node     
+263 static lib/gl_linked_list.c_gl_linked_previous_node     
+264 static lib/gl_linked_list.c_gl_linked_get_at     
+265 static lib/gl_linked_list.c_gl_linked_nx_set_at     
+266 static lib/gl_linked_list.c_gl_linked_search_from_to     
+267 static lib/gl_linked_list.c_gl_linked_indexof_from_to     
+268 static lib/gl_linked_list.c_gl_linked_nx_add_first     
+269 static lib/gl_linked_list.c_gl_linked_nx_add_last     
+270 static lib/gl_linked_list.c_gl_linked_nx_add_before     
+271 static lib/gl_linked_list.c_gl_linked_nx_add_after     
+272 static lib/gl_linked_list.c_gl_linked_nx_add_at     
+273 static lib/gl_linked_list.c_gl_linked_remove_node     
+274 static lib/gl_linked_list.c_gl_linked_remove_at     
+275 static lib/gl_linked_list.c_gl_linked_remove     
+276 static lib/gl_linked_list.c_gl_linked_list_free     
+277 static lib/gl_linked_list.c_gl_linked_iterator     
+278 static lib/gl_linked_list.c_gl_linked_iterator_from_to     
+279 static lib/gl_linked_list.c_gl_linked_iterator_next     
+280 static lib/gl_linked_list.c_gl_linked_iterator_free     
+281 static lib/gl_linked_list.c_gl_linked_sortedlist_search     
+282 static lib/gl_linked_list.c_gl_linked_sortedlist_search_from_to     
+283 static lib/gl_linked_list.c_gl_linked_sortedlist_indexof     
+284 static lib/gl_linked_list.c_gl_linked_sortedlist_indexof_from_to     
+285 static lib/gl_linked_list.c_gl_linked_sortedlist_nx_add     
+286 static lib/gl_linked_list.c_gl_linked_sortedlist_remove     
+287 gl_list_nx_create_empty      
+288 gl_list_nx_create      
+289 gl_list_size      
+290 gl_list_node_value      
+291 gl_list_node_nx_set_value      
+292 gl_list_next_node      
+293 gl_list_previous_node      
+294 gl_list_get_at      
+295 gl_list_nx_set_at      
+296 gl_list_search      
+297 gl_list_search_from      
+298 gl_list_search_from_to      
+299 gl_list_indexof      
+300 gl_list_indexof_from      
+301 gl_list_indexof_from_to      
+302 gl_list_nx_add_first      
+303 gl_list_nx_add_last      
+304 gl_list_nx_add_before      
+305 gl_list_nx_add_after      
+306 gl_list_nx_add_at      
+307 gl_list_remove_node      
+308 gl_list_remove_at      
+309 gl_list_remove      
+310 gl_list_free      
+311 gl_list_iterator      
+312 gl_list_iterator_from_to      
+313 gl_list_iterator_next      
+314 gl_list_iterator_free      
+315 gl_sortedlist_search      
+316 gl_sortedlist_search_from_to      
+317 gl_sortedlist_indexof      
+318 gl_sortedlist_indexof_from_to      
+319 gl_sortedlist_nx_add      
+320 gl_sortedlist_remove      
+321 locale_charset      
+322 glthread_recursive_lock_init_multithreaded      
+323 glthread_once_singlethreaded      
+324 parse_long_options      
+325 mmalloca      
+326 freea      
+327 mb_width_aux      
+328 mb_copy      
+329 is_basic      
+330 mbiter_multi_next      
+331 mbiter_multi_reloc      
+332 mbiter_multi_copy      
+333 mbsalign      
+334 ambsalign      
+335 mbscasecmp      
+336 mbslen      
+337 mbsstr      
+338 static lib/mbsstr.c_knuth_morris_pratt_multibyte     
+339 static lib/mbsstr.c_knuth_morris_pratt     
+340 gnu_mbswidth      
+341 mbsnwidth      
+342 mbuiter_multi_next      
+343 mbuiter_multi_reloc      
+344 mbuiter_multi_copy      
+345 memcasecmp      
+346 memchr2      
+347 memcmp2      
+348 memcoll      
+349 memcoll0      
+350 mgetgroups      
+351 mkancesdirs      
+352 dirchownmod      
+353 make_dir_parents      
+354 mode_compile      
+355 mode_create_from_ref      
+356 mode_adjust      
+357 mpsort      
+358 static lib/mpsort.c_mpsort_with_tmp     
+359 num_processors      
+360 openat_save_fail      
+361 openat_restore_fail      
+362 openat_safer      
+363 yyparse      
+364 parse_datetime      
+365 static lib/parse-datetime.c_get_tz     
+366 static lib/parse-datetime.c_mktime_ok     
+367 static lib/parse-datetime.c_lookup_zone     
+368 physmem_total      
+369 physmem_available      
+370 posixtime      
+371 posix2_version      
+372 printf_frexp      
+373 printf_frexpl      
+374 priv_set_remove_linkdir      
+375 priv_set_restore_linkdir      
+376 set_program_name      
+377 proper_name      
+378 static lib/propername.c_mbsstr_trimmed_wordbounded     
+379 proper_name_utf8      
+380 qcopy_acl      
+381 qset_acl      
+382 clone_quoting_options      
+383 get_quoting_style      
+384 set_quoting_style      
+385 set_char_quoting      
+386 set_quoting_flags      
+387 set_custom_quoting      
+388 quotearg_buffer      
+389 static lib/quotearg.c_quotearg_buffer_restyled     
+390 quotearg_alloc      
+391 quotearg_alloc_mem      
+392 quotearg_free      
+393 quotearg_n      
+394 static lib/quotearg.c_quotearg_n_options     
+395 quotearg_n_mem      
+396 quotearg      
+397 quotearg_mem      
+398 quotearg_n_style      
+399 quotearg_n_style_mem      
+400 quotearg_style      
+401 quotearg_style_mem      
+402 quotearg_char_mem      
+403 quotearg_char      
+404 quotearg_colon      
+405 quotearg_colon_mem      
+406 quotearg_n_custom      
+407 quotearg_n_custom_mem      
+408 quotearg_custom      
+409 quotearg_custom_mem      
+410 quote_n_mem      
+411 quote_mem      
+412 quote_n      
+413 quote      
+414 static lib/quotearg.c_gettext_quote     
+415 randint_new      
+416 randint_all_new      
+417 randint_get_source      
+418 randint_genmax      
+419 randint_free      
+420 randint_all_free      
+421 randperm_bound      
+422 randperm_new      
+423 static lib/randperm.c_sparse_hash_     
+424 static lib/randperm.c_sparse_cmp_     
+425 randread_new      
+426 randread_set_handler      
+427 randread_set_handler_arg      
+428 randread      
+429 randread_free      
+430 static lib/randread.c_randread_error     
+431 isaac_refill      
+432 isaac_seed      
+433 fread_file      
+434 read_file      
+435 read_binary_file      
+436 init_tokenbuffer      
+437 readtoken      
+438 readtokens      
+439 readtokens0_init      
+440 readtokens0_free      
+441 readtokens0      
+442 static lib/readtokens0.c_save_token     
+443 get_root_dev_ino      
+444 safe_read      
+445 safe_write      
+446 same_name      
+447 save_cwd      
+448 restore_cwd      
+449 free_cwd      
+450 streamsavedir      
+451 savedir      
+452 static lib/savedir.c_direntry_cmp_name     
+453 static lib/savedir.c_direntry_cmp_inode     
+454 savewd_init      
+455 savewd_errno      
+456 savewd_chdir      
+457 savewd_restore      
+458 savewd_finish      
+459 savewd_process_files      
+460 settime      
+461 get_handler      
+462 gl_sockets_startup      
+463 gl_sockets_cleanup      
+464 get_stat_atime_ns      
+465 get_stat_ctime_ns      
+466 get_stat_mtime_ns      
+467 get_stat_birthtime_ns      
+468 get_stat_atime      
+469 get_stat_ctime      
+470 get_stat_mtime      
+471 get_stat_birthtime      
+472 statat      
+473 lstatat      
+474 mkstemp_safer      
+475 nstrftime      
+476 static lib/strftime.c_strftime_case_     
+477 mem_cd_iconv      
+478 str_cd_iconv      
+479 str_iconv      
+480 strnlen1      
+481 strintcmp      
+482 strnumcmp      
+483 try_tempname_len      
+484 gen_tempname_len      
+485 static lib/tempname.c_try_file     
+486 static lib/tempname.c_try_dir     
+487 static lib/tempname.c_try_nocreate     
+488 gen_tempname      
+489 try_tempname      
+490 make_timespec      
+491 timespec_cmp      
+492 timespec_sign      
+493 timespectod      
+494 trim2      
+495 unicode_to_mb      
+496 fwrite_success_callback      
+497 print_unicode_char      
+498 static lib/unicodeio.c_exit_failure_callback     
+499 static lib/unicodeio.c_fallback_failure_callback     
+500 dup_safer      
+501 fd_safer      
+502 pipe_safer      
+503 u8_mbtoucr      
+504 u8_uctomb_aux      
+505 uc_width      
+506 parse_user_spec      
+507 static lib/userspec.c_parse_with_separator     
+508 utimecmp      
+509 static lib/utimecmp.c_dev_info_hash     
+510 static lib/utimecmp.c_dev_info_compare     
+511 lutimensat      
+512 fdutimens      
+513 utimens      
+514 lutimens      
+515 verror      
+516 verror_at_line      
+517 version_etc_arn      
+518 version_etc_ar      
+519 version_etc_va      
+520 version_etc      
+521 emit_bug_reporting_address      
+522 can_write_any_file      
+523 xnmalloc      
+524 xmalloc      
+525 xnrealloc      
+526 xrealloc      
+527 x2nrealloc      
+528 xcharalloc      
+529 x2realloc      
+530 xzalloc      
+531 xcalloc      
+532 xmemdup      
+533 xstrdup      
+534 xalloc_die      
+535 xnumtoimax      
+536 xdectoimax      
+537 xnumtoumax      
+538 xdectoumax      
+539 xfreopen      
+540 xfts_open      
+541 cycle_warning_required      
+542 xgetcwd      
+543 xgetgroups      
+544 xgethostname      
+545 gl_list_create_empty      
+546 gl_list_create      
+547 gl_list_node_set_value      
+548 gl_list_set_at      
+549 gl_list_add_first      
+550 gl_list_add_last      
+551 gl_list_add_before      
+552 gl_list_add_after      
+553 gl_list_add_at      
+554 gl_sortedlist_add      
+555 xmemcoll      
+556 xmemcoll0      
+557 xnanosleep      
+558 xprintf      
+559 xvprintf      
+560 xfprintf      
+561 xvfprintf      
+562 xreadlink      
+563 xsum      
+564 xsum3      
+565 xsum4      
+566 xmax      
+567 xmem_cd_iconv      
+568 xstr_cd_iconv      
+569 xstr_iconv      
+570 xstrndup      
+571 xstrtod      
+572 xstrtoimax      
+573 xstrtol      
+574 xstrtoul      
+575 xstrtol_fatal      
+576 static lib/xstrtol-error.c_xstrtol_error     
+577 xstrtold      
+578 xstrtoumax      
+579 xvasprintf      
+580 xasprintf      
+581 yesno      
+582 asnprintf      
+583 rpl_asprintf      
+584 chdir_long      
+585 static lib/chdir-long.c_cdb_free     
+586 rpl_fclose      
+587 rpl_fcntl      
+588 rpl_fflush      
+589 fpurge      
+590 freadahead      
+591 freadptr      
+592 rpl_fseek      
+593 rpl_fseeko      
+594 fseterr      
+595 get_fs_usage      
+596 fts_open      
+597 static lib/fts.c_fts_alloc     
+598 static lib/fts.c_fts_stat     
+599 static lib/fts.c_fts_sort     
+600 static lib/fts.c_setup_dir     
+601 static lib/fts.c_diropen     
+602 static lib/fts.c_fts_lfree     
+603 fts_close      
+604 static lib/fts.c_free_dir     
+605 fts_read      
+606 static lib/fts.c_leave_dir     
+607 static lib/fts.c_fts_safe_changedir     
+608 static lib/fts.c_fts_build     
+609 static lib/fts.c_restore_initial_cwd     
+610 static lib/fts.c_fts_load     
+611 static lib/fts.c_link_count_optimize_ok     
+612 static lib/fts.c_cwd_advance_fd     
+613 fts_set      
+614 fts_children      
+615 static lib/fts.c_AD_hash     
+616 static lib/fts.c_AD_compare     
+617 static lib/fts.c_LCO_hash     
+618 static lib/fts.c_LCO_compare     
+619 static lib/fts.c_fts_compare_ino     
+620 rpl_futimens      
+621 rpl_getfilecon      
+622 rpl_lgetfilecon      
+623 rpl_fgetfilecon      
+624 gnu_getpass      
+625 isapipe      
+626 read_file_system_list      
+627 free_mount_entry      
+628 rpl_nanosleep      
+629 _obstack_begin      
+630 _obstack_begin_1      
+631 _obstack_newchunk      
+632 _obstack_allocated_p      
+633 _obstack_free      
+634 _obstack_memory_used      
+635 static lib/obstack.c_print_and_abort     
+636 openat_proc_name      
+637 printf_fetchargs      
+638 printf_parse      
+639 extract_trimmed_name      
+640 read_utmp      
+641 getfileconat      
+642 lgetfileconat      
+643 setfileconat      
+644 lsetfileconat      
+645 str2sig      
+646 sig2str      
+647 rpl_utimensat      
+648 vasnprintf      
+649 rpl_vasprintf      
+650 rpl_vfprintf      
+651 rpl_vprintf      

@@ -1,0 +1,2476 @@
+0 magma_log      
+1 static /magma/magma/src/canary.c_magma_init     
+2 stor_get      
+3 stor_put      
+4 stor_forall      
+5 sqlite3_status64      
+6 static sqlite3.c_sqlite3MisuseError     
+7 static sqlite3.c_sqlite3Pcache1Mutex     
+8 static sqlite3.c_sqlite3MallocMutex     
+9 sqlite3_mutex_enter      
+10 sqlite3_mutex_leave      
+11 sqlite3_status      
+12 sqlite3_db_status      
+13 static sqlite3.c_sqlite3LookasideUsed     
+14 static sqlite3.c_sqlite3BtreeEnterAll     
+15 static sqlite3.c_sqlite3BtreePager     
+16 static sqlite3.c_sqlite3PagerMemUsed     
+17 static sqlite3.c_sqlite3BtreeConnectionCount     
+18 static sqlite3.c_sqlite3BtreeLeaveAll     
+19 sqlite3_msize      
+20 static sqlite3.c_sqlite3DeleteTrigger     
+21 static sqlite3.c_sqlite3DeleteTable     
+22 static sqlite3.c_sqlite3VdbeClearObject     
+23 static sqlite3.c_sqlite3DbFree     
+24 static sqlite3.c_sqlite3PagerCacheStat     
+25 sqlite3_vfs_find      
+26 sqlite3_initialize      
+27 static sqlite3.c_sqlite3MutexAlloc     
+28 sqlite3_vfs_register      
+29 static sqlite3.c_vfsUnlink     
+30 sqlite3_vfs_unregister      
+31 sqlite3_mutex_alloc      
+32 static sqlite3.c_sqlite3MutexInit     
+33 sqlite3_mutex_free      
+34 sqlite3_mutex_try      
+35 sqlite3_mutex_held      
+36 sqlite3_mutex_notheld      
+37 sqlite3_release_memory      
+38 sqlite3_memory_alarm      
+39 sqlite3_soft_heap_limit64      
+40 static sqlite3.c_sqlite3StatusValue     
+41 sqlite3_memory_used      
+42 sqlite3_soft_heap_limit      
+43 sqlite3_hard_heap_limit64      
+44 sqlite3_memory_highwater      
+45 sqlite3_malloc      
+46 static sqlite3.c_sqlite3Malloc     
+47 sqlite3_malloc64      
+48 sqlite3_free      
+49 static sqlite3.c_sqlite3StatusDown     
+50 static sqlite3.c_sqlite3MallocSize     
+51 sqlite3_realloc      
+52 static sqlite3.c_sqlite3Realloc     
+53 sqlite3_realloc64      
+54 sqlite3_str_vappendf      
+55 sqlite3_str_append      
+56 static sqlite3.c_getIntArg     
+57 static sqlite3.c_printfTempBuf     
+58 static sqlite3.c_getDoubleArg     
+59 static sqlite3.c_sqlite3IsNaN     
+60 static sqlite3.c_et_getdigit     
+61 static sqlite3.c_getTextArg     
+62 sqlite3_str_appendchar      
+63 static sqlite3.c_sqlite3DbMallocSize     
+64 sqlite3_str_appendall      
+65 sqlite3_str_appendf      
+66 static sqlite3.c_sqlite3StrAccumEnlarge     
+67 static sqlite3.c_enlargeAndAppend     
+68 static sqlite3.c_sqlite3Strlen30     
+69 sqlite3_str_finish      
+70 static sqlite3.c_sqlite3StrAccumFinish     
+71 sqlite3_str_errcode      
+72 sqlite3_str_length      
+73 sqlite3_str_value      
+74 sqlite3_str_reset      
+75 sqlite3_str_new      
+76 static sqlite3.c_sqlite3StrAccumInit     
+77 sqlite3_vmprintf      
+78 sqlite3_mprintf      
+79 sqlite3_vsnprintf      
+80 sqlite3_snprintf      
+81 sqlite3_log      
+82 static sqlite3.c_renderLogMsg     
+83 sqlite3_randomness      
+84 static sqlite3.c_sqlite3OsRandomness     
+85 sqlite3_stricmp      
+86 static sqlite3.c_sqlite3StrICmp     
+87 sqlite3_strnicmp      
+88 unixFileMutexHeld      
+89 unixFileMutexNotheld      
+90 sqlite3_os_init      
+91 static sqlite3.c_unixOpen     
+92 static sqlite3.c_unixDelete     
+93 static sqlite3.c_unixAccess     
+94 static sqlite3.c_unixFullPathname     
+95 static sqlite3.c_unixDlOpen     
+96 static sqlite3.c_unixDlError     
+97 static sqlite3.c_unixDlSym     
+98 static sqlite3.c_unixDlClose     
+99 static sqlite3.c_unixRandomness     
+100 static sqlite3.c_unixSleep     
+101 static sqlite3.c_unixCurrentTime     
+102 static sqlite3.c_unixGetLastError     
+103 static sqlite3.c_unixCurrentTimeInt64     
+104 static sqlite3.c_unixSetSystemCall     
+105 static sqlite3.c_unixGetSystemCall     
+106 static sqlite3.c_unixNextSystemCall     
+107 sqlite3_os_end      
+108 sqlite3_serialize      
+109 static sqlite3.c_memdbFromDbSchema     
+110 static sqlite3.c_sqlite3FindDbName     
+111 static sqlite3.c_sqlite3BtreeGetPageSize     
+112 sqlite3_prepare_v2      
+113 sqlite3_step      
+114 sqlite3_column_int64      
+115 sqlite3_column_int      
+116 static sqlite3.c_sqlite3PagerGet     
+117 static sqlite3.c_sqlite3PagerGetData     
+118 static sqlite3.c_sqlite3PagerUnref     
+119 sqlite3_finalize      
+120 sqlite3_deserialize      
+121 print_pager_state      
+122 sqlite3_database_file_object      
+123 sqlite3_enable_shared_cache      
+124 corruptPageError      
+125 static sqlite3.c_sqlite3BeginBenignMalloc     
+126 static sqlite3.c_sqlite3PagerFilename     
+127 static sqlite3.c_sqlite3EndBenignMalloc     
+128 static sqlite3.c_sqlite3ReportError     
+129 static sqlite3.c_sqlite3CorruptError     
+130 sqlite3_backup_init      
+131 static sqlite3.c_sqlite3ErrorWithMsg     
+132 static sqlite3.c_sqlite3MallocZero     
+133 static sqlite3.c_sqlite3Error     
+134 static sqlite3.c_sqlite3NomemError     
+135 static sqlite3.c_findBtree     
+136 static sqlite3.c_checkReadTransaction     
+137 sqlite3_backup_step      
+138 static sqlite3.c_sqlite3BtreeEnter     
+139 static sqlite3.c_isFatalError     
+140 static sqlite3.c_sqlite3BtreeTxnState     
+141 static sqlite3.c_sqlite3BtreeBeginTrans     
+142 static sqlite3.c_setDestPgsz     
+143 static sqlite3.c_sqlite3PagerGetJournalMode     
+144 static sqlite3.c_sqlite3BtreeLastPage     
+145 static sqlite3.c_backupOnePage     
+146 static sqlite3.c_attachBackupObject     
+147 static sqlite3.c_sqlite3BtreeNewDb     
+148 static sqlite3.c_sqlite3BtreeUpdateMeta     
+149 static sqlite3.c_sqlite3ResetAllSchemasOfConnection     
+150 static sqlite3.c_sqlite3BtreeSetVersion     
+151 static sqlite3.c_sqlite3PagerFile     
+152 static sqlite3.c_sqlite3PagerPagecount     
+153 static sqlite3.c_sqlite3PagerWrite     
+154 static sqlite3.c_sqlite3PagerCommitPhaseOne     
+155 static sqlite3.c_sqlite3OsWrite     
+156 static sqlite3.c_backupTruncateFile     
+157 static sqlite3.c_sqlite3PagerSync     
+158 static sqlite3.c_sqlite3PagerTruncateImage     
+159 static sqlite3.c_sqlite3BtreeCommitPhaseTwo     
+160 static sqlite3.c_sqlite3BtreeCommitPhaseOne     
+161 static sqlite3.c_sqlite3BtreeLeave     
+162 sqlite3_backup_finish      
+163 static sqlite3.c_sqlite3PagerBackupPtr     
+164 static sqlite3.c_sqlite3BtreeRollback     
+165 static sqlite3.c_sqlite3LeaveMutexAndCloseZombie     
+166 sqlite3_backup_remaining      
+167 sqlite3_backup_pagecount      
+168 sqlite3_expired      
+169 static sqlite3.c_vdbeSafety     
+170 static sqlite3.c_invokeProfileCallback     
+171 static sqlite3.c_sqlite3VdbeFinalize     
+172 static sqlite3.c_sqlite3ApiExit     
+173 sqlite3_reset      
+174 static sqlite3.c_sqlite3VdbeReset     
+175 static sqlite3.c_sqlite3VdbeRewind     
+176 sqlite3_clear_bindings      
+177 static sqlite3.c_sqlite3VdbeMemRelease     
+178 sqlite3_value_blob      
+179 static sqlite3.c_sqlite3VdbeMemExpandBlob     
+180 sqlite3_value_text      
+181 sqlite3_value_bytes      
+182 static sqlite3.c_sqlite3ValueBytes     
+183 sqlite3_value_bytes16      
+184 sqlite3_value_double      
+185 static sqlite3.c_sqlite3VdbeRealValue     
+186 sqlite3_value_int      
+187 static sqlite3.c_sqlite3VdbeIntValue     
+188 sqlite3_value_int64      
+189 sqlite3_value_subtype      
+190 sqlite3_value_pointer      
+191 static sqlite3.c_sqlite3ValueText     
+192 sqlite3_value_text16      
+193 sqlite3_value_text16be      
+194 sqlite3_value_text16le      
+195 sqlite3_value_type      
+196 sqlite3_value_nochange      
+197 sqlite3_value_frombind      
+198 sqlite3_value_dup      
+199 static sqlite3.c_sqlite3VdbeMemMakeWriteable     
+200 static sqlite3.c_sqlite3ValueFree     
+201 sqlite3_value_free      
+202 sqlite3_result_blob      
+203 static sqlite3.c_setResultStrOrError     
+204 sqlite3_result_blob64      
+205 static sqlite3.c_sqlite3OomFault     
+206 static sqlite3.c_invokeValueDestructor     
+207 sqlite3_result_double      
+208 static sqlite3.c_sqlite3VdbeMemSetDouble     
+209 sqlite3_result_error      
+210 static sqlite3.c_sqlite3VdbeMemSetStr     
+211 sqlite3_result_error16      
+212 sqlite3_result_int      
+213 static sqlite3.c_sqlite3VdbeMemSetInt64     
+214 sqlite3_result_int64      
+215 sqlite3_result_null      
+216 static sqlite3.c_sqlite3VdbeMemSetNull     
+217 sqlite3_result_pointer      
+218 static sqlite3.c_sqlite3VdbeMemSetPointer     
+219 sqlite3_result_subtype      
+220 sqlite3_result_text      
+221 sqlite3_result_text64      
+222 sqlite3_result_text16      
+223 sqlite3_result_text16be      
+224 sqlite3_result_text16le      
+225 sqlite3_result_value      
+226 static sqlite3.c_sqlite3VdbeMemCopy     
+227 sqlite3_result_zeroblob      
+228 static sqlite3.c_sqlite3VdbeMemSetZeroBlob     
+229 sqlite3_result_zeroblob64      
+230 sqlite3_result_error_code      
+231 static sqlite3.c_sqlite3ErrStr     
+232 sqlite3_result_error_toobig      
+233 sqlite3_result_error_nomem      
+234 static sqlite3.c_vdbeSafetyNotNull     
+235 static sqlite3.c_sqlite3Step     
+236 static sqlite3.c_sqlite3Reprepare     
+237 static sqlite3.c_sqlite3DbStrDup     
+238 sqlite3_user_data      
+239 sqlite3_context_db_handle      
+240 sqlite3_vtab_nochange      
+241 sqlite3_aggregate_context      
+242 static sqlite3.c_createAggContext     
+243 sqlite3_get_auxdata      
+244 sqlite3_set_auxdata      
+245 static sqlite3.c_sqlite3DbMallocZero     
+246 sqlite3_aggregate_count      
+247 sqlite3_column_count      
+248 sqlite3_data_count      
+249 sqlite3_column_blob      
+250 static sqlite3.c_columnMem     
+251 static sqlite3.c_columnMallocFailure     
+252 sqlite3_column_bytes      
+253 sqlite3_column_bytes16      
+254 sqlite3_column_double      
+255 sqlite3_column_text      
+256 sqlite3_column_value      
+257 sqlite3_column_text16      
+258 sqlite3_column_type      
+259 sqlite3_column_name      
+260 static sqlite3.c_columnName     
+261 sqlite3_column_name16      
+262 sqlite3_column_decltype      
+263 sqlite3_column_decltype16      
+264 sqlite3_bind_blob      
+265 static sqlite3.c_bindText     
+266 sqlite3_bind_blob64      
+267 sqlite3_bind_double      
+268 static sqlite3.c_vdbeUnbind     
+269 sqlite3_bind_int      
+270 sqlite3_bind_int64      
+271 sqlite3_bind_null      
+272 sqlite3_bind_pointer      
+273 sqlite3_bind_text      
+274 sqlite3_bind_text64      
+275 sqlite3_bind_text16      
+276 sqlite3_bind_value      
+277 sqlite3_bind_zeroblob      
+278 sqlite3_bind_zeroblob64      
+279 sqlite3_bind_parameter_count      
+280 sqlite3_bind_parameter_name      
+281 static sqlite3.c_sqlite3VListNumToName     
+282 sqlite3_bind_parameter_index      
+283 static sqlite3.c_sqlite3VdbeParameterIndex     
+284 sqlite3_transfer_bindings      
+285 static sqlite3.c_sqlite3TransferBindings     
+286 sqlite3_db_handle      
+287 sqlite3_stmt_readonly      
+288 sqlite3_stmt_isexplain      
+289 sqlite3_stmt_busy      
+290 sqlite3_next_stmt      
+291 sqlite3_stmt_status      
+292 sqlite3_sql      
+293 sqlite3_expanded_sql      
+294 static sqlite3.c_sqlite3VdbeExpandSql     
+295 sqlite3_value_numeric_type      
+296 static sqlite3.c_applyNumericAffinity     
+297 sqlite3PrintMem      
+298 static sqlite3.c_memTracePrint     
+299 sqlite3_blob_open      
+300 static sqlite3.c_sqlite3LocateTable     
+301 static sqlite3.c_sqlite3ErrorMsg     
+302 static sqlite3.c_sqlite3SchemaToIndex     
+303 static sqlite3.c_sqlite3MPrintf     
+304 static sqlite3.c_sqlite3VdbeCreate     
+305 static sqlite3.c_sqlite3VdbeAddOp4Int     
+306 static sqlite3.c_sqlite3VdbeChangeP5     
+307 static sqlite3.c_sqlite3VdbeCurrentAddr     
+308 static sqlite3.c_sqlite3VdbeAddOpList     
+309 static sqlite3.c_sqlite3VdbeUsesBtree     
+310 static sqlite3.c_sqlite3VdbeChangeP4     
+311 static sqlite3.c_sqlite3VdbeMakeReady     
+312 static sqlite3.c_blobSeekToRow     
+313 static sqlite3.c_sqlite3ParserReset     
+314 sqlite3_blob_close      
+315 sqlite3_blob_read      
+316 static sqlite3.c_blobReadWrite     
+317 static sqlite3.c_sqlite3BtreePayloadChecked     
+318 sqlite3_blob_write      
+319 static sqlite3.c_sqlite3BtreePutData     
+320 sqlite3_blob_bytes      
+321 sqlite3_blob_reopen      
+322 sqlite3_set_authorizer      
+323 static sqlite3.c_sqlite3ExpirePreparedStatements     
+324 sqlite3_strglob      
+325 static sqlite3.c_patternCompare     
+326 sqlite3_strlike      
+327 sqlite3_exec      
+328 static sqlite3.c_sqlite3SafetyCheckOk     
+329 static sqlite3.c_sqlite3DbMallocRaw     
+330 sqlite3_errmsg      
+331 sqlite3_load_extension      
+332 static sqlite3.c_sqlite3LoadExtension     
+333 sqlite3_enable_load_extension      
+334 sqlite3_auto_extension      
+335 sqlite3_cancel_auto_extension      
+336 sqlite3_reset_auto_extension      
+337 sqlite3_prepare      
+338 static sqlite3.c_sqlite3LockAndPrepare     
+339 sqlite3_prepare_v3      
+340 sqlite3_prepare16      
+341 static sqlite3.c_sqlite3Prepare16     
+342 sqlite3_prepare16_v2      
+343 sqlite3_prepare16_v3      
+344 sqlite3_get_table      
+345 static sqlite3.c_sqlite3_get_table_cb     
+346 sqlite3_free_table      
+347 sqlite3_create_module      
+348 static sqlite3.c_createModule     
+349 sqlite3_create_module_v2      
+350 sqlite3_drop_modules      
+351 sqlite3_declare_vtab      
+352 static sqlite3.c_sqlite3RunParser     
+353 static sqlite3.c_sqlite3PrimaryKeyIndex     
+354 sqlite3_vtab_on_conflict      
+355 sqlite3_vtab_config      
+356 sqlite3_vtab_collation      
+357 static sqlite3.c_sqlite3ExprCompareCollSeq     
+358 sqlite3_keyword_name      
+359 sqlite3_keyword_count      
+360 sqlite3_keyword_check      
+361 static sqlite3.c_sqlite3KeywordCode     
+362 sqlite3_complete      
+363 sqlite3_complete16      
+364 static sqlite3.c_sqlite3ValueNew     
+365 static sqlite3.c_sqlite3ValueSetStr     
+366 sqlite3_libversion      
+367 sqlite3_libversion_number      
+368 sqlite3_threadsafe      
+369 static sqlite3.c_sqlite3MemoryBarrier     
+370 static sqlite3.c_sqlite3MallocInit     
+371 static sqlite3.c_sqlite3RegisterBuiltinFunctions     
+372 static sqlite3.c_sqlite3PcacheInitialize     
+373 static sqlite3.c_sqlite3OsInit     
+374 static sqlite3.c_sqlite3MemdbInit     
+375 static sqlite3.c_sqlite3PCacheBufferSetup     
+376 sqlite3_shutdown      
+377 static sqlite3.c_sqlite3PcacheShutdown     
+378 static sqlite3.c_sqlite3MallocEnd     
+379 static sqlite3.c_sqlite3MutexEnd     
+380 sqlite3_config      
+381 static sqlite3.c_sqlite3MemSetDefault     
+382 static sqlite3.c_sqlite3HeaderSizeBtree     
+383 static sqlite3.c_sqlite3HeaderSizePcache     
+384 static sqlite3.c_sqlite3HeaderSizePcache1     
+385 static sqlite3.c_sqlite3PCacheSetDefault     
+386 sqlite3_db_mutex      
+387 sqlite3_db_release_memory      
+388 static sqlite3.c_sqlite3PagerShrink     
+389 sqlite3_db_cacheflush      
+390 static sqlite3.c_sqlite3PagerFlush     
+391 sqlite3_db_config      
+392 static sqlite3.c_setupLookaside     
+393 sqlite3_last_insert_rowid      
+394 sqlite3_set_last_insert_rowid      
+395 sqlite3_changes64      
+396 sqlite3_changes      
+397 sqlite3_total_changes64      
+398 sqlite3_total_changes      
+399 sqlite3_txn_state      
+400 sqlite3_close      
+401 static sqlite3.c_sqlite3Close     
+402 sqlite3_close_v2      
+403 sqlite3_busy_handler      
+404 sqlite3_progress_handler      
+405 sqlite3_busy_timeout      
+406 static sqlite3.c_sqliteDefaultBusyCallback     
+407 sqlite3_interrupt      
+408 sqlite3_create_function      
+409 static sqlite3.c_createFunctionApi     
+410 sqlite3_create_function_v2      
+411 sqlite3_create_window_function      
+412 sqlite3_create_function16      
+413 static sqlite3.c_sqlite3Utf16to8     
+414 static sqlite3.c_sqlite3CreateFunc     
+415 sqlite3_overload_function      
+416 static sqlite3.c_sqlite3FindFunction     
+417 static sqlite3.c_sqlite3InvalidFunction     
+418 sqlite3_trace      
+419 sqlite3_trace_v2      
+420 sqlite3_profile      
+421 sqlite3_commit_hook      
+422 sqlite3_update_hook      
+423 sqlite3_rollback_hook      
+424 sqlite3_wal_autocheckpoint      
+425 sqlite3_wal_hook      
+426 static sqlite3.c_sqlite3WalDefaultHook     
+427 sqlite3_wal_checkpoint_v2      
+428 static sqlite3.c_sqlite3Checkpoint     
+429 sqlite3_wal_checkpoint      
+430 static sqlite3.c_sqlite3SafetyCheckSickOrOk     
+431 sqlite3_errmsg16      
+432 static sqlite3.c_sqlite3OomClear     
+433 sqlite3_errcode      
+434 sqlite3_extended_errcode      
+435 sqlite3_system_errno      
+436 sqlite3_errstr      
+437 sqlite3_limit      
+438 sqlite3_open      
+439 static sqlite3.c_openDatabase     
+440 sqlite3_open_v2      
+441 sqlite3_open16      
+442 sqlite3_create_collation      
+443 sqlite3_create_collation_v2      
+444 static sqlite3.c_createCollation     
+445 sqlite3_create_collation16      
+446 sqlite3_collation_needed      
+447 sqlite3_collation_needed16      
+448 sqlite3_global_recover      
+449 sqlite3_get_autocommit      
+450 sqlite3_thread_cleanup      
+451 sqlite3_table_column_metadata      
+452 static sqlite3.c_sqlite3Init     
+453 static sqlite3.c_sqlite3FindTable     
+454 static sqlite3.c_sqlite3IsRowid     
+455 static sqlite3.c_sqlite3ColumnType     
+456 sqlite3_sleep      
+457 static sqlite3.c_sqlite3OsSleep     
+458 sqlite3_extended_result_codes      
+459 sqlite3_file_control      
+460 static sqlite3.c_sqlite3DbNameToBtree     
+461 static sqlite3.c_sqlite3PagerVfs     
+462 static sqlite3.c_sqlite3PagerJrnlFile     
+463 static sqlite3.c_sqlite3PagerDataVersion     
+464 static sqlite3.c_sqlite3BtreeGetRequestedReserve     
+465 static sqlite3.c_sqlite3BtreeSetPageSize     
+466 static sqlite3.c_sqlite3OsFileControl     
+467 sqlite3_test_control      
+468 static sqlite3.c_sqlite3PrngSaveState     
+469 static sqlite3.c_sqlite3PrngRestoreState     
+470 static sqlite3.c_sqlite3BitvecBuiltinTest     
+471 static sqlite3.c_sqlite3FaultSim     
+472 static sqlite3.c_sqlite3BenignMallocHooks     
+473 static sqlite3.c_sqlite3ResultIntReal     
+474 static sqlite3.c_sqlite3BtreeSeekCount     
+475 sqlite3_create_filename      
+476 static sqlite3.c_appendText     
+477 sqlite3_free_filename      
+478 static sqlite3.c_databaseName     
+479 sqlite3_uri_parameter      
+480 static sqlite3.c_uriParameter     
+481 sqlite3_uri_key      
+482 sqlite3_uri_boolean      
+483 static sqlite3.c_sqlite3GetBoolean     
+484 sqlite3_uri_int64      
+485 static sqlite3.c_sqlite3DecOrHexToI64     
+486 sqlite3_filename_database      
+487 sqlite3_filename_journal      
+488 sqlite3_filename_wal      
+489 sqlite3_db_filename      
+490 static sqlite3.c_sqlite3BtreeGetFilename     
+491 sqlite3_db_readonly      
+492 static sqlite3.c_sqlite3BtreeIsReadonly     
+493 sqlite3_compileoption_used      
+494 static sqlite3.c_sqlite3CompileOptions     
+495 static sqlite3.c_sqlite3IsIdChar     
+496 sqlite3_compileoption_get      
+497 sqlite3_rtree_geometry_callback      
+498 static sqlite3.c_geomCallback     
+499 static sqlite3.c_rtreeFreeCallback     
+500 sqlite3_rtree_query_callback      
+501 sqlite3_sourceid      
+502 static sqlite3.c_countLookasideSlots     
+503 static sqlite3.c_sqlite3DefaultMutex     
+504 static sqlite3.c_sqlite3NoopMutex     
+505 static sqlite3.c_pthreadMutexInit     
+506 static sqlite3.c_pthreadMutexEnd     
+507 static sqlite3.c_pthreadMutexAlloc     
+508 static sqlite3.c_pthreadMutexFree     
+509 static sqlite3.c_pthreadMutexEnter     
+510 static sqlite3.c_pthreadMutexTry     
+511 static sqlite3.c_pthreadMutexLeave     
+512 static sqlite3.c_pthreadMutexHeld     
+513 static sqlite3.c_pthreadMutexNotheld     
+514 static sqlite3.c_debugMutexInit     
+515 static sqlite3.c_debugMutexEnd     
+516 static sqlite3.c_debugMutexAlloc     
+517 static sqlite3.c_debugMutexFree     
+518 static sqlite3.c_debugMutexEnter     
+519 static sqlite3.c_debugMutexTry     
+520 static sqlite3.c_debugMutexLeave     
+521 static sqlite3.c_debugMutexHeld     
+522 static sqlite3.c_debugMutexNotheld     
+523 static sqlite3.c_mallocWithAlarm     
+524 static sqlite3.c_sqlite3StatusHighwater     
+525 static sqlite3.c_sqlite3MallocAlarm     
+526 static sqlite3.c_sqlite3StatusUp     
+527 static sqlite3.c_sqlite3DbFreeNN     
+528 static sqlite3.c_measureAllocationSize     
+529 static sqlite3.c_setStrAccumError     
+530 static sqlite3.c_sqlite3ErrorToParser     
+531 static sqlite3.c_isLookaside     
+532 static sqlite3.c_sqlite3DbRealloc     
+533 static sqlite3.c_sqlite3DbMallocRawNN     
+534 static sqlite3.c_dbReallocFinish     
+535 static sqlite3.c_dbMallocRawFinish     
+536 static sqlite3.c_lookasideMallocSize     
+537 static sqlite3.c_strAccumFinishRealloc     
+538 static sqlite3.c_posixIoFinderImpl     
+539 static sqlite3.c_unixClose     
+540 static sqlite3.c_unixRead     
+541 static sqlite3.c_unixWrite     
+542 static sqlite3.c_unixTruncate     
+543 static sqlite3.c_unixSync     
+544 static sqlite3.c_unixFileSize     
+545 static sqlite3.c_unixLock     
+546 static sqlite3.c_unixUnlock     
+547 static sqlite3.c_unixCheckReservedLock     
+548 static sqlite3.c_unixFileControl     
+549 static sqlite3.c_unixSectorSize     
+550 static sqlite3.c_unixDeviceCharacteristics     
+551 static sqlite3.c_unixShmMap     
+552 static sqlite3.c_unixShmLock     
+553 static sqlite3.c_unixShmBarrier     
+554 static sqlite3.c_unixShmUnmap     
+555 static sqlite3.c_unixFetch     
+556 static sqlite3.c_unixUnfetch     
+557 static sqlite3.c_verifyDbFile     
+558 static sqlite3.c_unixEnterMutex     
+559 static sqlite3.c_setPendingFd     
+560 static sqlite3.c_releaseInodeInfo     
+561 static sqlite3.c_closeUnixFile     
+562 static sqlite3.c_unixLeaveMutex     
+563 static sqlite3.c_fileHasMoved     
+564 static sqlite3.c_posixOpen     
+565 static sqlite3.c_openDirectory     
+566 static sqlite3.c_unixGetpagesize     
+567 static sqlite3.c_robust_open     
+568 static sqlite3.c_unixLogErrorAtLine     
+569 static sqlite3.c_sqlite3CantopenError     
+570 static sqlite3.c_unixMutexHeld     
+571 static sqlite3.c_closePendingFds     
+572 static sqlite3.c_robust_close     
+573 static sqlite3.c_unixUnmapfile     
+574 static sqlite3.c_seekAndRead     
+575 static sqlite3.c_storeLastErrno     
+576 static sqlite3.c_seekAndWrite     
+577 static sqlite3.c_seekAndWriteFd     
+578 static sqlite3.c_robust_ftruncate     
+579 static sqlite3.c_full_fsync     
+580 static sqlite3.c_unixFileLock     
+581 static sqlite3.c_sqliteErrorFromPosixError     
+582 static sqlite3.c_posixUnlock     
+583 static sqlite3.c_fcntlSizeHint     
+584 static sqlite3.c_unixModeBit     
+585 static sqlite3.c_unixGetTempname     
+586 static sqlite3.c_unixMapfile     
+587 static sqlite3.c_unixFcntlExternalReader     
+588 static sqlite3.c_unixTempFileDir     
+589 static sqlite3.c_unixRemapfile     
+590 static sqlite3.c_setDeviceCharacteristics     
+591 static sqlite3.c_unixShmRegionPerMap     
+592 static sqlite3.c_unixOpenSharedMemory     
+593 static sqlite3.c_unixLockSharedMemory     
+594 static sqlite3.c_sqlite3IoerrnomemError     
+595 static sqlite3.c_robustFchown     
+596 static sqlite3.c_unixShmPurge     
+597 static sqlite3.c_unixShmSystemLock     
+598 static sqlite3.c_assertLockingArrayOk     
+599 static sqlite3.c_nolockLock     
+600 static sqlite3.c_findReusableFd     
+601 static sqlite3.c_findCreateFileMode     
+602 static sqlite3.c_fillInUnixFile     
+603 static sqlite3.c_getFileMode     
+604 static sqlite3.c_findInodeInfo     
+605 static sqlite3.c_nolockClose     
+606 static sqlite3.c_nolockUnlock     
+607 static sqlite3.c_nolockCheckReservedLock     
+608 static sqlite3.c_dotlockClose     
+609 static sqlite3.c_dotlockLock     
+610 static sqlite3.c_dotlockUnlock     
+611 static sqlite3.c_dotlockCheckReservedLock     
+612 static sqlite3.c_mkFullPathname     
+613 static sqlite3.c_unixBackupDir     
+614 static sqlite3.c_nolockIoFinderImpl     
+615 static sqlite3.c_dotlockIoFinderImpl     
+616 static sqlite3.c_memdbEnter     
+617 static sqlite3.c_memdbLeave     
+618 static sqlite3.c_memdbClose     
+619 static sqlite3.c_memdbRead     
+620 static sqlite3.c_memdbWrite     
+621 static sqlite3.c_memdbTruncate     
+622 static sqlite3.c_memdbSync     
+623 static sqlite3.c_memdbFileSize     
+624 static sqlite3.c_memdbLock     
+625 static sqlite3.c_memdbFileControl     
+626 static sqlite3.c_memdbDeviceCharacteristics     
+627 static sqlite3.c_memdbFetch     
+628 static sqlite3.c_memdbUnfetch     
+629 static sqlite3.c_memdbEnlarge     
+630 static sqlite3.c_sqlite3PagerUnrefNotNull     
+631 static sqlite3.c_pagerReleaseMapPage     
+632 static sqlite3.c_sqlite3PcacheRelease     
+633 static sqlite3.c_sqlite3PcacheRefCount     
+634 static sqlite3.c_sqlite3OsUnfetch     
+635 static sqlite3.c_pcacheUnpin     
+636 static sqlite3.c_pcacheManageDirtyList     
+637 static sqlite3.c_sqlite3PcachePagecount     
+638 static sqlite3.c_btreeEnterAll     
+639 static sqlite3.c_btreeLeaveAll     
+640 static sqlite3.c_sqlite3SystemError     
+641 static sqlite3.c_sqlite3VMPrintf     
+642 static sqlite3.c_sqlite3OsGetLastError     
+643 static sqlite3.c_sqlite3ErrorFinish     
+644 static sqlite3.c_sqlite3ValueSetNull     
+645 static sqlite3.c_sqlite3OpenTempDatabase     
+646 static sqlite3.c_sqlite3BtreeOpen     
+647 static sqlite3.c_sqlite3TempInMemory     
+648 static sqlite3.c_sqlite3OsFullPathname     
+649 static sqlite3.c_sqlite3PagerOpen     
+650 static sqlite3.c_pageReinit     
+651 static sqlite3.c_sqlite3PagerSetMmapLimit     
+652 static sqlite3.c_sqlite3PagerReadFileheader     
+653 static sqlite3.c_sqlite3PagerSetBusyHandler     
+654 static sqlite3.c_btreeInvokeBusyHandler     
+655 static sqlite3.c_sqlite3PagerIsreadonly     
+656 static sqlite3.c_sqlite3Get4byte     
+657 static sqlite3.c_sqlite3PagerSetPagesize     
+658 static sqlite3.c_sqlite3PagerClose     
+659 static sqlite3.c_sqlite3BtreeSchema     
+660 static sqlite3.c_sqlite3BtreeSetCacheSize     
+661 static sqlite3.c_sqlite3OsFileControlHint     
+662 static sqlite3.c_sqlite3PcacheSize     
+663 static sqlite3.c_sqlite3JournalSize     
+664 static sqlite3.c_sqlite3OsOpen     
+665 static sqlite3.c_sqlite3OsDeviceCharacteristics     
+666 static sqlite3.c_setSectorSize     
+667 static sqlite3.c_sqlite3PcacheOpen     
+668 static sqlite3.c_pagerStress     
+669 static sqlite3.c_sqlite3OsClose     
+670 static sqlite3.c_sqlite3PageFree     
+671 static sqlite3.c_setGetterMethod     
+672 static sqlite3.c_sqlite3SectorSize     
+673 static sqlite3.c_sqlite3OsSectorSize     
+674 static sqlite3.c_sqlite3PcacheSetPageSize     
+675 static sqlite3.c_numberOfCachePages     
+676 static sqlite3.c_subjournalPageIfRequired     
+677 static sqlite3.c_pagerWalFrames     
+678 static sqlite3.c_syncJournal     
+679 static sqlite3.c_pager_write_pagelist     
+680 static sqlite3.c_sqlite3PcacheMakeClean     
+681 static sqlite3.c_pager_error     
+682 static sqlite3.c_subjRequiresPage     
+683 static sqlite3.c_subjournalPage     
+684 static sqlite3.c_sqlite3BitvecTestNotNull     
+685 static sqlite3.c_pageInJournal     
+686 static sqlite3.c_openSubJournal     
+687 static sqlite3.c_write32bits     
+688 static sqlite3.c_addToSavepointBitvecs     
+689 static sqlite3.c_sqlite3BitvecTest     
+690 static sqlite3.c_sqlite3JournalOpen     
+691 static sqlite3.c_memjrnlClose     
+692 static sqlite3.c_memjrnlRead     
+693 static sqlite3.c_memjrnlWrite     
+694 static sqlite3.c_memjrnlTruncate     
+695 static sqlite3.c_memjrnlSync     
+696 static sqlite3.c_memjrnlFileSize     
+697 static sqlite3.c_memjrnlFreeChunks     
+698 static sqlite3.c_memjrnlCreateFile     
+699 static sqlite3.c_sqlite3Put4byte     
+700 static sqlite3.c_sqlite3BitvecSet     
+701 static sqlite3.c_sqlite3BitvecCreate     
+702 static sqlite3.c_pager_write_changecounter     
+703 static sqlite3.c_sqlite3WalFrames     
+704 static sqlite3.c_sqlite3BackupUpdate     
+705 static sqlite3.c_walIndexHdr     
+706 static sqlite3.c_walRestartLog     
+707 static sqlite3.c_walChecksumBytes     
+708 static sqlite3.c_sqlite3OsSync     
+709 static sqlite3.c_sqlite3WalFindFrame     
+710 static sqlite3.c_walWriteOneFrame     
+711 static sqlite3.c_walRewriteChecksums     
+712 static sqlite3.c_walLimitSize     
+713 static sqlite3.c_walIndexAppend     
+714 static sqlite3.c_walIndexWriteHdr     
+715 static sqlite3.c_walCkptInfo     
+716 static sqlite3.c_walLockExclusive     
+717 static sqlite3.c_walRestartHdr     
+718 static sqlite3.c_walUnlockExclusive     
+719 static sqlite3.c_walUnlockShared     
+720 static sqlite3.c_walTryBeginRead     
+721 static sqlite3.c_sqlite3OsShmLock     
+722 static sqlite3.c_walIndexReadHdr     
+723 static sqlite3.c_walLockShared     
+724 static sqlite3.c_walBeginShmUnreliable     
+725 static sqlite3.c_walShmBarrier     
+726 static sqlite3.c_walIndexPage     
+727 static sqlite3.c_walIndexTryHdr     
+728 static sqlite3.c_walIndexRecover     
+729 static sqlite3.c_walIndexClose     
+730 static sqlite3.c_walIndexPageRealloc     
+731 static sqlite3.c_sqlite3OsShmMap     
+732 static sqlite3.c_sqlite3OsFileSize     
+733 static sqlite3.c_sqlite3OsRead     
+734 static sqlite3.c_walFramePage     
+735 static sqlite3.c_walDecodeFrame     
+736 static sqlite3.c_sqlite3OsShmUnmap     
+737 static sqlite3.c_sqlite3WalEndReadTransaction     
+738 static sqlite3.c_sqlite3WalEndWriteTransaction     
+739 static sqlite3.c_sqlite3OsShmBarrier     
+740 static sqlite3.c_walHashGet     
+741 static sqlite3.c_walHash     
+742 static sqlite3.c_walNextHash     
+743 static sqlite3.c_walEncodeFrame     
+744 static sqlite3.c_walWriteToLog     
+745 static sqlite3.c_sqlite3OsTruncate     
+746 static sqlite3.c_walCleanupHash     
+747 static sqlite3.c_backupUpdate     
+748 static sqlite3.c_assert_pager_state     
+749 static sqlite3.c_sqlite3PagerExclusiveLock     
+750 static sqlite3.c_journalHdrOffset     
+751 static sqlite3.c_writeJournalHdr     
+752 static sqlite3.c_sqlite3PcacheClearSyncFlags     
+753 static sqlite3.c_pager_wait_on_lock     
+754 static sqlite3.c_pagerLockDb     
+755 static sqlite3.c_sqlite3OsLock     
+756 static sqlite3.c_pagerOpentemp     
+757 static sqlite3.c_sqlite3PcachePageSanity     
+758 static sqlite3.c_pcache1Free     
+759 static sqlite3.c_getPageError     
+760 static sqlite3.c_getPageMMap     
+761 static sqlite3.c_getPageNormal     
+762 static sqlite3.c_sqlite3OsFetch     
+763 static sqlite3.c_sqlite3PagerLookup     
+764 static sqlite3.c_pagerAcquireMapPage     
+765 static sqlite3.c_sqlite3PcacheFetch     
+766 static sqlite3.c_sqlite3PcacheFetchFinish     
+767 static sqlite3.c_pcacheFetchFinishWithInit     
+768 static sqlite3.c_sqlite3PcacheFetchStress     
+769 static sqlite3.c_readDbPage     
+770 static sqlite3.c_sqlite3PcacheDrop     
+771 static sqlite3.c_pagerUnlockIfUnused     
+772 static sqlite3.c_sqlite3WalReadFrame     
+773 static sqlite3.c_pagerUnlockAndRollback     
+774 static sqlite3.c_sqlite3PagerRollback     
+775 static sqlite3.c_pager_end_transaction     
+776 static sqlite3.c_pager_unlock     
+777 static sqlite3.c_sqlite3PagerSavepoint     
+778 static sqlite3.c_pager_playback     
+779 static sqlite3.c_sqlite3BitvecDestroy     
+780 static sqlite3.c_sqlite3JournalIsInMemory     
+781 static sqlite3.c_pagerPlaybackSavepoint     
+782 static sqlite3.c_pagerRollbackWal     
+783 static sqlite3.c_pager_playback_one_page     
+784 static sqlite3.c_readJournalHdr     
+785 static sqlite3.c_sqlite3WalSavepointUndo     
+786 static sqlite3.c_sqlite3WalUndo     
+787 static sqlite3.c_pagerUndoCallback     
+788 static sqlite3.c_sqlite3PcacheDirtyList     
+789 static sqlite3.c_walFramePgno     
+790 static sqlite3.c_sqlite3PcachePageRefcount     
+791 static sqlite3.c_sqlite3BackupRestart     
+792 static sqlite3.c_pcacheSortDirtyList     
+793 static sqlite3.c_pcacheMergeDirtyList     
+794 static sqlite3.c_read32bits     
+795 static sqlite3.c_pager_cksum     
+796 static sqlite3.c_sqlite3PcacheMakeDirty     
+797 static sqlite3.c_readSuperJournal     
+798 static sqlite3.c_sqlite3OsAccess     
+799 static sqlite3.c_pager_truncate     
+800 static sqlite3.c_pager_reset     
+801 static sqlite3.c_pager_delsuper     
+802 static sqlite3.c_sqlite3PcacheClear     
+803 static sqlite3.c_sqlite3PcacheTruncate     
+804 static sqlite3.c_sqlite3OsDelete     
+805 static sqlite3.c_releaseAllSavepoints     
+806 static sqlite3.c_zeroJournalHdr     
+807 static sqlite3.c_pagerFlushOnCommit     
+808 static sqlite3.c_sqlite3PcacheCleanAll     
+809 static sqlite3.c_sqlite3PcacheClearWritable     
+810 static sqlite3.c_sqlite3WalExclusiveMode     
+811 static sqlite3.c_pagerUnlockDb     
+812 static sqlite3.c_sqlite3PCachePercentDirty     
+813 static sqlite3.c_sqlite3OsUnlock     
+814 static sqlite3.c_sqlite3PagerGetExtra     
+815 static sqlite3.c_sqlite3PagerPageRefcount     
+816 static sqlite3.c_btreeInitPage     
+817 static sqlite3.c_sqlite3PagerPagenumber     
+818 static sqlite3.c_decodeFlags     
+819 static sqlite3.c_btreeCellSizeCheck     
+820 static sqlite3.c_cellSizePtr     
+821 static sqlite3.c_btreeParseCellPtr     
+822 static sqlite3.c_cellSizePtrNoPayload     
+823 static sqlite3.c_btreeParseCellPtrNoPayload     
+824 static sqlite3.c_btreeParseCellPtrIndex     
+825 static sqlite3.c_btreeParseCellAdjustSizeForOverflow     
+826 static sqlite3.c_sqlite3GetVarint     
+827 static sqlite3.c_pagerFixMaplimit     
+828 static sqlite3.c_sqlite3InvokeBusyHandler     
+829 static sqlite3.c_sqlite3PageMalloc     
+830 static sqlite3.c_pcache1Alloc     
+831 static sqlite3.c_pagerFreeMapHdrs     
+832 static sqlite3.c_databaseIsUnmoved     
+833 static sqlite3.c_sqlite3WalClose     
+834 static sqlite3.c_pagerSyncHotJournal     
+835 static sqlite3.c_sqlite3PcacheClose     
+836 static sqlite3.c_sqlite3WalCheckpoint     
+837 static sqlite3.c_walBusyLock     
+838 static sqlite3.c_walPagesize     
+839 static sqlite3.c_walCheckpoint     
+840 static sqlite3.c_walIteratorInit     
+841 static sqlite3.c_walIteratorNext     
+842 static sqlite3.c_walIteratorFree     
+843 static sqlite3.c_walMergesort     
+844 static sqlite3.c_walMerge     
+845 static sqlite3.c_sqlite3PagerSetCachesize     
+846 static sqlite3.c_sqlite3PcacheSetCachesize     
+847 static sqlite3.c_btreeLockCarefully     
+848 static sqlite3.c_unlockBtreeMutex     
+849 static sqlite3.c_lockBtreeMutex     
+850 static sqlite3.c_querySharedCacheTableLock     
+851 static sqlite3.c_lockBtree     
+852 static sqlite3.c_sqlite3PagerBegin     
+853 static sqlite3.c_newDatabase     
+854 static sqlite3.c_unlockBtreeIfUnused     
+855 static sqlite3.c_sqlite3PagerOpenSavepoint     
+856 static sqlite3.c_sqlite3BtreeHoldsMutex     
+857 static sqlite3.c_sqlite3PagerSharedLock     
+858 static sqlite3.c_btreeGetPage     
+859 static sqlite3.c_sqlite3PagerOpenWal     
+860 static sqlite3.c_releasePageOne     
+861 static sqlite3.c_freeTempSpace     
+862 static sqlite3.c_sqlite3WritableSchema     
+863 static sqlite3.c_hasHotJournal     
+864 static sqlite3.c_pagerOpenWalIfPresent     
+865 static sqlite3.c_pagerBeginReadTransaction     
+866 static sqlite3.c_pagerPagecount     
+867 static sqlite3.c_sqlite3OsCheckReservedLock     
+868 static sqlite3.c_sqlite3WalBeginReadTransaction     
+869 static sqlite3.c_sqlite3WalDbsize     
+870 static sqlite3.c_btreePageFromDbPage     
+871 static sqlite3.c_sqlite3PagerWalSupported     
+872 static sqlite3.c_pagerOpenWal     
+873 static sqlite3.c_pagerExclusiveLock     
+874 static sqlite3.c_sqlite3WalOpen     
+875 static sqlite3.c_sqlite3PagerUnrefPageOne     
+876 static sqlite3.c_sqlite3WalBeginWriteTransaction     
+877 static sqlite3.c_zeroPage     
+878 static sqlite3.c_sqlite3PagerIswriteable     
+879 static sqlite3.c_countValidCursors     
+880 static sqlite3.c_sqlite3PagerRefcount     
+881 static sqlite3.c_pagerOpenSavepoint     
+882 static sqlite3.c_sqlite3WalSavepoint     
+883 static sqlite3.c_assertTruncateConstraint     
+884 static sqlite3.c_sqlite3PcacheIterateDirty     
+885 static sqlite3.c_assertTruncateConstraintCb     
+886 static sqlite3.c_btreePagecount     
+887 static sqlite3.c_sqlite3BtreeGetReserveNoMutex     
+888 static sqlite3.c_sqlite3PagerIsMemdb     
+889 static sqlite3.c_pagerWriteLargeSector     
+890 static sqlite3.c_pager_write     
+891 static sqlite3.c_pager_open_journal     
+892 static sqlite3.c_pagerAddPageToRollbackJournal     
+893 static sqlite3.c_sqlite3MemJournalOpen     
+894 static sqlite3.c_jrnlBufferSize     
+895 static sqlite3.c_pager_incr_changecounter     
+896 static sqlite3.c_writeSuperJournal     
+897 static sqlite3.c_sqlite3PagerCommitPhaseTwo     
+898 static sqlite3.c_btreeClearHasContent     
+899 static sqlite3.c_btreeEndTransaction     
+900 static sqlite3.c_downgradeAllSharedCacheTableLocks     
+901 static sqlite3.c_clearAllSharedCacheTableLocks     
+902 static sqlite3.c_autoVacuumCommit     
+903 static sqlite3.c_invalidateAllOverflowCache     
+904 static sqlite3.c_ptrmapPageno     
+905 static sqlite3.c_finalDbSize     
+906 static sqlite3.c_saveAllCursors     
+907 static sqlite3.c_incrVacuumStep     
+908 static sqlite3.c_saveCursorsOnList     
+909 static sqlite3.c_saveCursorPosition     
+910 static sqlite3.c_btreeReleaseAllCursorPages     
+911 static sqlite3.c_cursorHoldsMutex     
+912 static sqlite3.c_saveCursorKey     
+913 static sqlite3.c_sqlite3BtreeIntegerKey     
+914 static sqlite3.c_sqlite3BtreePayloadSize     
+915 static sqlite3.c_sqlite3BtreePayload     
+916 static sqlite3.c_getCellInfo     
+917 static sqlite3.c_btreeParseCell     
+918 static sqlite3.c_assertCellInfo     
+919 static sqlite3.c_cellInfoEqual     
+920 static sqlite3.c_accessPayload     
+921 static sqlite3.c_copyPayload     
+922 static sqlite3.c_getOverflowPage     
+923 static sqlite3.c_ptrmapGet     
+924 static sqlite3.c_releasePage     
+925 static sqlite3.c_sqlite3CorruptPgnoError     
+926 static sqlite3.c_releasePageNotNull     
+927 static sqlite3.c_allocateBtreePage     
+928 static sqlite3.c_relocatePage     
+929 static sqlite3.c_btreeGetUnusedPage     
+930 static sqlite3.c_sqlite3AbsInt32     
+931 static sqlite3.c_btreeGetHasContent     
+932 static sqlite3.c_sqlite3BitvecSize     
+933 static sqlite3.c_sqlite3PagerMovepage     
+934 static sqlite3.c_setChildPtrmaps     
+935 static sqlite3.c_ptrmapPut     
+936 static sqlite3.c_modifyPagePointer     
+937 static sqlite3.c_sqlite3PcacheMove     
+938 static sqlite3.c_sqlite3BitvecClear     
+939 static sqlite3.c_ptrmapPutOvflPtr     
+940 static sqlite3.c_sqlite3BtreeTripAllCursors     
+941 static sqlite3.c_btreeSetNPage     
+942 static sqlite3.c_sqlite3BtreeClearCursor     
+943 static sqlite3.c_releaseMemArray     
+944 static sqlite3.c_vdbeFreeOpArray     
+945 static sqlite3.c_sqlite3VdbeCheckMemInvariants     
+946 static sqlite3.c_freeP4     
+947 static sqlite3.c_freeP4FuncCtx     
+948 static sqlite3.c_sqlite3KeyInfoUnref     
+949 static sqlite3.c_freeEphemeralFunction     
+950 static sqlite3.c_freeP4Mem     
+951 static sqlite3.c_sqlite3VtabUnlock     
+952 static sqlite3.c_sqlite3VtabModuleUnref     
+953 static sqlite3.c_sqlite3OsCurrentTimeInt64     
+954 static sqlite3.c_sqlite3VdbeDelete     
+955 static sqlite3.c_apiHandleError     
+956 static sqlite3.c_sqlite3VdbeHalt     
+957 static sqlite3.c_sqlite3VdbeTransferError     
+958 static sqlite3.c_closeAllCursors     
+959 static sqlite3.c_checkActiveVdbeCnt     
+960 static sqlite3.c_sqlite3VdbeEnter     
+961 static sqlite3.c_sqlite3RollbackAll     
+962 static sqlite3.c_sqlite3CloseSavepoints     
+963 static sqlite3.c_sqlite3VdbeCheckFk     
+964 static sqlite3.c_sqlite3VdbeLeave     
+965 static sqlite3.c_vdbeCommit     
+966 static sqlite3.c_sqlite3CommitInternalChanges     
+967 static sqlite3.c_sqlite3VdbeCloseStatement     
+968 static sqlite3.c_sqlite3VdbeSetChanges     
+969 static sqlite3.c_sqlite3VdbeFrameRestore     
+970 static sqlite3.c_closeCursorsInFrame     
+971 static sqlite3.c_sqlite3VdbeFrameDelete     
+972 static sqlite3.c_sqlite3VdbeDeleteAuxData     
+973 static sqlite3.c_sqlite3VdbeFreeCursor     
+974 static sqlite3.c_sqlite3VdbeSorterClose     
+975 static sqlite3.c_sqlite3BtreeCloseCursor     
+976 static sqlite3.c_sqlite3VdbeSorterReset     
+977 static sqlite3.c_vdbeSorterJoinAll     
+978 static sqlite3.c_vdbePmaReaderClear     
+979 static sqlite3.c_vdbeMergeEngineFree     
+980 static sqlite3.c_vdbeSortSubtaskCleanup     
+981 static sqlite3.c_vdbeSorterRecordFree     
+982 static sqlite3.c_vdbeSorterJoinThread     
+983 static sqlite3.c_sqlite3ThreadJoin     
+984 static sqlite3.c_vdbeIncrFree     
+985 static sqlite3.c_sqlite3OsCloseFree     
+986 static sqlite3.c_sqlite3BtreeClose     
+987 static sqlite3.c_removeFromSharingList     
+988 static sqlite3.c_sqlite3VdbeFrameIsValid     
+989 static sqlite3.c_sqlite3VtabRollback     
+990 static sqlite3.c_callFinaliser     
+991 static sqlite3.c_sqlite3VdbeError     
+992 static sqlite3.c_vdbeLeave     
+993 static sqlite3.c_sqlite3VtabSync     
+994 static sqlite3.c_sqlite3VtabCommit     
+995 static sqlite3.c_sqlite3OsOpenMalloc     
+996 static sqlite3.c_sqlite3BtreeGetJournalname     
+997 static sqlite3.c_sqlite3VtabImportErrmsg     
+998 static sqlite3.c_sqlite3PagerJournalname     
+999 static sqlite3.c_vdbeCloseStatement     
+1000 static sqlite3.c_sqlite3BtreeSavepoint     
+1001 static sqlite3.c_sqlite3VtabSavepoint     
+1002 static sqlite3.c_sqlite3VtabLock     
+1003 static sqlite3.c_vdbeMemClear     
+1004 static sqlite3.c_vdbeMemClearExternAndSetNull     
+1005 static sqlite3.c_sqlite3VdbeMemFinalize     
+1006 static sqlite3.c_sqlite3VdbeMemIsRowSet     
+1007 static sqlite3.c_sqlite3VdbeMemGrow     
+1008 static sqlite3.c_sqlite3RowSetDelete     
+1009 static sqlite3.c_sqlite3RowSetClear     
+1010 static sqlite3.c_sqlite3DbReallocOrFree     
+1011 static sqlite3.c_valueBytes     
+1012 static sqlite3.c_valueToText     
+1013 static sqlite3.c_sqlite3VdbeChangeEncoding     
+1014 static sqlite3.c_sqlite3VdbeMemNulTerminate     
+1015 static sqlite3.c_sqlite3VdbeMemStringify     
+1016 static sqlite3.c_sqlite3VdbeMemValidStrRep     
+1017 static sqlite3.c_sqlite3VdbeMemTranslate     
+1018 static sqlite3.c_vdbeMemAddTerminator     
+1019 static sqlite3.c_sqlite3VdbeMemClearAndResize     
+1020 static sqlite3.c_vdbeMemRenderNum     
+1021 static sqlite3.c_sqlite3Int64ToText     
+1022 static sqlite3.c_memRealValue     
+1023 static sqlite3.c_sqlite3AtoF     
+1024 static sqlite3.c_sqlite3Pow10     
+1025 static sqlite3.c_doubleToInt64     
+1026 static sqlite3.c_memIntValue     
+1027 static sqlite3.c_sqlite3Atoi64     
+1028 static sqlite3.c_compare2pow63     
+1029 static sqlite3.c_sqlite3VdbeMemHandleBom     
+1030 static sqlite3.c_vdbeReleaseAndSetInt64     
+1031 static sqlite3.c_sqlite3NoopDestructor     
+1032 static sqlite3.c_sqlite3VdbeList     
+1033 static sqlite3.c_sqlite3VdbeExec     
+1034 static sqlite3.c_doWalCallbacks     
+1035 static sqlite3.c_sqlite3VdbeNextOpcode     
+1036 static sqlite3.c_sqlite3VdbeDisplayP4     
+1037 static sqlite3.c_sqlite3OpcodeName     
+1038 static sqlite3.c_sqlite3VdbeDisplayComment     
+1039 static sqlite3.c_translateP     
+1040 static sqlite3.c_sqlite3VdbePrintSql     
+1041 static sqlite3.c_sqlite3VdbePrintOp     
+1042 static sqlite3.c_test_trace_breakpoint     
+1043 static sqlite3.c_registerTrace     
+1044 static sqlite3.c_sqlite3VdbeMemAboutToChange     
+1045 static sqlite3.c_sqlite3VdbeAssertAbortable     
+1046 static sqlite3.c_out2Prerelease     
+1047 static sqlite3.c_sqlite3VdbeMemTooBig     
+1048 static sqlite3.c_sqlite3VdbeMemMove     
+1049 static sqlite3.c_sqlite3VdbeMemShallowCopy     
+1050 static sqlite3.c_numericType     
+1051 static sqlite3.c_sqlite3AddInt64     
+1052 static sqlite3.c_sqlite3SubInt64     
+1053 static sqlite3.c_sqlite3MulInt64     
+1054 static sqlite3.c_sqlite3VdbeMemIntegerify     
+1055 static sqlite3.c_applyAffinity     
+1056 static sqlite3.c_sqlite3VdbeMemRealify     
+1057 static sqlite3.c_sqlite3VdbeMemCast     
+1058 static sqlite3.c_sqlite3MemCompare     
+1059 static sqlite3.c_sqlite3VdbeBooleanValue     
+1060 static sqlite3.c_sqlite3VdbeCursorMoveto     
+1061 static sqlite3.c_sqlite3BtreeCursorIsValid     
+1062 static sqlite3.c_sqlite3BtreePayloadFetch     
+1063 static sqlite3.c_sqlite3GetVarint32     
+1064 static sqlite3.c_sqlite3VdbeMemFromBtreeZeroOffset     
+1065 static sqlite3.c_sqlite3VdbeOneByteSerialTypeLen     
+1066 static sqlite3.c_sqlite3VdbeSerialTypeLen     
+1067 static sqlite3.c_sqlite3VdbeSerialGet     
+1068 static sqlite3.c_sqlite3VdbeMemFromBtree     
+1069 static sqlite3.c_sqlite3VarintLen     
+1070 static sqlite3.c_sqlite3PutVarint     
+1071 static sqlite3.c_sqlite3VdbeSerialPut     
+1072 static sqlite3.c_sqlite3BtreeRowCountEst     
+1073 static sqlite3.c_sqlite3BtreeCount     
+1074 static sqlite3.c_checkSavepointCount     
+1075 static sqlite3.c_sqlite3BtreeBeginStmt     
+1076 static sqlite3.c_sqlite3ResetOneSchema     
+1077 static sqlite3.c_sqlite3BtreeGetMeta     
+1078 static sqlite3.c_sqlite3VdbeIncrWriteCounter     
+1079 static sqlite3.c_sqlite3SchemaMutexHeld     
+1080 static sqlite3.c_allocateCursor     
+1081 static sqlite3.c_sqlite3BtreeCursor     
+1082 static sqlite3.c_sqlite3BtreeCursorHintFlags     
+1083 static sqlite3.c_sqlite3BtreeClearTable     
+1084 static sqlite3.c_sqlite3BtreeCreateTable     
+1085 static sqlite3.c_sqlite3VdbeSorterInit     
+1086 static sqlite3.c_sqlite3BtreeFakeValidCursor     
+1087 static sqlite3.c_sqlite3BtreeCursorHasHint     
+1088 static sqlite3.c_sqlite3BtreeLast     
+1089 static sqlite3.c_sqlite3BtreeTableMoveto     
+1090 static sqlite3.c_sqlite3BtreeIndexMoveto     
+1091 static sqlite3.c_sqlite3BtreeNext     
+1092 static sqlite3.c_sqlite3BtreePrevious     
+1093 static sqlite3.c_sqlite3BtreeEof     
+1094 static sqlite3.c_sqlite3BtreeCursorIsValidNN     
+1095 static sqlite3.c_sqlite3VdbeIdxKeyCompare     
+1096 static sqlite3.c_sqlite3VdbeAllocUnpackedRecord     
+1097 static sqlite3.c_sqlite3VdbeRecordUnpack     
+1098 static sqlite3.c_sqlite3BtreeInsert     
+1099 static sqlite3.c_sqlite3BtreeTransferRow     
+1100 static sqlite3.c_sqlite3BtreeDelete     
+1101 static sqlite3.c_sqlite3VdbeSorterCompare     
+1102 static sqlite3.c_sqlite3VdbeSorterRowkey     
+1103 static sqlite3.c_sqlite3VdbeCursorRestore     
+1104 static sqlite3.c_sqlite3BtreeFirst     
+1105 static sqlite3.c_sqlite3LogEst     
+1106 static sqlite3.c_sqlite3VdbeSorterRewind     
+1107 static sqlite3.c_sqlite3VdbeSorterNext     
+1108 static sqlite3.c_sqlite3VdbeSorterWrite     
+1109 static sqlite3.c_sqlite3VdbeIdxRowid     
+1110 static sqlite3.c_sqlite3VdbeFinishMoveto     
+1111 static sqlite3.c_sqlite3VdbeMemInit     
+1112 static sqlite3.c_sqlite3VdbeRecordCompareWithSkip     
+1113 static sqlite3.c_sqlite3BtreeDropTable     
+1114 static sqlite3.c_sqlite3RootPageMoved     
+1115 static sqlite3.c_sqlite3BtreeClearTableOfCursor     
+1116 static sqlite3.c_sqlite3SchemaClear     
+1117 static sqlite3.c_sqlite3InitOne     
+1118 static sqlite3.c_sqlite3InitCallback     
+1119 static sqlite3.c_sqlite3AnalysisLoad     
+1120 static sqlite3.c_sqlite3UnlinkAndDeleteTable     
+1121 static sqlite3.c_sqlite3UnlinkAndDeleteIndex     
+1122 static sqlite3.c_sqlite3UnlinkAndDeleteTrigger     
+1123 static sqlite3.c_sqlite3BtreeIntegrityCheck     
+1124 static sqlite3.c_sqlite3VdbeMemSetRowSet     
+1125 static sqlite3.c_sqlite3RowSetInsert     
+1126 static sqlite3.c_sqlite3RowSetNext     
+1127 static sqlite3.c_sqlite3RowSetTest     
+1128 static sqlite3.c_sqlite3VdbeFrameMemDel     
+1129 static sqlite3.c_sqlite3VdbeMemAggValue     
+1130 static sqlite3.c_sqlite3PagerOkToChangeJournalMode     
+1131 static sqlite3.c_sqlite3PagerCloseWal     
+1132 static sqlite3.c_sqlite3PagerSetJournalMode     
+1133 static sqlite3.c_sqlite3JournalModename     
+1134 static sqlite3.c_sqlite3RunVacuum     
+1135 static sqlite3.c_sqlite3BtreeIncrVacuum     
+1136 static sqlite3.c_sqlite3BtreeCursorPin     
+1137 static sqlite3.c_sqlite3BtreeCursorUnpin     
+1138 static sqlite3.c_sqlite3BtreeLockTable     
+1139 static sqlite3.c_sqlite3VtabBegin     
+1140 static sqlite3.c_sqlite3VtabCallCreate     
+1141 static sqlite3.c_sqlite3VtabCallDestroy     
+1142 static sqlite3.c_sqlite3BtreeMaxPageCount     
+1143 static sqlite3.c_sqlite3DebugPrintf     
+1144 static sqlite3.c_sqlite3VdbeRegisterDump     
+1145 static sqlite3.c_out2PrereleaseWithClear     
+1146 static sqlite3.c_vdbeClrCopy     
+1147 static sqlite3.c_computeNumericType     
+1148 static sqlite3.c_sqlite3VdbeIntegerAffinity     
+1149 static sqlite3.c_sqlite3ValueApplyAffinity     
+1150 static sqlite3.c_sqlite3VdbeMemNumerify     
+1151 static sqlite3.c_sqlite3RealSameAsInt     
+1152 static sqlite3.c_sqlite3IntFloatCompare     
+1153 static sqlite3.c_vdbeCompareMemString     
+1154 static sqlite3.c_sqlite3BlobCompare     
+1155 static sqlite3.c_isAllZero     
+1156 static sqlite3.c_sqlite3BtreeCursorHasMoved     
+1157 static sqlite3.c_handleMovedCursor     
+1158 static sqlite3.c_sqlite3BtreeCursorRestore     
+1159 static sqlite3.c_btreeRestoreCursorPosition     
+1160 static sqlite3.c_cursorOwnsBtShared     
+1161 static sqlite3.c_btreeMoveto     
+1162 static sqlite3.c_fetchPayload     
+1163 static sqlite3.c_serialGet     
+1164 static sqlite3.c_sqlite3BtreeMaxRecordSize     
+1165 static sqlite3.c_putVarint64     
+1166 static sqlite3.c_moveToRoot     
+1167 static sqlite3.c_moveToParent     
+1168 static sqlite3.c_moveToChild     
+1169 static sqlite3.c_getAndInitPage     
+1170 static sqlite3.c_assertParentIndex     
+1171 static sqlite3.c_sqlite3BtreeCursorSize     
+1172 static sqlite3.c_sqlite3BtreeCursorZero     
+1173 static sqlite3.c_btreeCursorWithLock     
+1174 static sqlite3.c_btreeCursor     
+1175 static sqlite3.c_hasSharedCacheTableLock     
+1176 static sqlite3.c_hasReadConflicts     
+1177 static sqlite3.c_allocateTempSpace     
+1178 static sqlite3.c_invalidateIncrblobCursors     
+1179 static sqlite3.c_clearDatabasePage     
+1180 static sqlite3.c_clearCellOverflow     
+1181 static sqlite3.c_freePage     
+1182 static sqlite3.c_btreePageLookup     
+1183 static sqlite3.c_freePage2     
+1184 static sqlite3.c_sqlite3PagerRef     
+1185 static sqlite3.c_sqlite3PagerDontWrite     
+1186 static sqlite3.c_btreeSetHasContent     
+1187 static sqlite3.c_sqlite3PcacheRef     
+1188 static sqlite3.c_btreeCreateTable     
+1189 static sqlite3.c_moveToRightmost     
+1190 static sqlite3.c_sqlite3VdbeFindCompare     
+1191 static sqlite3.c_sqlite3VdbeRecordCompare     
+1192 static sqlite3.c_vdbeRecordCompareInt     
+1193 static sqlite3.c_vdbeRecordCompareString     
+1194 static sqlite3.c_vdbeAssertFieldCountWithinLimits     
+1195 static sqlite3.c_vdbeRecordCompareDebug     
+1196 static sqlite3.c_btreeNext     
+1197 static sqlite3.c_moveToLeftmost     
+1198 static sqlite3.c_btreePrevious     
+1199 static sqlite3.c_btreeOverwriteCell     
+1200 static sqlite3.c_btreeComputeFreeSpace     
+1201 static sqlite3.c_fillInCell     
+1202 static sqlite3.c_dropCell     
+1203 static sqlite3.c_insertCell     
+1204 static sqlite3.c_balance     
+1205 static sqlite3.c_btreeOverwriteContent     
+1206 static sqlite3.c_cellSize     
+1207 static sqlite3.c_freeSpace     
+1208 static sqlite3.c_allocateSpace     
+1209 static sqlite3.c_pageFindSlot     
+1210 static sqlite3.c_defragmentPage     
+1211 static sqlite3.c_sqlite3PagerTempSpace     
+1212 static sqlite3.c_anotherValidCursor     
+1213 static sqlite3.c_balance_deeper     
+1214 static sqlite3.c_balance_quick     
+1215 static sqlite3.c_balance_nonroot     
+1216 static sqlite3.c_copyNodeContent     
+1217 static sqlite3.c_rebuildPage     
+1218 static sqlite3.c_cachedCellSize     
+1219 static sqlite3.c_sqlite3PagerRekey     
+1220 static sqlite3.c_editPage     
+1221 static sqlite3.c_computeCellSize     
+1222 static sqlite3.c_pageFreeArray     
+1223 static sqlite3.c_pageInsertArray     
+1224 static sqlite3.c_populateCellCache     
+1225 static sqlite3.c_btreePayloadToLocal     
+1226 static sqlite3.c_vdbeSorterRowkey     
+1227 static sqlite3.c_vdbeSorterSort     
+1228 static sqlite3.c_vdbeSorterFlushPMA     
+1229 static sqlite3.c_vdbeSorterSetupMerge     
+1230 static sqlite3.c_vdbeSortAllocUnpacked     
+1231 static sqlite3.c_vdbeSorterGetCompare     
+1232 static sqlite3.c_vdbeSorterMerge     
+1233 static sqlite3.c_vdbeSorterCompareInt     
+1234 static sqlite3.c_vdbeSorterCompareText     
+1235 static sqlite3.c_vdbeSorterCompare     
+1236 static sqlite3.c_vdbeSorterCompareTail     
+1237 static sqlite3.c_vdbeSorterListToPMA     
+1238 static sqlite3.c_vdbeSorterCreateThread     
+1239 static sqlite3.c_vdbeSorterFlushThread     
+1240 static sqlite3.c_vdbeSorterOpenTempFile     
+1241 static sqlite3.c_vdbeSorterExtendFile     
+1242 static sqlite3.c_vdbePmaWriterInit     
+1243 static sqlite3.c_vdbePmaWriteVarint     
+1244 static sqlite3.c_vdbePmaWriteBlob     
+1245 static sqlite3.c_vdbePmaWriterFinish     
+1246 static sqlite3.c_sqlite3ThreadCreate     
+1247 static sqlite3.c_vdbeSorterMergeTreeBuild     
+1248 static sqlite3.c_vdbeIncrMergerNew     
+1249 static sqlite3.c_vdbeIncrMergerSetThreads     
+1250 static sqlite3.c_vdbePmaReaderIncrInit     
+1251 static sqlite3.c_vdbePmaReaderIncrMergeInit     
+1252 static sqlite3.c_vdbeMergeEngineInit     
+1253 static sqlite3.c_vdbeMergeEngineNew     
+1254 static sqlite3.c_vdbeSorterTreeDepth     
+1255 static sqlite3.c_vdbeMergeEngineLevel0     
+1256 static sqlite3.c_vdbeSorterAddToTree     
+1257 static sqlite3.c_vdbePmaReaderInit     
+1258 static sqlite3.c_vdbePmaReaderSeek     
+1259 static sqlite3.c_vdbePmaReadVarint     
+1260 static sqlite3.c_vdbePmaReaderNext     
+1261 static sqlite3.c_vdbeSorterMapFile     
+1262 static sqlite3.c_vdbePmaReadBlob     
+1263 static sqlite3.c_vdbeIncrSwap     
+1264 static sqlite3.c_vdbeIncrBgPopulate     
+1265 static sqlite3.c_vdbeIncrPopulate     
+1266 static sqlite3.c_vdbeIncrPopulateThread     
+1267 static sqlite3.c_vdbeMergeEngineStep     
+1268 static sqlite3.c_vdbePmaReaderBgIncrInit     
+1269 static sqlite3.c_vdbeMergeEngineCompare     
+1270 static sqlite3.c_sqlite3HeapNearlyFull     
+1271 static sqlite3.c_vdbeRecordDecodeInt     
+1272 static sqlite3.c_btreeDropTable     
+1273 static sqlite3.c_sqlite3HashInit     
+1274 static sqlite3.c_sqlite3HashClear     
+1275 static sqlite3.c_sqlite3SetString     
+1276 static sqlite3.c_sqlite3SetTextEncoding     
+1277 static sqlite3.c_sqlite3BtreeCommit     
+1278 static sqlite3.c_sqlite3FindCollSeq     
+1279 static sqlite3.c_findCollSeqEntry     
+1280 static sqlite3.c_sqlite3HashFind     
+1281 static sqlite3.c_sqlite3HashInsert     
+1282 static sqlite3.c_findElementWithHash     
+1283 static sqlite3.c_strHash     
+1284 static sqlite3.c_removeElementGivenHash     
+1285 static sqlite3.c_rehash     
+1286 static sqlite3.c_insertElement     
+1287 static sqlite3.c_corruptSchema     
+1288 static sqlite3.c_sqlite3GetUInt32     
+1289 static sqlite3.c_sqlite3Prepare     
+1290 static sqlite3.c_sqlite3FindIndex     
+1291 static sqlite3.c_sqlite3IndexHasDuplicateRootPage     
+1292 static sqlite3.c_sqlite3BtreeSchemaLocked     
+1293 static sqlite3.c_sqlite3VtabUnlockList     
+1294 static sqlite3.c_sqlite3DbStrNDup     
+1295 static sqlite3.c_sqlite3VdbeSetSql     
+1296 static sqlite3.c_schemaIsValid     
+1297 static sqlite3.c_sqlite3ErrorClear     
+1298 static sqlite3.c_sqlite3BtreeHoldsAllMutexes     
+1299 static sqlite3.c_sqlite3DbIsNamed     
+1300 static sqlite3.c_analysisLoader     
+1301 static sqlite3.c_sqlite3DefaultRowEst     
+1302 static sqlite3.c_decodeIntArray     
+1303 static sqlite3.c_sqlite3Atoi     
+1304 static sqlite3.c_sqlite3GetInt32     
+1305 static sqlite3.c_sqlite3HexToInt     
+1306 static sqlite3.c_sqlite3FreeIndex     
+1307 static sqlite3.c_sqlite3DeleteIndexSamples     
+1308 static sqlite3.c_sqlite3ExprDelete     
+1309 static sqlite3.c_sqlite3ExprListDelete     
+1310 static sqlite3.c_sqlite3ExprDeleteNN     
+1311 static sqlite3.c_sqlite3SelectDelete     
+1312 static sqlite3.c_sqlite3WindowDelete     
+1313 static sqlite3.c_clearSelect     
+1314 static sqlite3.c_sqlite3SrcListDelete     
+1315 static sqlite3.c_sqlite3WithDelete     
+1316 static sqlite3.c_sqlite3WindowListDelete     
+1317 static sqlite3.c_sqlite3WindowUnlinkFromSelect     
+1318 static sqlite3.c_sqlite3IdListDelete     
+1319 static sqlite3.c_cteClear     
+1320 static sqlite3.c_exprListDeleteNN     
+1321 static sqlite3.c_tableOfTrigger     
+1322 static sqlite3.c_setPageReferenced     
+1323 static sqlite3.c_checkList     
+1324 static sqlite3.c_checkAppendMsg     
+1325 static sqlite3.c_checkPtrmap     
+1326 static sqlite3.c_checkTreePage     
+1327 static sqlite3.c_getPageReferenced     
+1328 static sqlite3.c_checkRef     
+1329 static sqlite3.c_btreeHeapInsert     
+1330 static sqlite3.c_btreeHeapPull     
+1331 static sqlite3.c_sqlite3RowSetInit     
+1332 static sqlite3.c_rowSetEntryAlloc     
+1333 static sqlite3.c_rowSetEntrySort     
+1334 static sqlite3.c_rowSetEntryMerge     
+1335 static sqlite3.c_rowSetListToTree     
+1336 static sqlite3.c_rowSetTreeToList     
+1337 static sqlite3.c_rowSetNDeepTree     
+1338 static sqlite3.c_execSqlF     
+1339 static sqlite3.c_sqlite3BtreeSetSpillSize     
+1340 static sqlite3.c_sqlite3BtreeSetPagerFlags     
+1341 static sqlite3.c_execSql     
+1342 static sqlite3.c_sqlite3BtreeSetAutoVacuum     
+1343 static sqlite3.c_sqlite3BtreeGetAutoVacuum     
+1344 static sqlite3.c_sqlite3BtreeCopyFile     
+1345 static sqlite3.c_sqlite3PagerSetSpillsize     
+1346 static sqlite3.c_sqlite3PcacheSetSpillsize     
+1347 static sqlite3.c_sqlite3PagerSetFlags     
+1348 static sqlite3.c_sqlite3PagerClearCache     
+1349 static sqlite3.c_setSharedCacheTableLock     
+1350 static sqlite3.c_growVTrans     
+1351 static sqlite3.c_addToVTrans     
+1352 static sqlite3.c_vtabCallConstructor     
+1353 static sqlite3.c_sqlite3GetVTable     
+1354 static sqlite3.c_vtabDisconnectAll     
+1355 static sqlite3.c_sqlite3PagerMaxPageCount     
+1356 static sqlite3.c_sqlite3PagerWalCallback     
+1357 static sqlite3.c_sqlite3WalCallback     
+1358 static sqlite3.c_columnNullValue     
+1359 static sqlite3.c_sqlite3VListNameToNum     
+1360 static sqlite3.c_findNextHostParameter     
+1361 static sqlite3.c_sqlite3GetToken     
+1362 static sqlite3.c_keywordCode     
+1363 static sqlite3.c_alsoAnInt     
+1364 static sqlite3.c_sqlite3VdbeMemPrettyPrint     
+1365 static sqlite3.c_sqlite3VdbeAddOp2     
+1366 static sqlite3.c_sqlite3VdbeAddOp3     
+1367 static sqlite3.c_growOp3     
+1368 static sqlite3.c_test_addop_breakpoint     
+1369 static sqlite3.c_growOpArray     
+1370 static sqlite3.c_sqlite3BtreeSharable     
+1371 static sqlite3.c_vdbeChangeP4Full     
+1372 static sqlite3.c_resolveP2Values     
+1373 static sqlite3.c_sqlite3VdbeSetNumCols     
+1374 static sqlite3.c_sqlite3VdbeSetColName     
+1375 static sqlite3.c_allocSpace     
+1376 static sqlite3.c_initMemArray     
+1377 static sqlite3.c_sqlite3BtreeIncrblobCursor     
+1378 static sqlite3.c_sqlite3BtreeEnterCursor     
+1379 static sqlite3.c_sqlite3BtreeLeaveCursor     
+1380 static sqlite3.c_accessPayloadChecked     
+1381 static sqlite3.c_sqlite3ReadSchema     
+1382 static sqlite3.c_sqlite3PragmaVtabRegister     
+1383 static sqlite3.c_sqlite3VtabEponymousTableInit     
+1384 static sqlite3.c_pragmaLocate     
+1385 static sqlite3.c_sqlite3VtabCreateModule     
+1386 static sqlite3.c_sqlite3VtabEponymousTableClear     
+1387 static sqlite3.c_pragmaVtabConnect     
+1388 static sqlite3.c_pragmaVtabBestIndex     
+1389 static sqlite3.c_pragmaVtabDisconnect     
+1390 static sqlite3.c_pragmaVtabOpen     
+1391 static sqlite3.c_pragmaVtabClose     
+1392 static sqlite3.c_pragmaVtabFilter     
+1393 static sqlite3.c_pragmaVtabNext     
+1394 static sqlite3.c_pragmaVtabEof     
+1395 static sqlite3.c_pragmaVtabColumn     
+1396 static sqlite3.c_pragmaVtabRowid     
+1397 static sqlite3.c_pragmaVtabCursorClear     
+1398 static sqlite3.c_addModuleArgument     
+1399 static sqlite3.c_sqlite3CollapseDatabaseArray     
+1400 static sqlite3.c_deleteTable     
+1401 static sqlite3.c_sqlite3FkDelete     
+1402 static sqlite3.c_sqlite3DeleteColumnNames     
+1403 static sqlite3.c_sqlite3VtabClear     
+1404 static sqlite3.c_fkTriggerDelete     
+1405 static sqlite3.c_sqlite3StrIHash     
+1406 static sqlite3.c_sqlite3Utf8Read     
+1407 static sqlite3.c_logBadConnection     
+1408 static sqlite3.c_sqlite3OsDlOpen     
+1409 static sqlite3.c_sqlite3OsDlSym     
+1410 static sqlite3.c_sqlite3OsDlClose     
+1411 static sqlite3.c_sqlite3OsDlError     
+1412 static sqlite3.c_sqlite3VdbeDb     
+1413 static sqlite3.c_sqlite3VdbePrepareFlags     
+1414 static sqlite3.c_sqlite3VdbeSwap     
+1415 static sqlite3.c_sqlite3VdbeResetStepResult     
+1416 static sqlite3.c_sqlite3Utf8CharLen     
+1417 static sqlite3.c_sqlite3Utf16ByteLen     
+1418 static sqlite3.c_sqlite3DeleteTriggerStep     
+1419 static sqlite3.c_sqlite3UpsertDelete     
+1420 static sqlite3.c_upsertDelete     
+1421 static sqlite3.c_sqlite3BinaryCompareCollSeq     
+1422 static sqlite3.c_sqlite3ExprCollSeq     
+1423 static sqlite3.c_sqlite3GetCollSeq     
+1424 static sqlite3.c_sqlite3CheckCollSeq     
+1425 static sqlite3.c_callCollNeeded     
+1426 static sqlite3.c_synthCollSeq     
+1427 static sqlite3.c_sqlite3ParserTrace     
+1428 static sqlite3.c_sqlite3ParserInit     
+1429 static sqlite3.c_analyzeWindowKeyword     
+1430 static sqlite3.c_analyzeOverKeyword     
+1431 static sqlite3.c_analyzeFilterKeyword     
+1432 static sqlite3.c_sqlite3Parser     
+1433 static sqlite3.c_sqlite3ParserFinalize     
+1434 static sqlite3.c_getToken     
+1435 static sqlite3.c_sqlite3ParserFallback     
+1436 static sqlite3.c_yy_find_shift_action     
+1437 static sqlite3.c_yyStackOverflow     
+1438 static sqlite3.c_yy_reduce     
+1439 static sqlite3.c_yy_shift     
+1440 static sqlite3.c_yy_accept     
+1441 static sqlite3.c_yy_syntax_error     
+1442 static sqlite3.c_yy_destructor     
+1443 static sqlite3.c_yy_pop_parser_stack     
+1444 static sqlite3.c_sqlite3FinishCoding     
+1445 static sqlite3.c_sqlite3BeginTransaction     
+1446 static sqlite3.c_sqlite3EndTransaction     
+1447 static sqlite3.c_sqlite3Savepoint     
+1448 static sqlite3.c_sqlite3StartTable     
+1449 static sqlite3.c_disableLookaside     
+1450 static sqlite3.c_sqlite3EndTable     
+1451 static sqlite3.c_sqlite3AddColumn     
+1452 static sqlite3.c_sqlite3AddDefaultValue     
+1453 static sqlite3.c_sqlite3PExpr     
+1454 static sqlite3.c_tokenExpr     
+1455 static sqlite3.c_sqlite3ExprIdToTrueFalse     
+1456 static sqlite3.c_sqlite3AddNotNull     
+1457 static sqlite3.c_sqlite3AddPrimaryKey     
+1458 static sqlite3.c_sqlite3CreateIndex     
+1459 static sqlite3.c_sqlite3AddCheckConstraint     
+1460 static sqlite3.c_sqlite3CreateForeignKey     
+1461 static sqlite3.c_sqlite3DeferForeignKey     
+1462 static sqlite3.c_sqlite3AddCollateType     
+1463 static sqlite3.c_sqlite3AddGenerated     
+1464 static sqlite3.c_sqlite3DropTable     
+1465 static sqlite3.c_sqlite3CreateView     
+1466 static sqlite3.c_sqlite3Select     
+1467 static sqlite3.c_attachWithToSelect     
+1468 static sqlite3.c_parserDoubleLinkSelect     
+1469 static sqlite3.c_sqlite3SrcListAppendFromTerm     
+1470 static sqlite3.c_sqlite3SelectNew     
+1471 static sqlite3.c_sqlite3ExprListAppend     
+1472 static sqlite3.c_sqlite3ExprListSetName     
+1473 static sqlite3.c_sqlite3ExprListSetSpan     
+1474 static sqlite3.c_sqlite3Expr     
+1475 static sqlite3.c_sqlite3ExprAlloc     
+1476 static sqlite3.c_sqlite3SrcListShiftJoinType     
+1477 static sqlite3.c_sqlite3SrcListIndexedBy     
+1478 static sqlite3.c_sqlite3SrcListFuncArgs     
+1479 static sqlite3.c_sqlite3SrcListAppend     
+1480 static sqlite3.c_sqlite3RenameTokenMap     
+1481 static sqlite3.c_sqlite3NameFromToken     
+1482 static sqlite3.c_sqlite3JoinType     
+1483 static sqlite3.c_sqlite3ExprListSetSortOrder     
+1484 static sqlite3.c_sqlite3DeleteFrom     
+1485 static sqlite3.c_sqlite3AddReturning     
+1486 static sqlite3.c_sqlite3ExprListCheckLength     
+1487 static sqlite3.c_sqlite3SrcListAppendList     
+1488 static sqlite3.c_sqlite3Update     
+1489 static sqlite3.c_sqlite3ExprListAppendVector     
+1490 static sqlite3.c_sqlite3Insert     
+1491 static sqlite3.c_sqlite3UpsertNew     
+1492 static sqlite3.c_sqlite3IdListAppend     
+1493 static sqlite3.c_sqlite3ExprAssignVarNumber     
+1494 static sqlite3.c_sqlite3ExprAddCollateToken     
+1495 static sqlite3.c_sqlite3ExprAttachSubtrees     
+1496 static sqlite3.c_sqlite3ExprFunction     
+1497 static sqlite3.c_sqlite3WindowAttach     
+1498 static sqlite3.c_sqlite3ExprAnd     
+1499 static sqlite3.c_binaryToUnaryIfNull     
+1500 static sqlite3.c_sqlite3ExprUnmapAndDelete     
+1501 static sqlite3.c_sqlite3ExprIsConstant     
+1502 static sqlite3.c_sqlite3ExprListToValues     
+1503 static sqlite3.c_sqlite3PExprAddSelect     
+1504 static sqlite3.c_sqlite3ExprSetHeightAndFlags     
+1505 static sqlite3.c_parserAddExprIdListTerm     
+1506 static sqlite3.c_sqlite3DropIndex     
+1507 static sqlite3.c_sqlite3Vacuum     
+1508 static sqlite3.c_sqlite3Pragma     
+1509 static sqlite3.c_sqlite3FinishTrigger     
+1510 static sqlite3.c_sqlite3BeginTrigger     
+1511 static sqlite3.c_sqlite3TriggerUpdateStep     
+1512 static sqlite3.c_sqlite3TriggerInsertStep     
+1513 static sqlite3.c_sqlite3TriggerDeleteStep     
+1514 static sqlite3.c_sqlite3TriggerSelectStep     
+1515 static sqlite3.c_sqlite3DropTrigger     
+1516 static sqlite3.c_sqlite3Attach     
+1517 static sqlite3.c_sqlite3Detach     
+1518 static sqlite3.c_sqlite3Reindex     
+1519 static sqlite3.c_sqlite3Analyze     
+1520 static sqlite3.c_sqlite3AlterRenameTable     
+1521 static sqlite3.c_sqlite3AlterFinishAddColumn     
+1522 static sqlite3.c_sqlite3AlterDropColumn     
+1523 static sqlite3.c_sqlite3AlterBeginAddColumn     
+1524 static sqlite3.c_sqlite3AlterRenameColumn     
+1525 static sqlite3.c_sqlite3VtabFinishParse     
+1526 static sqlite3.c_sqlite3VtabBeginParse     
+1527 static sqlite3.c_sqlite3VtabArgInit     
+1528 static sqlite3.c_sqlite3VtabArgExtend     
+1529 static sqlite3.c_sqlite3WithPush     
+1530 static sqlite3.c_sqlite3CteNew     
+1531 static sqlite3.c_sqlite3WithAdd     
+1532 static sqlite3.c_sqlite3WindowChain     
+1533 static sqlite3.c_sqlite3WindowAssemble     
+1534 static sqlite3.c_sqlite3WindowAlloc     
+1535 static sqlite3.c_yy_find_reduce_action     
+1536 static sqlite3.c_yyTraceShift     
+1537 static sqlite3.c_sqlite3GetVdbe     
+1538 static sqlite3.c_sqlite3VdbeAssertMayAbort     
+1539 static sqlite3.c_sqlite3VdbeAddOp1     
+1540 static sqlite3.c_sqlite3VdbeJumpHere     
+1541 static sqlite3.c_sqlite3VdbeAddOp0     
+1542 static sqlite3.c_sqlite3VdbeGetOp     
+1543 static sqlite3.c_sqlite3VdbeComment     
+1544 static sqlite3.c_sqlite3VdbeAddOp4     
+1545 static sqlite3.c_codeTableLocks     
+1546 static sqlite3.c_sqlite3AutoincrementBegin     
+1547 static sqlite3.c_sqlite3ExprCode     
+1548 static sqlite3.c_sqlite3VdbeGoto     
+1549 static sqlite3.c_opIterNext     
+1550 static sqlite3.c_sqlite3VdbeChangeP2     
+1551 static sqlite3.c_vdbeVComment     
+1552 static sqlite3.c_sqlite3OpenTable     
+1553 static sqlite3.c_sqlite3VdbeLoadString     
+1554 static sqlite3.c_sqlite3TableLock     
+1555 static sqlite3.c_sqlite3VdbeSetP4KeyInfo     
+1556 static sqlite3.c_lockTable     
+1557 static sqlite3.c_sqlite3KeyInfoOfIndex     
+1558 static sqlite3.c_sqlite3VdbeAppendP4     
+1559 static sqlite3.c_sqlite3KeyInfoAlloc     
+1560 static sqlite3.c_sqlite3KeyInfoIsWriteable     
+1561 static sqlite3.c_sqlite3LocateCollSeq     
+1562 static sqlite3.c_sqlite3ExprCodeTarget     
+1563 static sqlite3.c_sqlite3TableColumnAffinity     
+1564 static sqlite3.c_sqlite3TableColumnToStorage     
+1565 static sqlite3.c_sqlite3ExprCodeGeneratedColumn     
+1566 static sqlite3.c_sqlite3ExprCodeGetColumn     
+1567 static sqlite3.c_codeInteger     
+1568 static sqlite3.c_sqlite3ExprTruthValue     
+1569 static sqlite3.c_codeReal     
+1570 static sqlite3.c_sqlite3HexToBlob     
+1571 static sqlite3.c_sqlite3AffinityType     
+1572 static sqlite3.c_sqlite3ExprIsVector     
+1573 static sqlite3.c_codeVectorCompare     
+1574 static sqlite3.c_sqlite3ExprCodeTemp     
+1575 static sqlite3.c_codeCompare     
+1576 static sqlite3.c_sqlite3ExprIsConstantNotJoin     
+1577 static sqlite3.c_sqlite3ExprCodeRunJustOnce     
+1578 static sqlite3.c_exprCodeInlineFunction     
+1579 static sqlite3.c_sqlite3ExprFunctionUsable     
+1580 static sqlite3.c_sqlite3GetTempRange     
+1581 static sqlite3.c_sqlite3ExprCodeExprList     
+1582 static sqlite3.c_sqlite3VtabOverloadFunction     
+1583 static sqlite3.c_sqlite3VdbeAddFunctionCall     
+1584 static sqlite3.c_sqlite3ReleaseTempRange     
+1585 static sqlite3.c_sqlite3VdbeReleaseRegisters     
+1586 static sqlite3.c_sqlite3SubselectError     
+1587 static sqlite3.c_sqlite3CodeSubselect     
+1588 static sqlite3.c_sqlite3ExprVectorSize     
+1589 static sqlite3.c_sqlite3VdbeMakeLabel     
+1590 static sqlite3.c_sqlite3ExprCodeIN     
+1591 static sqlite3.c_sqlite3VdbeResolveLabel     
+1592 static sqlite3.c_exprCodeBetween     
+1593 static sqlite3.c_sqlite3VdbeChangeP3     
+1594 static sqlite3.c_sqlite3ExprDup     
+1595 static sqlite3.c_exprToRegister     
+1596 static sqlite3.c_exprCodeVector     
+1597 static sqlite3.c_sqlite3ExprIfFalse     
+1598 static sqlite3.c_setDoNotMergeFlagOnCopy     
+1599 static sqlite3.c_sqlite3MayAbort     
+1600 static sqlite3.c_sqlite3HaltConstraint     
+1601 static sqlite3.c_sqlite3ReleaseTempReg     
+1602 static sqlite3.c_sqlite3ExprCodeCopy     
+1603 static sqlite3.c_sqlite3ExprCodeGetColumnOfTable     
+1604 static sqlite3.c_sqlite3VdbeParser     
+1605 static sqlite3.c_sqlite3TableColumnToIndex     
+1606 static sqlite3.c_sqlite3ColumnDefault     
+1607 static sqlite3.c_sqlite3ValueFromExpr     
+1608 static sqlite3.c_valueFromExpr     
+1609 static sqlite3.c_valueNew     
+1610 static sqlite3.c_sqlite3VdbeAddOp4Dup8     
+1611 static sqlite3.c_sqlite3ExprSkipCollate     
+1612 static sqlite3.c_exprCodeSubselect     
+1613 static sqlite3.c_exprVectorRegister     
+1614 static sqlite3.c_sqlite3VectorFieldSubexpr     
+1615 static sqlite3.c_sqlite3ExprSkipCollateAndLikely     
+1616 static sqlite3.c_sqlite3GetTempReg     
+1617 static sqlite3.c_binaryCompareP5     
+1618 static sqlite3.c_sqlite3ExprAffinity     
+1619 static sqlite3.c_sqlite3CompareAffinity     
+1620 static sqlite3.c_exprIsConst     
+1621 static sqlite3.c_exprNodeIsConstant     
+1622 static sqlite3.c_sqlite3SelectWalkFail     
+1623 static sqlite3.c_sqlite3SelectWalkAssert2     
+1624 static sqlite3.c_sqlite3WalkExpr     
+1625 static sqlite3.c_walkExpr     
+1626 static sqlite3.c_sqlite3WalkSelect     
+1627 static sqlite3.c_sqlite3WalkExprList     
+1628 static sqlite3.c_walkWindowList     
+1629 static sqlite3.c_sqlite3WalkSelectExpr     
+1630 static sqlite3.c_sqlite3WalkSelectFrom     
+1631 static sqlite3.c_sqlite3WalkWinDefnDummyCallback     
+1632 static sqlite3.c_sqlite3SelectPopWith     
+1633 static sqlite3.c_findRightmost     
+1634 static sqlite3.c_sqlite3ExprCompare     
+1635 static sqlite3.c_exprCompareVariable     
+1636 static sqlite3.c_sqlite3WindowCompare     
+1637 static sqlite3.c_sqlite3ExprListCompare     
+1638 static sqlite3.c_sqlite3VdbeSetVarmask     
+1639 static sqlite3.c_sqlite3VdbeGetBoundValue     
+1640 static sqlite3.c_sqlite3ExprImpliesExpr     
+1641 static sqlite3.c_sqlite3ExprImpliesNonNullRow     
+1642 static sqlite3.c_exprImpliesNotNull     
+1643 static sqlite3.c_impliesNotNullRow     
+1644 static sqlite3.c_magma_or     
+1645 static sqlite3.c_magma_and     
+1646 static sqlite3.c_sqlite3VdbeExplain     
+1647 static sqlite3.c_sqlite3SelectDestInit     
+1648 static sqlite3.c_sqlite3VdbeChangeP1     
+1649 static sqlite3.c_sqlite3ClearTempRegCache     
+1650 static sqlite3.c_sqlite3ExplainBreakpoint     
+1651 static sqlite3.c_sqlite3ExprCheckIN     
+1652 static sqlite3.c_exprINAffinity     
+1653 static sqlite3.c_sqlite3VdbeNoopComment     
+1654 static sqlite3.c_sqlite3FindInIndex     
+1655 static sqlite3.c_sqlite3ExprCanBeNull     
+1656 static sqlite3.c_sqlite3VectorErrorMsg     
+1657 static sqlite3.c_isCandidateForInOpt     
+1658 static sqlite3.c_sqlite3CodeVerifySchema     
+1659 static sqlite3.c_sqlite3SetHasNullFlag     
+1660 static sqlite3.c_sqlite3InRhsIsConstant     
+1661 static sqlite3.c_sqlite3CodeRhsOfIN     
+1662 static sqlite3.c_sqlite3CodeVerifySchemaAtToplevel     
+1663 static sqlite3.c_sqlite3SelectDup     
+1664 static sqlite3.c_sqlite3VdbeChangeToNoop     
+1665 static sqlite3.c_sqlite3ExprListDup     
+1666 static sqlite3.c_sqlite3SrcListDup     
+1667 static sqlite3.c_sqlite3WithDup     
+1668 static sqlite3.c_sqlite3WindowListDup     
+1669 static sqlite3.c_gatherSelectWindows     
+1670 static sqlite3.c_sqlite3IdListDup     
+1671 static sqlite3.c_sqlite3WindowDup     
+1672 static sqlite3.c_gatherSelectWindowsCallback     
+1673 static sqlite3.c_gatherSelectWindowsSelectCallback     
+1674 static sqlite3.c_sqlite3WindowLink     
+1675 static sqlite3.c_resizeResolveLabel     
+1676 static sqlite3.c_exprDup     
+1677 static sqlite3.c_dupedExprSize     
+1678 static sqlite3.c_dupedExprStructSize     
+1679 static sqlite3.c_exprStructSize     
+1680 static sqlite3.c_dupedExprNodeSize     
+1681 static sqlite3.c_sqlite3ExprCodeFactorable     
+1682 static sqlite3.c_sqlite3ExprSimplifiedAndOr     
+1683 static sqlite3.c_sqlite3ExprIfTrue     
+1684 static sqlite3.c_sqlite3AuthCheck     
+1685 static sqlite3.c_sqliteAuthBadReturnCode     
+1686 static sqlite3.c_sqlite3TwoPartName     
+1687 static sqlite3.c_sqlite3CheckObjectName     
+1688 static sqlite3.c_sqlite3ForceNotReadOnly     
+1689 static sqlite3.c_sqlite3BeginWriteOperation     
+1690 static sqlite3.c_sqlite3OpenSchemaTable     
+1691 static sqlite3.c_sqlite3FindDb     
+1692 static sqlite3.c_sqlite3ReadOnlyShadowTables     
+1693 static sqlite3.c_sqlite3ShadowTableName     
+1694 static sqlite3.c_sqlite3IsShadowTableOf     
+1695 static sqlite3.c_convertToWithoutRowidTable     
+1696 static sqlite3.c_sqlite3ResolveSelfReference     
+1697 static sqlite3.c_markExprListImmutable     
+1698 static sqlite3.c_estimateTableWidth     
+1699 static sqlite3.c_estimateIndexWidth     
+1700 static sqlite3.c_sqlite3ResultSetOfSelect     
+1701 static sqlite3.c_sqlite3VdbeEndCoroutine     
+1702 static sqlite3.c_sqlite3TableAffinity     
+1703 static sqlite3.c_createTableStmt     
+1704 static sqlite3.c_sqlite3NestedParse     
+1705 static sqlite3.c_sqlite3ChangeCookie     
+1706 static sqlite3.c_sqlite3VdbeAddParseSchemaOp     
+1707 static sqlite3.c_sqlite3TokenInit     
+1708 static sqlite3.c_sqlite3RenameTokenRemap     
+1709 static sqlite3.c_isDupColumn     
+1710 static sqlite3.c_sqlite3VdbeChangeOpcode     
+1711 static sqlite3.c_resizeIndexObject     
+1712 static sqlite3.c_hasColumn     
+1713 static sqlite3.c_recomputeColumnsNotIndexed     
+1714 static sqlite3.c_renameTokenCheckAll     
+1715 static sqlite3.c_sqlite3ResolveExprNames     
+1716 static sqlite3.c_sqlite3ResolveExprListNames     
+1717 static sqlite3.c_resolveExprStep     
+1718 static sqlite3.c_resolveSelectStep     
+1719 static sqlite3.c_sqlite3ExprCheckHeight     
+1720 static sqlite3.c_notValidImpl     
+1721 static sqlite3.c_lookupName     
+1722 static sqlite3.c_exprProbability     
+1723 static sqlite3.c_sqlite3WindowUpdate     
+1724 static sqlite3.c_sqlite3FunctionUsesThisSrc     
+1725 static sqlite3.c_sqlite3MatchEName     
+1726 static sqlite3.c_nameInUsingClause     
+1727 static sqlite3.c_resolveAlias     
+1728 static sqlite3.c_areDoubleQuotedStringsEnabled     
+1729 static sqlite3.c_sqlite3ExprColUsed     
+1730 static sqlite3.c_sqlite3AuthRead     
+1731 static sqlite3.c_incrAggFunctionDepth     
+1732 static sqlite3.c_sqlite3ExprAddCollateString     
+1733 static sqlite3.c_incrAggDepth     
+1734 static sqlite3.c_sqlite3AuthReadCol     
+1735 static sqlite3.c_windowFind     
+1736 static sqlite3.c_exprSrcCount     
+1737 static sqlite3.c_selectSrcCount     
+1738 static sqlite3.c_sqlite3SelectPrep     
+1739 static sqlite3.c_sqlite3ResolveSelectNames     
+1740 static sqlite3.c_resolveOrderGroupBy     
+1741 static sqlite3.c_sqlite3SelectWrongNumTermsError     
+1742 static sqlite3.c_resolveCompoundOrderBy     
+1743 static sqlite3.c_sqlite3SelectExpand     
+1744 static sqlite3.c_sqlite3SelectAddTypeInfo     
+1745 static sqlite3.c_sqlite3ExprWalkNoop     
+1746 static sqlite3.c_convertCompoundSelectToSubquery     
+1747 static sqlite3.c_selectExpander     
+1748 static sqlite3.c_sqlite3SrcListAssignCursors     
+1749 static sqlite3.c_sqlite3ExpandSubquery     
+1750 static sqlite3.c_resolveFromTermToCte     
+1751 static sqlite3.c_sqlite3LocateTableItem     
+1752 static sqlite3.c_cannotBeFunction     
+1753 static sqlite3.c_sqlite3ViewGetColumnNames     
+1754 static sqlite3.c_sqlite3IndexedByLookup     
+1755 static sqlite3.c_sqliteProcessJoin     
+1756 static sqlite3.c_tableAndColumnIndex     
+1757 static sqlite3.c_sqlite3IdListIndex     
+1758 static sqlite3.c_sqlite3ColumnsFromExprList     
+1759 static sqlite3.c_sqlite3IsTrueOrFalse     
+1760 static sqlite3.c_searchWith     
+1761 static sqlite3.c_sqlite3ParserAddCleanup     
+1762 static sqlite3.c_sqlite3VtabCallConnect     
+1763 static sqlite3.c_sqlite3SelectAddColumnTypeAndCollation     
+1764 static sqlite3.c_columnTypeImpl     
+1765 static sqlite3.c_addWhereTerm     
+1766 static sqlite3.c_sqlite3SetJoinExpr     
+1767 static sqlite3.c_sqlite3ColumnIndex     
+1768 static sqlite3.c_sqlite3CreateColumnExpr     
+1769 static sqlite3.c_sqlite3SelectWalkNoop     
+1770 static sqlite3.c_selectAddSubqueryTypeInfo     
+1771 static sqlite3.c_resolveAsName     
+1772 static sqlite3.c_sqlite3ExprIsInteger     
+1773 static sqlite3.c_resolveOutOfRangeError     
+1774 static sqlite3.c_windowRemoveExprFromSelect     
+1775 static sqlite3.c_sqlite3ResolveOrderGroupBy     
+1776 static sqlite3.c_resolveRemoveWindowsCb     
+1777 static sqlite3.c_sqlite3SelectOpName     
+1778 static sqlite3.c_resolveOrderByTermToExprList     
+1779 static sqlite3.c_markImmutableExprStep     
+1780 static sqlite3.c_identLength     
+1781 static sqlite3.c_identPut     
+1782 static sqlite3.c_sqlite3Dequote     
+1783 static sqlite3.c_sqlite3ExprIsConstantOrFunction     
+1784 static sqlite3.c_sqlite3DbSpanDup     
+1785 static sqlite3.c_sqlite3RenameExprUnmap     
+1786 static sqlite3.c_renameUnmapExprCb     
+1787 static sqlite3.c_renameUnmapSelectCb     
+1788 static sqlite3.c_unmapColumnIdlistNames     
+1789 static sqlite3.c_renameWalkWith     
+1790 static sqlite3.c_sqlite3RenameExprlistUnmap     
+1791 static sqlite3.c_sqlite3DequoteExpr     
+1792 static sqlite3.c_makeColumnPartOfPrimaryKey     
+1793 static sqlite3.c_sqlite3StringToId     
+1794 static sqlite3.c_sqlite3HasExplicitNulls     
+1795 static sqlite3.c_sqlite3SrcListLookup     
+1796 static sqlite3.c_sqlite3FixInit     
+1797 static sqlite3.c_sqlite3FixSrcList     
+1798 static sqlite3.c_sqlite3AllocateIndexObject     
+1799 static sqlite3.c_sqlite3RefillIndex     
+1800 static sqlite3.c_fixExprCb     
+1801 static sqlite3.c_fixSelectCb     
+1802 static sqlite3.c_sqlite3KeyInfoRef     
+1803 static sqlite3.c_sqlite3MultiWrite     
+1804 static sqlite3.c_sqlite3GenerateIndexKey     
+1805 static sqlite3.c_sqlite3ResolvePartIdxLabel     
+1806 static sqlite3.c_sqlite3VdbeVerifyAbortable     
+1807 static sqlite3.c_sqlite3UniqueConstraint     
+1808 static sqlite3.c_sqlite3ExprIfFalseDup     
+1809 static sqlite3.c_sqlite3ExprCodeLoadIndexColumn     
+1810 static sqlite3.c_sqlite3VdbeDeletePriorOpcode     
+1811 static sqlite3.c_sqlite3CodeVerifyNamedSchema     
+1812 static sqlite3.c_tableMayNotBeDropped     
+1813 static sqlite3.c_sqlite3ClearStatTables     
+1814 static sqlite3.c_sqlite3FkDropTable     
+1815 static sqlite3.c_sqlite3CodeDropTable     
+1816 static sqlite3.c_sqlite3FkReferences     
+1817 static sqlite3.c_sqlite3TriggerList     
+1818 static sqlite3.c_sqlite3DropTriggerPtr     
+1819 static sqlite3.c_destroyTable     
+1820 static sqlite3.c_sqliteViewResetAll     
+1821 static sqlite3.c_destroyRootPage     
+1822 static sqlite3.c_sqlite3FixSelect     
+1823 static sqlite3.c_sqlite3GenerateColumnNames     
+1824 static sqlite3.c_sqlite3WindowRewrite     
+1825 static sqlite3.c_unsetJoinExpr     
+1826 static sqlite3.c_flattenSubquery     
+1827 static sqlite3.c_multiSelect     
+1828 static sqlite3.c_sqlite3VdbeExplainPop     
+1829 static sqlite3.c_propagateConstants     
+1830 static sqlite3.c_sqlite3SelectExprHeight     
+1831 static sqlite3.c_pushDownWhereTerms     
+1832 static sqlite3.c_isSelfJoinView     
+1833 static sqlite3.c_sqlite3KeyInfoFromExprList     
+1834 static sqlite3.c_computeLimitRegisters     
+1835 static sqlite3.c_sqlite3WindowCodeInit     
+1836 static sqlite3.c_sqlite3WhereBegin     
+1837 static sqlite3.c_sqlite3WhereOutputRowCount     
+1838 static sqlite3.c_sqlite3WhereIsDistinct     
+1839 static sqlite3.c_sqlite3WhereIsOrdered     
+1840 static sqlite3.c_sqlite3WhereOrderByLimitOptLabel     
+1841 static sqlite3.c_sqlite3WindowCodeStep     
+1842 static sqlite3.c_selectInnerLoop     
+1843 static sqlite3.c_sqlite3WhereContinueLabel     
+1844 static sqlite3.c_sqlite3WhereBreakLabel     
+1845 static sqlite3.c_sqlite3WhereEnd     
+1846 static sqlite3.c_agginfoFree     
+1847 static sqlite3.c_sqlite3ExprAnalyzeAggList     
+1848 static sqlite3.c_havingToWhere     
+1849 static sqlite3.c_sqlite3ExprAnalyzeAggregates     
+1850 static sqlite3.c_minMaxQuery     
+1851 static sqlite3.c_explainTempTable     
+1852 static sqlite3.c_sqlite3WhereIsSorted     
+1853 static sqlite3.c_sqlite3ExprCodeMove     
+1854 static sqlite3.c_updateAccumulator     
+1855 static sqlite3.c_finalizeAggFunctions     
+1856 static sqlite3.c_resetAccumulator     
+1857 static sqlite3.c_fixDistinctOpenEph     
+1858 static sqlite3.c_isSimpleCount     
+1859 static sqlite3.c_explainSimpleCount     
+1860 static sqlite3.c_sqlite3WhereMinMaxOptEarlyOut     
+1861 static sqlite3.c_generateSortTail     
+1862 static sqlite3.c_generateColumnTypes     
+1863 static sqlite3.c_sqlite3AggInfoPersistWalkerInit     
+1864 static sqlite3.c_disallowAggregatesInOrderByCb     
+1865 static sqlite3.c_exprListAppendList     
+1866 static sqlite3.c_selectWindowRewriteEList     
+1867 static sqlite3.c_sqlite3WindowExtraAggFuncDepth     
+1868 static sqlite3.c_sqlite3WalkerDepthIncrease     
+1869 static sqlite3.c_sqlite3WalkerDepthDecrease     
+1870 static sqlite3.c_agginfoPersistExprCb     
+1871 static sqlite3.c_sqlite3ExprDeferredDelete     
+1872 static sqlite3.c_selectWindowRewriteExprCb     
+1873 static sqlite3.c_selectWindowRewriteSelectCb     
+1874 static sqlite3.c_renumberCursors     
+1875 static sqlite3.c_sqlite3SrcListEnlarge     
+1876 static sqlite3.c_substSelect     
+1877 static sqlite3.c_recomputeColumnsUsed     
+1878 static sqlite3.c_srclistRenumberCursors     
+1879 static sqlite3.c_renumberCursorsCb     
+1880 static sqlite3.c_substExprList     
+1881 static sqlite3.c_substExpr     
+1882 static sqlite3.c_recomputeColumnsUsedExpr     
+1883 static sqlite3.c_multiSelectValues     
+1884 static sqlite3.c_hasAnchor     
+1885 static sqlite3.c_generateWithRecursiveQuery     
+1886 static sqlite3.c_multiSelectOrderBy     
+1887 static sqlite3.c_sqlite3LogEstAdd     
+1888 static sqlite3.c_multiSelectCollSeq     
+1889 static sqlite3.c_multiSelectOrderByKeyInfo     
+1890 static sqlite3.c_codeOffset     
+1891 static sqlite3.c_generateOutputSubroutine     
+1892 static sqlite3.c_sqlite3VdbeExplainParent     
+1893 static sqlite3.c_findConstInWhere     
+1894 static sqlite3.c_propagateConstantExprRewrite     
+1895 static sqlite3.c_constInsert     
+1896 static sqlite3.c_sqlite3IsBinary     
+1897 static sqlite3.c_binCollFunc     
+1898 static sqlite3.c_propagateConstantExprRewriteOne     
+1899 static sqlite3.c_heightOfSelect     
+1900 static sqlite3.c_heightOfExpr     
+1901 static sqlite3.c_heightOfExprList     
+1902 static sqlite3.c_sqlite3ExprIsTableConstant     
+1903 static sqlite3.c_pushDownWindowCheck     
+1904 static sqlite3.c_sqlite3ExprIsConstantOrGroupBy     
+1905 static sqlite3.c_exprNodeIsConstantOrGroupBy     
+1906 static sqlite3.c_sqlite3ExprNNCollSeq     
+1907 static sqlite3.c_whereLoopInit     
+1908 static sqlite3.c_sqlite3WhereClauseInit     
+1909 static sqlite3.c_sqlite3WhereSplit     
+1910 static sqlite3.c_createMask     
+1911 static sqlite3.c_sqlite3WhereTabFuncArgs     
+1912 static sqlite3.c_sqlite3WhereGetMask     
+1913 static sqlite3.c_sqlite3WhereExprAnalyze     
+1914 static sqlite3.c_exprIsDeterministic     
+1915 static sqlite3.c_isDistinctRedundant     
+1916 static sqlite3.c_whereShortCut     
+1917 static sqlite3.c_whereLoopAddAll     
+1918 static sqlite3.c_wherePathSolver     
+1919 static sqlite3.c_sqlite3WhereExprListUsage     
+1920 static sqlite3.c_constructAutomaticIndex     
+1921 static sqlite3.c_sqlite3WhereExplainOneScan     
+1922 static sqlite3.c_sqlite3WhereCodeOneLoopStart     
+1923 static sqlite3.c_whereUndoExprMods     
+1924 static sqlite3.c_whereInfoFree     
+1925 static sqlite3.c_whereClauseInsert     
+1926 static sqlite3.c_exprAnalyze     
+1927 static sqlite3.c_sqlite3WhereExprUsage     
+1928 static sqlite3.c_exprSelectUsage     
+1929 static sqlite3.c_sqlite3WhereExprUsageNN     
+1930 static sqlite3.c_allowedOp     
+1931 static sqlite3.c_exprMightBeIndexed     
+1932 static sqlite3.c_operatorMask     
+1933 static sqlite3.c_markTermAsChild     
+1934 static sqlite3.c_termIsEquivalence     
+1935 static sqlite3.c_exprCommute     
+1936 static sqlite3.c_transferJoinMarkings     
+1937 static sqlite3.c_exprAnalyzeOrTerm     
+1938 static sqlite3.c_isLikeOrGlob     
+1939 static sqlite3.c_sqlite3ExprForVectorField     
+1940 static sqlite3.c_isAuxiliaryVtabOperator     
+1941 static sqlite3.c_exprMightBeIndexed2     
+1942 static sqlite3.c_sqlite3ExprCompareSkip     
+1943 static sqlite3.c_sqlite3ExprCollSeqMatch     
+1944 static sqlite3.c_whereNthSubterm     
+1945 static sqlite3.c_whereCombineDisjuncts     
+1946 static sqlite3.c_sqlite3IsLikeFunction     
+1947 static sqlite3.c_exprNodeIsDeterministic     
+1948 static sqlite3.c_sqlite3WhereFindTerm     
+1949 static sqlite3.c_findIndexCol     
+1950 static sqlite3.c_indexColumnNotNull     
+1951 static sqlite3.c_whereScanInit     
+1952 static sqlite3.c_whereScanNext     
+1953 static sqlite3.c_whereScanInitIndexExpr     
+1954 static sqlite3.c_whereRightSubexprIsColumn     
+1955 static sqlite3.c_sqlite3IndexAffinityOk     
+1956 static sqlite3.c_comparisonAffinity     
+1957 static sqlite3.c_whereLoopAddVirtual     
+1958 static sqlite3.c_whereLoopAddBtree     
+1959 static sqlite3.c_whereLoopAddOr     
+1960 static sqlite3.c_whereLoopClear     
+1961 static sqlite3.c_allocateIndexInfo     
+1962 static sqlite3.c_whereLoopResize     
+1963 static sqlite3.c_whereLoopAddVirtualOne     
+1964 static sqlite3.c_vtabBestIndex     
+1965 static sqlite3.c_sqlite3LogEstFromDouble     
+1966 static sqlite3.c_whereLoopInsert     
+1967 static sqlite3.c_whereLoopAdjustCost     
+1968 static sqlite3.c_whereOrInsert     
+1969 static sqlite3.c_whereLoopFindLesser     
+1970 static sqlite3.c_whereLoopDelete     
+1971 static sqlite3.c_whereLoopXfer     
+1972 static sqlite3.c_whereLoopCheaperProperSubset     
+1973 static sqlite3.c_whereLoopClearUnion     
+1974 static sqlite3.c_estLog     
+1975 static sqlite3.c_termCanDriveIndex     
+1976 static sqlite3.c_whereUsablePartialIndex     
+1977 static sqlite3.c_indexMightHelpWithOrderBy     
+1978 static sqlite3.c_whereLoopOutputAdjust     
+1979 static sqlite3.c_sqlite3ExprCoveredByIndex     
+1980 static sqlite3.c_whereLoopAddBtreeIndex     
+1981 static sqlite3.c_exprIdxCover     
+1982 static sqlite3.c_whereRangeVectorLen     
+1983 static sqlite3.c_whereRangeScanEst     
+1984 static sqlite3.c_whereRangeAdjust     
+1985 static sqlite3.c_whereOrMove     
+1986 static sqlite3.c_wherePathSatisfiesOrderBy     
+1987 static sqlite3.c_whereSortingCost     
+1988 static sqlite3.c_translateColumnToCopy     
+1989 static sqlite3.c_explainIndexRange     
+1990 static sqlite3.c_explainIndexColumnName     
+1991 static sqlite3.c_explainAppendTerm     
+1992 static sqlite3.c_codeEqualityTerm     
+1993 static sqlite3.c_codeExprOrVector     
+1994 static sqlite3.c_disableTerm     
+1995 static sqlite3.c_codeAllEqualityTerms     
+1996 static sqlite3.c_whereLikeOptimizationStringFixup     
+1997 static sqlite3.c_updateRangeAffinityStr     
+1998 static sqlite3.c_codeApplyAffinity     
+1999 static sqlite3.c_codeDeferredSeek     
+2000 static sqlite3.c_whereIndexExprTrans     
+2001 static sqlite3.c_whereApplyPartialIndexConstraints     
+2002 static sqlite3.c_sqlite3WhereUsesDeferredSeek     
+2003 static sqlite3.c_removeUnindexableInClauseTerms     
+2004 static sqlite3.c_sqlite3IndexAffinityStr     
+2005 static sqlite3.c_sqlite3ExprNeedsNoAffinityChange     
+2006 static sqlite3.c_whereIndexExprTransNode     
+2007 static sqlite3.c_whereIndexExprTransColumn     
+2008 static sqlite3.c_preserveExpr     
+2009 static sqlite3.c_sqlite3WhereClauseClear     
+2010 static sqlite3.c_whereOrInfoDelete     
+2011 static sqlite3.c_whereAndInfoDelete     
+2012 static sqlite3.c_windowExprGtZero     
+2013 static sqlite3.c_windowCacheFrame     
+2014 static sqlite3.c_windowInitAccum     
+2015 static sqlite3.c_windowCheckValue     
+2016 static sqlite3.c_windowAggFinal     
+2017 static sqlite3.c_windowReturnOneRow     
+2018 static sqlite3.c_windowIfNewPeer     
+2019 static sqlite3.c_windowCodeOp     
+2020 static sqlite3.c_windowCodeRangeTest     
+2021 static sqlite3.c_windowArgCount     
+2022 static sqlite3.c_windowFullScan     
+2023 static sqlite3.c_windowReadPeerValues     
+2024 static sqlite3.c_windowAggStep     
+2025 static sqlite3.c_noopStepFunc     
+2026 static sqlite3.c_innerLoopLoadRow     
+2027 static sqlite3.c_codeDistinct     
+2028 static sqlite3.c_pushOntoSorter     
+2029 static sqlite3.c_makeSorterRecord     
+2030 static sqlite3.c_sqlite3StorageColumnToTable     
+2031 static sqlite3.c_sqlite3WhereOpcodeRewriteTrace     
+2032 static sqlite3.c_havingToWhereExprCb     
+2033 static sqlite3.c_analyzeAggregate     
+2034 static sqlite3.c_addAggInfoColumn     
+2035 static sqlite3.c_addAggInfoFunc     
+2036 static sqlite3.c_sqlite3ArrayAllocate     
+2037 static sqlite3.c_sqlite3VdbeJumpHereOrPopInst     
+2038 static sqlite3.c_sqlite3ExprListAppendNew     
+2039 static sqlite3.c_sqlite3ExprListAppendGrow     
+2040 static sqlite3.c_sqlite3TriggersExist     
+2041 static sqlite3.c_sqlite3FkRequired     
+2042 static sqlite3.c_sqlite3IsReadOnly     
+2043 static sqlite3.c_sqlite3AuthContextPush     
+2044 static sqlite3.c_sqlite3VdbeCountChanges     
+2045 static sqlite3.c_sqlite3MaterializeView     
+2046 static sqlite3.c_sqlite3WhereOkOnePass     
+2047 static sqlite3.c_sqlite3OpenTableAndIndices     
+2048 static sqlite3.c_sqlite3VtabMakeWritable     
+2049 static sqlite3.c_sqlite3GenerateRowDelete     
+2050 static sqlite3.c_sqlite3AutoincrementEnd     
+2051 static sqlite3.c_sqlite3AuthContextPop     
+2052 static sqlite3.c_checkColumnOverlap     
+2053 static sqlite3.c_fkChildIsModified     
+2054 static sqlite3.c_fkParentIsModified     
+2055 static sqlite3.c_tabIsReadOnly     
+2056 static sqlite3.c_sqlite3TriggerColmask     
+2057 static sqlite3.c_sqlite3FkOldmask     
+2058 static sqlite3.c_sqlite3CodeRowTrigger     
+2059 static sqlite3.c_sqlite3FkCheck     
+2060 static sqlite3.c_sqlite3GenerateRowIndexDelete     
+2061 static sqlite3.c_sqlite3FkActions     
+2062 static sqlite3.c_getRowTrigger     
+2063 static sqlite3.c_codeRowTrigger     
+2064 static sqlite3.c_sqlite3VdbeLinkSubProgram     
+2065 static sqlite3.c_onErrorText     
+2066 static sqlite3.c_codeTriggerProgram     
+2067 static sqlite3.c_transferParseError     
+2068 static sqlite3.c_sqlite3VdbeTakeOpArray     
+2069 static sqlite3.c_sqlite3TriggerStepSrc     
+2070 static sqlite3.c_sqlite3UpsertDup     
+2071 static sqlite3.c_sqlite3FkLocateIndex     
+2072 static sqlite3.c_sqlite3CodeRowTriggerDirect     
+2073 static sqlite3.c_codeReturningTrigger     
+2074 static sqlite3.c_sqlite3ExpandReturning     
+2075 static sqlite3.c_isAsteriskTerm     
+2076 static sqlite3.c_fkLookupParent     
+2077 static sqlite3.c_isSetNullAction     
+2078 static sqlite3.c_fkScanChildren     
+2079 static sqlite3.c_exprTableRegister     
+2080 static sqlite3.c_exprTableColumn     
+2081 static sqlite3.c_fkActionTrigger     
+2082 static sqlite3.c_autoIncrementEnd     
+2083 static sqlite3.c_sqlite3DeleteReturning     
+2084 static sqlite3.c_sqlite3ExprReferencesUpdatedColumn     
+2085 static sqlite3.c_indexWhereClauseMightChange     
+2086 static sqlite3.c_indexColumnIsBeingUpdated     
+2087 static sqlite3.c_updateVirtualTable     
+2088 static sqlite3.c_updateFromSelect     
+2089 static sqlite3.c_sqlite3ComputeGeneratedColumns     
+2090 static sqlite3.c_sqlite3GenerateConstraintChecks     
+2091 static sqlite3.c_sqlite3CompleteInsertion     
+2092 static sqlite3.c_checkConstraintExprNode     
+2093 static sqlite3.c_exprRowColumn     
+2094 static sqlite3.c_exprColumnFlagUnion     
+2095 static sqlite3.c_sqlite3UpsertOfIndex     
+2096 static sqlite3.c_sqlite3RowidConstraint     
+2097 static sqlite3.c_sqlite3UpsertDoUpdate     
+2098 static sqlite3.c_indexIteratorFirst     
+2099 static sqlite3.c_sqlite3UpsertNextIsIPK     
+2100 static sqlite3.c_indexIteratorNext     
+2101 static sqlite3.c_xferOptimization     
+2102 static sqlite3.c_autoIncBegin     
+2103 static sqlite3.c_readsTable     
+2104 static sqlite3.c_sqlite3UpsertAnalyzeTarget     
+2105 static sqlite3.c_autoIncStep     
+2106 static sqlite3.c_sqlite3VdbeHasSubProgram     
+2107 static sqlite3.c_xferCompatibleIndex     
+2108 static sqlite3.c_sqlite3VListAdd     
+2109 static sqlite3.c_exprSetHeight     
+2110 static sqlite3.c_sqlite3ExprListFlags     
+2111 static sqlite3.c_sqlite3VdbeRunOnlyOnce     
+2112 static sqlite3.c_returnSingleText     
+2113 static sqlite3.c_setPragmaResultColumnNames     
+2114 static sqlite3.c_sqlite3VdbeVerifyNoMallocRequired     
+2115 static sqlite3.c_returnSingleInt     
+2116 static sqlite3.c_sqlite3BtreeSecureDelete     
+2117 static sqlite3.c_getLockingMode     
+2118 static sqlite3.c_sqlite3PagerLockingMode     
+2119 static sqlite3.c_sqlite3PagerJournalSizeLimit     
+2120 static sqlite3.c_getAutoVacuum     
+2121 static sqlite3.c_setAllPagerFlags     
+2122 static sqlite3.c_sqlite3BtreeSetMmapLimit     
+2123 static sqlite3.c_changeTempStorage     
+2124 static sqlite3.c_invalidateTempStorage     
+2125 static sqlite3.c_getSafetyLevel     
+2126 static sqlite3.c_sqlite3VdbeMultiLoad     
+2127 static sqlite3.c_pragmaFunclistLine     
+2128 static sqlite3.c_actionName     
+2129 static sqlite3.c_sqlite3RegisterLikeFunctions     
+2130 static sqlite3.c_integrityCheckResultRow     
+2131 static sqlite3.c_sqlite3NoTempsInRange     
+2132 static sqlite3.c_sqlite3VdbeReusable     
+2133 static sqlite3.c_sqlite3VdbeVerifyNoResultRow     
+2134 static sqlite3.c_sqlite3WalHeapMemory     
+2135 static sqlite3.c_sqlite3WalLimit     
+2136 static sqlite3.c_getTempStore     
+2137 static sqlite3.c_likeFunc     
+2138 static sqlite3.c_sqlite3FixTriggerStep     
+2139 static sqlite3.c_sqlite3FixExpr     
+2140 static sqlite3.c_triggerStepAllocate     
+2141 static sqlite3.c_triggerSpanDup     
+2142 static sqlite3.c_attachFunc     
+2143 static sqlite3.c_codeAttach     
+2144 static sqlite3.c_sqlite3ParseUri     
+2145 static sqlite3.c_sqlite3SchemaGet     
+2146 static sqlite3.c_resolveAttachExpr     
+2147 static sqlite3.c_detachFunc     
+2148 static sqlite3.c_sqlite3BtreeIsInBackup     
+2149 static sqlite3.c_reindexDatabases     
+2150 static sqlite3.c_reindexTable     
+2151 static sqlite3.c_collationMatch     
+2152 static sqlite3.c_analyzeDatabase     
+2153 static sqlite3.c_analyzeTable     
+2154 static sqlite3.c_openStatTable     
+2155 static sqlite3.c_analyzeOneTable     
+2156 static sqlite3.c_loadAnalysis     
+2157 static sqlite3.c_analyzeVdbeCommentIndexWithColumnName     
+2158 static sqlite3.c_callStatGet     
+2159 static sqlite3.c_statInit     
+2160 static sqlite3.c_statAccumDestructor     
+2161 static sqlite3.c_statPush     
+2162 static sqlite3.c_statGet     
+2163 static sqlite3.c_isAlterableTable     
+2164 static sqlite3.c_renameReloadSchema     
+2165 static sqlite3.c_renameTestSchema     
+2166 static sqlite3.c_sqlite3ErrorIfNotEmpty     
+2167 static sqlite3.c_isRealTable     
+2168 static sqlite3.c_renameFixQuotes     
+2169 static sqlite3.c_addArgumentToVtab     
+2170 static sqlite3.c_sqlite3CteDelete     
+2171 static sqlite3.c_sqlite3WindowOffsetExpr     
+2172 static sqlite3.c_versionFunc     
+2173 static sqlite3.c_loadExt     
+2174 static sqlite3.c_compileoptionusedFunc     
+2175 static sqlite3.c_compileoptiongetFunc     
+2176 static sqlite3.c_trimFunc     
+2177 static sqlite3.c_minmaxFunc     
+2178 static sqlite3.c_minmaxStep     
+2179 static sqlite3.c_minMaxFinalize     
+2180 static sqlite3.c_minMaxValue     
+2181 static sqlite3.c_typeofFunc     
+2182 static sqlite3.c_lengthFunc     
+2183 static sqlite3.c_instrFunc     
+2184 static sqlite3.c_printfFunc     
+2185 static sqlite3.c_unicodeFunc     
+2186 static sqlite3.c_charFunc     
+2187 static sqlite3.c_absFunc     
+2188 static sqlite3.c_roundFunc     
+2189 static sqlite3.c_upperFunc     
+2190 static sqlite3.c_lowerFunc     
+2191 static sqlite3.c_hexFunc     
+2192 static sqlite3.c_randomFunc     
+2193 static sqlite3.c_randomBlob     
+2194 static sqlite3.c_nullifFunc     
+2195 static sqlite3.c_sourceidFunc     
+2196 static sqlite3.c_errlogFunc     
+2197 static sqlite3.c_quoteFunc     
+2198 static sqlite3.c_last_insert_rowid     
+2199 static sqlite3.c_changes     
+2200 static sqlite3.c_total_changes     
+2201 static sqlite3.c_replaceFunc     
+2202 static sqlite3.c_zeroblobFunc     
+2203 static sqlite3.c_substrFunc     
+2204 static sqlite3.c_sumStep     
+2205 static sqlite3.c_sumFinalize     
+2206 static sqlite3.c_sumInverse     
+2207 static sqlite3.c_totalFinalize     
+2208 static sqlite3.c_avgFinalize     
+2209 static sqlite3.c_countStep     
+2210 static sqlite3.c_countFinalize     
+2211 static sqlite3.c_countInverse     
+2212 static sqlite3.c_groupConcatStep     
+2213 static sqlite3.c_groupConcatFinalize     
+2214 static sqlite3.c_groupConcatValue     
+2215 static sqlite3.c_groupConcatInverse     
+2216 static sqlite3.c_xCeil     
+2217 static sqlite3.c_ceilingFunc     
+2218 static sqlite3.c_xFloor     
+2219 static sqlite3.c_logFunc     
+2220 static sqlite3.c_math1Func     
+2221 static sqlite3.c_math2Func     
+2222 static sqlite3.c_degToRad     
+2223 static sqlite3.c_radToDeg     
+2224 static sqlite3.c_piFunc     
+2225 static sqlite3.c_signFunc     
+2226 static sqlite3.c_sqlite3AlterFunctions     
+2227 static sqlite3.c_sqlite3WindowFunctions     
+2228 static sqlite3.c_sqlite3RegisterDateTimeFunctions     
+2229 static sqlite3.c_sqlite3InsertBuiltinFuncs     
+2230 static sqlite3.c_contextMalloc     
+2231 static sqlite3.c_sqlite3GetFuncCollSeq     
+2232 static sqlite3.c_sqlite3SkipAccumulatorLoad     
+2233 static sqlite3.c_minMaxValueFinalize     
+2234 static sqlite3.c_renameColumnFunc     
+2235 static sqlite3.c_renameTableFunc     
+2236 static sqlite3.c_renameTableTest     
+2237 static sqlite3.c_dropColumnFunc     
+2238 static sqlite3.c_renameQuotefixFunc     
+2239 static sqlite3.c_renameParseSql     
+2240 static sqlite3.c_renameColumnExprCb     
+2241 static sqlite3.c_renameColumnSelectCb     
+2242 static sqlite3.c_renameTokenFind     
+2243 static sqlite3.c_renameResolveTrigger     
+2244 static sqlite3.c_renameColumnElistNames     
+2245 static sqlite3.c_renameColumnIdlistNames     
+2246 static sqlite3.c_renameWalkTrigger     
+2247 static sqlite3.c_renameEditSql     
+2248 static sqlite3.c_renameColumnParseError     
+2249 static sqlite3.c_renameParseCleanup     
+2250 static sqlite3.c_renameTokenFree     
+2251 static sqlite3.c_renameColumnTokenNext     
+2252 static sqlite3.c_renameTableExprCb     
+2253 static sqlite3.c_renameTableSelectCb     
+2254 static sqlite3.c_renameQuotefixExprCb     
+2255 static sqlite3.c_row_numberStepFunc     
+2256 static sqlite3.c_row_numberValueFunc     
+2257 static sqlite3.c_dense_rankStepFunc     
+2258 static sqlite3.c_dense_rankValueFunc     
+2259 static sqlite3.c_rankStepFunc     
+2260 static sqlite3.c_rankValueFunc     
+2261 static sqlite3.c_percent_rankStepFunc     
+2262 static sqlite3.c_percent_rankValueFunc     
+2263 static sqlite3.c_percent_rankInvFunc     
+2264 static sqlite3.c_cume_distStepFunc     
+2265 static sqlite3.c_cume_distValueFunc     
+2266 static sqlite3.c_cume_distInvFunc     
+2267 static sqlite3.c_ntileStepFunc     
+2268 static sqlite3.c_ntileValueFunc     
+2269 static sqlite3.c_ntileInvFunc     
+2270 static sqlite3.c_last_valueStepFunc     
+2271 static sqlite3.c_last_valueFinalizeFunc     
+2272 static sqlite3.c_last_valueValueFunc     
+2273 static sqlite3.c_last_valueInvFunc     
+2274 static sqlite3.c_nth_valueStepFunc     
+2275 static sqlite3.c_nth_valueFinalizeFunc     
+2276 static sqlite3.c_noopValueFunc     
+2277 static sqlite3.c_first_valueStepFunc     
+2278 static sqlite3.c_first_valueFinalizeFunc     
+2279 static sqlite3.c_juliandayFunc     
+2280 static sqlite3.c_dateFunc     
+2281 static sqlite3.c_timeFunc     
+2282 static sqlite3.c_datetimeFunc     
+2283 static sqlite3.c_strftimeFunc     
+2284 static sqlite3.c_ctimeFunc     
+2285 static sqlite3.c_ctimestampFunc     
+2286 static sqlite3.c_cdateFunc     
+2287 static sqlite3.c_isDate     
+2288 static sqlite3.c_computeJD     
+2289 static sqlite3.c_sqlite3NotPureFunc     
+2290 static sqlite3.c_setDateTimeToCurrent     
+2291 static sqlite3.c_setRawDateNumber     
+2292 static sqlite3.c_parseDateOrTime     
+2293 static sqlite3.c_parseModifier     
+2294 static sqlite3.c_validJulianDay     
+2295 static sqlite3.c_sqlite3StmtCurrentTime     
+2296 static sqlite3.c_parseYyyyMmDd     
+2297 static sqlite3.c_parseHhMmSs     
+2298 static sqlite3.c_getDigits     
+2299 static sqlite3.c_parseTimezone     
+2300 static sqlite3.c_localtimeOffset     
+2301 static sqlite3.c_clearYMD_HMS_TZ     
+2302 static sqlite3.c_computeYMD_HMS     
+2303 static sqlite3.c_computeYMD     
+2304 static sqlite3.c_osLocaltime     
+2305 static sqlite3.c_computeHMS     
+2306 static sqlite3.c_datetimeError     
+2307 static sqlite3.c_sqlite3FunctionSearch     
+2308 static sqlite3.c_memdbOpen     
+2309 static sqlite3.c_memdbAccess     
+2310 static sqlite3.c_memdbFullPathname     
+2311 static sqlite3.c_memdbDlOpen     
+2312 static sqlite3.c_memdbDlError     
+2313 static sqlite3.c_memdbDlSym     
+2314 static sqlite3.c_memdbDlClose     
+2315 static sqlite3.c_memdbRandomness     
+2316 static sqlite3.c_memdbSleep     
+2317 static sqlite3.c_memdbGetLastError     
+2318 static sqlite3.c_memdbCurrentTimeInt64     
+2319 static sqlite3.c_sqlite3MemMalloc     
+2320 static sqlite3.c_sqlite3MemFree     
+2321 static sqlite3.c_sqlite3MemRealloc     
+2322 static sqlite3.c_sqlite3MemSize     
+2323 static sqlite3.c_sqlite3MemRoundup     
+2324 static sqlite3.c_sqlite3MemInit     
+2325 static sqlite3.c_sqlite3MemShutdown     
+2326 static sqlite3.c_pcache1Init     
+2327 static sqlite3.c_pcache1Shutdown     
+2328 static sqlite3.c_pcache1Create     
+2329 static sqlite3.c_pcache1Cachesize     
+2330 static sqlite3.c_pcache1Pagecount     
+2331 static sqlite3.c_pcache1Fetch     
+2332 static sqlite3.c_pcache1Unpin     
+2333 static sqlite3.c_pcache1Rekey     
+2334 static sqlite3.c_pcache1Truncate     
+2335 static sqlite3.c_pcache1Destroy     
+2336 static sqlite3.c_pcache1Shrink     
+2337 static sqlite3.c_pcache1ResizeHash     
+2338 static sqlite3.c_pcache1EnforceMaxPage     
+2339 static sqlite3.c_pcache1PinPage     
+2340 static sqlite3.c_pcache1RemoveFromHash     
+2341 static sqlite3.c_pcache1FreePage     
+2342 static sqlite3.c_pcache1FetchNoMutex     
+2343 static sqlite3.c_pcache1FetchStage2     
+2344 static sqlite3.c_pcache1UnderMemoryPressure     
+2345 static sqlite3.c_pcache1AllocPage     
+2346 static sqlite3.c_pcache1InitBulk     
+2347 static sqlite3.c_pcache1TruncateUnsafe     
+2348 static sqlite3.c_sqlite3PcacheShrink     
+2349 static sqlite3.c_disconnectAllVtab     
+2350 static sqlite3.c_connectionIsBusy     
+2351 static sqlite3.c_sqlite3VtabDisconnect     
+2352 static sqlite3.c_functionDestroy     
+2353 static sqlite3.c_sqlite3CloseExtensions     
+2354 static sqlite3.c_matchQuality     
+2355 static sqlite3.c_sqlite3BtreeCheckpoint     
+2356 static sqlite3.c_sqlite3PagerCheckpoint     
+2357 static sqlite3.c_nocaseCollatingFunc     
+2358 static sqlite3.c_rtrimCollFunc     
+2359 static sqlite3.c_sqlite3RegisterPerConnectionBuiltinFunctions     
+2360 static sqlite3.c_sqlite3AutoLoadExtensions     
+2361 static sqlite3.c_sqlite3RtreeInit     
+2362 static sqlite3.c_sqlite3TestExtInit     
+2363 static sqlite3.c_rtreenode     
+2364 static sqlite3.c_rtreedepth     
+2365 static sqlite3.c_rtreecheck     
+2366 static sqlite3.c_readInt16     
+2367 static sqlite3.c_nodeGetCell     
+2368 static sqlite3.c_nodeGetRowid     
+2369 static sqlite3.c_readCoord     
+2370 static sqlite3.c_readInt64     
+2371 static sqlite3.c_rtreeCheckTable     
+2372 static sqlite3.c_rtreeCheckPrepare     
+2373 static sqlite3.c_rtreeCheckAppendMsg     
+2374 static sqlite3.c_rtreeCheckNode     
+2375 static sqlite3.c_rtreeCheckCount     
+2376 static sqlite3.c_rtreeCheckGetNode     
+2377 static sqlite3.c_rtreeCheckCellCoord     
+2378 static sqlite3.c_rtreeCheckMapping     
+2379 static sqlite3.c_rtreeCheckReset     
+2380 static sqlite3.c_rtreeCreate     
+2381 static sqlite3.c_rtreeConnect     
+2382 static sqlite3.c_rtreeBestIndex     
+2383 static sqlite3.c_rtreeDisconnect     
+2384 static sqlite3.c_rtreeDestroy     
+2385 static sqlite3.c_rtreeOpen     
+2386 static sqlite3.c_rtreeClose     
+2387 static sqlite3.c_rtreeFilter     
+2388 static sqlite3.c_rtreeNext     
+2389 static sqlite3.c_rtreeEof     
+2390 static sqlite3.c_rtreeColumn     
+2391 static sqlite3.c_rtreeRowid     
+2392 static sqlite3.c_rtreeUpdate     
+2393 static sqlite3.c_rtreeBeginTransaction     
+2394 static sqlite3.c_rtreeEndTransaction     
+2395 static sqlite3.c_rtreeRename     
+2396 static sqlite3.c_rtreeSavepoint     
+2397 static sqlite3.c_rtreeShadowName     
+2398 static sqlite3.c_rtreeInit     
+2399 static sqlite3.c_rtreeTokenLength     
+2400 static sqlite3.c_getNodeSize     
+2401 static sqlite3.c_rtreeSqlInit     
+2402 static sqlite3.c_rtreeRelease     
+2403 static sqlite3.c_getIntFromStmt     
+2404 static sqlite3.c_rtreeQueryStat1     
+2405 static sqlite3.c_nodeBlobReset     
+2406 static sqlite3.c_resetCursor     
+2407 static sqlite3.c_nodeRelease     
+2408 static sqlite3.c_nodeWrite     
+2409 static sqlite3.c_nodeHashDelete     
+2410 static sqlite3.c_nodeHashInsert     
+2411 static sqlite3.c_nodeHash     
+2412 static sqlite3.c_rtreeReference     
+2413 static sqlite3.c_findLeafNode     
+2414 static sqlite3.c_rtreeSearchPointNew     
+2415 static sqlite3.c_nodeRowidIndex     
+2416 static sqlite3.c_nodeAcquire     
+2417 static sqlite3.c_deserializeGeometry     
+2418 static sqlite3.c_rtreeStepToLeaf     
+2419 static sqlite3.c_rtreeSearchPointFirst     
+2420 static sqlite3.c_rtreeEnqueue     
+2421 static sqlite3.c_rtreeSearchPointCompare     
+2422 static sqlite3.c_rtreeSearchPointSwap     
+2423 static sqlite3.c_nodeHashLookup     
+2424 static sqlite3.c_nodeInParentChain     
+2425 static sqlite3.c_nodeReference     
+2426 static sqlite3.c_rtreeNodeOfFirstSearchPoint     
+2427 static sqlite3.c_rtreeCallbackConstraint     
+2428 static sqlite3.c_rtreeLeafConstraint     
+2429 static sqlite3.c_rtreeNonleafConstraint     
+2430 static sqlite3.c_rtreeSearchPointPop     
+2431 static sqlite3.c_nodeGetCoord     
+2432 static sqlite3.c_rtreeValueDown     
+2433 static sqlite3.c_rtreeValueUp     
+2434 static sqlite3.c_rtreeConstraintError     
+2435 static sqlite3.c_rtreeDeleteRowid     
+2436 static sqlite3.c_rtreeNewRowid     
+2437 static sqlite3.c_ChooseLeaf     
+2438 static sqlite3.c_rtreeInsertCell     
+2439 static sqlite3.c_deleteCell     
+2440 static sqlite3.c_removeNode     
+2441 static sqlite3.c_writeInt16     
+2442 static sqlite3.c_reinsertNodeContent     
+2443 static sqlite3.c_fixLeafParent     
+2444 static sqlite3.c_nodeDeleteCell     
+2445 static sqlite3.c_fixBoundingBox     
+2446 static sqlite3.c_cellUnion     
+2447 static sqlite3.c_nodeParentIndex     
+2448 static sqlite3.c_nodeOverwriteCell     
+2449 static sqlite3.c_writeInt64     
+2450 static sqlite3.c_writeCoord     
+2451 static sqlite3.c_cellGrowth     
+2452 static sqlite3.c_cellArea     
+2453 static sqlite3.c_nodeInsertCell     
+2454 static sqlite3.c_SplitNode     
+2455 static sqlite3.c_Reinsert     
+2456 static sqlite3.c_AdjustTree     
+2457 static sqlite3.c_rowidWrite     
+2458 static sqlite3.c_parentWrite     
+2459 static sqlite3.c_nodeZero     
+2460 static sqlite3.c_nodeNew     
+2461 static sqlite3.c_splitNodeStartree     
+2462 static sqlite3.c_updateMapping     
+2463 static sqlite3.c_SortByDimension     
+2464 static sqlite3.c_cellMargin     
+2465 static sqlite3.c_cellOverlap     
+2466 static sqlite3.c_SortByDistance     
+2467 static sqlite3.c_cellContains     
+2468 static sqlite3.c_sqlite3WalFile     
+2469 static sqlite3.c_rtreeMatchArgFree     
+2470 ossfuzz_set_debug_flags      
+2471 LLVMFuzzerTestOneInput      
+2472 static /magma/targets/sqlite3/repo/test/ossfuzz.c_timeOfDay     
+2473 static /magma/targets/sqlite3/repo/test/ossfuzz.c_progress_handler     
+2474 static /magma/targets/sqlite3/repo/test/ossfuzz.c_block_debug_pragmas     
+2475 static /magma/targets/sqlite3/repo/test/ossfuzz.c_exec_handler     

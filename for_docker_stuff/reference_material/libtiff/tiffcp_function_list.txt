@@ -1,0 +1,812 @@
+0 magma_log      
+1 static /magma/magma/src/canary.c_magma_init     
+2 stor_get      
+3 stor_put      
+4 stor_forall      
+5 TIFFCleanup      
+6 TIFFClose      
+7 TIFFFlush      
+8 TIFFFlushData      
+9 TIFFForceStrileArrayWriting      
+10 _TIFFNoRowEncode      
+11 static tif_compress.c_TIFFNoEncode     
+12 _TIFFNoStripEncode      
+13 _TIFFNoTileEncode      
+14 _TIFFNoRowDecode      
+15 static tif_compress.c_TIFFNoDecode     
+16 _TIFFNoStripDecode      
+17 _TIFFNoTileDecode      
+18 _TIFFNoSeek      
+19 _TIFFNoPreCode      
+20 _TIFFSetDefaultCompressionState      
+21 static tif_compress.c__TIFFNoFixupTags     
+22 static tif_compress.c__TIFFtrue     
+23 static tif_compress.c__TIFFvoid     
+24 TIFFSetCompressionScheme      
+25 TIFFFindCODEC      
+26 TIFFRegisterCODEC      
+27 TIFFUnRegisterCODEC      
+28 TIFFGetConfiguredCODECs      
+29 TIFFInitJBIG      
+30 static tif_jbig.c_JBIGSetupDecode     
+31 static tif_jbig.c_JBIGDecode     
+32 static tif_jbig.c_JBIGSetupEncode     
+33 static tif_jbig.c_JBIGEncode     
+34 static tif_jbig.c_JBIGOutputBie     
+35 static tif_jbig.c_JBIGCopyEncodedData     
+36 TIFFInitNeXT      
+37 static tif_next.c_NeXTPreDecode     
+38 static tif_next.c_NeXTDecode     
+39 TIFFInitDumpMode      
+40 static tif_dumpmode.c_DumpFixupTags     
+41 static tif_dumpmode.c_DumpModeDecode     
+42 static tif_dumpmode.c_DumpModeEncode     
+43 static tif_dumpmode.c_DumpModeSeek     
+44 _TIFFgetMode      
+45 TIFFClientOpen      
+46 static tif_open.c__tiffDummyMapProc     
+47 static tif_open.c__tiffDummyUnmapProc     
+48 TIFFFileName      
+49 TIFFSetFileName      
+50 TIFFFileno      
+51 TIFFSetFileno      
+52 TIFFClientdata      
+53 TIFFSetClientdata      
+54 TIFFGetMode      
+55 TIFFSetMode      
+56 TIFFIsTiled      
+57 TIFFCurrentRow      
+58 TIFFCurrentDirectory      
+59 TIFFCurrentStrip      
+60 TIFFCurrentTile      
+61 TIFFIsByteSwapped      
+62 TIFFIsUpSampled      
+63 TIFFIsMSB2LSB      
+64 TIFFIsBigEndian      
+65 TIFFGetReadProc      
+66 TIFFGetWriteProc      
+67 TIFFGetSeekProc      
+68 TIFFGetCloseProc      
+69 TIFFGetSizeProc      
+70 TIFFGetMapFileProc      
+71 TIFFGetUnmapFileProc      
+72 TIFFSwabShort      
+73 TIFFSwabLong      
+74 TIFFSwabLong8      
+75 TIFFSwabArrayOfShort      
+76 TIFFSwabArrayOfTriples      
+77 TIFFSwabArrayOfLong      
+78 TIFFSwabArrayOfLong8      
+79 TIFFSwabFloat      
+80 TIFFSwabArrayOfFloat      
+81 TIFFSwabDouble      
+82 TIFFSwabArrayOfDouble      
+83 TIFFGetBitRevTable      
+84 TIFFReverseBits      
+85 TIFFSetWarningHandler      
+86 TIFFSetWarningHandlerExt      
+87 TIFFWarning      
+88 TIFFWarningExt      
+89 static tif_codec.c_NotConfigured     
+90 TIFFIsCODECConfigured      
+91 static tif_codec.c__notConfigured     
+92 TIFFComputeTile      
+93 TIFFCheckTile      
+94 TIFFNumberOfTiles      
+95 TIFFTileRowSize64      
+96 TIFFTileRowSize      
+97 TIFFVTileSize64      
+98 TIFFVTileSize      
+99 TIFFTileSize64      
+100 TIFFTileSize      
+101 TIFFDefaultTileSize      
+102 _TIFFDefaultTileSize      
+103 _TIFFGetFields      
+104 _TIFFGetExifFields      
+105 _TIFFGetGpsFields      
+106 _TIFFSetupFields      
+107 _TIFFMergeFields      
+108 TIFFFindField      
+109 static tif_dirinfo.c_tagCompare     
+110 _TIFFPrintFieldInfo      
+111 TIFFDataWidth      
+112 _TIFFDataSize      
+113 _TIFFSetGetFieldSize      
+114 TIFFFieldWithTag      
+115 TIFFFieldWithName      
+116 static tif_dirinfo.c__TIFFFindFieldByName     
+117 TIFFFieldTag      
+118 TIFFFieldName      
+119 TIFFFieldDataType      
+120 TIFFFieldPassCount      
+121 TIFFFieldReadCount      
+122 TIFFFieldWriteCount      
+123 _TIFFFindOrRegisterField      
+124 _TIFFCreateAnonField      
+125 TIFFMergeFieldInfo      
+126 static tif_dirinfo.c__TIFFSetGetType     
+127 _TIFFCheckFieldIsValidForCodec      
+128 static tif_dirinfo.c_td_lfind     
+129 static tif_dirinfo.c_tagNameCompare     
+130 TIFFPredictorInit      
+131 static tif_predict.c_PredictorVGetField     
+132 static tif_predict.c_PredictorVSetField     
+133 static tif_predict.c_PredictorPrintDir     
+134 static tif_predict.c_PredictorSetupDecode     
+135 static tif_predict.c_PredictorSetupEncode     
+136 TIFFPredictorCleanup      
+137 static tif_predict.c_PredictorSetup     
+138 static tif_predict.c_horAcc8     
+139 static tif_predict.c_horAcc16     
+140 static tif_predict.c_horAcc32     
+141 static tif_predict.c_PredictorDecodeRow     
+142 static tif_predict.c_PredictorDecodeTile     
+143 static tif_predict.c_swabHorAcc16     
+144 static tif_predict.c_swabHorAcc32     
+145 static tif_predict.c_fpAcc     
+146 static tif_predict.c_horDiff8     
+147 static tif_predict.c_horDiff16     
+148 static tif_predict.c_horDiff32     
+149 static tif_predict.c_PredictorEncodeRow     
+150 static tif_predict.c_PredictorEncodeTile     
+151 static tif_predict.c_swabHorDiff16     
+152 static tif_predict.c_swabHorDiff32     
+153 static tif_predict.c_fpDiff     
+154 TIFFJPEGIsFullStripRequired      
+155 static tif_jpeg.c_TIFFjpeg_create_decompress     
+156 static tif_jpeg.c_TIFFjpeg_data_src     
+157 static tif_jpeg.c_TIFFjpeg_read_header     
+158 static tif_jpeg.c_TIFFjpeg_destroy     
+159 static tif_jpeg.c_TIFFjpeg_has_multiple_scans     
+160 TIFFInitJPEG      
+161 static tif_jpeg.c_JPEGVGetField     
+162 static tif_jpeg.c_JPEGVSetField     
+163 static tif_jpeg.c_JPEGPrintDir     
+164 static tif_jpeg.c_JPEGFixupTags     
+165 static tif_jpeg.c_JPEGSetupDecode     
+166 static tif_jpeg.c_JPEGPreDecode     
+167 static tif_jpeg.c_JPEGDecode     
+168 static tif_jpeg.c_JPEGSetupEncode     
+169 static tif_jpeg.c_JPEGPreEncode     
+170 static tif_jpeg.c_JPEGPostEncode     
+171 static tif_jpeg.c_JPEGEncode     
+172 static tif_jpeg.c_JPEGCleanup     
+173 static tif_jpeg.c_JPEGDefaultStripSize     
+174 static tif_jpeg.c_JPEGDefaultTileSize     
+175 static tif_jpeg.c_TIFFjpeg_error_exit     
+176 static tif_jpeg.c_TIFFjpeg_output_message     
+177 static tif_jpeg.c_std_init_source     
+178 static tif_jpeg.c_std_fill_input_buffer     
+179 static tif_jpeg.c_std_skip_input_data     
+180 static tif_jpeg.c_std_term_source     
+181 static tif_jpeg.c_JPEGResetUpsampled     
+182 static tif_jpeg.c_JPEGFixupTagsSubsampling     
+183 static tif_jpeg.c_JPEGFixupTagsSubsamplingSec     
+184 static tif_jpeg.c_JPEGFixupTagsSubsamplingReadByte     
+185 static tif_jpeg.c_JPEGFixupTagsSubsamplingReadWord     
+186 static tif_jpeg.c_JPEGFixupTagsSubsamplingSkip     
+187 static tif_jpeg.c_JPEGInitializeLibJPEG     
+188 static tif_jpeg.c_TIFFjpeg_tables_src     
+189 static tif_jpeg.c_TIFFjpeg_create_compress     
+190 static tif_jpeg.c_tables_init_source     
+191 static tif_jpeg.c_TIFFjpeg_abort     
+192 static tif_jpeg.c_DecodeRowError     
+193 static tif_jpeg.c_JPEGDecodeRaw     
+194 static tif_jpeg.c_TIFFjpeg_start_decompress     
+195 static tif_jpeg.c_alloc_downsampled_buffers     
+196 static tif_jpeg.c_TIFFjpeg_read_raw_data     
+197 static tif_jpeg.c_TIFFjpeg_finish_decompress     
+198 static tif_jpeg.c_TIFFjpeg_progress_monitor     
+199 static tif_jpeg.c_TIFFjpeg_alloc_sarray     
+200 static tif_jpeg.c_TIFFjpeg_read_scanlines     
+201 static tif_jpeg.c_TIFFjpeg_set_defaults     
+202 static tif_jpeg.c_prepare_JPEGTables     
+203 static tif_jpeg.c_TIFFjpeg_data_dest     
+204 static tif_jpeg.c_TIFFjpeg_set_quality     
+205 static tif_jpeg.c_TIFFjpeg_suppress_tables     
+206 static tif_jpeg.c_unsuppress_quant_table     
+207 static tif_jpeg.c_unsuppress_huff_table     
+208 static tif_jpeg.c_TIFFjpeg_tables_dest     
+209 static tif_jpeg.c_TIFFjpeg_write_tables     
+210 static tif_jpeg.c_tables_init_destination     
+211 static tif_jpeg.c_tables_empty_output_buffer     
+212 static tif_jpeg.c_tables_term_destination     
+213 static tif_jpeg.c_std_init_destination     
+214 static tif_jpeg.c_std_empty_output_buffer     
+215 static tif_jpeg.c_std_term_destination     
+216 static tif_jpeg.c_TIFFjpeg_set_colorspace     
+217 static tif_jpeg.c_suppress_quant_table     
+218 static tif_jpeg.c_suppress_huff_table     
+219 static tif_jpeg.c_JPEGEncodeRaw     
+220 static tif_jpeg.c_TIFFjpeg_start_compress     
+221 static tif_jpeg.c_TIFFjpeg_write_raw_data     
+222 static tif_jpeg.c_TIFFjpeg_finish_compress     
+223 static tif_jpeg.c_TIFFjpeg_write_scanlines     
+224 TIFFInitPackBits      
+225 static tif_packbits.c_PackBitsDecode     
+226 static tif_packbits.c_PackBitsPreEncode     
+227 static tif_packbits.c_PackBitsPostEncode     
+228 static tif_packbits.c_PackBitsEncode     
+229 static tif_packbits.c_PackBitsEncodeChunk     
+230 TIFFInitLZMA      
+231 static tif_lzma.c_LZMAVGetField     
+232 static tif_lzma.c_LZMAVSetField     
+233 static tif_lzma.c_LZMAFixupTags     
+234 static tif_lzma.c_LZMASetupDecode     
+235 static tif_lzma.c_LZMAPreDecode     
+236 static tif_lzma.c_LZMADecode     
+237 static tif_lzma.c_LZMASetupEncode     
+238 static tif_lzma.c_LZMAPreEncode     
+239 static tif_lzma.c_LZMAPostEncode     
+240 static tif_lzma.c_LZMAEncode     
+241 static tif_lzma.c_LZMACleanup     
+242 static tif_lzma.c_LZMAStrerror     
+243 TIFFWriteScanline      
+244 TIFFWriteCheck      
+245 TIFFWriteBufferSetup      
+246 static tif_write.c_TIFFGrowStrips     
+247 TIFFWriteEncodedStrip      
+248 static tif_write.c__TIFFReserveLargeEnoughWriteBuffer     
+249 static tif_write.c_TIFFAppendToStrip     
+250 TIFFWriteRawStrip      
+251 TIFFWriteTile      
+252 TIFFWriteEncodedTile      
+253 TIFFWriteRawTile      
+254 TIFFSetupStrips      
+255 TIFFFlushData1      
+256 TIFFSetWriteOffset      
+257 TIFFSetErrorHandler      
+258 TIFFSetErrorHandlerExt      
+259 TIFFError      
+260 TIFFErrorExt      
+261 _TIFFMultiply32      
+262 _TIFFMultiply64      
+263 _TIFFMultiplySSize      
+264 _TIFFCastUInt64ToSSize      
+265 _TIFFCheckRealloc      
+266 _TIFFCheckMalloc      
+267 TIFFVGetFieldDefaulted      
+268 static tif_aux.c_TIFFDefaultTransferFunction     
+269 static tif_aux.c_TIFFDefaultRefBlackWhite     
+270 TIFFGetFieldDefaulted      
+271 _TIFFUInt64ToFloat      
+272 _TIFFUInt64ToDouble      
+273 _TIFFClampDoubleToFloat      
+274 _TIFFSeekOK      
+275 TIFFInitLZW      
+276 static tif_lzw.c_LZWFixupTags     
+277 static tif_lzw.c_LZWSetupDecode     
+278 static tif_lzw.c_LZWPreDecode     
+279 static tif_lzw.c_LZWDecode     
+280 static tif_lzw.c_LZWSetupEncode     
+281 static tif_lzw.c_LZWPreEncode     
+282 static tif_lzw.c_LZWPostEncode     
+283 static tif_lzw.c_LZWEncode     
+284 static tif_lzw.c_LZWCleanup     
+285 static tif_lzw.c_LZWDecodeCompat     
+286 static tif_lzw.c_codeLoop     
+287 static tif_lzw.c_cl_hash     
+288 TIFFGetVersion      
+289 TIFFComputeStrip      
+290 TIFFNumberOfStrips      
+291 TIFFVStripSize64      
+292 TIFFScanlineSize64      
+293 TIFFVStripSize      
+294 TIFFRawStripSize64      
+295 TIFFRawStripSize      
+296 TIFFStripSize64      
+297 TIFFStripSize      
+298 TIFFDefaultStripSize      
+299 _TIFFDefaultStripSize      
+300 TIFFScanlineSize      
+301 TIFFRasterScanlineSize64      
+302 TIFFRasterScanlineSize      
+303 TIFFInitOJPEG      
+304 static tif_ojpeg.c_OJPEGFixupTags     
+305 static tif_ojpeg.c_OJPEGSetupDecode     
+306 static tif_ojpeg.c_OJPEGPreDecode     
+307 static tif_ojpeg.c_OJPEGPostDecode     
+308 static tif_ojpeg.c_OJPEGDecode     
+309 static tif_ojpeg.c_OJPEGSetupEncode     
+310 static tif_ojpeg.c_OJPEGPreEncode     
+311 static tif_ojpeg.c_OJPEGPostEncode     
+312 static tif_ojpeg.c_OJPEGEncode     
+313 static tif_ojpeg.c_OJPEGCleanup     
+314 static tif_ojpeg.c_OJPEGVGetField     
+315 static tif_ojpeg.c_OJPEGVSetField     
+316 static tif_ojpeg.c_OJPEGPrintDir     
+317 static tif_ojpeg.c_OJPEGSubsamplingCorrect     
+318 static tif_ojpeg.c_OJPEGReadHeaderInfoSec     
+319 static tif_ojpeg.c_OJPEGReadBytePeek     
+320 static tif_ojpeg.c_OJPEGReadByteAdvance     
+321 static tif_ojpeg.c_OJPEGReadByte     
+322 static tif_ojpeg.c_OJPEGReadWord     
+323 static tif_ojpeg.c_OJPEGReadSkip     
+324 static tif_ojpeg.c_OJPEGReadHeaderInfoSecStreamDri     
+325 static tif_ojpeg.c_OJPEGReadHeaderInfoSecStreamDqt     
+326 static tif_ojpeg.c_OJPEGReadHeaderInfoSecStreamDht     
+327 static tif_ojpeg.c_OJPEGReadHeaderInfoSecStreamSof     
+328 static tif_ojpeg.c_OJPEGReadHeaderInfoSecStreamSos     
+329 static tif_ojpeg.c_OJPEGReadHeaderInfoSecTablesQTable     
+330 static tif_ojpeg.c_OJPEGReadHeaderInfoSecTablesDcTable     
+331 static tif_ojpeg.c_OJPEGReadHeaderInfoSecTablesAcTable     
+332 static tif_ojpeg.c_OJPEGReadBufferFill     
+333 static tif_ojpeg.c_OJPEGReadBlock     
+334 static tif_ojpeg.c_OJPEGReadHeaderInfo     
+335 static tif_ojpeg.c_OJPEGReadSecondarySos     
+336 static tif_ojpeg.c_OJPEGLibjpegSessionAbort     
+337 static tif_ojpeg.c_OJPEGWriteHeaderInfo     
+338 static tif_ojpeg.c_OJPEGPreDecodeSkipRaw     
+339 static tif_ojpeg.c_OJPEGPreDecodeSkipScanlines     
+340 static tif_ojpeg.c_OJPEGLibjpegJpegErrorMgrOutputMessage     
+341 static tif_ojpeg.c_OJPEGLibjpegJpegErrorMgrErrorExit     
+342 static tif_ojpeg.c_jpeg_create_decompress_encap     
+343 static tif_ojpeg.c_OJPEGLibjpegJpegSourceMgrInitSource     
+344 static tif_ojpeg.c_OJPEGLibjpegJpegSourceMgrFillInputBuffer     
+345 static tif_ojpeg.c_OJPEGLibjpegJpegSourceMgrSkipInputData     
+346 static tif_ojpeg.c_OJPEGLibjpegJpegSourceMgrResyncToRestart     
+347 static tif_ojpeg.c_OJPEGLibjpegJpegSourceMgrTermSource     
+348 static tif_ojpeg.c_jpeg_read_header_encap     
+349 static tif_ojpeg.c_jpeg_start_decompress_encap     
+350 static tif_ojpeg.c_jpeg_encap_unwind     
+351 static tif_ojpeg.c_OJPEGWriteStream     
+352 static tif_ojpeg.c_OJPEGWriteStreamSoi     
+353 static tif_ojpeg.c_OJPEGWriteStreamQTable     
+354 static tif_ojpeg.c_OJPEGWriteStreamDcTable     
+355 static tif_ojpeg.c_OJPEGWriteStreamAcTable     
+356 static tif_ojpeg.c_OJPEGWriteStreamDri     
+357 static tif_ojpeg.c_OJPEGWriteStreamSof     
+358 static tif_ojpeg.c_OJPEGWriteStreamSos     
+359 static tif_ojpeg.c_OJPEGWriteStreamCompressed     
+360 static tif_ojpeg.c_OJPEGWriteStreamRst     
+361 static tif_ojpeg.c_OJPEGWriteStreamEoi     
+362 static tif_ojpeg.c_jpeg_read_raw_data_encap     
+363 static tif_ojpeg.c_jpeg_read_scanlines_encap     
+364 static tif_ojpeg.c_OJPEGDecodeRaw     
+365 static tif_ojpeg.c_OJPEGDecodeScanlines     
+366 TIFFInitZSTD      
+367 static tif_zstd.c_ZSTDVGetField     
+368 static tif_zstd.c_ZSTDVSetField     
+369 static tif_zstd.c_ZSTDFixupTags     
+370 static tif_zstd.c_ZSTDSetupDecode     
+371 static tif_zstd.c_ZSTDPreDecode     
+372 static tif_zstd.c_ZSTDDecode     
+373 static tif_zstd.c_ZSTDSetupEncode     
+374 static tif_zstd.c_ZSTDPreEncode     
+375 static tif_zstd.c_ZSTDPostEncode     
+376 static tif_zstd.c_ZSTDEncode     
+377 static tif_zstd.c_ZSTDCleanup     
+378 TIFFInitZIP      
+379 static tif_zip.c_ZIPVGetField     
+380 static tif_zip.c_ZIPVSetField     
+381 static tif_zip.c_ZIPFixupTags     
+382 static tif_zip.c_ZIPSetupDecode     
+383 static tif_zip.c_ZIPPreDecode     
+384 static tif_zip.c_ZIPDecode     
+385 static tif_zip.c_ZIPSetupEncode     
+386 static tif_zip.c_ZIPPreEncode     
+387 static tif_zip.c_ZIPPostEncode     
+388 static tif_zip.c_ZIPEncode     
+389 static tif_zip.c_ZIPCleanup     
+390 TIFFInitThunderScan      
+391 static tif_thunder.c_ThunderSetupDecode     
+392 static tif_thunder.c_ThunderDecodeRow     
+393 static tif_thunder.c_ThunderDecode     
+394 _TIFFFax3fillruns      
+395 TIFFInitCCITTFax3      
+396 static tif_fax3.c_InitCCITTFax3     
+397 TIFFInitCCITTFax4      
+398 static tif_fax3.c_Fax4Decode     
+399 static tif_fax3.c_Fax4Encode     
+400 static tif_fax3.c_Fax4PostEncode     
+401 TIFFInitCCITTRLE      
+402 static tif_fax3.c_Fax3DecodeRLE     
+403 TIFFInitCCITTRLEW      
+404 static tif_fax3.c_Fax3VGetField     
+405 static tif_fax3.c_Fax3VSetField     
+406 static tif_fax3.c_Fax3PrintDir     
+407 static tif_fax3.c_Fax3FixupTags     
+408 static tif_fax3.c_Fax3SetupState     
+409 static tif_fax3.c_Fax3PreDecode     
+410 static tif_fax3.c_Fax3Decode1D     
+411 static tif_fax3.c_Fax3PreEncode     
+412 static tif_fax3.c_Fax3PostEncode     
+413 static tif_fax3.c_Fax3Encode     
+414 static tif_fax3.c_Fax3Close     
+415 static tif_fax3.c_Fax3Cleanup     
+416 static tif_fax3.c_Fax3Decode2D     
+417 static tif_fax3.c_Fax3Unexpected     
+418 static tif_fax3.c_Fax3PrematureEOF     
+419 static tif_fax3.c_Fax3BadLength     
+420 static tif_fax3.c_Fax3Extension     
+421 static tif_fax3.c_Fax3PutEOL     
+422 static tif_fax3.c_Fax3Encode1DRow     
+423 static tif_fax3.c_Fax3Encode2DRow     
+424 static tif_fax3.c_find0span     
+425 static tif_fax3.c_putspan     
+426 static tif_fax3.c_find1span     
+427 static tif_fax3.c_Fax3PutBits     
+428 static tif_fax3.c__Fax3Close     
+429 TIFFInitPixarLog      
+430 static tif_pixarlog.c_PixarLogFixupTags     
+431 static tif_pixarlog.c_PixarLogSetupDecode     
+432 static tif_pixarlog.c_PixarLogPreDecode     
+433 static tif_pixarlog.c_PixarLogDecode     
+434 static tif_pixarlog.c_PixarLogSetupEncode     
+435 static tif_pixarlog.c_PixarLogPreEncode     
+436 static tif_pixarlog.c_PixarLogPostEncode     
+437 static tif_pixarlog.c_PixarLogEncode     
+438 static tif_pixarlog.c_PixarLogClose     
+439 static tif_pixarlog.c_PixarLogCleanup     
+440 static tif_pixarlog.c_PixarLogVGetField     
+441 static tif_pixarlog.c_PixarLogVSetField     
+442 static tif_pixarlog.c_PixarLogMakeTables     
+443 static tif_pixarlog.c_multiply_ms     
+444 static tif_pixarlog.c_add_ms     
+445 static tif_pixarlog.c_PixarLogGuessDataFmt     
+446 static tif_pixarlog.c_horizontalAccumulateF     
+447 static tif_pixarlog.c_horizontalAccumulate16     
+448 static tif_pixarlog.c_horizontalAccumulate12     
+449 static tif_pixarlog.c_horizontalAccumulate11     
+450 static tif_pixarlog.c_horizontalAccumulate8     
+451 static tif_pixarlog.c_horizontalAccumulate8abgr     
+452 static tif_pixarlog.c_horizontalDifferenceF     
+453 static tif_pixarlog.c_horizontalDifference16     
+454 static tif_pixarlog.c_horizontalDifference8     
+455 TIFFFdOpen      
+456 static tif_unix.c__tiffReadProc     
+457 static tif_unix.c__tiffWriteProc     
+458 static tif_unix.c__tiffSeekProc     
+459 static tif_unix.c__tiffCloseProc     
+460 static tif_unix.c__tiffSizeProc     
+461 static tif_unix.c__tiffMapProc     
+462 static tif_unix.c__tiffUnmapProc     
+463 TIFFOpen      
+464 _TIFFmalloc      
+465 _TIFFcalloc      
+466 _TIFFfree      
+467 _TIFFrealloc      
+468 _TIFFmemset      
+469 _TIFFmemcpy      
+470 _TIFFmemcmp      
+471 static tif_unix.c_unixWarningHandler     
+472 static tif_unix.c_unixErrorHandler     
+473 _TIFFsetByteArray      
+474 static tif_dir.c_setByteArray     
+475 _TIFFsetString      
+476 _TIFFsetShortArray      
+477 _TIFFsetLongArray      
+478 _TIFFsetFloatArray      
+479 _TIFFsetDoubleArray      
+480 TIFFSetField      
+481 TIFFVSetField      
+482 TIFFUnsetField      
+483 static tif_dir.c_OkToChangeTag     
+484 TIFFGetField      
+485 TIFFVGetField      
+486 TIFFFreeDirectory      
+487 TIFFSetTagExtender      
+488 TIFFCreateDirectory      
+489 TIFFDefaultDirectory      
+490 TIFFCreateCustomDirectory      
+491 TIFFCreateEXIFDirectory      
+492 TIFFCreateGPSDirectory      
+493 static tif_dir.c__TIFFVSetField     
+494 static tif_dir.c__TIFFVGetField     
+495 TIFFNumberOfDirectories      
+496 static tif_dir.c_TIFFAdvanceDirectory     
+497 TIFFSetDirectory      
+498 TIFFSetSubDirectory      
+499 TIFFCurrentDirOffset      
+500 TIFFLastDirectory      
+501 TIFFUnlinkDirectory      
+502 static tif_dir.c_magma_or     
+503 static tif_dir.c_magma_and     
+504 static tif_dir.c_setDoubleArrayOneValue     
+505 static tif_dir.c_setExtraSamples     
+506 static tif_dir.c__TIFFsetLong8Array     
+507 static tif_dir.c_checkInkNamesString     
+508 static tif_dir.c__TIFFsetNString     
+509 TIFFReadScanline      
+510 static tif_read.c_TIFFCheckRead     
+511 static tif_read.c_TIFFSeek     
+512 TIFFReadEncodedStrip      
+513 static tif_read.c_TIFFReadEncodedStripGetStripSize     
+514 static tif_read.c_TIFFReadRawStrip1     
+515 TIFFFillStrip      
+516 _TIFFReadEncodedStripAndAllocBuffer      
+517 TIFFReadRawStrip      
+518 static tif_read.c_NoSanitizeSubUInt64     
+519 TIFFReadBufferSetup      
+520 static tif_read.c_TIFFReadRawStripOrTile2     
+521 static tif_read.c_TIFFStartStrip     
+522 TIFFReadTile      
+523 TIFFReadEncodedTile      
+524 static tif_read.c_TIFFReadRawTile1     
+525 TIFFFillTile      
+526 _TIFFReadTileAndAllocBuffer      
+527 _TIFFReadEncodedTileAndAllocBuffer      
+528 TIFFReadRawTile      
+529 static tif_read.c_TIFFStartTile     
+530 TIFFReadFromUserBuffer      
+531 _TIFFNoPostDecode      
+532 _TIFFSwab16BitData      
+533 _TIFFSwab24BitData      
+534 _TIFFSwab32BitData      
+535 _TIFFSwab64BitData      
+536 static tif_read.c_TIFFFillStripPartial     
+537 static tif_read.c_TIFFReadAndRealloc     
+538 LogL16toY      
+539 LogL16fromY      
+540 static tif_luv.c_tiff_itrunc     
+541 XYZtoRGB24      
+542 LogL10toY      
+543 LogL10fromY      
+544 uv_encode      
+545 static tif_luv.c_oog_encode     
+546 uv_decode      
+547 LogLuv24toXYZ      
+548 LogLuv24fromXYZ      
+549 LogLuv32toXYZ      
+550 LogLuv32fromXYZ      
+551 TIFFInitSGILog      
+552 static tif_luv.c__logLuvNop     
+553 static tif_luv.c_LogLuvFixupTags     
+554 static tif_luv.c_LogLuvSetupDecode     
+555 static tif_luv.c_LogLuvDecodeStrip     
+556 static tif_luv.c_LogLuvDecodeTile     
+557 static tif_luv.c_LogLuvSetupEncode     
+558 static tif_luv.c_LogLuvEncodeStrip     
+559 static tif_luv.c_LogLuvEncodeTile     
+560 static tif_luv.c_LogLuvClose     
+561 static tif_luv.c_LogLuvCleanup     
+562 static tif_luv.c_LogLuvVGetField     
+563 static tif_luv.c_LogLuvVSetField     
+564 static tif_luv.c_LogLuvInitState     
+565 static tif_luv.c_LogLuvDecode24     
+566 static tif_luv.c_Luv24toXYZ     
+567 static tif_luv.c_Luv24toLuv48     
+568 static tif_luv.c_Luv24toRGB     
+569 static tif_luv.c_LogLuvDecode32     
+570 static tif_luv.c_Luv32toXYZ     
+571 static tif_luv.c_Luv32toLuv48     
+572 static tif_luv.c_Luv32toRGB     
+573 static tif_luv.c_LogL16InitState     
+574 static tif_luv.c_LogL16Decode     
+575 static tif_luv.c_L16toY     
+576 static tif_luv.c_L16toGry     
+577 static tif_luv.c_LogLuvGuessDataFmt     
+578 static tif_luv.c_multiply_ms     
+579 static tif_luv.c_LogL16GuessDataFmt     
+580 static tif_luv.c_LogLuvEncode24     
+581 static tif_luv.c_Luv24fromXYZ     
+582 static tif_luv.c_Luv24fromLuv48     
+583 static tif_luv.c_LogLuvEncode32     
+584 static tif_luv.c_Luv32fromXYZ     
+585 static tif_luv.c_Luv32fromLuv48     
+586 static tif_luv.c_LogL16Encode     
+587 static tif_luv.c_L16fromY     
+588 TIFFWriteDirectory      
+589 static tif_dirwrite.c_TIFFWriteDirectorySec     
+590 TIFFDeferStrileArrayWriting      
+591 TIFFCheckpointDirectory      
+592 TIFFWriteCustomDirectory      
+593 TIFFRewriteDirectory      
+594 _TIFFRewriteField      
+595 static tif_dirwrite.c_WriteAsLong8     
+596 static tif_dirwrite.c_WriteAsLong4     
+597 static tif_dirwrite.c_TIFFWriteDirectoryTagShortLong     
+598 static tif_dirwrite.c_TIFFWriteDirectoryTagRational     
+599 static tif_dirwrite.c_TIFFWriteDirectoryTagLong     
+600 static tif_dirwrite.c_TIFFWriteDirectoryTagShortPerSample     
+601 static tif_dirwrite.c_TIFFWriteDirectoryTagShort     
+602 static tif_dirwrite.c_TIFFWriteDirectoryTagShortArray     
+603 static tif_dirwrite.c_TIFFWriteDirectoryTagLongLong8Array     
+604 static tif_dirwrite.c_TIFFWriteDirectoryTagColormap     
+605 static tif_dirwrite.c_TIFFWriteDirectoryTagSampleformatArray     
+606 static tif_dirwrite.c_TIFFWriteDirectoryTagRationalArray     
+607 static tif_dirwrite.c_TIFFWriteDirectoryTagTransferfunction     
+608 static tif_dirwrite.c_TIFFWriteDirectoryTagAscii     
+609 static tif_dirwrite.c_TIFFWriteDirectoryTagSubifd     
+610 static tif_dirwrite.c_TIFFWriteDirectoryTagUndefinedArray     
+611 static tif_dirwrite.c_TIFFWriteDirectoryTagByteArray     
+612 static tif_dirwrite.c_TIFFWriteDirectoryTagSbyteArray     
+613 static tif_dirwrite.c_TIFFWriteDirectoryTagSshortArray     
+614 static tif_dirwrite.c_TIFFWriteDirectoryTagLongArray     
+615 static tif_dirwrite.c_TIFFWriteDirectoryTagSlongArray     
+616 static tif_dirwrite.c_TIFFWriteDirectoryTagLong8Array     
+617 static tif_dirwrite.c_TIFFWriteDirectoryTagSlong8Array     
+618 static tif_dirwrite.c_TIFFWriteDirectoryTagRationalDoubleArray     
+619 static tif_dirwrite.c_TIFFWriteDirectoryTagSrationalDoubleArray     
+620 static tif_dirwrite.c_TIFFWriteDirectoryTagSrationalArray     
+621 static tif_dirwrite.c_TIFFWriteDirectoryTagFloatArray     
+622 static tif_dirwrite.c_TIFFWriteDirectoryTagDoubleArray     
+623 static tif_dirwrite.c_TIFFWriteDirectoryTagIfdArray     
+624 static tif_dirwrite.c_TIFFWriteDirectoryTagIfdIfd8Array     
+625 static tif_dirwrite.c_TIFFLinkDirectory     
+626 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedShort     
+627 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedLong     
+628 static tif_dirwrite.c_TIFFWriteDirectoryTagData     
+629 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedRational     
+630 static tif_dirwrite.c_DoubleToRational     
+631 static tif_dirwrite.c_ToRationalEuclideanGCD     
+632 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedShortArray     
+633 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedLong8Array     
+634 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedLongArray     
+635 static tif_dirwrite.c_TIFFClampDoubleToInt8     
+636 static tif_dirwrite.c_TIFFClampDoubleToInt16     
+637 static tif_dirwrite.c_TIFFClampDoubleToInt32     
+638 static tif_dirwrite.c_TIFFClampDoubleToUInt8     
+639 static tif_dirwrite.c_TIFFClampDoubleToUInt16     
+640 static tif_dirwrite.c_TIFFClampDoubleToUInt32     
+641 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedRationalArray     
+642 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedAscii     
+643 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedIfdArray     
+644 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedIfd8Array     
+645 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedUndefinedArray     
+646 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedByteArray     
+647 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedSbyteArray     
+648 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedSshortArray     
+649 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedSlongArray     
+650 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedSlong8Array     
+651 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedRationalDoubleArray     
+652 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedSrationalDoubleArray     
+653 static tif_dirwrite.c_DoubleToSrational     
+654 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedSrationalArray     
+655 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedFloatArray     
+656 static tif_dirwrite.c_TIFFWriteDirectoryTagCheckedDoubleArray     
+657 static tif_dirwrite.c__WriteAsType     
+658 TIFFReadDirectory      
+659 static tif_dirread.c_TIFFCheckDirOffset     
+660 static tif_dirread.c_TIFFFetchDirectory     
+661 static tif_dirread.c_TIFFReadDirectoryCheckOrder     
+662 static tif_dirread.c_TIFFReadDirectoryFindEntry     
+663 static tif_dirread.c_TIFFFetchNormalTag     
+664 static tif_dirread.c_TIFFReadDirEntryShort     
+665 static tif_dirread.c_TIFFReadDirEntryPersampleShort     
+666 static tif_dirread.c_TIFFReadDirEntryOutputErr     
+667 static tif_dirread.c_TIFFReadDirectoryFindFieldInfo     
+668 _TIFFFillStriles      
+669 static tif_dirread.c_MissingRequired     
+670 static tif_dirread.c_TIFFReadDirEntryDoubleArray     
+671 static tif_dirread.c_TIFFReadDirEntryShortArray     
+672 static tif_dirread.c_TIFFFetchStripThing     
+673 static tif_dirread.c__TIFFGetMaxColorChannels     
+674 static tif_dirread.c_EstimateStripByteCounts     
+675 static tif_dirread.c_ByteCountLooksBad     
+676 TIFFGetStrileByteCount      
+677 static tif_dirread.c_ChopUpSingleUncompressedStrip     
+678 static tif_dirread.c_TryChopUpUncompressedBigTiff     
+679 TIFFReadCustomDirectory      
+680 static tif_dirread.c_CheckDirCount     
+681 static tif_dirread.c_TIFFFetchSubjectDistance     
+682 TIFFReadEXIFDirectory      
+683 TIFFReadGPSDirectory      
+684 TIFFGetStrileOffset      
+685 TIFFGetStrileOffsetWithErr      
+686 static tif_dirread.c__TIFFGetStrileOffsetOrByteCountValue     
+687 TIFFGetStrileByteCountWithErr      
+688 static tif_dirread.c__TIFFFillStrilesInternal     
+689 static tif_dirread.c_TIFFReadDirEntryCheckedByte     
+690 static tif_dirread.c_TIFFReadDirEntryCheckedSbyte     
+691 static tif_dirread.c_TIFFReadDirEntryCheckRangeShortSbyte     
+692 static tif_dirread.c_TIFFReadDirEntryCheckedShort     
+693 static tif_dirread.c_TIFFReadDirEntryCheckedSshort     
+694 static tif_dirread.c_TIFFReadDirEntryCheckRangeShortSshort     
+695 static tif_dirread.c_TIFFReadDirEntryCheckedLong     
+696 static tif_dirread.c_TIFFReadDirEntryCheckRangeShortLong     
+697 static tif_dirread.c_TIFFReadDirEntryCheckedSlong     
+698 static tif_dirread.c_TIFFReadDirEntryCheckRangeShortSlong     
+699 static tif_dirread.c_TIFFReadDirEntryCheckedLong8     
+700 static tif_dirread.c_TIFFReadDirEntryCheckRangeShortLong8     
+701 static tif_dirread.c_TIFFReadDirEntryCheckedSlong8     
+702 static tif_dirread.c_TIFFReadDirEntryCheckRangeShortSlong8     
+703 static tif_dirread.c_TIFFReadDirEntryData     
+704 static tif_dirread.c_TIFFReadDirEntryArray     
+705 static tif_dirread.c_TIFFReadDirEntryArrayWithLimit     
+706 static tif_dirread.c_TIFFReadDirEntryDataAndRealloc     
+707 static tif_dirread.c_TIFFReadUInt64     
+708 static tif_dirread.c_TIFFReadDirEntryByteArray     
+709 static tif_dirread.c_TIFFReadDirEntryByte     
+710 static tif_dirread.c_TIFFReadDirEntryLong     
+711 static tif_dirread.c_TIFFReadDirEntryLong8     
+712 static tif_dirread.c_TIFFReadDirEntryFloat     
+713 static tif_dirread.c_TIFFReadDirEntryDouble     
+714 static tif_dirread.c_TIFFReadDirEntryIfd8     
+715 static tif_dirread.c_TIFFReadDirEntryLongArray     
+716 static tif_dirread.c_TIFFReadDirEntryFloatArray     
+717 static tif_dirread.c_TIFFReadDirEntryLong8Array     
+718 static tif_dirread.c_TIFFReadDirEntryIfd8Array     
+719 static tif_dirread.c_TIFFReadDirEntrySbyteArray     
+720 static tif_dirread.c_TIFFReadDirEntrySshortArray     
+721 static tif_dirread.c_TIFFReadDirEntrySlongArray     
+722 static tif_dirread.c_TIFFReadDirEntrySlong8Array     
+723 static tif_dirread.c_TIFFReadDirEntryCheckRangeByteSbyte     
+724 static tif_dirread.c_TIFFReadDirEntryCheckRangeByteShort     
+725 static tif_dirread.c_TIFFReadDirEntryCheckRangeByteSshort     
+726 static tif_dirread.c_TIFFReadDirEntryCheckRangeByteLong     
+727 static tif_dirread.c_TIFFReadDirEntryCheckRangeByteSlong     
+728 static tif_dirread.c_TIFFReadDirEntryCheckRangeByteLong8     
+729 static tif_dirread.c_TIFFReadDirEntryCheckRangeByteSlong8     
+730 static tif_dirread.c_TIFFReadDirEntryCheckRangeLongSbyte     
+731 static tif_dirread.c_TIFFReadDirEntryCheckRangeLongSshort     
+732 static tif_dirread.c_TIFFReadDirEntryCheckRangeLongSlong     
+733 static tif_dirread.c_TIFFReadDirEntryCheckRangeLongLong8     
+734 static tif_dirread.c_TIFFReadDirEntryCheckRangeLongSlong8     
+735 static tif_dirread.c_TIFFReadDirEntryCheckRangeLong8Sbyte     
+736 static tif_dirread.c_TIFFReadDirEntryCheckRangeLong8Sshort     
+737 static tif_dirread.c_TIFFReadDirEntryCheckRangeLong8Slong     
+738 static tif_dirread.c_TIFFReadDirEntryCheckRangeLong8Slong8     
+739 static tif_dirread.c_TIFFReadDirEntryCheckedRational     
+740 static tif_dirread.c_TIFFReadDirEntryCheckedSrational     
+741 static tif_dirread.c_TIFFReadDirEntryCheckedFloat     
+742 static tif_dirread.c_TIFFReadDirEntryCheckedDouble     
+743 static tif_dirread.c_TIFFReadDirEntryLong8ArrayWithLimit     
+744 static tif_dirread.c_TIFFReadDirEntryCheckRangeSbyteByte     
+745 static tif_dirread.c_TIFFReadDirEntryCheckRangeSbyteShort     
+746 static tif_dirread.c_TIFFReadDirEntryCheckRangeSbyteSshort     
+747 static tif_dirread.c_TIFFReadDirEntryCheckRangeSbyteLong     
+748 static tif_dirread.c_TIFFReadDirEntryCheckRangeSbyteSlong     
+749 static tif_dirread.c_TIFFReadDirEntryCheckRangeSbyteLong8     
+750 static tif_dirread.c_TIFFReadDirEntryCheckRangeSbyteSlong8     
+751 static tif_dirread.c_TIFFReadDirEntryCheckRangeSshortShort     
+752 static tif_dirread.c_TIFFReadDirEntryCheckRangeSshortLong     
+753 static tif_dirread.c_TIFFReadDirEntryCheckRangeSshortSlong     
+754 static tif_dirread.c_TIFFReadDirEntryCheckRangeSshortLong8     
+755 static tif_dirread.c_TIFFReadDirEntryCheckRangeSshortSlong8     
+756 static tif_dirread.c_TIFFReadDirEntryCheckRangeSlongLong     
+757 static tif_dirread.c_TIFFReadDirEntryCheckRangeSlongLong8     
+758 static tif_dirread.c_TIFFReadDirEntryCheckRangeSlongSlong8     
+759 static tif_dirread.c_TIFFReadDirEntryCheckRangeSlong8Long8     
+760 static tif_dirread.c_magma_and     
+761 static tif_dirread.c_magma_or     
+762 static tif_dirread.c_allocChoppedUpStripArrays     
+763 static tif_dirread.c__TIFFFetchStrileValue     
+764 static tif_dirread.c__TIFFPartialReadStripArray     
+765 static tif_dirread.c__TIFFUnsanitizedAddUInt64AndInt     
+766 main      
+767 static tiffcp.c_usage     
+768 static tiffcp.c_openSrcImage     
+769 static tiffcp.c_processCompressOptions     
+770 static tiffcp.c_tiffcp     
+771 static tiffcp.c_nextSrcImage     
+772 static tiffcp.c_processG3Options     
+773 static tiffcp.c_processZIPOptions     
+774 static tiffcp.c_processLERCOptions     
+775 static tiffcp.c_cpTag     
+776 static tiffcp.c_pickCopyFunc     
+777 static tiffcp.c_cpContigStrips2ContigTiles     
+778 static tiffcp.c_cpContigStrips2SeparateTiles     
+779 static tiffcp.c_cpSeparateStrips2ContigTiles     
+780 static tiffcp.c_cpSeparateStrips2SeparateTiles     
+781 static tiffcp.c_cpContigTiles2ContigTiles     
+782 static tiffcp.c_cpContigTiles2SeparateTiles     
+783 static tiffcp.c_cpSeparateTiles2ContigTiles     
+784 static tiffcp.c_cpSeparateTiles2SeparateTiles     
+785 static tiffcp.c_cpContigTiles2ContigStrips     
+786 static tiffcp.c_cpContigTiles2SeparateStrips     
+787 static tiffcp.c_cpSeparateTiles2ContigStrips     
+788 static tiffcp.c_cpSeparateTiles2SeparateStrips     
+789 static tiffcp.c_cpBiasedContig2Contig     
+790 static tiffcp.c_cpContig2ContigByRow     
+791 static tiffcp.c_cpDecodedStrips     
+792 static tiffcp.c_cpContig2SeparateByRow     
+793 static tiffcp.c_cpSeparate2ContigByRow     
+794 static tiffcp.c_cpSeparate2SeparateByRow     
+795 static tiffcp.c_cpImage     
+796 static tiffcp.c_readContigStripsIntoBuffer     
+797 static tiffcp.c_writeBufferToContigTiles     
+798 static tiffcp.c_limitMalloc     
+799 static tiffcp.c_cpStripToTile     
+800 static tiffcp.c_writeBufferToSeparateTiles     
+801 static tiffcp.c_cpContigBufToSeparateBuf     
+802 static tiffcp.c_readSeparateStripsIntoBuffer     
+803 static tiffcp.c_readContigTilesIntoBuffer     
+804 static tiffcp.c_readSeparateTilesIntoBuffer     
+805 static tiffcp.c_cpSeparateBufToContigBuf     
+806 static tiffcp.c_writeBufferToContigStrips     
+807 static tiffcp.c_writeBufferToSeparateStrips     
+808 static tiffcp.c_lineSubtractFn     
+809 static tiffcp.c_subtract8     
+810 static tiffcp.c_subtract16     
+811 static tiffcp.c_subtract32     
