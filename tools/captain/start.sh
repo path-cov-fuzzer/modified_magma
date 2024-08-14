@@ -80,6 +80,8 @@ else
         wait
     )
 
+    exit
+
     # echo_time "Container for $FUZZER/$TARGET/$PROGRAM started in $container_id"
     # docker logs -f "$container_id" &
     # exit_code=$(docker wait $container_id)
