@@ -117,14 +117,19 @@ COPY --chown=magma:magma ${magma_root}/${fuzzer_path5} ${FUZZER5}/
 
 USER magma:magma
 
+ENV FUZZER ${FUZZER1}
 RUN ${FUZZER1}/fetch.sh
 RUN ${FUZZER1}/build.sh
+ENV FUZZER ${FUZZER2}
 RUN ${FUZZER2}/fetch.sh
 RUN ${FUZZER2}/build.sh
+ENV FUZZER ${FUZZER3}
 RUN ${FUZZER3}/fetch.sh
 RUN ${FUZZER3}/build.sh
+ENV FUZZER ${FUZZER4}
 RUN ${FUZZER4}/fetch.sh
 RUN ${FUZZER4}/build.sh
+ENV FUZZER ${FUZZER5}
 RUN ${FUZZER5}/fetch.sh
 RUN ${FUZZER5}/build.sh
 

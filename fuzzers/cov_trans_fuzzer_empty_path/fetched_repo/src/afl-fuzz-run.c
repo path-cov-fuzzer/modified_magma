@@ -83,31 +83,34 @@ fuzz_run_target(afl_state_t *afl, afl_forkserver_t *fsrv, u32 timeout) {
   u64 cur_execs = fsrv->total_execs; // 获取当前总执行数
   u32 cur_queued_cov = afl->queued_with_cov + afl->queued_with_pat; // 获取当前队列中的 +cov 和 +pat 数量
 
-  // 如果是第一次运行到这里，那么首先记录 prev_ms 和 prev_queued_cov
-  if (-1 == prev_execs){
-    assert(-1 == prev_queued_cov);
-    prev_execs = cur_execs;
-    prev_queued_cov = cur_queued_cov;
-  }
-  // 如果当前总执行数已经是之前的三倍，那么看看 corpus_count 是否有变化 (TODO: )
-  if(cur_execs >= prev_execs * 6) {
-    // 如果 corpus_count 没有增加，那么切换到下一个 k 
-    assert(cur_queued_cov >= prev_queued_cov);
-    if (cur_queued_cov == prev_queued_cov) {
-        if(NULL == used_path_reducer)
-            used_path_reducer = path_reducer3;
-        else if(path_reducer3 == used_path_reducer)
-            used_path_reducer = path_reducer5;
-        else if(path_reducer5 == used_path_reducer)
-            used_path_reducer = path_reducer9;
-        else if(path_reducer9 == used_path_reducer)
-            used_path_reducer = path_reducer17;
-        else
-            ; // if used_path_reducer == path_reducer17, then do nothing
+  // 如果当前执行次数低于 50W 次，那么不启动这个机制
+  if (cur_execs < 500000) {
+    // 如果是第一次运行到这里，那么首先记录 prev_ms 和 prev_queued_cov
+    if (-1 == prev_execs){
+        assert(-1 == prev_queued_cov);
+        prev_execs = cur_execs;
+        prev_queued_cov = cur_queued_cov;
     }
-    // 哪怕 corpus_count 增加了，也要重新记录 prev_ms 和 prev_queued_cov
-    prev_execs = cur_execs;
-    prev_queued_cov = cur_queued_cov;
+    // 如果当前总执行数已经是之前的6倍，那么看看 corpus_count 是否有变化 (TODO: )
+    if(cur_execs >= prev_execs * 6) {
+        // 如果 corpus_count 没有增加，那么切换到下一个 k 
+        assert(cur_queued_cov >= prev_queued_cov);
+        if (cur_queued_cov == prev_queued_cov) {
+            if(NULL == used_path_reducer)
+                used_path_reducer = path_reducer3;
+            else if(path_reducer3 == used_path_reducer)
+                used_path_reducer = path_reducer5;
+            else if(path_reducer5 == used_path_reducer)
+                used_path_reducer = path_reducer9;
+            else if(path_reducer9 == used_path_reducer)
+                used_path_reducer = path_reducer17;
+            else
+                ; // if used_path_reducer == path_reducer17, then do nothing
+        }
+        // 哪怕 corpus_count 增加了，也要重新记录 prev_ms 和 prev_queued_cov
+        prev_execs = cur_execs;
+        prev_queued_cov = cur_queued_cov;
+    }
   }
   // CYHADDED: 如果一小时内 corpus count 没有变化，那么就切换到下一个 k ------------ end
 
