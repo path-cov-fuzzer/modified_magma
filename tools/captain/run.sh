@@ -246,14 +246,15 @@ for FUZZER in "${FUZZERS[@]}"; do
 
         export FUZZARGS="$(get_var_or_default $FUZZER $TARGET 'FUZZARGS')"
 
-        # build the Docker image
-        IMG_NAME="magma/$FUZZER/$TARGET"
-        echo_time "Building $IMG_NAME"
-        if ! "$MAGMA"/tools/captain/build.sh &> \
-            "${LOGDIR}/${FUZZER}_${TARGET}_build.log"; then
-            echo_time "Failed to build $IMG_NAME. Check build log for info."
-            continue
-        fi
+        # in_docker 版本里，不需要构建 docker images
+        # # build the Docker image
+        # IMG_NAME="magma/$FUZZER/$TARGET"
+        # echo_time "Building $IMG_NAME"
+        # if ! "$MAGMA"/tools/captain/build.sh &> \
+        #     "${LOGDIR}/${FUZZER}_${TARGET}_build.log"; then
+        #     echo_time "Failed to build $IMG_NAME. Check build log for info."
+        #     continue
+        # fi
 
         PROGRAMS=($(get_var_or_default $FUZZER $TARGET 'PROGRAMS'))
         for PROGRAM in "${PROGRAMS[@]}"; do

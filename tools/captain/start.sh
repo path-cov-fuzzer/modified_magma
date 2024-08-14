@@ -59,19 +59,27 @@ if [ -t 1 ]; then
         --env=FUZZARGS="$FUZZARGS" --env=POLL="$POLL" --env=TIMEOUT="$TIMEOUT" \
         $flag_aff $flag_ep "$IMG_NAME"
 else
-    container_id=$(
-    docker run -dt $flag_volume \
-        --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \
-        --env=PROGRAM="$PROGRAM" --env=ARGS="$ARGS" \
-        --env=FUZZARGS="$FUZZARGS" --env=POLL="$POLL" --env=TIMEOUT="$TIMEOUT" \
-        --network=host \
-        $flag_aff $flag_ep "$IMG_NAME"
-    )
-    container_id=$(cut -c-12 <<< $container_id)
-    echo_time "Container for $FUZZER/$TARGET/$PROGRAM started in $container_id"
-    docker logs -f "$container_id" &
-    exit_code=$(docker wait $container_id)
-    exit $exit_code
+    # 通常是运行到这里
+    # SHARED 是储存 fuzzing 结果的地方
+    # container_id=$(
+    # docker run -dt $flag_volume \
+    #     --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \
+    #     --env=PROGRAM="$PROGRAM" --env=ARGS="$ARGS" \
+    #     --env=FUZZARGS="$FUZZARGS" --env=POLL="$POLL" --env=TIMEOUT="$TIMEOUT" \
+    #     --network=host \
+    #     $flag_aff $flag_ep "$IMG_NAME"
+    # )
+    # container_id=$(cut -c-12 <<< $container_id)
+    export PROGRAM=$PROGRAM
+    export ARGS=$ARGS
+    export FUZZARGS=$FUZZARGS
+    export TIMEOUT=$TIMEOUT
+    bash $MAGMA/magma/run.sh
+
+    # echo_time "Container for $FUZZER/$TARGET/$PROGRAM started in $container_id"
+    # docker logs -f "$container_id" &
+    # exit_code=$(docker wait $container_id)
+    # exit $exit_code
 fi
 set +x
 
