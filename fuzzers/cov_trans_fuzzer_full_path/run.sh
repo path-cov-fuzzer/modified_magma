@@ -39,15 +39,13 @@ export AFL_MAP_SIZE=256000
 # export AFL_DRIVER_DONT_DEFER=1
 
 # 针对 path_fuzzer 的一些环境变量设置
-export CFG_BIN_FILE="$SHARED/${PROGRAM}_cfg.bin"
+export CFG_BIN_FILE="$OUT/cfgbin/${PROGRAM}_cfg.bin"
 export LD_LIBRARY_PATH=$FUZZER/repo
 # export AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
 
-cp $OUT/cfg.txt $SHARED/cfg.txt
-
 set -x
 
-"$FUZZER/repo/afl-fuzz" -i "$TARGET/corpus/$PROGRAM" -o "$SHARED/findings" \
+"$FUZZER/repo/afl-fuzz" -i "$OUT/corpus/$PROGRAM" -o "$SHARED/findings" \
     "${flag_cmplog[@]}" -d \
     $FUZZARGS -- "$OUT/afl/$PROGRAM" $ARGS 2>&1
 

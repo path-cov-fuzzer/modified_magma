@@ -17,6 +17,7 @@ set -e
 ##
 
 export OUT=/magma_out
+export FUZZER=/magma/magma/fuzzers/$FUZZER
 
 # CYHNO_TE: in_docker 版本里不需要这些
 # # CYHADDED: 生成 CFG binary
