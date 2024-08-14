@@ -70,11 +70,15 @@ else
     #     $flag_aff $flag_ep "$IMG_NAME"
     # )
     # container_id=$(cut -c-12 <<< $container_id)
-    export PROGRAM=$PROGRAM
-    export ARGS=$ARGS
-    export FUZZARGS=$FUZZARGS
-    export TIMEOUT=$TIMEOUT
-    bash $MAGMA/magma/run.sh
+    (
+        export PROGRAM=$PROGRAM
+        export ARGS=$ARGS
+        export FUZZARGS=$FUZZARGS
+        export TIMEOUT=$TIMEOUT
+        bash $MAGMA/magma/run.sh &
+
+        wait
+    )
 
     # echo_time "Container for $FUZZER/$TARGET/$PROGRAM started in $container_id"
     # docker logs -f "$container_id" &
