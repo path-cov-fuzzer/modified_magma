@@ -41,40 +41,42 @@ if [ ! -z $HARDEN ]; then
     harden_flag="--build-arg harden=1"
 fi
 
-# CYHADDED: AFL++ 的 LLVM17 ------------------------------- start
-set -x
-if [ "$FUZZER" == "aflplusplus" ]; then
+singularity build $MAGMA/singularity_images/${FUZZER}_${TARGET}.sif docker-daemon:$IMG_NAME:latest
 
-docker build -t "$IMG_NAME" \
-    --build-arg fuzzer_name="$FUZZER" \
-    --build-arg target_name="$TARGET" \
-    --build-arg USER_ID=$(id -u $USER) \
-    --build-arg GROUP_ID=$(id -g $USER) \
-    $mode_flag $isan_flag $harden_flag \
-    -f "$MAGMA/docker/Dockerfile.my" "$MAGMA"
+# # CYHADDED: AFL++ 的 LLVM17 ------------------------------- start
+# set -x
+# if [ "$FUZZER" == "aflplusplus" ]; then
 
-elif [[ "$FUZZER" =~ "path_fuzzer" ]] || [[ "$FUZZER" =~ "cov_trans_fuzzer" ]]; then
+# docker build -t "$IMG_NAME" \
+#     --build-arg fuzzer_name="$FUZZER" \
+#     --build-arg target_name="$TARGET" \
+#     --build-arg USER_ID=$(id -u $USER) \
+#     --build-arg GROUP_ID=$(id -g $USER) \
+#     $mode_flag $isan_flag $harden_flag \
+#     -f "$MAGMA/docker/Dockerfile.my" "$MAGMA"
 
-docker build -t "$IMG_NAME" \
-    --build-arg fuzzer_name="$FUZZER" \
-    --build-arg target_name="$TARGET" \
-    --build-arg USER_ID=$(id -u $USER) \
-    --build-arg GROUP_ID=$(id -g $USER) \
-    $mode_flag $isan_flag $harden_flag \
-    -f "$MAGMA/docker/Dockerfile.path" "$MAGMA"
+# elif [[ "$FUZZER" =~ "path_fuzzer" ]] || [[ "$FUZZER" =~ "cov_trans_fuzzer" ]]; then
 
-else
+# docker build -t "$IMG_NAME" \
+#     --build-arg fuzzer_name="$FUZZER" \
+#     --build-arg target_name="$TARGET" \
+#     --build-arg USER_ID=$(id -u $USER) \
+#     --build-arg GROUP_ID=$(id -g $USER) \
+#     $mode_flag $isan_flag $harden_flag \
+#     -f "$MAGMA/docker/Dockerfile.path" "$MAGMA"
 
-docker build -t "$IMG_NAME" \
-    --build-arg fuzzer_name="$FUZZER" \
-    --build-arg target_name="$TARGET" \
-    --build-arg USER_ID=$(id -u $USER) \
-    --build-arg GROUP_ID=$(id -g $USER) \
-    $mode_flag $isan_flag $harden_flag \
-    -f "$MAGMA/docker/Dockerfile" "$MAGMA"
+# else
 
-fi
-set +x
-# CYHADDED: AFL++ 的 LLVM17 ------------------------------- end
+# docker build -t "$IMG_NAME" \
+#     --build-arg fuzzer_name="$FUZZER" \
+#     --build-arg target_name="$TARGET" \
+#     --build-arg USER_ID=$(id -u $USER) \
+#     --build-arg GROUP_ID=$(id -g $USER) \
+#     $mode_flag $isan_flag $harden_flag \
+#     -f "$MAGMA/docker/Dockerfile" "$MAGMA"
+
+# fi
+# set +x
+# # CYHADDED: AFL++ 的 LLVM17 ------------------------------- end
 
 echo "$IMG_NAME"
