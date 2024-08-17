@@ -68,6 +68,8 @@ if [[ "$TARGET" != *"base64"* ]] && [[ "$TARGET" != *"md5sum"* ]] && [[ "$TARGET
 #       itself is the fuzz target. In the case of Angora, we might need to
 #       replace $OUT by $OUT/fast and $OUT/track, for instance.
 
+    bash $FUZZER/generateCFG.sh
+
 else 
 
     echo "branch 2"
@@ -92,4 +94,11 @@ else
 	)
 
 fi
+
+
+
+
+
+
+
 
