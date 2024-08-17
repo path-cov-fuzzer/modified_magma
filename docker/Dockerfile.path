@@ -75,7 +75,7 @@ RUN	echo "magma:amgam" | chpasswd && usermod -a -G sudo magma
 
 RUN mkdir -p ${SHARED} ${OUT} && \
 	chown magma:magma ${SHARED} ${OUT} && \
-	chmod 744 ${SHARED} ${OUT}
+	chmod 777 ${SHARED} ${OUT}
 
 ARG magma_path=magma
 ENV MAGMA 	${MAGMA_R}/${magma_path}
