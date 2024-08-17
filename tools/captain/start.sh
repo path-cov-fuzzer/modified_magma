@@ -51,34 +51,37 @@ if [ ! -z "$SHARED" ]; then
     flag_volume="--volume=$SHARED:/magma_shared"
 fi
 
-set -x
-if [ -t 1 ]; then
-    docker run -it $flag_volume \
-        --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \
-        --env=PROGRAM="$PROGRAM" --env=ARGS="$ARGS" \
-        --env=FUZZARGS="$FUZZARGS" --env=POLL="$POLL" --env=TIMEOUT="$TIMEOUT" \
-        $flag_aff $flag_ep "$IMG_NAME"
-else
-    container_id=$(
-    docker run -dt $flag_volume \
-        --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \
-        --env=PROGRAM="$PROGRAM" --env=ARGS="$ARGS" \
-        --env=FUZZARGS="$FUZZARGS" --env=POLL="$POLL" --env=TIMEOUT="$TIMEOUT" \
-        --network=host \
-        $flag_aff $flag_ep "$IMG_NAME"
-    )
-    container_id=$(cut -c-12 <<< $container_id)
-    echo_time "Container for $FUZZER/$TARGET/$PROGRAM started in $container_id"
-    docker logs -f "$container_id" &
-    exit_code=$(docker wait $container_id)
-    exit $exit_code
-fi
-set +x
+set -x 
 
-    # docker run -dt $flag_volume \
-    #     --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \
-    #     --env=PROGRAM="$PROGRAM" --env=ARGS="$ARGS" \
-    #     --env=FUZZARGS="$FUZZARGS" --env=POLL="$POLL" --env=TIMEOUT="$TIMEOUT" \
-    #     --network=none \
-    #     $flag_aff $flag_ep "$IMG_NAME"
-    # )
+singularity run --bind=$SHARED:/magma_shared \
+    --env PROGRAM="$PROGRAM" --env ARGS="$ARGS" \
+    --env FUZZARGS="$FUZZARGS" --env POLL="$POLL" --env TIMEOUT="$TIMEOUT" \
+    --env=AFFINITY=$AFFINITY --network=host \
+    $MAGMA/singularity_images/${FUZZER}_${TARGET}.sif 
+
+set +x 
+
+# set -x
+# if [ -t 1 ]; then
+#     docker run -it $flag_volume \
+#         --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \
+#         --env=PROGRAM="$PROGRAM" --env=ARGS="$ARGS" \
+#         --env=FUZZARGS="$FUZZARGS" --env=POLL="$POLL" --env=TIMEOUT="$TIMEOUT" \
+#         $flag_aff $flag_ep "$IMG_NAME"
+# else
+#     container_id=$(
+#     docker run -dt $flag_volume \
+#         --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \
+#         --env=PROGRAM="$PROGRAM" --env=ARGS="$ARGS" \
+#         --env=FUZZARGS="$FUZZARGS" --env=POLL="$POLL" --env=TIMEOUT="$TIMEOUT" \
+#         --network=host \
+#         $flag_aff $flag_ep "$IMG_NAME"
+#     )
+#     container_id=$(cut -c-12 <<< $container_id)
+#     echo_time "Container for $FUZZER/$TARGET/$PROGRAM started in $container_id"
+#     docker logs -f "$container_id" &
+#     exit_code=$(docker wait $container_id)
+#     exit $exit_code
+# fi
+# set +x
+

@@ -115,10 +115,11 @@ start_campaign()
         fi
 
         if [ -z $NO_ARCHIVE ]; then
-            # only one tar job runs at a time, to prevent out-of-storage errors
-            mutex $MUX_TAR \
-              tar -cf "${CAMPAIGN_ARDIR}/${ARCID}/${TARBALL_BASENAME}.tar" -C "$SHARED" . &>/dev/null && \
-            rm -rf "$SHARED"
+            # # only one tar job runs at a time, to prevent out-of-storage errors
+            # mutex $MUX_TAR \
+            #   tar -cf "${CAMPAIGN_ARDIR}/${ARCID}/${TARBALL_BASENAME}.tar" -C "$SHARED" . &>/dev/null && \
+            # rm -rf "$SHARED"
+            mutex $MUX_TAR echo "we do not do tar job !!!"
         else
             # overwrites empty $ARCID directory with the $SHARED directory
             mv -T "$SHARED" "${CAMPAIGN_ARDIR}/${ARCID}"
@@ -246,26 +247,26 @@ for FUZZER in "${FUZZERS[@]}"; do
 
         export FUZZARGS="$(get_var_or_default $FUZZER $TARGET 'FUZZARGS')"
 
-        # build the Docker image
-        IMG_NAME="magma/$FUZZER/$TARGET"
-        echo_time "Building $IMG_NAME"
-        if ! "$MAGMA"/tools/captain/build.sh &> \
-            "${LOGDIR}/${FUZZER}_${TARGET}_build.log"; then
-            echo_time "Failed to build $IMG_NAME. Check build log for info."
-            continue
-        fi
+        # # build the Docker image
+        # IMG_NAME="magma/$FUZZER/$TARGET"
+        # echo_time "Building $IMG_NAME"
+        # if ! "$MAGMA"/tools/captain/build.sh &> \
+        #     "${LOGDIR}/${FUZZER}_${TARGET}_build.log"; then
+        #     echo_time "Failed to build $IMG_NAME. Check build log for info."
+        #     continue
+        # fi
 
-        # PROGRAMS=($(get_var_or_default $FUZZER $TARGET 'PROGRAMS'))
-        # for PROGRAM in "${PROGRAMS[@]}"; do
-        #     export PROGRAM
-        #     export ARGS="$(get_var_or_default $FUZZER $TARGET $PROGRAM 'ARGS')"
+        PROGRAMS=($(get_var_or_default $FUZZER $TARGET 'PROGRAMS'))
+        for PROGRAM in "${PROGRAMS[@]}"; do
+            export PROGRAM
+            export ARGS="$(get_var_or_default $FUZZER $TARGET $PROGRAM 'ARGS')"
 
-        #     echo_time "Starting campaigns for $PROGRAM $ARGS"
-        #     for ((i=0; i<$REPEAT; i++)); do
-        #         export NUMWORKERS="$(get_var_or_default $FUZZER 'CAMPAIGN_WORKERS')"
-        #         export AFFINITY=$(allocate_workers)
-        #         start_ex &
-        #     done
-        # done
+            echo_time "Starting campaigns for $PROGRAM $ARGS"
+            for ((i=0; i<$REPEAT; i++)); do
+                export NUMWORKERS="$(get_var_or_default $FUZZER 'CAMPAIGN_WORKERS')"
+                export AFFINITY=$(allocate_workers)
+                start_ex &
+            done
+        done
     done
 done
