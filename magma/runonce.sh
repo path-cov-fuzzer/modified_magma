@@ -26,9 +26,9 @@ find_triggered()
     done
 }
 
-cd "$SHARED"
-cp --force "$1" "$SHARED/runonce.tmp"
-out="$($OUT/monitor --fetch watch --dump human "$FUZZER/runonce.sh" "$SHARED/runonce.tmp")"
+cd "$OUT"
+cp --force "$1" "$OUT/runonce.tmp"
+out="$($OUT/monitor --fetch watch --dump human "$FUZZER/runonce.sh" "$OUT/runonce.tmp")"
 exit_code=$?
 bug=$(find_triggered "$out")
 is_triggered=$?
@@ -40,7 +40,7 @@ if [ $is_triggered -ne 0 ]; then
 fi
 
 echo "$msg"
-rm "$SHARED/runonce.tmp"
+rm "$OUT/runonce.tmp"
 
 if [ $is_triggered -ne 0 ] || [ $exit_code -ne 0 ]; then
 # if [ $is_triggered -ne 0 ] || [ $exit_code -ge 128 ]; then
