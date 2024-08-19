@@ -23,12 +23,13 @@ find_triggered()
             awk '{print $1}' <<< "$line"
             return 1
         fi
+
     done
 }
 
-cd "$OUT"
-cp --force "$1" "$OUT/runonce.tmp"
-out="$($OUT/monitor --fetch watch --dump human "$FUZZER/runonce.sh" "$OUT/runonce.tmp")"
+cd "$SHARED"
+cp --force "$1" "$SHARED/runonce.tmp"
+out="$($OUT/monitor --fetch watch --dump human "$FUZZER/runonce.sh" "$SHARED/runonce.tmp")"
 exit_code=$?
 bug=$(find_triggered "$out")
 is_triggered=$?
@@ -40,7 +41,7 @@ if [ $is_triggered -ne 0 ]; then
 fi
 
 echo "$msg"
-rm "$OUT/runonce.tmp"
+rm "$SHARED/runonce.tmp"
 
 if [ $is_triggered -ne 0 ] || [ $exit_code -ne 0 ]; then
 # if [ $is_triggered -ne 0 ] || [ $exit_code -ge 128 ]; then

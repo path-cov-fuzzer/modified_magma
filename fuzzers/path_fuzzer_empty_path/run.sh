@@ -47,7 +47,6 @@ cp $OUT/cfg.txt $SHARED/cfg.txt
 
 set -x
 
-cp -r $TARGET/corpus/ $SHARED/corpus
 mkdir -p $SHARED/afl
 mkdir -p $SHARED/cmplog
 cp  $OUT/afl/$PROGRAM $SHARED/afl/$PROGRAM

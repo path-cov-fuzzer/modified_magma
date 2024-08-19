@@ -147,8 +147,8 @@ RUN ${FUZZER}/instrument.sh
 # RUN mkdir -p ${OUT}/cfgbin
 # COPY --chown=magma:magma ${magma_root}/cfgbin/${target_name} ${OUT}/cfgbin/
 
-RUN chmod 777 ${MAGMA}/filter_corpus.sh 
-RUN ${MAGMA}/filter_corpus.sh
+# RUN chmod 777 ${MAGMA}/filter_corpus.sh 
+# RUN ${MAGMA}/filter_corpus.sh
 
 ENTRYPOINT "${MAGMA}/run.sh"
 

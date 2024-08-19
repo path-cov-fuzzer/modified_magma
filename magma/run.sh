@@ -32,6 +32,9 @@ if [[ "$FUZZER" != *"aflplusplus"* ]]; then
 	# fi
 fi
 
+mkdir -p "$SHARED/corpus"
+cp -r $TARGET/corpus/$PROGRAM $SHARED/corpus/$PROGRAM
+
 # CYHADDED: 打印一些变量 ------------------ start
 # 设置 CFLAGS, CXXFLAGS, LD, LDFLAGS, SHARED, LIBS
 echo "CFLAGS = $CFLAGS"
@@ -82,6 +85,22 @@ mkdir -p "$MONITOR"
 
 # change working directory to somewhere accessible by the fuzzer and target
 cd "$SHARED"
+
+set +e
+
+# prune the seed corpus for any fault-triggering test-cases
+for seed in "$SHARED/corpus/$PROGRAM"/*; do
+
+    out="$("$MAGMA"/runonce.sh "$seed")"
+    code=$?
+
+    if [ $code -ne 0 ]; then
+        echo "$seed: $out"
+        rm "$seed"
+    fi
+done
+
+set -e
 
 shopt -s nullglob
 seeds=("$1"/*)

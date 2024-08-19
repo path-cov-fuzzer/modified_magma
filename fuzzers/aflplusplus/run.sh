@@ -34,9 +34,6 @@ cp "$OUT/afl/$PROGRAM" "$SHARED/afl"
 mkdir -p "$SHARED/cmplog"
 cp "$OUT/cmplog/$PROGRAM" "$SHARED/cmplog"
 
-mkdir -p "$SHARED/corpus"
-cp -r "$TARGET/corpus/$PROGRAM" "$SHARED/corpus/$PROGRAM"
-
 "$FUZZER/repo/afl-fuzz" -i "$TARGET/corpus/$PROGRAM" -o "$SHARED/findings" \
     "${flag_cmplog[@]}" -d \
     $FUZZARGS -- "$OUT/afl/$PROGRAM" $ARGS 2>&1
