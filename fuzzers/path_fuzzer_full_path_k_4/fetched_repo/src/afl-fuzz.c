@@ -618,7 +618,7 @@ int main(int argc, char **argv_orig, char **envp) {
   // 获取 path_reducer
   printf("generating path reducer .......\n");
   extern PathReducer* get_path_reducer(const void* top_level, int32_t k);
-  path_reducer = get_path_reducer(top, 9);
+  path_reducer = get_path_reducer(top, 4);
   // CYHADDED: 在这里根据环境变量加载 CFG binary，同时获取 path_reducer ----------------------- end
 
   s32 opt, auto_sync = 0 /*, user_set_cache = 0*/;
