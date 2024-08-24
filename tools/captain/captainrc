@@ -92,11 +92,17 @@ FUZZERS=(aflplusplus path_fuzzer_empty_path path_fuzzer_full_path cov_trans_fuzz
 # aflplusplus_TARGETS=(libtiff)
 # path_fuzzer_empty_path_TARGETS=(md5sum)
 
-aflplusplus_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
-path_fuzzer_empty_path_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
-path_fuzzer_full_path_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
-cov_trans_fuzzer_empty_path_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
-cov_trans_fuzzer_full_path_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
+# aflplusplus_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
+# path_fuzzer_empty_path_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
+# path_fuzzer_full_path_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
+# cov_trans_fuzzer_empty_path_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
+# cov_trans_fuzzer_full_path_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
+
+aflplusplus_TARGETS=(php)
+path_fuzzer_empty_path_TARGETS=(php)
+path_fuzzer_full_path_TARGETS=(php)
+cov_trans_fuzzer_empty_path_TARGETS=(php)
+cov_trans_fuzzer_full_path_TARGETS=(php)
 
 # path_fuzzer_empty_path_TARGETS=(php libsndfile libpng libtiff libxml2 sqlite3)
 # path_fuzzer_full_path_TARGETS=(php libsndfile libpng libtiff libxml2 sqlite3)
