@@ -72,7 +72,22 @@ CACHE_ON_DISK=1
 
 # FUZZERS: an array of fuzzer names (from magma/fuzzers/*) to evaluate
 # FUZZERS=(afl aflfast moptafl aflplusplus fairfuzz honggfuzz)
-FUZZERS=(aflplusplus path_fuzzer_empty_path path_fuzzer_full_path cov_trans_fuzzer_empty_path cov_trans_fuzzer_full_path) 
+# FUZZERS=(aflplusplus path_fuzzer_empty_path path_fuzzer_full_path cov_trans_fuzzer_empty_path cov_trans_fuzzer_full_path) 
+FUZZERS=(aflplusplus path_fuzzer_empty_path_k_1 path_fuzzer_empty_path_k_2 path_fuzzer_empty_path_k_4 path_fuzzer_empty_path_k_8 path_fuzzer_full_path_k_1 path_fuzzer_full_path_k_2 path_fuzzer_full_path_k_4 path_fuzzer_full_path_k_8) 
+
+aflplusplus_TARGETS=(base64 md5sum uniq who php libsndfile libpng)
+
+path_fuzzer_empty_path_k_1_TARGETS=(base64 md5sum uniq who php libsndfile libpng)
+path_fuzzer_empty_path_k_2_TARGETS=(base64 md5sum uniq who php libsndfile libpng)
+path_fuzzer_empty_path_k_4_TARGETS=(base64 md5sum uniq who php libsndfile libpng)
+path_fuzzer_empty_path_k_8_TARGETS=(base64 md5sum uniq who php libsndfile libpng)
+
+path_fuzzer_full_path_k_1_TARGETS=(base64 md5sum uniq who php libsndfile libpng)
+path_fuzzer_full_path_k_2_TARGETS=(base64 md5sum uniq who php libsndfile libpng)
+path_fuzzer_full_path_k_4_TARGETS=(base64 md5sum uniq who php libsndfile libpng)
+path_fuzzer_full_path_k_8_TARGETS=(base64 md5sum uniq who php libsndfile libpng)
+
+
 # FUZZERS=(path_fuzzer_empty_path path_fuzzer_full_path cov_trans_fuzzer_empty_path cov_trans_fuzzer_full_path) 
 # FUZZERS=(aflplusplus path_fuzzer_empty_path) 
 # FUZZERS=(path_fuzzer_empty_path cov_trans_fuzzer_full_path) 
@@ -98,11 +113,12 @@ FUZZERS=(aflplusplus path_fuzzer_empty_path path_fuzzer_full_path cov_trans_fuzz
 # cov_trans_fuzzer_empty_path_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
 # cov_trans_fuzzer_full_path_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
 
-aflplusplus_TARGETS=(php)
-path_fuzzer_empty_path_TARGETS=(php)
-path_fuzzer_full_path_TARGETS=(php)
-cov_trans_fuzzer_empty_path_TARGETS=(php)
-cov_trans_fuzzer_full_path_TARGETS=(php)
+## aflplusplus_TARGETS=(php)
+# path_fuzzer_empty_path_TARGETS=(php)
+# path_fuzzer_full_path_TARGETS=(php)
+# cov_trans_fuzzer_empty_path_TARGETS=(php)
+# cov_trans_fuzzer_full_path_TARGETS=(php)
+
 
 # path_fuzzer_empty_path_TARGETS=(php libsndfile libpng libtiff libxml2 sqlite3)
 # path_fuzzer_full_path_TARGETS=(php libsndfile libpng libtiff libxml2 sqlite3)
