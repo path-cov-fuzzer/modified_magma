@@ -27,6 +27,7 @@ if [[ "$TARGET" != *"base64"* ]] && [[ "$TARGET" != *"md5sum"* ]] && [[ "$TARGET
     (
         export OUT="$OUT/afl"
         export LDFLAGS="$LDFLAGS -L$OUT"
+	    export AFL_LLVM_CALLER=1
 
         "$MAGMA/build.sh"
         "$TARGET/build.sh"
@@ -39,6 +40,7 @@ if [[ "$TARGET" != *"base64"* ]] && [[ "$TARGET" != *"md5sum"* ]] && [[ "$TARGET
         export LDFLAGS="$LDFLAGS -L$OUT"
         # export CFLAGS="$CFLAGS -DMAGMA_DISABLE_CANARIES"
 
+	    export AFL_LLVM_CALLER=1
         export AFL_LLVM_CMPLOG=1
 
         "$MAGMA/build.sh"
@@ -57,6 +59,7 @@ else
 		export LIBS=""
 		export CFLAGS="-I. -I./lib -Ilib -I./lib -Isrc -I./src -O2 -Wno-error=implicit-function-declaration"
 		export CXXFLAGS="-I. -I./lib -Ilib -I./lib -Isrc -I./src -O2 -Wno-error=implicit-function-declaration"
+	    export AFL_LLVM_CALLER=1
 
 		"$TARGET/build.sh"
 	)
@@ -66,6 +69,7 @@ else
 		export CFLAGS="-I. -I./lib -Ilib -I./lib -Isrc -I./src -O2 -Wno-error=implicit-function-declaration"
 		export CXXFLAGS="-I. -I./lib -Ilib -I./lib -Isrc -I./src -O2 -Wno-error=implicit-function-declaration"
         export AFL_LLVM_CMPLOG=1
+	    export AFL_LLVM_CALLER=1
 
 		"$TARGET/build.sh"
 	)
