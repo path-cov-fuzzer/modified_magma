@@ -38,6 +38,41 @@
 u64 time_spent_working = 0;
 #endif
 
+// CYHADDED: path_fuzzing 以及 path_reducer --------------------------- start
+#include <path_reduction.h>
+#include <assert.h>
+#include <openssl/sha.h>
+
+// trace hash
+unsigned char trace_hash[SHA256_DIGEST_LENGTH];
+
+// 供全局使用的 path_reducer
+PathReducer* path_reducer = NULL;
+// CYHADDED: path_fuzzing 以及 path_reducer --------------------------- end
+
+// CYHADDED: 添加 SHA256 函数 ------------------------ start
+void sha256(int *data, unsigned char* hash, int counter) {
+    SHA256_CTX sha256_ctx;
+    SHA256_Init(&sha256_ctx);
+    SHA256_Update(&sha256_ctx, data, counter * sizeof(int));
+    SHA256_Final(hash, &sha256_ctx);
+}
+// CYHADDED: 添加 SHA256 函数 ------------------------ end
+
+// CYHADDED: 出错时的路径日志 ------------------------ start
+void writeToLogFile(char *content) {
+    FILE *file = fopen("/magma_shared/path_log.txt", "a"); // 打开文件，以追加模式写入
+    if (file != NULL) {
+        fprintf(file, "%s", content); // 写入内容到文件
+        fclose(file); // 关闭文件
+    } else {
+        printf("无法打开文件 PUT_log.txt\n");
+    }
+}
+
+char formattedContent[256]; // 定义一个足够大的字符数组来存储格式化后的内容
+// CYHADDED: 出错时的路径日志 ------------------------ end
+
 /* Execute target application, monitoring for timeouts. Return status
    information. The called program will update afl->fsrv->trace_bits. */
 
@@ -57,11 +92,6 @@ fuzz_run_target(afl_state_t *afl, afl_forkserver_t *fsrv, u32 timeout) {
   }
 
 #endif
-
-  // CYHADDED: 拷贝一些 afl 阶段名 ------------------------------------ start
-  extern u8 afl_stage_name[256];
-  strcpy(afl_stage_name, afl->stage_name);
-  // CYHADDED: 拷贝一些 afl 阶段名 ------------------------------------ end
 
   fsrv_run_result_t res = afl_fsrv_run_target(fsrv, timeout, &afl->stop_soon);
 
@@ -1092,7 +1122,105 @@ common_fuzz_stuff(afl_state_t *afl, u8 *out_buf, u32 len) {
 
   }
 
+  // CYHADDED: 在这里更新一次 shm counter ---- start
+  if(afl->fsrv.path_trace_bits) {
+    afl->fsrv.path_trace_bits[0] = 0;
+  }
+  // CYHADDED: 在这里更新一次 shm counter ---- end
+
+  // CYHNO_TE: 运行 fuzzing
+  // printf("==================== in afl-fuzz-run.c: common_fuzz_stuff, afl->stage_name = %s =====================\n", afl->stage_name);
   fault = fuzz_run_target(afl, &afl->fsrv, afl->fsrv.exec_tmout);
+
+  // CYHADDED: 先用 Zekun code 对路径进行缩减，随后对共享内存中的数据计算哈希值，接着重置 counter ----------------------------------------- start
+  // 优化：在 "染色阶段", "校准阶段" 和 "裁剪阶段" 不需要计算 reduced_path
+  // printf("==================== in afl-fuzz-run.c: common_fuzz_stuff, afl->stage_name = %s =====================\n", afl->stage_name);
+  if( 0 != strcmp(afl->stage_name, "calibration") && 0 != strcmp(afl->stage_name, "colorization") && 0 != strncmp(afl->stage_name, "trim", 4) ) {
+
+    assert(afl->fsrv.path_trace_bits);
+
+    // 长度不能大于最大值
+    if(afl->fsrv.path_trace_bits[0] > ((afl->fsrv.path_map_size - sizeof(u32)) / sizeof(u32))) {
+
+        // printf("================================= the unreduced path start =================================\n");
+        // printf("size of shared mem = %d\n", fsrv->path_map_size);
+        // printf("length of unreduced path = %d\n", out_len);
+        // for(int i = 1; i <= out_len; i++) {
+        //     printf("%d ", fsrv->path_trace_bits[i]);
+        // }
+        // printf("\n");
+        // printf("================================= the unreduced path end =================================\n");
+
+        // snprintf(formattedContent, 256, "================================= the unreduced path start =================================\n");
+        // writeToLogFile(formattedContent);
+        // snprintf(formattedContent, 256, "fsrv->path_map_size = %d\n", fsrv->path_map_size);
+        // writeToLogFile(formattedContent);
+        // snprintf(formattedContent, 256, "out_len = %d\n", out_len);
+        // writeToLogFile(formattedContent);
+        // snprintf(formattedContent, 256, "fsrv->path_trace_bits[0] = %d\n", fsrv->path_trace_bits[0]);
+        // writeToLogFile(formattedContent);
+        // snprintf(formattedContent, 256, "((fsrv->path_map_size - sizeof(u32)) / sizeof(u32)) = %d\n", ((fsrv->path_map_size - sizeof(u32)) / sizeof(u32)));
+        // writeToLogFile(formattedContent);
+
+        // for(int i = 1; i <= out_len; i++) {
+        //     snprintf(formattedContent, 256, "%d ", fsrv->path_trace_bits[i]);
+        //     writeToLogFile(formattedContent);
+        // }
+        // snprintf(formattedContent, 256, "\n");
+        // writeToLogFile(formattedContent);
+
+        // snprintf(formattedContent, 256, "================================= the unreduced path end =================================\n");
+        // writeToLogFile(formattedContent);
+
+        assert(0);
+    }
+
+    int out_len = -1;
+    BlockID *reduced_path = NULL;
+    int *path_shm_ptr_pointer_to_1 = &(afl->fsrv.path_trace_bits[1]);   // 指向 path_shm_ptr[1] 的指针
+
+    // printf("================================= the unreduced path start =================================\n");
+    // printf("size of shared mem = %d\n", fsrv->path_map_size);
+    // printf("length of path = %d\n", fsrv->path_trace_bits[0]);
+    // for(int i = 1; i <= fsrv->path_trace_bits[0]; i++) {
+    //     printf("%d ", fsrv->path_trace_bits[i]);
+    // }
+    // printf("\n");
+    // printf("================================= the unreduced path end =================================\n");
+
+    // sha256(path_shm_ptr_pointer_to_1, trace_hash, afl->fsrv.path_trace_bits[0]);
+    // printf("unreduced path is ");
+    // for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)
+    //     printf("%02x", trace_hash[i]);
+    // printf("\n");
+    
+    extern const BlockID* reduce_path1(const PathReducer* reducer, const BlockID* path, int32_t path_size, FunID entry_fun_id, int* out_len);
+    reduced_path = reduce_path1(path_reducer, path_shm_ptr_pointer_to_1, afl->fsrv.path_trace_bits[0], 0, &out_len); // CYHTO_DO: 加上 Zekun reduction 后要取消注释
+    // out_len = fsrv->path_trace_bits[0]; // CYHTO_DO: 加上 Zekun reduction 后要去掉
+    assert(out_len >= 0);
+
+    // 声明断言：reduced_path 的长度一定小于等于 原来的path的长度  (当 path 中没有循环，那么就是“等于”)
+    assert(out_len <= afl->fsrv.path_trace_bits[0]);
+
+    // sha256(path_shm_ptr_pointer_to_1, trace_hash, out_len);
+    sha256(reduced_path, trace_hash, out_len);
+    // printf("reduced path is ");
+    // for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)
+    //     printf("%02x", trace_hash[i]);
+    // printf("\n");
+
+    extern void free_boxed_array(int* ptr, size_t len);
+    // free(reduced_path);  // CYHTO_DO: 加上 Zekun reduction 后还要取消注释
+    free_boxed_array(reduced_path, out_len);
+    reduced_path = NULL;
+    // printf("hash = 0x%lx\n", trace_hash);
+  }
+
+  // CYHADDED: 在这里更新一次 shm counter
+  if(afl->fsrv.path_trace_bits) {
+    afl->fsrv.path_trace_bits[0] = 0;
+  }
+  // CYHADDED: 先用 Zekun code 对路径进行缩减，随后对共享内存中的数据计算哈希值，接着重置 counter ----------------------------------------- end
 
   if (afl->stop_soon) { return 1; }
 

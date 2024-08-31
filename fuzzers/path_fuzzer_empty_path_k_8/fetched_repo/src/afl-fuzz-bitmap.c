@@ -530,11 +530,18 @@ save_if_interesting(afl_state_t *afl, void *mem, u32 len, u8 fault) {
     if( 0 != strcmp(afl->stage_name, "calibration") && 0 != strcmp(afl->stage_name, "colorization") && 0 != strncmp(afl->stage_name, "trim", 4) ) {
         extern unsigned char trace_hash[SHA256_DIGEST_LENGTH];
 
-        // printf("in afl-fuzz-bitmap.c, trace_hash = 0x%lx\n", trace_hash);
-
+        // extern bool hashcompare(unsigned char trace_hash[SHA256_DIGEST_LENGTH], bool crash_if_collide);
         extern bool hashcompare(unsigned char trace_hash[SHA256_DIGEST_LENGTH]);
+        // if (new_bits == 0 && hashcompare(trace_hash, false)) {
         if (new_bits == 0 && hashcompare(trace_hash)) {
-        new_bits = 3;
+            new_bits = 3;
+        }
+
+        // 如果 new_bits == 2，说明有新的 edge-coverage，那么也要把路径 hash 加入到种子池里
+        if (2 == new_bits)  {
+            // 有新的 edge-coverage，就一定有新的 path
+            // 但是 reduced 之后可能产生 path 碰撞，所以这里就不 assert 了
+            hashcompare(trace_hash);
         }
     }
     // CYHADDED: 判断 path hash 是否唯一，以判断种子是否新颖 ------------- end

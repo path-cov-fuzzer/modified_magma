@@ -47,6 +47,11 @@ cp $OUT/cfg.txt $SHARED/cfg.txt
 
 set -x
 
+mkdir -p $SHARED/afl
+mkdir -p $SHARED/cmplog
+cp  $OUT/afl/$PROGRAM $SHARED/afl/$PROGRAM
+cp  $OUT/cmplog/$PROGRAM $SHARED/cmplog/$PROGRAM
+
 "$FUZZER/repo/afl-fuzz" -i "$SHARED/corpus/$PROGRAM" -o "$SHARED/findings" \
     "${flag_cmplog[@]}" -d \
     $FUZZARGS -- "$OUT/afl/$PROGRAM" $ARGS 2>&1
