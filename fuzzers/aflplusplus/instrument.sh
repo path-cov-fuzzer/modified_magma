@@ -28,6 +28,7 @@ if [[ "$TARGET" != *"base64"* ]] && [[ "$TARGET" != *"md5sum"* ]] && [[ "$TARGET
         export OUT="$OUT/afl"
         export LDFLAGS="$LDFLAGS -L$OUT"
 	    export AFL_LLVM_CALLER=1
+	    export AFL_USE_ASAN=1
 
         "$MAGMA/build.sh"
         "$TARGET/build.sh"

@@ -41,6 +41,7 @@ if [[ "$TARGET" != *"base64"* ]] && [[ "$TARGET" != *"md5sum"* ]] && [[ "$TARGET
 	    export CALLMAPFILE="$OUT/callmap.txt"
 	    export CFGFILE="$OUT/cfg.txt"
 	    export AFL_LLVM_CALLER=1
+	    export AFL_USE_ASAN=1
 
 	    export OUT="$OUT/afl"
 
