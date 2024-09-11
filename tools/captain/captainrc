@@ -88,15 +88,15 @@ FUZZERS=(aflplusplus path_fuzzer_empty_path_k_1 path_fuzzer_empty_path_k_2 path_
 
 # path_fuzzer_empty_path_k_4_TARGETS=(libsndfile)
 
-# path_fuzzer_original_k_1_TARGETS=(base64 md5sum uniq who php libsndfile libpng)
-# path_fuzzer_original_k_2_TARGETS=(base64 md5sum uniq who php libsndfile libpng)
-# path_fuzzer_original_k_4_TARGETS=(base64 md5sum uniq who php libsndfile libpng)
-# path_fuzzer_original_k_8_TARGETS=(base64 md5sum uniq who php libsndfile libpng)
+# path_fuzzer_empty_path_k_1_TARGETS=(php)
+# path_fuzzer_empty_path_k_2_TARGETS=(php)
+# path_fuzzer_empty_path_k_4_TARGETS=(php)
+# path_fuzzer_empty_path_k_8_TARGETS=(php)
 
 # path_fuzzer_original_k_8_TARGETS=(who)
 
 aflplusplus_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3 openssl lua)
-
+ 
 path_fuzzer_empty_path_k_1_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3 openssl lua)
 path_fuzzer_empty_path_k_2_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3 openssl lua)
 path_fuzzer_empty_path_k_4_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3 openssl lua)
