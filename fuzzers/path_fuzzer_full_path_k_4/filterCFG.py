@@ -52,6 +52,8 @@ wholeCFG[firstBBID] = [False, singleCFG]
 #     2.如果有，那么看第一个 path_inject_eachbb 的参数，随后使用这个参数索引到之前的字典
 #       把字典 value 里对应的 false 设置为 true，随后继续下一个函数，直到扫描完整个反汇编文件
 justEnterFunction = False # 这个flag用来识别是否在一个函数内
+previousline = None
+previous_2_line = None
 with open(sys.argv[2], 'r', encoding='utf-8') as file:
     for line in file:
         # 使用 strip() 去除每行末尾的换行符
@@ -73,13 +75,18 @@ with open(sys.argv[2], 'r', encoding='utf-8') as file:
                 print('matched!')
                 xor_match = re.search(r'xor\s+%edi,%edi', previousline)
                 mov_match = re.search(r'mov\s+\$(0x[0-9a-fA-F]+),%edi', previousline)
-                assert(xor_match or mov_match)
-                assert(not (xor_match and mov_match))
-                if xor_match:
+                xor_match2 = re.search(r'xor\s+%edi,%edi', previous_2_line)
+                mov_match2 = re.search(r'mov\s+\$(0x[0-9a-fA-F]+),%edi', previous_2_line)
+                print(previousline)
+                assert(xor_match or mov_match or xor_match2 or mov_match2)
+                assert(not (xor_match and mov_match and xor_match2 and mov_match2))
+                if xor_match or xor_match2:
                     # 如果 previousline = xor 汇编指令，path_inject_eachbb 的参数是 0
                     arg = 0
-                else:
+                elif mov_match:
                     arg = int(mov_match.group(1), 16)
+                else:
+                    arg = int(mov_match2.group(1), 16)
                 print(f"arg: {arg}")
                 wholeCFG[arg][0] = True
                 justEnterFunction = False
@@ -92,6 +99,8 @@ with open(sys.argv[2], 'r', encoding='utf-8') as file:
             # 继续下一行文字，直到进入到下一个函数为止
             pass
         # 记录当前行，这一行的目的是在找到 callq path_inject_eachbb 后，寻找这个函数的参数
+        if previousline:
+            previous_2_line = previousline
         previousline = line
     file.close()
 
@@ -111,7 +120,6 @@ with open(sys.argv[3], "w") as file:
 # xor    %esi,%esi
 #   2038f6:       bf 08 32 00 00          mov    $0x3208,%edi
 #   2038fb:       e8 a0 e4 e0 00          callq  1011da0 <path_inject_eachbb>
-
 
 
 
