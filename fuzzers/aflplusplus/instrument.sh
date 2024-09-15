@@ -27,10 +27,7 @@ if [[ "$TARGET" != *"base64"* ]] && [[ "$TARGET" != *"md5sum"* ]] && [[ "$TARGET
         export OUT="$OUT/afl"
         export LDFLAGS="$LDFLAGS -L$OUT"
 	export AFL_LLVM_CALLER=1
-
-	export CFLAGS="$CFLAGS -fsanitize=address"
-	export CXXFLAGS="$CXXFLAGS -fsanitize=address"
-	export LDFLAGS="$LDFLAGS -fsanitize=address"
+	export AFL_USE_ASAN=1
 
         "$MAGMA/build.sh"
         "$TARGET/build.sh"
@@ -63,10 +60,7 @@ else
 		export CFLAGS="-I. -I./lib -Ilib -I./lib -Isrc -I./src -O2 -Wno-error=implicit-function-declaration"
 		export CXXFLAGS="-I. -I./lib -Ilib -I./lib -Isrc -I./src -O2 -Wno-error=implicit-function-declaration"
 	        export AFL_LLVM_CALLER=1
-
-		export CXXFLAGS="$CXXFLAGS -fsanitize=address"
-		export CFLAGS="$CFLAGS -fsanitize=address"
-		export LDFLAGS="$LDFLAGS -fsanitize=address"
+	        export AFL_USE_ASAN=1
 
 		"$TARGET/build.sh"
 	)
