@@ -43,6 +43,10 @@ export CFG_BIN_FILE="$SHARED/${PROGRAM}_cfg.bin"
 export LD_LIBRARY_PATH=$FUZZER/repo
 export AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
 
+# 对 path_reduction 的一些设置
+export PATH_REDUCTION_ON_ERROR="FULL_PATH"
+export PATH_REDUCTION_DEBUG=1
+
 cp $OUT/cfg.txt $SHARED/cfg.txt
 
 set -x
