@@ -24,6 +24,10 @@ if [[ "$TARGET" != *"base64"* ]] && [[ "$TARGET" != *"md5sum"* ]] && [[ "$TARGET
 	# AFL++'s driver is compiled against libc++
 	export CXXFLAGS="$CXXFLAGS -stdlib=libc++"
 
+	export CXXFLAGS="$CXXFLAGS -fsanitize=address"
+	export CFLAGS="$CFLAGS -fsanitize=address"
+	export LDFLAGS="$LDFLAGS -fsanitize=address"
+
 	export OUTAUX=$OUT
 	# Build the AFL-only instrumented version
 	(
@@ -69,7 +73,7 @@ if [[ "$TARGET" != *"base64"* ]] && [[ "$TARGET" != *"md5sum"* ]] && [[ "$TARGET
 #       itself is the fuzz target. In the case of Angora, we might need to
 #       replace $OUT by $OUT/fast and $OUT/track, for instance.
 
-    bash $FUZZER/generateCFG.sh
+        bash $FUZZER/generateCFG.sh
 
 else 
 
@@ -81,6 +85,10 @@ else
 		export CXXFLAGS="-I. -I./lib -Ilib -I./lib -Isrc -I./src -O2 -Wno-error=implicit-function-declaration"
 		export AFL_LLVM_CALLER=1
 
+		export CXXFLAGS="$CXXFLAGS -fsanitize=address"
+                export CFLAGS="$CFLAGS -fsanitize=address"
+                export LDFLAGS="$LDFLAGS -fsanitize=address"
+
 		"$TARGET/build.sh"
 	)
 
@@ -90,6 +98,10 @@ else
 		export CXXFLAGS="-I. -I./lib -Ilib -I./lib -Isrc -I./src -O2 -Wno-error=implicit-function-declaration"
 		export AFL_LLVM_CALLER=1
 	    	export AFL_LLVM_CMPLOG=1
+
+		export CXXFLAGS="$CXXFLAGS -fsanitize=address"
+                export CFLAGS="$CFLAGS -fsanitize=address"
+                export LDFLAGS="$LDFLAGS -fsanitize=address"
 
 		"$TARGET/build.sh"
 	)
