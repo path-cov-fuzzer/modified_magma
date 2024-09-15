@@ -20,16 +20,17 @@ if [[ "$TARGET" != *"base64"* ]] && [[ "$TARGET" != *"md5sum"* ]] && [[ "$TARGET
 
     export LIBS="$LIBS -lc++ -lc++abi $FUZZER/repo/utils/aflpp_driver/libAFLDriver.a"
 
-    # AFL++'s driver is compiled against libc++
-    export CXXFLAGS="$CXXFLAGS -stdlib=libc++ -fsanitize=address"
-    export CFLAGS="$CFLAGS -fsanitize=address"
-    export LDFLAGS="$LDFLAGS -fsanitize=address"
+    export CXXFLAGS="$CXXFLAGS -stdlib=libc++"
 
     # Build the AFL-only instrumented version
     (
         export OUT="$OUT/afl"
         export LDFLAGS="$LDFLAGS -L$OUT"
 	export AFL_LLVM_CALLER=1
+
+	export CFLAGS="$CFLAGS -fsanitize=address"
+	export CXXFLAGS="$CXXFLAGS -fsanitize=address"
+	export LDFLAGS="$LDFLAGS -fsanitize=address"
 
         "$MAGMA/build.sh"
         "$TARGET/build.sh"
@@ -76,10 +77,6 @@ else
 		export CXXFLAGS="-I. -I./lib -Ilib -I./lib -Isrc -I./src -O2 -Wno-error=implicit-function-declaration"
                 export AFL_LLVM_CMPLOG=1
 	        export AFL_LLVM_CALLER=1
-
-		export CXXFLAGS="$CXXFLAGS -fsanitize=address"
-		export CFLAGS="$CFLAGS -fsanitize=address"
-		export LDFLAGS="$LDFLAGS -fsanitize=address"
 
 		"$TARGET/build.sh"
 	)

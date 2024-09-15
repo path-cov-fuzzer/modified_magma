@@ -24,10 +24,6 @@ if [[ "$TARGET" != *"base64"* ]] && [[ "$TARGET" != *"md5sum"* ]] && [[ "$TARGET
 	# AFL++'s driver is compiled against libc++
 	export CXXFLAGS="$CXXFLAGS -stdlib=libc++"
 
-	export CXXFLAGS="$CXXFLAGS -fsanitize=address"
-	export CFLAGS="$CFLAGS -fsanitize=address"
-	export LDFLAGS="$LDFLAGS -fsanitize=address"
-
 	export OUTAUX=$OUT
 	# Build the AFL-only instrumented version
 	(
@@ -45,7 +41,10 @@ if [[ "$TARGET" != *"base64"* ]] && [[ "$TARGET" != *"md5sum"* ]] && [[ "$TARGET
 	    export CALLMAPFILE="$OUT/callmap.txt"
 	    export CFGFILE="$OUT/cfg.txt"
 	    export AFL_LLVM_CALLER=1
-	    export AFL_USE_ASAN=1
+	    
+	    export CXXFLAGS="$CXXFLAGS -fsanitize=address"
+            export CFLAGS="$CFLAGS -fsanitize=address"
+            export LDFLAGS="$LDFLAGS -fsanitize=address"
 
 	    export OUT="$OUT/afl"
 
@@ -98,10 +97,6 @@ else
 		export CXXFLAGS="-I. -I./lib -Ilib -I./lib -Isrc -I./src -O2 -Wno-error=implicit-function-declaration"
 		export AFL_LLVM_CALLER=1
 	    	export AFL_LLVM_CMPLOG=1
-
-		export CXXFLAGS="$CXXFLAGS -fsanitize=address"
-                export CFLAGS="$CFLAGS -fsanitize=address"
-                export LDFLAGS="$LDFLAGS -fsanitize=address"
 
 		"$TARGET/build.sh"
 	)
