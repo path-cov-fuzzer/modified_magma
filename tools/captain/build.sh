@@ -50,6 +50,7 @@ docker build -t "$IMG_NAME" \
     --build-arg target_name="$TARGET" \
     --build-arg USER_ID=$(id -u $USER) \
     --build-arg GROUP_ID=$(id -g $USER) \
+    --network=host \
     $mode_flag $isan_flag $harden_flag \
     -f "$MAGMA/docker/Dockerfile.my" "$MAGMA"
 
@@ -60,6 +61,7 @@ docker build -t "$IMG_NAME" \
     --build-arg target_name="$TARGET" \
     --build-arg USER_ID=$(id -u $USER) \
     --build-arg GROUP_ID=$(id -g $USER) \
+    --network=host \
     $mode_flag $isan_flag $harden_flag \
     -f "$MAGMA/docker/Dockerfile.path" "$MAGMA"
 
