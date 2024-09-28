@@ -27,6 +27,10 @@ MAGMA_STORAGE="$SHARED/canaries.raw"
 
 set -x
 
+# gcc '-DMAGMA_STORAGE="/magma_shared/canaries.raw"' -c /magma/magma/src/storage.c -fPIC -I /magma/magma/src/ -o /magma_out/pre_storage.o
+# gcc -g -O0 '-DMAGMA_STORAGE="/magma_shared/canaries.raw"' /magma/magma/src/monitor.c /magma_out/pre_storage.o -I /magma/magma/src/ -o /magma_out/monitor
+# rm /magma_out/pre_storage.o
+
 $CC $CFLAGS -D"MAGMA_STORAGE=\"$MAGMA_STORAGE\"" -c "$MAGMA/src/storage.c" \
     -fPIC -I "$MAGMA/src/" -o "$OUT/pre_storage.o" $LDFLAGS
 
