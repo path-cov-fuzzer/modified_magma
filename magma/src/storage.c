@@ -58,6 +58,7 @@ size_t stor_forall(data_t buffer, void * (* func)(pcanary_t,void *), \
             i < BUFFERLEN && *cur->name != '\0'; \
             ++i, ++cur) {
         if (results == NULL) {
+            // 从 ./monitor --dump row 过来的话，应该是走这行
             func(cur, arg);
         } else if (i < length) {
             results[i] = func(cur, arg);

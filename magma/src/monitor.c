@@ -173,6 +173,7 @@ bool fetch_file(data_t *data, const char *fname)
 {
     bool success = true;
     pstored_data_t data_ptr;
+    // 先试着打开 canaries.raw，如果失败就创建 canaries.raw
     int fd = open(fname, O_RDWR);
     if (fd == -1) {
         fd = open(fname, O_CREAT | O_RDWR, 0666);
@@ -187,6 +188,7 @@ bool fetch_file(data_t *data, const char *fname)
             goto exit;
         }
 
+        // 用 mmap 映射 canaries.raw，同时用 data_ptr 取映射的内存的起始地址
         data_ptr = mmap(0, FILESIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
         memset(data_ptr, 0, FILESIZE);
     } else {
@@ -194,6 +196,7 @@ bool fetch_file(data_t *data, const char *fname)
     }
 
     /* Since the file may be updated by a live producer, we follow protocol*/
+    // 如果 canaries.raw 里的内容没有被 consumed，那么把数据放进 data 里
     if (!data_ptr->consumed) {
         memcpy(*data, data_ptr->consumer_buffer, sizeof(data_t));
         __sync_synchronize();
@@ -252,7 +255,9 @@ exit:
 int main(int argc, char **argv)
 {
     int err = 0;
+    // 首先解析命令行的参数
     struct arg_item *args = parse_args(&argc, &argv), *tmp;
+    // 如果发现 --help，那么打印帮助信息
     for (tmp = args; tmp->def != NULL; ++tmp) {
         if (tmp->def == &ARG_LIST[ARG_HELP]) {
             print_help();
@@ -260,6 +265,7 @@ int main(int argc, char **argv)
         }
     }
 
+    // 检查命令行参数是否有 --dump or --fetch，若有，则设置相关变量
     struct arg_item *dump_itm = NULL, *fetch_itm = NULL;
     for (tmp = args; tmp->def != NULL; ++tmp) {
         if (tmp->def == &ARG_LIST[ARG_DUMP]) {
@@ -269,14 +275,20 @@ int main(int argc, char **argv)
         }
     }
 
+    // 这块代码是从 canaries.raw 读取数据，放进 data 里
     data_t data;
     if (fetch_itm == NULL || \
             strcmp(fetch_itm->value, fetch_itm->def->dflt) == 0) {
+        // 这个 NAME 就是 “canaries.raw”，定义在 common.h 里
         const char *fname = NAME;
         if (argc > 0) {
             fname = argv[0];
         }
+        // ./monitor --dump row 一定会经过这里
+        // printf("cyhadded, haha\n");
         if (!fetch_file(&data, fname)) {
+            // ./monitor --dump row 在面对旧的 canaries.raw 时，会执行到这里
+            // printf("cyhadded: err=1\n");
             err = 1;
             goto exit;
         }
@@ -300,10 +312,15 @@ int main(int argc, char **argv)
         goto exit;
     }
 
+    // 这一块代码是从 data 里打印数据
     if (dump_itm == NULL || \
             strcmp(dump_itm->value, dump_itm->def->dflt) == 0) {
         dump_raw(&data);
     } else if (strcmp(dump_itm->value, "row") == 0) {
+        // 我估计 ./monitor --dump row 是走到这里
+        // 经过测试，如果是新的 canaries.raw 会走这个分支，但如果不是新的 canaries.raw，不会走这个分支
+        // printf("cyh added\n");
+        // 这里面的代码，是打印 bug 信息的 header，以及具体信息
         dump_row(&data);
     } else if (strcmp(dump_itm->value, "human") == 0) {
         dump_human(&data);

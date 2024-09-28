@@ -43,6 +43,7 @@ static bool magma_init(void)
     if (file == NULL) {
         file = NAME;
     }
+    // 可以看到这里没有 O_CREAT，也就是 PUT 不能创建 canaries.raw，只有 monitor 能创建
     int fd = open(file, O_RDWR);
     if (fd == -1) {
         fprintf(stderr, "Monitor not running. Canaries will be disabled.\n");
@@ -82,7 +83,7 @@ void magma_log(const char *bug, int condition)
     // 猜测：一开始 data_ptr->consumed 是 false
     // 估计这个 flag 是给 monitor 使用的，当上一次执行 PUT 时产生的统计信息让 monitor consume 掉后，
     // PUT 才会把自己触发 bug 的信息发送给 monitor
-    // 但这里就出现了一个问题：只有在 PUT 再次触发 bug 时，这些信息才会发送给 monitor
+    // NOTE: 但这里就出现了一个问题：只有在 PUT 再次触发 bug 时，这些信息才会发送给 monitor
     // 一旦上次 triggered bug 的时候，monitor 的 consumed = false，那么这些信息就发送不出去了
     if (data_ptr->consumed) {
         memcpy(data_ptr->consumer_buffer, data_ptr->producer_buffer, sizeof(data_t));
@@ -93,6 +94,7 @@ void magma_log(const char *bug, int condition)
     }
 
     // magma_faulty 的意思是，这里的错误已经被触发了
+    // 只要有一个 bug 触发了，那么此次运行的这个 PUT 就不会再触发任何其它 bug 了
     magma_faulty = magma_faulty | (bool)condition;
 
 #ifdef MAGMA_HARDEN_CANARIES
