@@ -5,11 +5,14 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <string.h>
+#include <assert.h>
 
 pcanary_t stor_get(data_t buffer, const char *name)
 {
     pcanary_t cur;
     size_t i;
+    // 先在 producer_buffer 里寻找名为 bug_name 的 canary_t 结构体，若找到，则返回
+    // 每个 bug 都有一个 canary_t 
     for (i = 0, cur = buffer; \
         i < BUFFERLEN && *cur->name != '\0'; \
         ++i, ++cur) {
@@ -18,6 +21,9 @@ pcanary_t stor_get(data_t buffer, const char *name)
         }
     }
 
+    // 如果当前 bug 在 producer_buffer 里没有 canary_t，那么创建一个
+    // 这里好像并不担心 cur 指针数组越界，我们加个 assert 吧
+    assert(i < BUFFERLEN);
     // Bug record does not exist, create it
     strncpy(cur->name, name, sizeof(cur->name));
     cur->reached = 0;

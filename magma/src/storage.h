@@ -16,6 +16,7 @@ typedef enum {
 } canary_type_e;
 typedef unsigned long long canary_storage_t;
 
+// 从结构体来看，canary 只有名字，reached，triggered 这几个属性比较重要
 typedef struct {
     char name[16];
     union {
@@ -27,7 +28,10 @@ typedef struct {
     };
 } canary_t, *pcanary_t;
 
+// 定义 canary 结构体数组
+// 定义一个新的类型，data_t，它是 BUFFRLEN 个 canary_t 类型元素的数组
 typedef canary_t data_t[BUFFERLEN];
+
 typedef struct {
     bool consumed;
     data_t producer_buffer;
