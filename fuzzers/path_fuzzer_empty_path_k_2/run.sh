@@ -45,7 +45,7 @@ export AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
 
 # 对 path_reduction 的一些设置
 export PATH_REDUCTION_ON_ERROR="EMPTY_PATH"
-export PATH_REDUCTION_DEBUG=1
+# export PATH_REDUCTION_DEBUG=1
 
 cp $OUT/cfg.txt $SHARED/cfg.txt
 
