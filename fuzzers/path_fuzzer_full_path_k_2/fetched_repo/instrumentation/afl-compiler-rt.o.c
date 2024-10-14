@@ -1349,7 +1349,7 @@ __attribute__((constructor(0))) void __afl_auto_first(void) {
 static bool first = true;    // 表示是第一次执行 path_inject_eachbb 函数
 
 void writeToLogFile(char *content) {
-    FILE *file = fopen("./PUT_log.txt", "a"); // 打开文件，以追加模式写入
+    FILE *file = fopen("/magma_shared/PUT_log.txt", "a"); // 打开文件，以追加模式写入
     if (file != NULL) {
         fprintf(file, "%s\n", content); // 写入内容到文件
         fclose(file); // 关闭文件
@@ -1377,7 +1377,10 @@ void path_inject_eachbb(int integerBBID) {
     }
     else {
         writeToLogFile("path SHM exceeds!\n");
-        assert(0);
+	// return 才能把问题抛给 afl-fuzz，让 afl-fuzz 去 crash
+	// 否则，可能会被 afl-fuzz 认为自己找到了 bug
+        // assert(0);
+	return;
     }
 }
 // CYHADDED: path_inject_eachbb 的定义 ------------------------ end
