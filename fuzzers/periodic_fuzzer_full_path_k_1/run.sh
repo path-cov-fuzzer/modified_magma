@@ -55,7 +55,7 @@ cp  $OUT/afl/$PROGRAM $SHARED/afl/$PROGRAM
 cp  $OUT/cmplog/$PROGRAM $SHARED/cmplog/$PROGRAM
 
 # ===============================================================
-interval=60
+interval=600
 output="$SHARED/findings"
 
 "$FUZZER/repo/afl-fuzz" -i "$SHARED/corpus/$PROGRAM" -o "$SHARED/findings" \
