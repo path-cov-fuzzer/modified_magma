@@ -634,8 +634,8 @@ save_if_interesting(afl_state_t *afl, void *mem, u32 len, u8 fault) {
         }
       }
       // 清空所有 PathHash
-      extern void clearPathHash();
-      clearPathHash();
+      // extern void clearPathHash();
+      // clearPathHash();
       // CYHADDED: 每次发现 edge-cov+ 种子，就把所有 pat+ 种子 disable 掉 ------- start
 
     }
