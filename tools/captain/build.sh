@@ -54,7 +54,7 @@ docker build -t "$IMG_NAME" \
     $mode_flag $isan_flag $harden_flag \
     -f "$MAGMA/docker/Dockerfile.my" "$MAGMA"
 
-elif [[ "$FUZZER" =~ "path_fuzzer" ]] || [[ "$FUZZER" =~ "cov_trans_fuzzer" ]]; then
+elif [[ "$FUZZER" =~ "path_fuzzer" ]] || [[ "$FUZZER" =~ "cov_trans_fuzzer" ]] || [[ "$FUZZER" =~ "seeds_disable" ]] || [[ "$FUZZER" =~ "periodic_fuzzer" ]]; then
 
 docker build -t "$IMG_NAME" \
     --build-arg fuzzer_name="$FUZZER" \
