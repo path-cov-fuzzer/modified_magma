@@ -1140,7 +1140,7 @@ common_fuzz_stuff(afl_state_t *afl, u8 *out_buf, u32 len) {
     assert(afl->fsrv.path_trace_bits);
 
     // 长度不能大于最大值
-    if(afl->fsrv.path_trace_bits[0] > ((afl->fsrv.path_map_size - sizeof(u32)) / sizeof(u32))) {
+    if(afl->fsrv.path_trace_bits[0] * sizeof(u32) > afl->fsrv.path_map_size - sizeof(u32)) {
 
         // printf("================================= the unreduced path start =================================\n");
         // printf("size of shared mem = %d\n", fsrv->path_map_size);
