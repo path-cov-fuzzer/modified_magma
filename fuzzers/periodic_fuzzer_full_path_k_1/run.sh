@@ -100,7 +100,7 @@ do
         done
 
 	# 重启命令
-	rm -rf $output
+	mv $output "$SHARED/findings_deprecated.$elapsed_time"
 	"$FUZZER/repo/afl-fuzz" -i "$SHARED/corpus.$elapsed_time" -o "$SHARED/findings" \
     		"${flag_cmplog[@]}" -d \
     		$FUZZARGS -- "$OUT/afl/$PROGRAM" $ARGS 2>&1 &
