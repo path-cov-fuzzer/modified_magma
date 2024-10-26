@@ -1,3 +1,7 @@
+// 考虑做的事情： 2. 一段时间没有新的 edge，恢复 path-seeds
+// 完成 1. new_bits == 1 || new_bits == 2 可以考虑在 new_bits == 1 disable path-seeds
+// 完成 3. 之前 disable path-seeds 的时候把 new_bits == 1 也 disable 了 (bug)
+
 /*
    american fuzzy lop++ - bitmap related routines
    ----------------------------------------------
@@ -536,10 +540,9 @@ save_if_interesting(afl_state_t *afl, void *mem, u32 len, u8 fault) {
             new_bits = 3;
         }
 
-        // 如果 new_bits == 2，说明有新的 edge-coverage，那么也要把路径 hash 加入到种子池里
-        if (2 == new_bits)  {
-            // 有新的 edge-coverage，就一定有新的 path
-            // 但是 reduced 之后可能产生 path 碰撞，所以这里就不 assert 了
+        // new_bits == 2 和 1 时，也要记录 path
+        if (2 == new_bits || 1 == new_bits)  { 
+            // path_fuzzer 是有可能出现路径碰撞的
             hashcompare(trace_hash);
         }
     }
@@ -619,26 +622,35 @@ save_if_interesting(afl_state_t *afl, void *mem, u32 len, u8 fault) {
 
 #endif
 
+
     if (new_bits == 2) {
 
       afl->queue_top->has_new_cov = 1;
       ++afl->queued_with_cov;
 
-      // CYHADDED: 每次发现 edge-cov+ 种子，就把所有 pat+ 种子 disable 掉 ------- start
-      static u32 idx = 0;
-      for (; idx < afl->queued_items; idx++) {
-        struct queue_entry *q = afl->queue_buf[idx];
-        if(0 == q->has_new_cov) {
-            q->disabled = 1;
-            q->perf_score = 0;
+    }
+
+    // CYHADDED: 记录 has_new_pat 属性 -------------- start
+    if (3 == new_bits) {
+      afl->queue_top->has_new_pat = 1;
+    }
+    // CYHADDED: 记录 has_new_pat 属性 -------------- end
+
+    // CYHADDED: 每次发现 non-pat 种子，就把所有 pat+ 种子 disable 掉 ------- start
+    if(1 == new_bits || 2 == new_bits) {
+        
+        static u32 idx = 0;
+        for (; idx < afl->queued_items; idx++) {
+            struct queue_entry *q = afl->queue_buf[idx];
+            if(1 == q->has_new_pat) {
+                q->disabled = 1;
+                q->perf_score = 0;
+            }
         }
-      }
-      // 清空所有 PathHash
-      // extern void clearPathHash();
-      // clearPathHash();
-      // CYHADDED: 每次发现 edge-cov+ 种子，就把所有 pat+ 种子 disable 掉 ------- start
 
     }
+    // CYHADDED: 每次发现 non-pat 种子，就把所有 pat+ 种子 disable 掉 ------- end
+
 
     if (unlikely(need_hash && new_bits)) {
 

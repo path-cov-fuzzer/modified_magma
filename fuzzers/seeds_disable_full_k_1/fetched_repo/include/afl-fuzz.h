@@ -213,6 +213,8 @@ struct queue_entry {
       fs_redundant,                     /* Marked as redundant in the fs?   */
       is_ascii,                         /* Is the input just ascii text?    */
       disabled;                         /* Is disabled from fuzz selection  */
+  // CYHADDED: 增加 has_new_pat 属性
+  bool has_new_pat;
 
   u32 bitmap_size,                      /* Number of bits set in bitmap     */
 #ifdef INTROSPECTION
