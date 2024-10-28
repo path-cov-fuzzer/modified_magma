@@ -73,23 +73,25 @@ CACHE_ON_DISK=1
 # FUZZERS: an array of fuzzer names (from magma/fuzzers/*) to evaluate
 # FUZZERS=(afl aflfast moptafl aflplusplus fairfuzz honggfuzz)
 # FUZZERS=(aflplusplus path_fuzzer_empty_path path_fuzzer_full_path cov_trans_fuzzer_empty_path cov_trans_fuzzer_full_path) 
-FUZZERS=(aflplusplus pathfuzzeremptyk1 pathfuzzeremptyk1new pathfuzzerfullk1 pathfuzzerfullk1new seedsdisableemptyk1 seedsdisableemptyk1new seedsdisablefullk1 seedsdisablefullk1new)
+# FUZZERS=(aflplusplus pathfuzzeremptyk1 pathfuzzeremptyk1new pathfuzzerfullk1 pathfuzzerfullk1new seedsdisableemptyk1 seedsdisableemptyk1new seedsdisablefullk1 seedsdisablefullk1new)
+
+FUZZERS=(aflplusplus pathfuzzeremptyk1 pathfuzzerfullk1 pathfuzzeremptyk1new pathfuzzerfullk1new)
 
 # pathFuzzerEmptyK1_TARGETS=(php libpng lua sqlite3)
 
-aflplusplus_TARGETS=(php)
+aflplusplus_TARGETS=(php libpng lua sqlite3)
 
-pathfuzzeremptyk1_TARGETS=(php)
-pathfuzzeremptyk1new_TARGETS=(php)
+pathfuzzeremptyk1_TARGETS=(php libpng lua sqlite3)
+pathfuzzeremptyk1new_TARGETS=(php libpng lua sqlite3)
 
-pathfuzzerfullk1_TARGETS=(php)
-pathfuzzerfullk1new_TARGETS=(php)
+pathfuzzerfullk1_TARGETS=(php libpng lua sqlite3)
+pathfuzzerfullk1new_TARGETS=(php libpng lua sqlite3)
 
-seedsdisableemptyk1_TARGETS=(php)
-seedsdisableemptyk1new_TARGETS=(php)
+# seedsdisableemptyk1_TARGETS=()
+# seedsdisableemptyk1new_TARGETS=()
 
-seedsdisablefullk1_TARGETS=(php)
-seedsdisablefullk1new_TARGETS=(php)
+# seedsdisablefullk1_TARGETS=()
+# seedsdisablefullk1new_TARGETS=()
 
 # FUZZERS=(path_fuzzer_empty_path_k_4 path_fuzzer_full_path_k_2) 
  

@@ -637,14 +637,14 @@ save_if_interesting(afl_state_t *afl, void *mem, u32 len, u8 fault) {
     // CYHADDED: 记录 has_new_pat 属性 -------------- end
 
     // CYHADDED: 每次发现 non-pat 种子，就把所有 pat+ 种子 disable 掉 ------- start
+    static u32 idx = 0;
     if(1 == new_bits || 2 == new_bits) {
         
-        static u32 idx = 0;
         for (; idx < afl->queued_items; idx++) {
             struct queue_entry *q = afl->queue_buf[idx];
             if(1 == q->has_new_pat) {
                 q->disabled = 1;
-                q->perf_score = 0;
+                // q->perf_score = 0;
             }
         }
 
