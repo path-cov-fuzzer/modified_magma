@@ -53,8 +53,8 @@ docker build -t "$IMG_NAME" \
     --network=host \
     $mode_flag $isan_flag $harden_flag \
     -f "$MAGMA/docker/Dockerfile.my" "$MAGMA"
-
-elif [[ "$FUZZER" =~ "path_fuzzer" ]] || [[ "$FUZZER" =~ "cov_trans_fuzzer" ]] || [[ "$FUZZER" =~ "seeds_disable" ]] || [[ "$FUZZER" =~ "periodic_fuzzer" ]]; then
+# elif [[ "$FUZZER" =~ "path_fuzzer" ]] || [[ "$FUZZER" =~ "cov_trans_fuzzer" ]] || [[ "$FUZZER" =~ "seeds_disable" ]] || [[ "$FUZZER" =~ "periodic_fuzzer" ]]; then
+else
 
 docker build -t "$IMG_NAME" \
     --build-arg fuzzer_name="$FUZZER" \
@@ -64,17 +64,15 @@ docker build -t "$IMG_NAME" \
     --network=host \
     $mode_flag $isan_flag $harden_flag \
     -f "$MAGMA/docker/Dockerfile.path" "$MAGMA"
+# else
 
-else
-
-docker build -t "$IMG_NAME" \
-    --build-arg fuzzer_name="$FUZZER" \
-    --build-arg target_name="$TARGET" \
-    --build-arg USER_ID=$(id -u $USER) \
-    --build-arg GROUP_ID=$(id -g $USER) \
-    $mode_flag $isan_flag $harden_flag \
-    -f "$MAGMA/docker/Dockerfile" "$MAGMA"
-
+# docker build -t "$IMG_NAME" \
+#     --build-arg fuzzer_name="$FUZZER" \
+#     --build-arg target_name="$TARGET" \
+#     --build-arg USER_ID=$(id -u $USER) \
+#     --build-arg GROUP_ID=$(id -g $USER) \
+#     $mode_flag $isan_flag $harden_flag \
+#     -f "$MAGMA/docker/Dockerfile" "$MAGMA"
 fi
 set +x
 # CYHADDED: AFL++ 的 LLVM17 ------------------------------- end

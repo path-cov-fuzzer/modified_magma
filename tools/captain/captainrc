@@ -73,7 +73,23 @@ CACHE_ON_DISK=1
 # FUZZERS: an array of fuzzer names (from magma/fuzzers/*) to evaluate
 # FUZZERS=(afl aflfast moptafl aflplusplus fairfuzz honggfuzz)
 # FUZZERS=(aflplusplus path_fuzzer_empty_path path_fuzzer_full_path cov_trans_fuzzer_empty_path cov_trans_fuzzer_full_path) 
-FUZZERS=(aflplusplus path_fuzzer_empty_path_k_1 path_fuzzer_empty_path_k_2 path_fuzzer_empty_path_k_4 path_fuzzer_empty_path_k_8 path_fuzzer_full_path_k_1 path_fuzzer_full_path_k_2 path_fuzzer_full_path_k_4 path_fuzzer_full_path_k_8)
+FUZZERS=(aflplusplus pathFuzzerEmptyK1 pathFuzzerEmptyK1New pathFuzzerFullK1 pathFuzzerFullK1New seedsDisableEmptyK1 seedsDisableEmptyK1New seedsDisableFullK1 seedsDisableFullK1New)
+
+# pathFuzzerEmptyK1_TARGETS=(php libpng lua sqlite3)
+
+aflplusplus_TARGETS=(php)
+
+pathFuzzerEmptyK1_TARGETS=(php)
+pathFuzzerEmptyK1New_TARGETS=(php)
+
+pathFuzzerFullK1_TARGETS=(php)
+pathFuzzerFullK1New_TARGETS=(php)
+
+seedsDisableEmptyK1_TARGETS=(php)
+seedsDisableEmptyK1New_TARGETS=(php)
+
+seedsDisableFullK1_TARGETS=(php)
+seedsDisableFullK1New_TARGETS=(php)
 
 # FUZZERS=(path_fuzzer_empty_path_k_4 path_fuzzer_full_path_k_2) 
  
@@ -95,17 +111,6 @@ FUZZERS=(aflplusplus path_fuzzer_empty_path_k_1 path_fuzzer_empty_path_k_2 path_
 
 # path_fuzzer_original_k_8_TARGETS=(who)
 
-aflplusplus_TARGETS=(libsndfile libpng libtiff libxml2 php lua sqlite3)
-
-path_fuzzer_empty_path_k_1_TARGETS=(libsndfile libpng libtiff libxml2 php lua sqlite3)
-path_fuzzer_empty_path_k_2_TARGETS=(libsndfile libpng libtiff libxml2 php lua sqlite3)
-path_fuzzer_empty_path_k_4_TARGETS=(libsndfile libpng libtiff libxml2 php lua sqlite3)
-path_fuzzer_empty_path_k_8_TARGETS=(libsndfile libpng libtiff libxml2 php lua sqlite3)
-
-path_fuzzer_full_path_k_1_TARGETS=(libsndfile libpng libtiff libxml2 php lua sqlite3)
-path_fuzzer_full_path_k_2_TARGETS=(libsndfile libpng libtiff libxml2 php lua sqlite3)
-path_fuzzer_full_path_k_4_TARGETS=(libsndfile libpng libtiff libxml2 php lua sqlite3)
-path_fuzzer_full_path_k_8_TARGETS=(libsndfile libpng libtiff libxml2 php lua sqlite3)
 
 # path_fuzzer_empty_path_k_2_TARGETS=(libtiff)
 
