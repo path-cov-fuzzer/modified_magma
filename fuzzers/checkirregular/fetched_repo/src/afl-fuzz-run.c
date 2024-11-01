@@ -1180,18 +1180,16 @@ common_fuzz_stuff(afl_state_t *afl, u8 *out_buf, u32 len) {
     int *path_shm_ptr_pointer_to_1 = &(afl->fsrv.path_trace_bits[1]);   // 指向 path_shm_ptr[1] 的指针
 
     static int unique_count = 0;
-
-    printf("================================= the unreduced path start =================================\n");
+    printf("unique_count = %d\n", unique_count);
+    unique_count++;
+    // printf("================================= the unreduced path start =================================\n");
     // printf("size of shared mem = %d\n", fsrv->path_map_size);
     // printf("length of path = %d\n", fsrv->path_trace_bits[0]);
-    for(int i = 1; i <= fsrv->path_trace_bits[0]; i++) {
-        printf("%d ", fsrv->path_trace_bits[i]);
-    }
-    printf("\n");
-    printf("unique_count = %d\n", unique_count);
-    printf("================================= the unreduced path end =================================\n");
-
-    unique_count++;
+    // for(int i = 1; i <= fsrv->path_trace_bits[0]; i++) {
+    //     printf("%d ", fsrv->path_trace_bits[i]);
+    // }
+    // printf("\n");
+    // printf("================================= the unreduced path end =================================\n");
 
     // sha256(path_shm_ptr_pointer_to_1, trace_hash, afl->fsrv.path_trace_bits[0]);
     // printf("unreduced path is ");

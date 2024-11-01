@@ -47,6 +47,9 @@ export AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
 export PATH_REDUCTION_ON_ERROR="EMPTY_PATH"
 # export PATH_REDUCTION_DEBUG=1
 
+# 开启 memory leakage detection
+export ASAN_OPTIONS=detect_leaks=1
+
 cp $OUT/cfg.txt $SHARED/cfg.txt
 
 set -x
