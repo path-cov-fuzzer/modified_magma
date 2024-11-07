@@ -62,6 +62,10 @@ static bool magma_init(void)
 
 void magma_log(const char *bug, int condition)
 {
+    if(condition) {
+        dprintf(1, "Successfully triggered bug %s, crashing now!\n", bug);
+    }
+
 #ifndef MAGMA_DISABLE_CANARIES
     // 如果初始化出错，那么报错
     if (!data_ptr && !magma_init()) {

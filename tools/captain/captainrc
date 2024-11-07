@@ -30,7 +30,7 @@ REPEAT=1
 # [TIMEOUT]: time to run each campaign. This variable supports one-letter
 # suffixes to indicate duration (s: seconds, m: minutes, h: hours, d: days)
 # (default: 1m)
-TIMEOUT=5m
+TIMEOUT=10m
 
 # [POLL]: time (in seconds) between polls (default: 5)
 POLL=5
@@ -73,14 +73,31 @@ CACHE_ON_DISK=1
 # FUZZERS: an array of fuzzer names (from magma/fuzzers/*) to evaluate
 # FUZZERS=(afl aflfast moptafl aflplusplus fairfuzz honggfuzz)
 # FUZZERS=(aflplusplus path_fuzzer_empty_path path_fuzzer_full_path cov_trans_fuzzer_empty_path cov_trans_fuzzer_full_path) 
-FUZZERS=(aflplusplus pathfuzzeremptyk1 pathfuzzerfullk1 pathfuzzernewk1 pathfuzzernewerk1)
+# FUZZERS=(aflplusplus pathfuzzeremptyk1 pathfuzzerfullk1 pathfuzzernewk1 pathfuzzernewerk1)
+# FUZZERS=(pathfuzzeremptyk1 pathfuzzerfullk1 pathfuzzernewk1 pathfuzzernewerk1)
 
-aflplusplus_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+# FUZZERS=(aflplusplus aflplusplus2 aflplusplus3 aflplusplus4)
+# aflplusplus_TARGETS=(base64 md5sum uniq)
+# aflplusplus2_TARGETS=(base64 md5sum uniq)
+# aflplusplus3_TARGETS=(base64 md5sum uniq)
+# aflplusplus4_TARGETS=(base64 md5sum uniq)
+# FUZZERS=(aflplusplus aflplusplus2 aflplusplus3 aflplusplus4 aflplusplus5)
+
+FUZZERS=(checkirregular)
+checkirregular_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+
+# aflplusplus_TARGETS=(base64)
+# aflplusplus2_TARGETS=(base64)
+# aflplusplus3_TARGETS=(base64)
+# aflplusplus4_TARGETS=(base64)
+# aflplusplus5_TARGETS=(base64)
+
+# aflplusplus_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
  
-pathfuzzeremptyk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
-pathfuzzerfullk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
-pathfuzzernewk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
-pathfuzzernewerk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+# pathfuzzeremptyk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+# pathfuzzerfullk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+# pathfuzzernewk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+# pathfuzzernewerk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
  
 # seedsdisableemptyk1_TARGETS=(php libpng lua sqlite3)
 # seedsdisablefullk1_TARGETS=(php libpng lua sqlite3)
