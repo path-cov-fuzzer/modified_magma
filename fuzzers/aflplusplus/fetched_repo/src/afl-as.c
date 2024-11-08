@@ -612,13 +612,13 @@ int main(int argc, char **argv) {
   gettimeofday(&tv, &tz);
 
   rand_seed = tv.tv_sec ^ tv.tv_usec ^ getpid();
-  // CYHADDED: my own rand seed
-  rand_seed = 1234;
   // in fast systems where pids can repeat in the same seconds we need this
   for (i = 1; (s32)i < argc; i++)
     for (j = 0; j < strlen(argv[i]); j++)
       rand_seed += argv[i][j];
 
+  // CYHADDED: my own rand seed
+  rand_seed = 1234;
   srandom(rand_seed);
 
   edit_params(argc, argv);
