@@ -309,6 +309,8 @@ bool AFLCoverage::runOnModule(Module &M) {
   /* Setup random() so we get Actually Random(TM) outputs from AFL_R() */
   gettimeofday(&tv, &tz);
   rand_seed = tv.tv_sec ^ tv.tv_usec ^ getpid();
+  // CYHADDED: my own rand_seed
+  rand_seed = 1234;
   AFL_SR(rand_seed);
 
   /* Show a banner */
