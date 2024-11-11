@@ -1,9 +1,5 @@
 #!/bin/bash
 
-make clean
-
-bash update_path_reduction.sh
-
 g++ -c hashcompare.cpp
 ar rcs libhashcompare.a hashcompare.o
 export AFL_NO_X86=1
