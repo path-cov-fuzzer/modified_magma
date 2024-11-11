@@ -89,16 +89,18 @@ cd "$SHARED"
 set +e
 
 # prune the seed corpus for any fault-triggering test-cases
-for seed in "$SHARED/corpus/$PROGRAM"/*; do
+if [[ "$TARGET" != *"base64"* ]] && [[ "$TARGET" != *"md5sum"* ]] && [[ "$TARGET" != *"uniq"* ]] && [[ "$TARGET" != *"who"* ]]; then
+	for seed in "$SHARED/corpus/$PROGRAM"/*; do
 
-    out="$("$MAGMA"/runonce.sh "$seed")"
-    code=$?
+	    out="$("$MAGMA"/runonce.sh "$seed")"
+	    code=$?
 
-    if [ $code -ne 0 ]; then
-        echo "$seed: $out"
-        rm "$seed"
-    fi
-done
+	    if [ $code -ne 0 ]; then
+		echo "$seed: $out"
+		rm "$seed"
+	    fi
+	done
+fi
 
 shopt -s nullglob
 seeds=("$1"/*)
