@@ -91,13 +91,17 @@ CACHE_ON_DISK=1
 # aflplusplus4_TARGETS=(base64)
 # aflplusplus5_TARGETS=(base64)
 
-FUZZERS=(aflplusplus pathfuzzeremptyk1 pathfuzzerfullk1 pathfuzzernewk1 pathfuzzernewerk1)
+# FUZZERS=(aflplusplus pathfuzzeremptyk1 pathfuzzerfullk1 pathfuzzernewk1 pathfuzzernewerk1)
 
-aflplusplus_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
-pathfuzzeremptyk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
-pathfuzzerfullk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
-pathfuzzernewk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
-pathfuzzernewerk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+# aflplusplus_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+# pathfuzzeremptyk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+# pathfuzzerfullk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+# pathfuzzernewk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+# pathfuzzernewerk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+
+FUZZERS=(pathfuzzeremptyk1 pathfuzzernewerk1)
+pathfuzzeremptyk1_TARGETS=(libpng)
+pathfuzzernewerk1_TARGETS=(libsndfile libxml2)
  
 # seedsdisableemptyk1_TARGETS=(php libpng lua sqlite3)
 # seedsdisablefullk1_TARGETS=(php libpng lua sqlite3)
