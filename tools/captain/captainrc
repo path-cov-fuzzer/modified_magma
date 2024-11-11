@@ -10,7 +10,7 @@
 WORKDIR=./workdir
 
 # REPEAT: number of campaigns to run per program (per fuzzer)
-REPEAT=1
+REPEAT=2
 
 # [WORKER_MODE]: defines the type of CPU resources to allocate (default: 1)
 # - 1: logical cores (possibly SMT-enabled)
@@ -30,7 +30,7 @@ REPEAT=1
 # [TIMEOUT]: time to run each campaign. This variable supports one-letter
 # suffixes to indicate duration (s: seconds, m: minutes, h: hours, d: days)
 # (default: 1m)
-TIMEOUT=3m
+TIMEOUT=10m
 
 # [POLL]: time (in seconds) between polls (default: 5)
 POLL=5
@@ -73,7 +73,73 @@ CACHE_ON_DISK=1
 # FUZZERS: an array of fuzzer names (from magma/fuzzers/*) to evaluate
 # FUZZERS=(afl aflfast moptafl aflplusplus fairfuzz honggfuzz)
 # FUZZERS=(aflplusplus path_fuzzer_empty_path path_fuzzer_full_path cov_trans_fuzzer_empty_path cov_trans_fuzzer_full_path) 
-FUZZERS=(path_fuzzer_empty_path path_fuzzer_full_path cov_trans_fuzzer_empty_path cov_trans_fuzzer_full_path) 
+# FUZZERS=(pathfuzzeremptyk1 pathfuzzerfullk1 pathfuzzernewk1 pathfuzzernewerk1)
+
+# FUZZERS=(aflplusplus aflplusplus2 aflplusplus3 aflplusplus4)
+# aflplusplus_TARGETS=(base64 md5sum uniq)
+# aflplusplus2_TARGETS=(base64 md5sum uniq)
+# aflplusplus3_TARGETS=(base64 md5sum uniq)
+# aflplusplus4_TARGETS=(base64 md5sum uniq)
+# FUZZERS=(aflplusplus aflplusplus2 aflplusplus3 aflplusplus4 aflplusplus5)
+
+# FUZZERS=(checkirregular)
+# checkirregular_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+
+# aflplusplus_TARGETS=(base64)
+# aflplusplus2_TARGETS=(base64)
+# aflplusplus3_TARGETS=(base64)
+# aflplusplus4_TARGETS=(base64)
+# aflplusplus5_TARGETS=(base64)
+
+# FUZZERS=(aflplusplus pathfuzzeremptyk1 pathfuzzerfullk1 pathfuzzernewk1 pathfuzzernewerk1)
+
+# aflplusplus_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+# pathfuzzeremptyk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+# pathfuzzerfullk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+# pathfuzzernewk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+# pathfuzzernewerk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+
+FUZZERS=(aflplusplus nopathreduction)
+aflplusplus_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+nopathreduction_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+ 
+# seedsdisableemptyk1_TARGETS=(php libpng lua sqlite3)
+# seedsdisablefullk1_TARGETS=(php libpng lua sqlite3)
+# 
+# seedsdisablenewk1_TARGETS=(php libpng lua sqlite3)
+
+# seedsdisableemptyk1_TARGETS=()
+# seedsdisableemptyk1new_TARGETS=()
+
+# seedsdisablefullk1_TARGETS=()
+# seedsdisablefullk1new_TARGETS=()
+
+# FUZZERS=(path_fuzzer_empty_path_k_4 path_fuzzer_full_path_k_2) 
+ 
+# FUZZERS=(path_fuzzer_original_k_1 path_fuzzer_original_k_2 path_fuzzer_original_k_4 path_fuzzer_original_k_8) 
+
+# FUZZERS=(path_fuzzer_original_k_8) 
+
+# FUZZERS=(aflplusplus path_fuzzer_empty_path_k_1) 
+# FUZZERS=(path_fuzzer_empty_path_k_1) 
+
+# aflplusplus_TARGETS=(base64 md5sum uniq who php libsndfile libpng)
+
+# path_fuzzer_empty_path_k_4_TARGETS=(libsndfile)
+
+# path_fuzzer_empty_path_k_1_TARGETS=(php)
+# path_fuzzer_empty_path_k_2_TARGETS=(php)
+# path_fuzzer_empty_path_k_4_TARGETS=(php)
+# path_fuzzer_empty_path_k_8_TARGETS=(php)
+
+# path_fuzzer_original_k_8_TARGETS=(who)
+
+
+# path_fuzzer_empty_path_k_2_TARGETS=(libtiff)
+
+# path_fuzzer_full_path_k_4_TARGETS=(base64 md5sum uniq who)
+
+# FUZZERS=(path_fuzzer_empty_path path_fuzzer_full_path cov_trans_fuzzer_empty_path cov_trans_fuzzer_full_path) 
 # FUZZERS=(aflplusplus path_fuzzer_empty_path) 
 # FUZZERS=(path_fuzzer_empty_path cov_trans_fuzzer_full_path) 
 # FUZZERS=(aflplusplus cov_trans_fuzzer_empty_path cov_trans_fuzzer_full_path) 
@@ -93,11 +159,22 @@ FUZZERS=(path_fuzzer_empty_path path_fuzzer_full_path cov_trans_fuzzer_empty_pat
 # path_fuzzer_empty_path_TARGETS=(md5sum)
 
 # aflplusplus_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
+# path_fuzzer_empty_path_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
+# path_fuzzer_full_path_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
+# cov_trans_fuzzer_empty_path_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
+# cov_trans_fuzzer_full_path_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
 
-path_fuzzer_empty_path_TARGETS=(php libsndfile libpng libtiff libxml2 sqlite3)
-path_fuzzer_full_path_TARGETS=(php libsndfile libpng libtiff libxml2 sqlite3)
-cov_trans_fuzzer_empty_path_TARGETS=(php libsndfile libpng libtiff libxml2 sqlite3)
-cov_trans_fuzzer_full_path_TARGETS=(php libsndfile libpng libtiff libxml2 sqlite3)
+## aflplusplus_TARGETS=(php)
+# path_fuzzer_empty_path_TARGETS=(php)
+# path_fuzzer_full_path_TARGETS=(php)
+# cov_trans_fuzzer_empty_path_TARGETS=(php)
+# cov_trans_fuzzer_full_path_TARGETS=(php)
+
+
+# path_fuzzer_empty_path_TARGETS=(php libsndfile libpng libtiff libxml2 sqlite3)
+# path_fuzzer_full_path_TARGETS=(php libsndfile libpng libtiff libxml2 sqlite3)
+# cov_trans_fuzzer_empty_path_TARGETS=(php libsndfile libpng libtiff libxml2 sqlite3)
+# cov_trans_fuzzer_full_path_TARGETS=(php libsndfile libpng libtiff libxml2 sqlite3)
 
 # aflplusplus_TARGETS=(base64 md5sum uniq who)
 # path_fuzzer_empty_path_TARGETS=(base64 md5sum uniq who)

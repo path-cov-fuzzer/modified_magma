@@ -246,8 +246,8 @@ for FUZZER in "${FUZZERS[@]}"; do
 
         export FUZZARGS="$(get_var_or_default $FUZZER $TARGET 'FUZZARGS')"
 
-	docker tag magma/$FUZZER/$TARGET chenyinhua/magma_${FUZZER}_${TARGET}:latest
-	docker push chenyinhua/magma_${FUZZER}_${TARGET}:latest
+	# 拉取镜像
+	docker pull chenyinhua/magma_${FUZZER}_${TARGET}:latest
 
 #         # build the Docker image
 #         IMG_NAME="magma/$FUZZER/$TARGET"
@@ -258,17 +258,18 @@ for FUZZER in "${FUZZERS[@]}"; do
 #             continue
 #         fi
 
-        # PROGRAMS=($(get_var_or_default $FUZZER $TARGET 'PROGRAMS'))
-        # for PROGRAM in "${PROGRAMS[@]}"; do
-        #     export PROGRAM
-        #     export ARGS="$(get_var_or_default $FUZZER $TARGET $PROGRAM 'ARGS')"
+	# 运行镜像
+        PROGRAMS=($(get_var_or_default $FUZZER $TARGET 'PROGRAMS'))
+        for PROGRAM in "${PROGRAMS[@]}"; do
+            export PROGRAM
+            export ARGS="$(get_var_or_default $FUZZER $TARGET $PROGRAM 'ARGS')"
 
-        #     echo_time "Starting campaigns for $PROGRAM $ARGS"
-        #     for ((i=0; i<$REPEAT; i++)); do
-        #         export NUMWORKERS="$(get_var_or_default $FUZZER 'CAMPAIGN_WORKERS')"
-        #         export AFFINITY=$(allocate_workers)
-        #         start_ex &
-        #     done
-        # done
+            echo_time "Starting campaigns for $PROGRAM $ARGS"
+            for ((i=0; i<$REPEAT; i++)); do
+                export NUMWORKERS="$(get_var_or_default $FUZZER 'CAMPAIGN_WORKERS')"
+                export AFFINITY=$(allocate_workers)
+                start_ex &
+            done
+        done
     done
 done
