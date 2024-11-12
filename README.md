@@ -52,7 +52,7 @@ TIMEOUT=5m
 POLL=5
 
 # CACHE_ON_DISK 这个参数决定把 fuzzing 结果暂时放在内存上，还是直接放磁盘上。
-# 内存容量够的话，就不设置
+# 内存容量够的话，就不设置 (但是不设置的话，可能需要 sudo 权限来挂载 tmpfs 文件系统)
 # [CACHE_ON_DISK]: if set, the cache workdir is mounted on disk instead of
 # in-memory (default: unset)
 # CACHE_ON_DISK=1
@@ -75,8 +75,16 @@ nopathreduction_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfil
 
 ```
 
-<font color="red">FUZZERS 和 aflplusplus_TARGETS 这些环境变量尽量不要修改，因为我不一定有上传相应的 docker images。其它的修改问题不大</font>
+---
 
+### 需要注意的日志
 
+运行 `bash run.sh` 后，会在终端打印日志
+
+由于网络问题，有时候会出现 `Failed to pull chenyinhua/magma_aflplusplus_who:latest. Check build log for info.` 这样的 “docker image 拉取失败” 提示
+
+对于拉取失败的镜像，一般在 captainrc 中重新设置它们，随后再次 `bash run.sh`
+
+---
 
 
