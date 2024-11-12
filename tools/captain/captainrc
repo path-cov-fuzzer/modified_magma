@@ -37,7 +37,7 @@ POLL=5
 
 # [CACHE_ON_DISK]: if set, the cache workdir is mounted on disk instead of
 # in-memory (default: unset)
-CACHE_ON_DISK=1
+# CACHE_ON_DISK=1
 
 # [NO_ARCHIVE]: if set, campaign workdirs will not be tarballed (default: unset)
 # NO_ARCHIVE=1
