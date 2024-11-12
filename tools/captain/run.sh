@@ -251,7 +251,7 @@ for FUZZER in "${FUZZERS[@]}"; do
         echo_time "Pulling $IMG_NAME"
         docker pull "$IMG_NAME" &> "${LOGDIR}/${FUZZER}_${TARGET}_build.log"
 	exit_code=$?
-	if [ $? -ne 0 ]; then
+	if [ $exit_code -ne 0 ]; then
             echo_time "Failed to pull $IMG_NAME. Check build log for info."
             continue
         fi
