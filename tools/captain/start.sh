@@ -36,7 +36,8 @@ MAGMA=${MAGMA:-"$(cd "$(dirname "${BASH_SOURCE[0]}")/../../" >/dev/null 2>&1 \
 export MAGMA
 source "$MAGMA/tools/captain/common.sh"
 
-IMG_NAME="magma/$FUZZER/$TARGET"
+# IMG_NAME="magma/$FUZZER/$TARGET"
+IMG_NAME="chenyinhua/magma_${FUZZER}_${TARGET}"
 
 if [ ! -z $AFFINITY ]; then
     flag_aff="--cpuset-cpus=$AFFINITY --env=AFFINITY=$AFFINITY"

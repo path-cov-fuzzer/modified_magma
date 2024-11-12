@@ -249,8 +249,9 @@ for FUZZER in "${FUZZERS[@]}"; do
 	# 拉取镜像
         IMG_NAME="chenyinhua/magma_${FUZZER}_${TARGET}:latest"
         echo_time "Pulling $IMG_NAME"
-        if ! docker pull "$IMAGE_NAME" &> \
-            "${LOGDIR}/${FUZZER}_${TARGET}_build.log"; then
+        docker pull "$IMG_NAME" &> "${LOGDIR}/${FUZZER}_${TARGET}_build.log"
+	exit_code=$?
+	if [ $? -ne 0 ]; then
             echo_time "Failed to pull $IMG_NAME. Check build log for info."
             continue
         fi
