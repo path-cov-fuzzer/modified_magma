@@ -7,9 +7,11 @@
 ###
 
 # WORKDIR: path to directory where shared volumes will be created
+# 存放 fuzzing 结果的文件夹路径
 WORKDIR=./workdir
 
 # REPEAT: number of campaigns to run per program (per fuzzer)
+# 每个 fuzzer-target pair 重复多少次实验
 REPEAT=2
 
 # [WORKER_MODE]: defines the type of CPU resources to allocate (default: 1)
@@ -30,9 +32,11 @@ REPEAT=2
 # [TIMEOUT]: time to run each campaign. This variable supports one-letter
 # suffixes to indicate duration (s: seconds, m: minutes, h: hours, d: days)
 # (default: 1m)
+# 每个实验运行多长时间
 TIMEOUT=5m
 
 # [POLL]: time (in seconds) between polls (default: 5)
+# 这个是用于 magma PUT 的 monitor 运行参数，不用管
 POLL=5
 
 # [CACHE_ON_DISK]: if set, the cache workdir is mounted on disk instead of
@@ -71,129 +75,12 @@ POLL=5
 ###
 
 # FUZZERS: an array of fuzzer names (from magma/fuzzers/*) to evaluate
-# FUZZERS=(afl aflfast moptafl aflplusplus fairfuzz honggfuzz)
-# FUZZERS=(aflplusplus path_fuzzer_empty_path path_fuzzer_full_path cov_trans_fuzzer_empty_path cov_trans_fuzzer_full_path) 
-# FUZZERS=(pathfuzzeremptyk1 pathfuzzerfullk1 pathfuzzernewk1 pathfuzzernewerk1)
 
-# FUZZERS=(aflplusplus aflplusplus2 aflplusplus3 aflplusplus4)
-# aflplusplus_TARGETS=(base64 md5sum uniq)
-# aflplusplus2_TARGETS=(base64 md5sum uniq)
-# aflplusplus3_TARGETS=(base64 md5sum uniq)
-# aflplusplus4_TARGETS=(base64 md5sum uniq)
-# FUZZERS=(aflplusplus aflplusplus2 aflplusplus3 aflplusplus4 aflplusplus5)
-
-# FUZZERS=(checkirregular)
-# checkirregular_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
-
-# aflplusplus_TARGETS=(base64)
-# aflplusplus2_TARGETS=(base64)
-# aflplusplus3_TARGETS=(base64)
-# aflplusplus4_TARGETS=(base64)
-# aflplusplus5_TARGETS=(base64)
-
-# FUZZERS=(aflplusplus pathfuzzeremptyk1 pathfuzzerfullk1 pathfuzzernewk1 pathfuzzernewerk1)
-
-# aflplusplus_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
-# pathfuzzeremptyk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
-# pathfuzzerfullk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
-# pathfuzzernewk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
-# pathfuzzernewerk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
-
+# 参与实验的 fuzzers
 FUZZERS=(aflplusplus nopathreduction)
+# 每个 fuzzer 要运行的 TARGET
 aflplusplus_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
 nopathreduction_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
- 
-# seedsdisableemptyk1_TARGETS=(php libpng lua sqlite3)
-# seedsdisablefullk1_TARGETS=(php libpng lua sqlite3)
-# 
-# seedsdisablenewk1_TARGETS=(php libpng lua sqlite3)
-
-# seedsdisableemptyk1_TARGETS=()
-# seedsdisableemptyk1new_TARGETS=()
-
-# seedsdisablefullk1_TARGETS=()
-# seedsdisablefullk1new_TARGETS=()
-
-# FUZZERS=(path_fuzzer_empty_path_k_4 path_fuzzer_full_path_k_2) 
- 
-# FUZZERS=(path_fuzzer_original_k_1 path_fuzzer_original_k_2 path_fuzzer_original_k_4 path_fuzzer_original_k_8) 
-
-# FUZZERS=(path_fuzzer_original_k_8) 
-
-# FUZZERS=(aflplusplus path_fuzzer_empty_path_k_1) 
-# FUZZERS=(path_fuzzer_empty_path_k_1) 
-
-# aflplusplus_TARGETS=(base64 md5sum uniq who php libsndfile libpng)
-
-# path_fuzzer_empty_path_k_4_TARGETS=(libsndfile)
-
-# path_fuzzer_empty_path_k_1_TARGETS=(php)
-# path_fuzzer_empty_path_k_2_TARGETS=(php)
-# path_fuzzer_empty_path_k_4_TARGETS=(php)
-# path_fuzzer_empty_path_k_8_TARGETS=(php)
-
-# path_fuzzer_original_k_8_TARGETS=(who)
-
-
-# path_fuzzer_empty_path_k_2_TARGETS=(libtiff)
-
-# path_fuzzer_full_path_k_4_TARGETS=(base64 md5sum uniq who)
-
-# FUZZERS=(path_fuzzer_empty_path path_fuzzer_full_path cov_trans_fuzzer_empty_path cov_trans_fuzzer_full_path) 
-# FUZZERS=(aflplusplus path_fuzzer_empty_path) 
-# FUZZERS=(path_fuzzer_empty_path cov_trans_fuzzer_full_path) 
-# FUZZERS=(aflplusplus cov_trans_fuzzer_empty_path cov_trans_fuzzer_full_path) 
-# FUZZERS=(cov_trans_fuzzer_empty_path cov_trans_fuzzer_full_path) 
-# FUZZERS=(path_fuzzer_empty_path)
-# FUZZERS=(cov_trans_fuzzer_empty_path cov_trans_fuzzer_full_path) 
-
-# [fuzzer_TARGETS]: an array of target names (from magma/targets/*) to fuzz with
-# `fuzzer`. The `fuzzer` prefix is a fuzzer listed in the FUZZERS array
-# (default: all targets)
-# afl_TARGETS=(libpng libtiff libxml2)
-# aflplusplus_TARGETS=(lua php libsndfile libpng libtiff libxml2 sqlite3 openssl)
-# aflplusplus_TARGETS=(openssl)
-# aflplusplus_TARGETS=(libpng libtiff libxml2 sqlite3)
-
-# aflplusplus_TARGETS=(libtiff)
-# path_fuzzer_empty_path_TARGETS=(md5sum)
-
-# aflplusplus_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
-# path_fuzzer_empty_path_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
-# path_fuzzer_full_path_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
-# cov_trans_fuzzer_empty_path_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
-# cov_trans_fuzzer_full_path_TARGETS=(base64 md5sum uniq who php libsndfile libpng libtiff libxml2 sqlite3)
-
-## aflplusplus_TARGETS=(php)
-# path_fuzzer_empty_path_TARGETS=(php)
-# path_fuzzer_full_path_TARGETS=(php)
-# cov_trans_fuzzer_empty_path_TARGETS=(php)
-# cov_trans_fuzzer_full_path_TARGETS=(php)
-
-
-# path_fuzzer_empty_path_TARGETS=(php libsndfile libpng libtiff libxml2 sqlite3)
-# path_fuzzer_full_path_TARGETS=(php libsndfile libpng libtiff libxml2 sqlite3)
-# cov_trans_fuzzer_empty_path_TARGETS=(php libsndfile libpng libtiff libxml2 sqlite3)
-# cov_trans_fuzzer_full_path_TARGETS=(php libsndfile libpng libtiff libxml2 sqlite3)
-
-# aflplusplus_TARGETS=(base64 md5sum uniq who)
-# path_fuzzer_empty_path_TARGETS=(base64 md5sum uniq who)
-# path_fuzzer_full_path_TARGETS=(base64 md5sum uniq who)
-# cov_trans_fuzzer_empty_path_TARGETS=(base64 md5sum uniq who)
-# cov_trans_fuzzer_full_path_TARGETS=(base64 md5sum uniq who)
-
-# path_fuzzer_empty_path_TARGETS=(who)
-# cov_trans_fuzzer_full_path_TARGETS=(md5sum uniq who)
-
-# path_fuzzer_TARGETS=(lavam lua php libsndfile libpng libtiff libxml2 sqlite3 openssl)
-# path_fuzzer_empty_path_TARGETS=(base64 md5sum uniq who)
-# path_fuzzer_TARGETS=(lua libsndfile)
-# path_fuzzer_TARGETS=(libsndfile)
-# path_fuzzer_TARGETS=(sqlite3)
-# path_fuzzer_TARGETS=(libsndfile openssl lua)
-# path_fuzzer_TARGETS=(openssl)
-# path_fuzzer_TARGETS=(libtiff)
-# path_fuzzer_TARGETS=(php libsndfile libtiff libxml2 openssl)
 
 # [fuzzer_target_PROGRAMS]: an array of program names (from
 # magma/targets/target/configrc) to use as execution drivers when fuzzing the
