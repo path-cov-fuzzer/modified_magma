@@ -117,7 +117,7 @@ start_campaign()
         if [ -z $NO_ARCHIVE ]; then
             # only one tar job runs at a time, to prevent out-of-storage errors
             mutex $MUX_TAR \
-              tar -cf "${CAMPAIGN_ARDIR}/${ARCID}/${TARBALL_BASENAME}.tar" -C "$SHARED" . &>/dev/null && \
+                echo "we do not do tar stuff" \
             rm -rf "$SHARED"
         else
             # overwrites empty $ARCID directory with the $SHARED directory
@@ -247,16 +247,13 @@ for FUZZER in "${FUZZERS[@]}"; do
         export FUZZARGS="$(get_var_or_default $FUZZER $TARGET 'FUZZARGS')"
 
 	# 拉取镜像
-	docker pull chenyinhua/magma_${FUZZER}_${TARGET}:latest
-
-#         # build the Docker image
-#         IMG_NAME="magma/$FUZZER/$TARGET"
-#         echo_time "Building $IMG_NAME"
-#         if ! "$MAGMA"/tools/captain/build.sh &> \
-#             "${LOGDIR}/${FUZZER}_${TARGET}_build.log"; then
-#             echo_time "Failed to build $IMG_NAME. Check build log for info."
-#             continue
-#         fi
+        IMG_NAME="chenyinhua/magma_${FUZZER}_${TARGET}:latest"
+        echo_time "Pulling $IMG_NAME"
+        if ! docker pull "$IMAGE_NAME" &> \
+            "${LOGDIR}/${FUZZER}_${TARGET}_build.log"; then
+            echo_time "Failed to pull $IMG_NAME. Check build log for info."
+            continue
+        fi
 
 	# 运行镜像
         PROGRAMS=($(get_var_or_default $FUZZER $TARGET 'PROGRAMS'))
