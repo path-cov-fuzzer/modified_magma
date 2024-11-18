@@ -99,9 +99,9 @@ CACHE_ON_DISK=1
 # pathfuzzernewk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
 # pathfuzzernewerk1_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
 
-FUZZERS=(aflplusplus nopathreduction)
-aflplusplus_TARGETS=(base64)
-nopathreduction_TARGETS=(base64)
+FUZZERS=(aflplusplus)
+# aflplusplus_TARGETS=(base64 md5sum uniq who php libpng lua sqlite3 libsndfile libtiff libxml2 openssl)
+aflplusplus_TARGETS=(base64 uniq who) 
  
 # seedsdisableemptyk1_TARGETS=(php libpng lua sqlite3)
 # seedsdisablefullk1_TARGETS=(php libpng lua sqlite3)
