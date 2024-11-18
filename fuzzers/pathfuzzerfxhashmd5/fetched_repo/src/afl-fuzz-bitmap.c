@@ -29,9 +29,9 @@
   #define NAME_MAX _XOPEN_NAME_MAX
 #endif
 
-// CYHADDED: 使用 SHA256 ---- start
-#include <openssl/sha.h>
-// CYHADDED: 使用 SHA256 ---- end
+// CYHADDED: 使用 MD5 ---- start
+#include <openssl/md5.h>
+// CYHADDED: 使用 MD5 ---- end
 
 /* Write bitmap to file. The bitmap is useful mostly for the secret
    -B option, to focus a separate fuzzing session on a particular
@@ -528,10 +528,10 @@ save_if_interesting(afl_state_t *afl, void *mem, u32 len, u8 fault) {
 
     // CYHADDED: 判断 path hash 是否唯一，以判断种子是否新颖 ------------- start
     if( 0 != strcmp(afl->stage_name, "calibration") && 0 != strcmp(afl->stage_name, "colorization") && 0 != strncmp(afl->stage_name, "trim", 4) ) {
-        extern unsigned char trace_hash[SHA256_DIGEST_LENGTH];
+        extern unsigned char trace_hash[MD5_DIGEST_LENGTH];
 
         // extern bool hashcompare(unsigned char trace_hash[SHA256_DIGEST_LENGTH], bool crash_if_collide);
-        extern bool hashcompare(unsigned char trace_hash[SHA256_DIGEST_LENGTH]);
+        extern bool hashcompare(unsigned char trace_hash[MD5_DIGEST_LENGTH]);
         // if (new_bits == 0 && hashcompare(trace_hash, false)) {
         if (new_bits == 0 && hashcompare(trace_hash)) {
             new_bits = 3;
