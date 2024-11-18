@@ -46,6 +46,7 @@ export AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
 # 对 path_reduction 的一些设置---K=42不需要
 # export PATH_REDUCTION_ON_ERROR="EMPTY_PATH"
 # export PATH_REDUCTION_DEBUG=1
+export K=42
 
 cp $OUT/cfg.txt $SHARED/cfg.txt
 
