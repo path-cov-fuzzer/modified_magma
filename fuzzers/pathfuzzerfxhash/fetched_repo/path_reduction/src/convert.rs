@@ -35,6 +35,13 @@ impl<Alphabet, Name> Node<Alphabet, Name> {
             Node::Extern => RegExp::Epsilon,
         }
     }
+
+    pub fn to_block_id(self) -> Alphabet {
+        match self {
+            Node::Literal(block_id) => block_id,
+            _ => unreachable!(),
+        }
+    }
 }
 
 impl<Alphabet: Eq + Clone + Ord + Debug, Name: Eq + Clone + Ord + Debug> GNFA<Alphabet, Name> {
@@ -177,7 +184,7 @@ impl GNFA<BlockID, FunID> {
     ///
     /// The language accepted is the set of execution paths of `g`.
     pub fn from_intern_cfg(graph: CFG<BlockID, FunID>) -> Self {
-        let CFG { entry, exit, graph } = graph;
+        let CFG { entry, exit: _, graph } = graph;
         let mut the_graph = graph.map(
             |_node_id, _weight| (),
             |edge_id, _weight| {
@@ -193,7 +200,6 @@ impl GNFA<BlockID, FunID> {
             Arc::new(graph.node_weight(entry).unwrap().clone().to_re()),
         );
         let exit_nodes: Vec<_> = the_graph.node_indices().filter(|node_idx| the_graph.neighbors(*node_idx).count() == 0).collect();
-        assert!(exit_nodes.len() > 0);
         if exit_nodes.len() > 1 {
             let exit_node = the_graph.add_node(());
             for node in exit_nodes {
@@ -204,10 +210,12 @@ impl GNFA<BlockID, FunID> {
                 accepting_state: exit_node,
                 the_graph
             }
+        } else if exit_nodes.len() == 0 {
+            unimplemented!("no exit node");
         } else {
             Self {
                 start_state,
-                accepting_state: exit,
+                accepting_state: exit_nodes[0],
                 the_graph,
             }
         }
