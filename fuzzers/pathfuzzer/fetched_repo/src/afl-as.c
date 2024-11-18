@@ -617,7 +617,6 @@ int main(int argc, char **argv) {
     for (j = 0; j < strlen(argv[i]); j++)
       rand_seed += argv[i][j];
 
-  // CYHADDED: my own rand seed
   rand_seed = 1234;
   srandom(rand_seed);
 
