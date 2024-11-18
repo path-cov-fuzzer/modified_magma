@@ -41,10 +41,10 @@ u64 time_spent_working = 0;
 // CYHADDED: path_fuzzing 以及 path_reducer --------------------------- start
 #include <path_reduction.h>
 #include <assert.h>
-#include <openssl/sha.h>
+#include <openssl/md5.h>
 
 // trace hash
-unsigned char trace_hash[SHA256_DIGEST_LENGTH];
+unsigned char trace_hash[MD5_DIGEST_LENGTH];
 
 // 供全局使用的 path_reducer
 PathReducer* path_reducer = NULL;
@@ -52,10 +52,7 @@ PathReducer* path_reducer = NULL;
 
 // CYHADDED: 添加 SHA256 函数 ------------------------ start
 void sha256(int *data, unsigned char* hash, int counter) {
-    SHA256_CTX sha256_ctx;
-    SHA256_Init(&sha256_ctx);
-    SHA256_Update(&sha256_ctx, data, counter * sizeof(int));
-    SHA256_Final(hash, &sha256_ctx);
+    MD5((unsigned char*)data, counter, hash);
 }
 // CYHADDED: 添加 SHA256 函数 ------------------------ end
 

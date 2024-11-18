@@ -1349,7 +1349,7 @@ __attribute__((constructor(0))) void __afl_auto_first(void) {
 static bool first = true;    // 表示是第一次执行 path_inject_eachbb 函数
 
 void writeToLogFile(char *content) {
-    FILE *file = fopen("/magma_shared/PUT_log.txt", "a"); // 打开文件，以追加模式写入
+    FILE *file = fopen("./PUT_log.txt", "a"); // 打开文件，以追加模式写入
     if (file != NULL) {
         fprintf(file, "%s\n", content); // 写入内容到文件
         fclose(file); // 关闭文件
@@ -1362,6 +1362,7 @@ char formattedContent[100]; // 定义一个足够大的字符数组来存储格�
 
 void path_inject_eachbb(int integerBBID) {
     // 如果不在 fuzzing，也就是 afl-fuzz 没有申请共享内存，那么 __afl_path_ptr 为空，直接返回即可
+    // CYHNO_TE: 根据 shmat 的 manual 手册，shmat 返回的映射地址默认是和 4K 页面对齐的
     if(!__afl_path_ptr)
         return;
 
@@ -1377,10 +1378,8 @@ void path_inject_eachbb(int integerBBID) {
     }
     else {
         writeToLogFile("path SHM exceeds!\n");
-	// return 才能把问题抛给 afl-fuzz，让 afl-fuzz 去 crash
-	// 否则，可能会被 afl-fuzz 认为自己找到了 bug
         // assert(0);
-	return;
+        return;
     }
 }
 // CYHADDED: path_inject_eachbb 的定义 ------------------------ end
