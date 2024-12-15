@@ -36,8 +36,8 @@ cmplog binary 需要使用原生的 AFL++ 生成，首先更新子模块，然�
 ```bash
 git submodule update --init AFL++
 cd AFL++
-LLVM_CONFIG=llvm-config-17 make -e source-only
-sudo LLVM_CONFIG=llvm-config-17 make -e install
+LLVM_CONFIG=llvm-config-14 make -e source-only
+sudo LLVM_CONFIG=llvm-config-14 make -e install
 ```
 
 回到 edge 目录下，运行下面的脚本生成 cmplog binary

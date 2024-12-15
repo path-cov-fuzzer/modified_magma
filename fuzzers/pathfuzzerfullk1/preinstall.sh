@@ -2,12 +2,12 @@
 set -e
 
 apt-get update && \
-    apt-get install -y make clang-9 llvm-9-dev libc++-9-dev libc++abi-9-dev \
+    apt-get install -y make clang-9 llvm-config-14-dev libc++-9-dev libc++abi-9-dev \
         build-essential git wget gcc-7-plugin-dev
 
 update-alternatives \
-  --install /usr/lib/llvm              llvm             /usr/lib/llvm-9  20 \
-  --slave   /usr/bin/llvm-config       llvm-config      /usr/bin/llvm-config-9  \
+  --install /usr/lib/llvm              llvm             /usr/lib/llvm-config-14  20 \
+  --slave   /usr/bin/llvm-config       llvm-config      /usr/bin/llvm-config-14  \
     --slave   /usr/bin/llvm-ar           llvm-ar          /usr/bin/llvm-ar-9 \
     --slave   /usr/bin/llvm-as           llvm-as          /usr/bin/llvm-as-9 \
     --slave   /usr/bin/llvm-bcanalyzer   llvm-bcanalyzer  /usr/bin/llvm-bcanalyzer-9 \

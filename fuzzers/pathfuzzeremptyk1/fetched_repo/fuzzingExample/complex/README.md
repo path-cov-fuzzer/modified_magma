@@ -66,8 +66,8 @@ output_dir 文件夹下存放着 seeds 和 crashes 结果
 首先编译安装 AFL++ (stable branch)
 ```bash
 cd AFL++
-LLVM_CONFIG=llvm-config-17 make -e source-only
-sudo LLVM_CONFIG=llvm-config-17 make -e install
+LLVM_CONFIG=llvm-config-14 make -e source-only
+sudo LLVM_CONFIG=llvm-config-14 make -e install
 ```
 
 随后再生成 cmplog binary

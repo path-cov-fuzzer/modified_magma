@@ -57,6 +57,9 @@ mkdir -p $SHARED/cmplog
 cp  $OUT/afl/$PROGRAM $SHARED/afl/$PROGRAM
 cp  $OUT/cmplog/$PROGRAM $SHARED/cmplog/$PROGRAM
 
+# perf record -o $SHARED/perf.data --call-graph dwarf "$FUZZER/repo/afl-fuzz" -s 1234 -i "$SHARED/corpus/$PROGRAM" -o "$SHARED/findings" \
+#     $FUZZARGS -- "$OUT/afl/$PROGRAM" $ARGS 2>&1
+
 "$FUZZER/repo/afl-fuzz" -s 1234 -i "$SHARED/corpus/$PROGRAM" -o "$SHARED/findings" \
     $FUZZARGS -- "$OUT/afl/$PROGRAM" $ARGS 2>&1
 

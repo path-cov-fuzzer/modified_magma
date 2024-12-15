@@ -43,7 +43,7 @@ The idea and much of the initial implementation came from Laszlo Szekeres.
 Set the `LLVM_CONFIG` variable to the clang version you want to use, e.g.:
 
 ```
-LLVM_CONFIG=llvm-config-9 make
+LLVM_CONFIG=llvm-config-14 make
 ```
 
 In case you have your own compiled llvm version specify the full path:
